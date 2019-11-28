@@ -3,7 +3,7 @@
 
 ## Mentors
 
-- [Craig L. Russell](), Chairman, Apache Software Fundation
+- [Craig L. Russell](https://github.com/clr-apache), Chairman, Apache Software Fundation
 - [Junping Du](https://github.com/JunpingDu), Chairman, Tencent Open-source Office
 
 ## Committers

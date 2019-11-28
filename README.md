@@ -1,5 +1,13 @@
 # OSS-bot
 
+## Meeting Notes
+
+Let's try to switch to the google docs... becasue the qq docs are too many bug...
+
+I hope everyone could be able to visite Google without any problem! ;-)
+
+- [Google Docs](https://docs.google.com/document/d/1K3-rbiIUDSJoGyH0g4zEvhYZL2T6HsKgfsiI0xCCCa0/edit?usp=sharing)
+
 
 ## Apache Incubator Proposal
 

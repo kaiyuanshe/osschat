@@ -4,7 +4,8 @@
 ## Mentors
 
 - [Craig L. Russell](https://github.com/clr-apache), Chairman, Apache Software Fundation
-- [Junping Du](https://github.com/JunpingDu), Chairman, Tencent Open-source Office
+- [Junping Du](https://github.com/JunpingDu), Chairman, Tencent Open Source Alliance
+- [Ted Liu](https://github.com/tedliu1), Chairman, kaiyuanshe
 - To Be Added ...
 
 ## Committers

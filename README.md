@@ -5,10 +5,12 @@
 
 - [Craig L. Russell](https://github.com/clr-apache), Chairman, Apache Software Fundation
 - [Junping Du](https://github.com/JunpingDu), Chairman, Tencent Open-source Office
+- To Be Added ...
 
 ## Committers
 
 - [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) Wechaty Author, <zixia@zixia.net>
+- To Be Added ...
 
 ## Copyright & License
 

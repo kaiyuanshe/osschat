@@ -9,7 +9,7 @@
 
 ## Committers
 
-- [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) Wechaty Author, <zixia@zixia.net>
+- [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) [Wechaty](https://github.com/wechaty/wechaty) Author, <zixia@zixia.net>
 - To Be Added ...
 
 ## Copyright & License

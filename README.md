@@ -1,6 +1,10 @@
 # OSS-bot
 
 
+## Apache Incubator Proposal
+
+- [Incubator OSS Bot Proposal](https://cwiki.apache.org/confluence/display/INCUBATOR/OSSBotProposal)
+
 ## Mentors
 
 - [Craig L. Russell](https://github.com/clr-apache), Chairman, Apache Software Fundation

@@ -32,7 +32,7 @@
     "brolog": "^1.6.5",
     "finis": "^0.4.3",
     "read-pkg-up": "^4.0.0",
-    "wechaty": "^0.28.3"
+    "wechaty": "^0.29.7"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

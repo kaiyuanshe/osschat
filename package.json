@@ -29,6 +29,8 @@
     "@hapi/hapi": "^18.3.1",
     "@types/raven": "^2.5.1",
     "@types/read-pkg-up": "^3.0.1",
+    "@chatie/tsconfig": "^0.6.1",
+    "@types/hapi__hapi": "^18.2.5",
     "brolog": "^1.6.5",
     "finis": "^0.4.3",
     "read-pkg-up": "^4.0.0",
@@ -37,8 +39,6 @@
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
     "@chatie/git-scripts": "^0.2.5",
-    "@chatie/tsconfig": "^0.6.1",
-    "@types/hapi__hapi": "^18.2.5",
     "tstest": "^0.4.2"
   },
   "git": {

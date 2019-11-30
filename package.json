@@ -1,10 +1,10 @@
 {
-  "name": "heroku-wechaty",
-  "version": "0.2.21",
-  "description": "Deploy to Heroku Button for Wechaty",
+  "name": "oss-bot",
+  "version": "0.0.1",
+  "description": "Apache OSS Bot",
   "main": "index.js",
   "engines": {
-    "node": "10.4.1"
+    "node": "12"
   },
   "scripts": {
     "heroku-postbuild": "wechaty-puppet-install",
@@ -13,18 +13,18 @@
     "start": "echo -e '\n\nDo not use `npm start` because its buggy with SIGTERM\n\nUse Procfile instead.\n\n' && exit 1",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "blue-tape -r ts-node/register \"src/**/*.spec.ts\" \"src/*.spec.ts\" \"tests/*.spec.ts\" \"tests/**/*.spec.ts\"",
-    "lint:es": "eslint --ignore-pattern tests/fixtures/ '{bin,examples,scripts,src,tests}/**/*.ts'"
+    "lint:es": "eslint --ignore-pattern node_modules/ --ignore-pattern fixtures/ '{bin,examples,src,scripts,tests}/**/*.ts'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chatie/heroku-wechaty-getting-started.git"
+    "url": "git+https://github.com/kaiyuanshe/OSS-bot.git"
   },
   "author": "Huan LI <zixia@zixia.net>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/chatie/heroku-wechaty-getting-started/issues"
+    "url": "https://github.com/kaiyuanshe/OSS-bot/issues"
   },
-  "homepage": "https://github.com/chatie/heroku-wechaty-getting-started#readme",
+  "homepage": "https://github.com/kaiyuanshe/OSS-bot#readme",
   "dependencies": {
     "@hapi/hapi": "^18.3.1",
     "@types/raven": "^2.5.1",

@@ -1,0 +1,49 @@
+{
+  "name": "heroku-wechaty",
+  "version": "0.2.21",
+  "description": "Deploy to Heroku Button for Wechaty",
+  "main": "index.js",
+  "engines": {
+    "node": "10.4.1"
+  },
+  "scripts": {
+    "heroku-postbuild": "wechaty-puppet-install",
+    "lint": "npm run lint:es && npm run lint:ts",
+    "lint:ts": "tsc --noEmit",
+    "start": "echo -e '\n\nDo not use `npm start` because its buggy with SIGTERM\n\nUse Procfile instead.\n\n' && exit 1",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "blue-tape -r ts-node/register \"src/**/*.spec.ts\" \"src/*.spec.ts\" \"tests/*.spec.ts\" \"tests/**/*.spec.ts\"",
+    "lint:es": "eslint --ignore-pattern tests/fixtures/ '{bin,examples,scripts,src,tests}/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chatie/heroku-wechaty-getting-started.git"
+  },
+  "author": "Huan LI <zixia@zixia.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/chatie/heroku-wechaty-getting-started/issues"
+  },
+  "homepage": "https://github.com/chatie/heroku-wechaty-getting-started#readme",
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "@types/raven": "^2.5.1",
+    "@types/read-pkg-up": "^3.0.1",
+    "brolog": "^1.6.5",
+    "finis": "^0.4.3",
+    "read-pkg-up": "^4.0.0",
+    "wechaty": "^0.28.3"
+  },
+  "devDependencies": {
+    "@chatie/eslint-config": "^0.8.1",
+    "@chatie/git-scripts": "^0.2.5",
+    "@chatie/tsconfig": "^0.6.1",
+    "@types/hapi__hapi": "^18.2.5",
+    "tstest": "^0.4.2"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "npx git-scripts-pre-push"
+    }
+  }
+}

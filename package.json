@@ -4,7 +4,7 @@
   "description": "Apache OSS Bot",
   "main": "index.js",
   "engines": {
-    "node": "12"
+    "node": "10"
   },
   "scripts": {
     "heroku-postbuild": "wechaty-puppet-install",

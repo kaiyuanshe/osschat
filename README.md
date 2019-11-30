@@ -1,5 +1,11 @@
 # OSS-bot
 
+[![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-blue.svg)](https://github.com/chatie/wechaty)
+[![Build Status](https://travis-ci.com/kaiyuanshe/OSS-bot.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSS-bot)
+[![Greenkeeper badge](https://badges.greenkeeper.io/kaiyuanshe/OSS-bot.svg)](https://greenkeeper.io/)
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Meeting Notes
 
 Let's try to switch to the google docs... becasue the qq docs are too many bug...

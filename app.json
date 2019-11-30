@@ -2,7 +2,7 @@
   "name": "heroku-wechaty",
   "description": "Heroku Wechaty Getting Started Template",
   "repository": "https://github.com/wechaty/heroku-wechaty-getting-started",
-  "logo": "https://chatie.io/wechaty/images/wechaty-icon.png",
+  "logo": "https://wechaty.github.io/wechaty/images/wechaty-icon.png",
   "keywords": [
     "wechaty",
     "heroku",

@@ -14,7 +14,6 @@ I hope everyone could be able to visite Google without any problem! ;-)
 
 - [OSS Bot Meeting Notes](https://docs.google.com/document/d/1K3-rbiIUDSJoGyH0g4zEvhYZL2T6HsKgfsiI0xCCCa0/edit?usp=sharing)
 
-
 ## Apache Incubator Proposal
 
 - [Incubator OSS Bot Proposal](https://cwiki.apache.org/confluence/display/INCUBATOR/OSSBotProposal)

@@ -22,7 +22,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
   const handler = () => {
     if (qrcodeValue) {
       const html = [
-        `<h1>Heroku Wechaty Getting Started v${VERSION}</h1>`,
+        `<h1>OSS Bot v${VERSION}</h1>`,
         'Scan QR Code: <br />',
         qrcodeValue + '<br />',
         '<a href="http://goqr.me/" target="_blank">http://goqr.me/</a><br />',
@@ -34,9 +34,9 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       ].join('')
       return html
     } else if (userName) {
-      return `Heroku Wechaty Getting Started v${VERSION} User ${userName} logined`
+      return `OSS Bot v${VERSION} User ${userName} logined`
     } else {
-      return `Heroku Wechaty Getting Started v${VERSION} Hello, come back later please.`
+      return `OSS Bot v${VERSION} Hello, come back later please.`
     }
   }
 

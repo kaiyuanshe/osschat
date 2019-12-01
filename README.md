@@ -10,7 +10,7 @@
 
 We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.
 
-You can visit the staging system at <http://chachabot.com> (Temporary domain name, to be changed to Kaiyuanshe)
+You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 
 ## Meeting Notes
 

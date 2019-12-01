@@ -6,6 +6,12 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## Staging
+
+We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.
+
+You can visit the staging system at http://chachabot.com (Temporary domain name, to be changed to Kaiyuanshe)
+
 ## Meeting Notes
 
 Let's try to switch to the google docs... becasue the qq docs are too many bug...

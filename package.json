@@ -34,7 +34,7 @@
     "brolog": "^1.6.5",
     "finis": "^0.4.3",
     "read-pkg-up": "^7.0.0",
-    "wechaty-puppet-padplus": "latest",
+    "wechaty-puppet-padplus": "^0.1.0",
     "wechaty": "^0.29.7"
   },
   "devDependencies": {

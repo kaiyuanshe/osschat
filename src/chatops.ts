@@ -17,12 +17,14 @@ export async function chatops (
 ): Promise<void> {
   log.info('chatops', 'chatops(%s)', text)
 
-  if (!room) {
+  while (!room) {
     const tryRoom = await bot.Room.find({ topic: CHATOPS_ROOM_TOPIC })
-    if (!tryRoom) {
-      throw new Error('Can not found ChatOps Room!')
+    if (tryRoom) {
+      room = tryRoom
+    } else {
+      log.verbose('chatops', `chatops() can not find room with topic "${CHATOPS_ROOM_TOPIC}"`)
+      await new Promise(resolve => setTimeout(resolve, 1000))
     }
-    room = tryRoom
   }
 
   await room.say(text)

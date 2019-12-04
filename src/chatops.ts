@@ -7,7 +7,8 @@ import {
   log,
 }                   from './config'
 
-const CHATOPS_ROOM_TOPIC = 'OSS Bot ChatOps'
+// const CHATOPS_ROOM_TOPIC = 'OSS Bot ChatOps'
+const CHATOPS_ROOM_ID = '18995691396@chatroom'
 
 let room: Room
 
@@ -17,14 +18,8 @@ export async function chatops (
 ): Promise<void> {
   log.info('chatops', 'chatops(%s)', text)
 
-  while (!room) {
-    const tryRoom = await bot.Room.find({ topic: CHATOPS_ROOM_TOPIC })
-    if (tryRoom) {
-      room = tryRoom
-    } else {
-      log.verbose('chatops', `chatops() can not find room with topic "${CHATOPS_ROOM_TOPIC}"`)
-      await new Promise(resolve => setTimeout(resolve, 1000))
-    }
+  if (!room) {
+    room = bot.Room.load(CHATOPS_ROOM_ID)
   }
 
   await room.say(text)

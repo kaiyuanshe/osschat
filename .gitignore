@@ -64,3 +64,6 @@ package-lock.json
 
 # IDE
 .idea
+
+t/
+t.*

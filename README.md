@@ -37,6 +37,13 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 - [Zhuang Biaowei](https://github.com/zhuangbiaowei), [(庄表伟)](http://www.zhuangbiaowei.com/blog/), Product Manager from Huawei technologies co. ltd
 - To Be Added ...
 
+## Thanks
+
+- OSS mentored by: Apache Software Fundation
+- Project Lead by: 开源社
+- Heroku Dyno sponsored by: Juzi.BOT
+- Wechaty Puppet Padplus sponsored by: Juzi.BOT
+
 ## Copyright & License
 
 - Code & Docs © 2019-now 开源社

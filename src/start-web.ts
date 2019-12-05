@@ -1,4 +1,4 @@
-import Hapi    from '@hapi/hapi'
+import Hapi, { Request, ResponseToolkit }    from '@hapi/hapi'
 import {
   Wechaty,
 }               from 'wechaty'
@@ -8,6 +8,21 @@ import {
   PORT,
   VERSION,
 }             from './config'
+import { chatops } from './chatops'
+
+let wechaty: Wechaty
+
+async function chatopsHandler (request: Request, response: ResponseToolkit) {
+  log.info('startWeb', 'chatopsHandler()')
+
+  const payload: {
+    chatops: string,
+  } = request.payload as any
+
+  await chatops(wechaty, payload.chatops)
+
+  return response.redirect('/')
+}
 
 export async function startWeb (bot: Wechaty): Promise<void> {
   log.verbose('startWeb', 'startWeb(%s)', bot)
@@ -15,10 +30,19 @@ export async function startWeb (bot: Wechaty): Promise<void> {
   let qrcodeValue : undefined | string
   let userName    : undefined | string
 
+  wechaty = bot
+
   const server =  new Hapi.Server({
     port: PORT,
   })
 
+  const FORM_HTML = `
+    <form action="/chatops/" method="post">
+      <label for="chatops">ChatOps: </label>
+      <input id="chatops" type="text" name="chatops" value="Hello, OSS Bot.">
+      <input type="submit" value="ChatOps">
+    </form>
+  `
   const handler = () => {
     if (qrcodeValue) {
       const html = [
@@ -31,6 +55,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
         'https://api.qrserver.com/v1/create-qr-code/?data=',
         encodeURIComponent(qrcodeValue),
         '">',
+        FORM_HTML,
       ].join('')
       return html
     } else if (userName) {
@@ -44,6 +69,12 @@ export async function startWeb (bot: Wechaty): Promise<void> {
     handler,
     method : 'GET',
     path   : '/',
+  })
+
+  server.route({
+    handler: chatopsHandler,
+    method : 'POST',
+    path   : '/chatops/',
   })
 
   bot.on('scan', qrcode => {

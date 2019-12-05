@@ -41,8 +41,8 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 
 - OSS mentored by: Apache Software Fundation
 - Project Lead by: 开源社
-- Heroku Dyno sponsored by: Juzi.BOT
-- Wechaty Puppet Padplus sponsored by: Juzi.BOT
+- Heroku Dyno sponsored by: [JuziBot](https://www.juzi.bot)
+- Wechaty Puppet Padplus sponsored by: [JuziBot](https://www.juzi.bot)
 
 ## Copyright & License
 

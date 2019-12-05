@@ -44,8 +44,11 @@ export async function startWeb (bot: Wechaty): Promise<void> {
     </form>
   `
   const handler = () => {
+    let html
+
     if (qrcodeValue) {
-      const html = [
+
+      html = [
         `<h1>OSS Bot v${VERSION}</h1>`,
         'Scan QR Code: <br />',
         qrcodeValue + '<br />',
@@ -55,14 +58,21 @@ export async function startWeb (bot: Wechaty): Promise<void> {
         'https://api.qrserver.com/v1/create-qr-code/?data=',
         encodeURIComponent(qrcodeValue),
         '">',
+      ].join('')
+
+    } else if (userName) {
+
+      html = [
+        `<p> OSS Bot v${VERSION} User ${userName} logined. </p>`,
         FORM_HTML,
       ].join('')
-      return html
-    } else if (userName) {
-      return `OSS Bot v${VERSION} User ${userName} logined`
+
     } else {
-      return `OSS Bot v${VERSION} Hello, come back later please.`
+
+      html = `OSS Bot v${VERSION} Hello, come back later please.`
+
     }
+    return html
   }
 
   server.route({

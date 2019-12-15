@@ -1,7 +1,6 @@
 import {
   log,
   Message,
-  Room,
   Wechaty,
 }             from 'wechaty'
 
@@ -9,7 +8,7 @@ export default async function onMessage (
   this    : Wechaty,
   message : Message,
 ): Promise<void> {
-  const text = message.text()
+  const text    = message.text()
   const contact = message.from()
   if (!contact) {
     return
@@ -17,7 +16,8 @@ export default async function onMessage (
   if (text === 'oss') {
 
     // To Be Fix: Change "OSS Bot ChatOps" Group Name to actual group name
-    const room = await Room.find({ topic: 'OSS Bot ChatOps' })
+    log.info('on-message', 'Begin to find the OSS Bot ChatOps room')
+    const room = await this.Room.find({ topic: 'OSS Bot ChatOps' })
     if (room) {
       await room.add(contact)
 

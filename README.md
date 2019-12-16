@@ -6,6 +6,34 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## Run
+
+```shell
+ts-node src/main
+```
+
+### Localhost
+
+You can get the following result, open <http://localhost:8788>, scan qrcode and begin to use the bot!
+
+```shell
+16:57:45 INFO Wechaty <wechaty-puppet-puppeteer>(heroku-wechaty) start() v0.29.7 is starting...
+16:57:47 INFO startWeb startWeb() listening to http://localhost:8788
+```
+
+After scan the qrcode, you can find the following result here
+
+```shell
+17:12:57 INFO chatops chatops(Der! I just got online!
+OSS Bot v0.0.24)
+17:12:57 INFO startBot onLogin(Contact<李佳芮>) 李佳芮 Heroku Wechaty Getting Started v0.29.7 logined
+```
+
+### Advance
+
+1. Using docker to get a more stable version
+2. Using an advance puppet to get a more stable version
+
 ## Staging
 
 We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.

@@ -5,10 +5,8 @@ import {
 
 import {
   log,
+  CHATOPS_ROOM_ID,
 }                   from './config'
-
-// const CHATOPS_ROOM_TOPIC = 'OSS Bot ChatOps'
-const CHATOPS_ROOM_ID = '18995691396@chatroom'
 
 let room: Room
 

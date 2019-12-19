@@ -14,6 +14,7 @@ about: Create a bug report for a bug you found in ossbot
 rm -rf package-lock.json
 rm -rf node_modules
 npm install
+ts-node src/main.ts
 ```
 
 2. Please search in the issue first, and make sure your problem had not been reported before
@@ -63,7 +64,7 @@ Show Logs
 </summary>
 
 ```shell
-$ WECHATY_LOG=silly node yourbot.js
+$ WECHATY_LOG=silly ts-node src/main.ts
 
 Question: Paste your FULL(DO NOT ONLY PROVIDE FRAGMENTS) log messages
 Answer:

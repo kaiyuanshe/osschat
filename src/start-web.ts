@@ -24,19 +24,6 @@ async function chatopsHandler (request: Request, response: ResponseToolkit) {
   return response.redirect('/')
 }
 
-async function githubWebhookHandler (
-  request: Request,
-  response: ResponseToolkit,
-) {
-  log.info('startWeb', 'githubWebhookHandler()')
-
-  const payload = request.payload as any
-
-  console.log(payload)
-
-  return response.response()
-}
-
 export async function startWeb (bot: Wechaty): Promise<void> {
   log.verbose('startWeb', 'startWeb(%s)', bot)
 

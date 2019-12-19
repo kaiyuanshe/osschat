@@ -43,7 +43,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       <input type="submit" value="ChatOps">
     </form>
   `
-  const handler = () => {
+  const handler = async () => {
     let html
 
     if (qrcodeValue) {
@@ -61,12 +61,20 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       ].join('')
 
     } else if (userName) {
+      // zhuangbiaowei add code begin
+      let rooms = await bot.Room.findAll()
+      let room_html : string = ``
+      for(let room in rooms){
+        const topic = await room.topic()
+        room_html = room_html + topic + `</br>/n`
+      }
+      // zhuangbiaowei add code end
 
       html = [
         `<p> OSS Bot v${VERSION} User ${userName} logined. </p>`,
         FORM_HTML,
+        room_html,
       ].join('')
-
     } else {
 
       html = `OSS Bot v${VERSION} Hello, come back later please.`
@@ -101,4 +109,4 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   await server.start()
   log.info('startWeb', 'startWeb() listening to http://localhost:%d', PORT)
-}
+}                                                                              

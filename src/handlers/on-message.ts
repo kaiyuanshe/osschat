@@ -4,6 +4,10 @@ import {
   Wechaty,
 }             from 'wechaty'
 
+import {
+  CHATOPS_ROOM_ID,
+}                   from '../config'
+
 export default async function onMessage (
   this    : Wechaty,
   message : Message,
@@ -13,11 +17,12 @@ export default async function onMessage (
   if (!contact) {
     return
   }
-  if (text === 'oss') {
+  if (text.toLowerCase() === 'oss') {
 
     // To Be Fix: Change "OSS Bot ChatOps" Group Name to actual group name
     log.info('on-message', 'Begin to find the OSS Bot ChatOps room')
-    const room = await this.Room.find({ topic: 'OSS Bot ChatOps' })
+    const room = this.Room.load(CHATOPS_ROOM_ID)
+
     if (room) {
       await room.add(contact)
 

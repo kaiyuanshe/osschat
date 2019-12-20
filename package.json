@@ -26,16 +26,17 @@
   },
   "homepage": "https://github.com/kaiyuanshe/OSS-bot#readme",
   "dependencies": {
+    "@chatie/tsconfig": "^0.6.1",
     "@hapi/hapi": "^18.3.1",
+    "@types/hapi__hapi": "^18.2.5",
     "@types/raven": "^2.5.1",
     "@types/read-pkg-up": "^6.0.0",
-    "@chatie/tsconfig": "^0.6.1",
-    "@types/hapi__hapi": "^18.2.5",
     "brolog": "^1.6.5",
     "finis": "^0.4.3",
+    "node-cache": "^5.1.0",
     "read-pkg-up": "^7.0.0",
-    "wechaty-puppet-padplus": "^0.1.0",
-    "wechaty": "^0.29.8"
+    "wechaty": "^0.29.8",
+    "wechaty-puppet-padplus": "^0.1.0"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

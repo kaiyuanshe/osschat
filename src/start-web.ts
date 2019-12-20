@@ -1,13 +1,13 @@
-import Hapi, { Request, ResponseToolkit }    from '@hapi/hapi'
+import Hapi, { Request, ResponseToolkit } from '@hapi/hapi'
 import {
   Wechaty,
-}               from 'wechaty'
+} from 'wechaty'
 
 import {
   log,
   PORT,
   VERSION,
-}             from './config'
+} from './config'
 import { chatops } from './chatops'
 
 let wechaty: Wechaty
@@ -27,12 +27,12 @@ async function chatopsHandler (request: Request, response: ResponseToolkit) {
 export async function startWeb (bot: Wechaty): Promise<void> {
   log.verbose('startWeb', 'startWeb(%s)', bot)
 
-  let qrcodeValue : undefined | string
-  let userName    : undefined | string
+  let qrcodeValue: undefined | string
+  let userName: undefined | string
 
   wechaty = bot
 
-  const server =  new Hapi.Server({
+  const server = new Hapi.Server({
     port: PORT,
   })
 
@@ -61,19 +61,18 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       ].join('')
 
     } else if (userName) {
-      // zhuangbiaowei add code begin
       let rooms = await bot.Room.findAll()
-      let room_html : string = ``
-      for(let room in rooms){
+      let roomHtml = `The rooms I have joined are as follows: <ol>`
+      for (let room of rooms) {
         const topic = await room.topic()
-        room_html = room_html + topic + `</br>/n`
+        roomHtml = roomHtml + `<li>` + topic + `</li>\n`
       }
-      // zhuangbiaowei add code end
+      roomHtml = roomHtml + `</ol>`
 
       html = [
         `<p> OSS Bot v${VERSION} User ${userName} logined. </p>`,
         FORM_HTML,
-        room_html,
+        roomHtml,
       ].join('')
     } else {
 
@@ -85,23 +84,23 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   server.route({
     handler,
-    method : 'GET',
-    path   : '/',
+    method: 'GET',
+    path: '/',
   })
 
   server.route({
     handler: chatopsHandler,
-    method : 'POST',
-    path   : '/chatops/',
+    method: 'POST',
+    path: '/chatops/',
   })
 
   bot.on('scan', qrcode => {
     qrcodeValue = qrcode
-    userName    = undefined
+    userName = undefined
   })
   bot.on('login', user => {
     qrcodeValue = undefined
-    userName    = user.name()
+    userName = user.name()
   })
   bot.on('logout', () => {
     userName = undefined
@@ -109,4 +108,4 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   await server.start()
   log.info('startWeb', 'startWeb() listening to http://localhost:%d', PORT)
-}                                                                              
+}

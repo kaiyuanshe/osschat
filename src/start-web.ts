@@ -1,13 +1,13 @@
-import Hapi, { Request, ResponseToolkit }    from '@hapi/hapi'
+import Hapi, { Request, ResponseToolkit } from '@hapi/hapi'
 import {
   Wechaty,
-}               from 'wechaty'
+} from 'wechaty'
 
 import {
   log,
   PORT,
   VERSION,
-}             from './config'
+} from './config'
 import { chatops } from './chatops'
 
 let wechaty: Wechaty
@@ -27,12 +27,12 @@ async function chatopsHandler (request: Request, response: ResponseToolkit) {
 export async function startWeb (bot: Wechaty): Promise<void> {
   log.verbose('startWeb', 'startWeb(%s)', bot)
 
-  let qrcodeValue : undefined | string
-  let userName    : undefined | string
+  let qrcodeValue: undefined | string
+  let userName: undefined | string
 
   wechaty = bot
 
-  const server =  new Hapi.Server({
+  const server = new Hapi.Server({
     port: PORT,
   })
 
@@ -43,7 +43,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       <input type="submit" value="ChatOps">
     </form>
   `
-  const handler = () => {
+  const handler = async () => {
     let html
 
     if (qrcodeValue) {
@@ -61,12 +61,19 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       ].join('')
 
     } else if (userName) {
+      let rooms = await bot.Room.findAll()
+      let roomHtml = `The rooms I have joined are as follows: <ol>`
+      for (let room of rooms) {
+        const topic = await room.topic()
+        roomHtml = roomHtml + `<li>` + topic + `</li>\n`
+      }
+      roomHtml = roomHtml + `</ol>`
 
       html = [
         `<p> OSS Bot v${VERSION} User ${userName} logined. </p>`,
         FORM_HTML,
+        roomHtml,
       ].join('')
-
     } else {
 
       html = `OSS Bot v${VERSION} Hello, come back later please.`
@@ -77,23 +84,23 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   server.route({
     handler,
-    method : 'GET',
-    path   : '/',
+    method: 'GET',
+    path: '/',
   })
 
   server.route({
     handler: chatopsHandler,
-    method : 'POST',
-    path   : '/chatops/',
+    method: 'POST',
+    path: '/chatops/',
   })
 
   bot.on('scan', qrcode => {
     qrcodeValue = qrcode
-    userName    = undefined
+    userName = undefined
   })
   bot.on('login', user => {
     qrcodeValue = undefined
-    userName    = user.name()
+    userName = user.name()
   })
   bot.on('logout', () => {
     userName = undefined

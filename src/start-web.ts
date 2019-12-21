@@ -65,7 +65,8 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       let roomHtml = `The rooms I have joined are as follows: <ol>`
       for (let room of rooms) {
         const topic = await room.topic()
-        roomHtml = roomHtml + `<li>` + topic + `</li>\n`
+        const roomId = room.id
+        roomHtml = roomHtml + `<li> ${topic} / ${roomId} </li>\n`
       }
       roomHtml = roomHtml + `</ol>`
 

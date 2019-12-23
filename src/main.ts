@@ -1,12 +1,24 @@
 import {
   log,
+  VERSION,
 }                     from './config'
 import { getWechaty } from './get-wechaty'
 import { startBot }   from './start-bot'
 import { startFinis } from './start-finis'
 import { startWeb }   from './start-web'
+import { Command } from 'commander'
 
 async function main () {
+  const program = new Command()
+  program
+    .version(VERSION)
+    .option('-d, --debug', 'enable debug mode')
+
+  program.parse(process.argv)
+  if (program.debug) {
+    process.env.DEBUG = program.debug.toString()
+  }
+
   log.verbose('main', 'main()')
 
   const name = process.env.WECHATY_NAME || 'heroku-wechaty'

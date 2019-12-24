@@ -13,6 +13,7 @@ let room: Room
 export async function chatops (
   bot: Wechaty,
   text: string,
+  opt: boolean = true
 ): Promise<void> {
   log.info('chatops', 'chatops(%s)', text)
 
@@ -20,5 +21,7 @@ export async function chatops (
     room = bot.Room.load(CHATOPS_ROOM_ID)
   }
 
-  await room.say(text)
+  if (opt) {
+    await room.say(text)
+  }
 }

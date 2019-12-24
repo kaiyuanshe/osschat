@@ -1,6 +1,6 @@
 {
   "name": "oss-bot",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Apache OSS Bot",
   "main": "index.js",
   "engines": {
@@ -26,15 +26,18 @@
   },
   "homepage": "https://github.com/kaiyuanshe/OSS-bot#readme",
   "dependencies": {
+    "@chatie/tsconfig": "^0.6.1",
     "@hapi/hapi": "^18.3.1",
+    "@types/hapi__hapi": "^18.2.5",
     "@types/raven": "^2.5.1",
     "@types/read-pkg-up": "^6.0.0",
-    "@chatie/tsconfig": "^0.6.1",
-    "@types/hapi__hapi": "^18.2.5",
     "brolog": "^1.6.5",
+    "commander": "^4.0.1",
+    "eslint": "^5.16.0",
     "finis": "^0.4.3",
+    "flash-store": "^0.16.6",
+    "grpc": "^1.24.2",
     "read-pkg-up": "^7.0.0",
-    "wechaty-puppet-padplus": "^0.1.0",
     "wechaty": "^0.29.8"
   },
   "devDependencies": {

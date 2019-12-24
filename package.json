@@ -1,6 +1,6 @@
 {
   "name": "oss-bot",
-  "version": "0.0.26",
+  "version": "0.0.28",
   "description": "Apache OSS Bot",
   "main": "index.js",
   "engines": {
@@ -32,11 +32,14 @@
     "@types/raven": "^2.5.1",
     "@types/read-pkg-up": "^6.0.0",
     "brolog": "^1.6.5",
+    "commander": "^4.0.1",
+    "eslint": "^5.16.0",
     "finis": "^0.4.3",
     "node-cache": "^5.1.0",
+    "flash-store": "^0.16.6",
+    "grpc": "^1.24.2",
     "read-pkg-up": "^7.0.0",
-    "wechaty": "^0.29.8",
-    "wechaty-puppet-padplus": "^0.1.0"
+    "wechaty": "^0.29.20"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

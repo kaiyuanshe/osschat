@@ -7,6 +7,7 @@ import {
 import {
   log,
   VERSION,
+  debug,
 }             from './config'
 
 const BOT_NAME = 'OSS Bot'
@@ -23,7 +24,7 @@ export async function startFinis (wechaty: Wechaty): Promise<void> {
   }
   bot = wechaty
 
-  bot.on('login',   _ => chatops(wechaty, LOGIN_ANNOUNCEMENT))
+  bot.on('login',   _ => chatops(wechaty, LOGIN_ANNOUNCEMENT, !debug()))
   bot.on('logout',  user => log.info('RestartReporter', 'startFinis() bot %s logout', user))
 }
 
@@ -52,9 +53,11 @@ finis(async (code, signal) => {
     log.info('RestartReporter', 'finis() announce exiting')
     try {
       // log.level('silly')
-      await chatops(bot, EXIT_ANNOUNCEMENT)
+      await chatops(bot, EXIT_ANNOUNCEMENT, !debug())
       log.info('startFinis', 'finis() chatops() done')
-      await bot.say(EXIT_ANNOUNCEMENT)
+      if (!debug()) {
+        await bot.say(EXIT_ANNOUNCEMENT)
+      }
       log.info('startFinis', 'finis() bot.say() done')
       await new Promise(resolve => setTimeout(resolve, 10 * 1000))
       log.info('startFinis', 'finis() sleep 10s done')

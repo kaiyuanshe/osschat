@@ -38,10 +38,7 @@
     "flash-store": "^0.16.6",
     "grpc": "^1.24.2",
     "read-pkg-up": "^7.0.0",
-    "rocksdb": "^4.1.0",
-    "wechaty": "^0.29.8",
-    "wechaty-puppet": "^0.15.28",
-    "wechaty-puppet-padplus": "^0.1.3"
+    "wechaty": "^0.29.8"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

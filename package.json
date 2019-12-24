@@ -35,6 +35,7 @@
     "commander": "^4.0.1",
     "eslint": "^5.16.0",
     "finis": "^0.4.3",
+    "node-cache": "^5.1.0",
     "flash-store": "^0.16.6",
     "grpc": "^1.24.2",
     "read-pkg-up": "^7.0.0",

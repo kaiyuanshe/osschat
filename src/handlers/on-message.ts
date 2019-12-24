@@ -7,6 +7,7 @@ import {
 import {
   CHATOPS_ROOM_ID,
 }                   from '../config'
+import { VoteManager } from '../managers/vote-manager'
 
 export default async function onMessage (
   this    : Wechaty,
@@ -31,4 +32,10 @@ export default async function onMessage (
     }
   }
   log.info('on-message', 'onMessage(%s)', message)
+
+  try {
+    await VoteManager.checkVote(message)
+  } catch (e) {
+    log.error('on-message', 'Failed to check vote for the message:\n', e)
+  }
 }

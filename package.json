@@ -1,6 +1,6 @@
 {
   "name": "oss-bot",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "Apache OSS Bot",
   "main": "index.js",
   "engines": {

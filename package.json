@@ -37,6 +37,7 @@
     "finis": "^0.4.3",
     "flash-store": "^0.16.6",
     "grpc": "^1.24.2",
+    "moment": "^2.24.0",
     "node-cache": "^5.1.0",
     "read-pkg-up": "^7.0.0",
     "wechaty": "^0.29.22"

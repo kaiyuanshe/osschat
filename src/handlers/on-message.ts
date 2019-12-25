@@ -38,4 +38,36 @@ export default async function onMessage (
   } catch (e) {
     log.error('on-message', 'Failed to check vote for the message:\n', e)
   }
+
+  await dingDong.call(this, message)
+}
+
+async function dingDong (
+  this:     Wechaty,
+  message:  Message,
+) {
+  log.info('on-message', 'dingDong()')
+
+  let text = message.text()
+  const type = message.type()
+  const room = message.room()
+  // const from = message.from()
+  const mentionSelf = await message.mentionSelf()
+
+  if (room) {
+    if (!mentionSelf) {
+      return
+    }
+
+    log.info('on-message', 'dingDong() message in room and mentioned self')
+    text = await message.mentionText()
+    console.info('mentionText', text)
+  }
+
+  if (type === Message.Type.Text) {
+    if (text.match(/^#ding$/i)) {
+      await message.say('dong')
+    }
+  }
+
 }

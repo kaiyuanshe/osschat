@@ -11,6 +11,8 @@ import {
 }                   from '../config'
 import { VoteManager } from '../managers/vote-manager'
 
+const BORN_TIME = Date.now()
+
 export default async function onMessage (
   this    : Wechaty,
   message : Message,

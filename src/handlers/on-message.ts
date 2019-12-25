@@ -66,11 +66,17 @@ async function ctpStatus (
     return
   }
 
-  let text = await message.mentionText()
+  const text = await message.mentionText()
+  if (!text.match(/^#\w+/)) {
+    return
+  }
+
+  const cmd = text.replace(/^#/, '')
+
   let reply
-  if (text.match(/^#ding$/i)) {
+  if (cmd.match(/^ding$/i)) {
     reply = 'dong'
-  } else if (text.match(/^#uptime$/i)) {
+  } else if (cmd.match(/^uptime$/i)) {
     const time = moment(BORN_TIME).fromNow()
     reply = `I'm online ${time}`
   } else {

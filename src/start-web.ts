@@ -110,7 +110,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   const webhookRoute = {
     handler: webhookHandler,
-    method: 'POST',
+    method: 'GET',
     path: '/webhook/',
   }
 

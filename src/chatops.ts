@@ -7,6 +7,7 @@ import {
 import {
   log,
   BOT_ROOM_ID,
+  DEV_ROOM_ID,
   HEARTBEAT_ROOM_ID,
 }                     from './config'
 
@@ -44,6 +45,10 @@ export class Chatops {
 
   public async say (textOrMessage: string | Message | UrlLink) {
     return this.roomMessage(BOT_ROOM_ID, textOrMessage)
+  }
+
+  public async dev (urlLink: UrlLink) {
+    return this.roomMessage(DEV_ROOM_ID, urlLink)
   }
 
   private async roomMessage (

@@ -9,7 +9,7 @@ import {
   log,
   PORT,
   VERSION,
-} from './config'
+}               from './config'
 import { Chatops } from './chatops'
 
 async function chatopsHandler (
@@ -50,7 +50,7 @@ async function webhookHandler (
 
   const urlLink = new UrlLink(payload)
 
-  await Chatops.instance().say(urlLink)
+  await Chatops.instance().dev(urlLink)
 
   const html = [
     'webhook succeed!',

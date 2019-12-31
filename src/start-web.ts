@@ -12,7 +12,10 @@ import {
 } from './config'
 import { Chatops } from './chatops'
 
-async function chatopsHandler (request: Request, response: ResponseToolkit) {
+async function chatopsHandler (
+  request: Request,
+  response: ResponseToolkit
+) {
   log.info('startWeb', 'chatopsHandler()')
 
   const payload: {
@@ -30,7 +33,20 @@ async function webhookHandler (
 ) {
   log.info('startWeb', 'webhookHandler()')
 
-  const payload: UrlLinkPayload = request.payload as any
+  let payload: UrlLinkPayload
+
+  switch (request.method) {
+    case 'get':
+      payload = { ...request.params } as any
+      break
+
+    case 'post':
+      payload = request.payload as any
+      break
+
+    default:
+      throw Error(`method is neither get nor post: ${request.method}`)
+  }
 
   const urlLink = new UrlLink(payload)
 
@@ -110,7 +126,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   const webhookRoute = {
     handler: webhookHandler,
-    method: 'GET',
+    method: ['GET', 'POST'],
     path: '/webhook/',
   }
 

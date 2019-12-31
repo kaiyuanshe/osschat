@@ -29,7 +29,7 @@ async function chatopsHandler (
 
 async function webhookHandler (
   request: Request,
-  response: ResponseToolkit,
+  h: ResponseToolkit,
 ) {
   log.info('startWeb', 'webhookHandler()')
 
@@ -37,7 +37,7 @@ async function webhookHandler (
 
   switch (request.method) {
     case 'get':
-      payload = { ...request.params } as any
+      payload = { ...request.query } as any
       break
 
     case 'post':
@@ -52,7 +52,12 @@ async function webhookHandler (
 
   await Chatops.instance().say(urlLink)
 
-  return response.redirect('/')
+  const html = [
+    'webhook succeed!',
+    JSON.stringify(payload),
+  ].join('<hr />')
+
+  return h.response(html)
 }
 
 export async function startWeb (bot: Wechaty): Promise<void> {

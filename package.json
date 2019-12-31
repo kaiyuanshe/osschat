@@ -40,7 +40,7 @@
     "moment": "^2.24.0",
     "node-cache": "^5.1.0",
     "read-pkg-up": "^7.0.0",
-    "wechaty": "^0.29.22"
+    "wechaty": "^0.29.28"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

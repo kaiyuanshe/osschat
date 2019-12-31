@@ -8,6 +8,7 @@ import {
 import {
   getMemory,
 }               from './get-memory'
+import { Chatops } from './chatops'
 
 let wechaty: Wechaty
 
@@ -24,6 +25,9 @@ export function getWechaty (name: string): Wechaty {
     memory,
     name,
   })
+
+  // Initialize Chatops Instance:
+  Chatops.instance(wechaty)
 
   return wechaty
 }

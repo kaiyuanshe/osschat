@@ -1,16 +1,16 @@
 import Hapi, { Request, ResponseToolkit } from '@hapi/hapi'
 import {
   Wechaty,
-} from 'wechaty'
+  UrlLinkPayload,
+  UrlLink,
+}                   from 'wechaty'
 
 import {
   log,
   PORT,
   VERSION,
 } from './config'
-import { chatops } from './chatops'
-
-let wechaty: Wechaty
+import { Chatops } from './chatops'
 
 async function chatopsHandler (request: Request, response: ResponseToolkit) {
   log.info('startWeb', 'chatopsHandler()')
@@ -19,7 +19,22 @@ async function chatopsHandler (request: Request, response: ResponseToolkit) {
     chatops: string,
   } = request.payload as any
 
-  await chatops(wechaty, payload.chatops)
+  await Chatops.instance().say(payload.chatops)
+
+  return response.redirect('/')
+}
+
+async function webhookHandler (
+  request: Request,
+  response: ResponseToolkit,
+) {
+  log.info('startWeb', 'webhookHandler()')
+
+  const payload: UrlLinkPayload = request.payload as any
+
+  const urlLink = new UrlLink(payload)
+
+  await Chatops.instance().say(urlLink)
 
   return response.redirect('/')
 }
@@ -29,8 +44,6 @@ export async function startWeb (bot: Wechaty): Promise<void> {
 
   let qrcodeValue: undefined | string
   let userName: undefined | string
-
-  wechaty = bot
 
   const server = new Hapi.Server({
     port: PORT,
@@ -43,7 +56,7 @@ export async function startWeb (bot: Wechaty): Promise<void> {
       <input type="submit" value="ChatOps">
     </form>
   `
-  const handler = async () => {
+  const rootHandler = async () => {
     let html
 
     if (qrcodeValue) {
@@ -83,17 +96,31 @@ export async function startWeb (bot: Wechaty): Promise<void> {
     return html
   }
 
-  server.route({
-    handler,
+  const rootRoute = {
+    handler: rootHandler,
     method: 'GET',
     path: '/',
-  })
+  }
 
-  server.route({
+  const chatopsRoute = {
     handler: chatopsHandler,
     method: 'POST',
     path: '/chatops/',
-  })
+  }
+
+  const webhookRoute = {
+    handler: webhookHandler,
+    method: 'POST',
+    path: '/webhook/',
+  }
+
+  const routeList = [
+    rootRoute,
+    chatopsRoute,
+    webhookRoute,
+  ]
+
+  server.route(routeList)
 
   bot.on('scan', qrcode => {
     qrcodeValue = qrcode

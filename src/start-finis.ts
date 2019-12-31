@@ -2,7 +2,7 @@ import { finis }    from 'finis'
 import { Wechaty }  from 'wechaty'
 
 import {
-  chatops,
+  Chatops,
 }             from './chatops'
 import {
   log,
@@ -24,7 +24,7 @@ export async function startFinis (wechaty: Wechaty): Promise<void> {
   }
   bot = wechaty
 
-  bot.on('login',   _ => chatops(wechaty, LOGIN_ANNOUNCEMENT, !debug()))
+  bot.on('login',   _ => Chatops.instance().say(LOGIN_ANNOUNCEMENT))
   bot.on('logout',  user => log.info('RestartReporter', 'startFinis() bot %s logout', user))
 }
 
@@ -53,7 +53,7 @@ finis(async (code, signal) => {
     log.info('RestartReporter', 'finis() announce exiting')
     try {
       // log.level('silly')
-      await chatops(bot, EXIT_ANNOUNCEMENT, !debug())
+      await Chatops.instance().say(EXIT_ANNOUNCEMENT)
       log.info('startFinis', 'finis() chatops() done')
       if (!debug()) {
         await bot.say(EXIT_ANNOUNCEMENT)

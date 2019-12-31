@@ -7,7 +7,7 @@ import {
 import moment from 'moment'
 
 import {
-  CHATOPS_ROOM_ID,
+  BOT_ROOM_ID,
 }                   from '../config'
 import { VoteManager } from '../managers/vote-manager'
 
@@ -26,7 +26,7 @@ export default async function onMessage (
 
     // To Be Fix: Change "OSS Bot ChatOps" Group Name to actual group name
     log.info('on-message', 'Begin to find the OSS Bot ChatOps room')
-    const room = this.Room.load(CHATOPS_ROOM_ID)
+    const room = this.Room.load(BOT_ROOM_ID)
 
     if (room) {
       await room.add(contact)

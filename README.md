@@ -12,20 +12,21 @@ OSS-bot is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g.,
 OSS-bot will serve users as a cloud service.
 
 ## Using OSS-bot as a service
+
 TBD
 
 ## Preliminary
+
 To compile OSS-bot, typescript environment is needed. If you have `npm`, you can run:
 
 ```shell
-npm install -g ts-node
-npm install -g typescript
+npm install
 ```
 
 ## Run
 
 ```shell
-ts-node src/main
+./node_modules/.bin/ts-node src/main.ts
 ```
 
 ### Localhost

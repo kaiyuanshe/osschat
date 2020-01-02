@@ -11,7 +11,8 @@
 ## Run
 
 ```shell
-ts-node src/main
+npm install
+ts-node bin/main
 ```
 
 ### Localhost
@@ -70,6 +71,7 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 - Project Lead by: 开源社
 - Heroku Dyno sponsored by: [JuziBot](https://www.juzi.bot)
 - Wechaty Puppet Padplus sponsored by: [JuziBot](https://www.juzi.bot)
+- Heroku Getting Started Template from [Wechaty](https://github.com/wechaty/)
 
 ## Copyright & License
 

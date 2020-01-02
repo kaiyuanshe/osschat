@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "heroku-postbuild": "wechaty-puppet-install",
+    "heroku-postbuild": "npm run build && wechaty-puppet-install",
     "lint": "npm run lint:es && npm run lint:ts",
     "lint:ts": "tsc --noEmit",
     "start": "echo -e '\n\nDo not use `npm start` because its buggy with SIGTERM\n\nUse Procfile instead.\n\n$ npm run build && npx probot run ./dist/bin/main.js\n\n' && exit 0",

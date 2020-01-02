@@ -1,6 +1,6 @@
 {
   "name": "oss-bot",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Apache OSS Bot",
   "main": "index.js",
   "engines": {
@@ -45,6 +45,7 @@
     "@types/hapi__hapi": "^18.2.5",
     "@types/raven": "^2.5.1",
     "@types/read-pkg-up": "^6.0.0",
+    "eslint": "^6.8.0",
     "tstest": "^0.4.2"
   },
   "git": {

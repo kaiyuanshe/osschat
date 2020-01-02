@@ -42,10 +42,7 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 
 ## Meeting Notes
 
-- [Weekly Meeting Notes](https://docs.google.com/document/d/1K3-rbiIUDSJoGyH0g4zEvhYZL2T6HsKgfsiI0xCCCa0/edit?usp=sharing)
-
-> Let's try to switch to the google docs... becasue the qq docs are too many bug...  
-> I hope everyone could be able to visite Google without any problem! ;-)
+- [Weekly Meeting Notes](https://shimo.im/docs/wGHydDxvWGjWKgDK)
 
 ## Apache Incubator Proposal
 

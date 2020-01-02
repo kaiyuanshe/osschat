@@ -11,7 +11,7 @@
     "heroku-postbuild": "wechaty-puppet-install",
     "lint": "npm run lint:es && npm run lint:ts",
     "lint:ts": "tsc --noEmit",
-    "start": "npm run build && probot run ./dist/bin/main.js",
+    "start": "echo -e '\n\nDo not use `npm start` because its buggy with SIGTERM\n\nUse Procfile instead.\n\n$ npm run build && npx probot run ./dist/bin/main.js\n\n' && exit 0",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "blue-tape -r ts-node/register \"src/**/*.spec.ts\" \"src/*.spec.ts\" \"tests/*.spec.ts\" \"tests/**/*.spec.ts\"",
     "lint:es": "eslint --ignore-pattern node_modules/ --ignore-pattern fixtures/ '{bin,examples,src,scripts,tests}/**/*.ts'"
@@ -41,6 +41,7 @@
     "@chatie/git-scripts": "^0.2.5",
     "@chatie/tsconfig": "^0.6.1",
     "@hapi/hapi": "^18.3.1",
+    "@types/express": "^4.17.2",
     "@types/hapi__hapi": "^18.2.5",
     "@types/raven": "^2.5.1",
     "@types/read-pkg-up": "^6.0.0",

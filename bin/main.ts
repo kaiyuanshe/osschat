@@ -9,16 +9,18 @@ import {
 import { getWechaty } from '../src/get-wechaty'
 import { startBot }   from '../src/start-bot'
 import { startFinis } from '../src/start-finis'
-import { startWeb }   from '../src/start-web'
 
 import {
   commentIssue,
   openIssue,
 }                 from '../src/issue-handlers'
+import configureRoutes from '../src/routers'
 
 export = async (app: Application) => {
   app.on('issue_comment.created', commentIssue)
   app.on('issues.opened', openIssue)
+
+  configureRoutes(app)
 
   // For more information on building apps:
   // https://probot.github.io/docs/
@@ -38,15 +40,12 @@ export = async (app: Application) => {
 
   log.verbose('main', 'main()')
 
-  const name = process.env.WECHATY_NAME || 'heroku-wechaty'
-
-  const bot = getWechaty(name)
+  const bot = getWechaty()
 
   await Promise.all([
     bot.start(),
     startBot(bot),
     startFinis(bot),
-    startWeb(bot),
   ])
 
   while (bot.state.on()) {

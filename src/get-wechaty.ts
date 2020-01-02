@@ -12,11 +12,15 @@ import { Chatops } from './chatops'
 
 let wechaty: Wechaty
 
-export function getWechaty (name: string): Wechaty {
+export function getWechaty (name?: string): Wechaty {
   log.verbose('getWechaty', 'getWechaty(%s)', name)
 
   if (wechaty) {
     return wechaty
+  }
+
+  if (!name) {
+    throw new Error('init must with name')
   }
 
   const memory = getMemory(name)

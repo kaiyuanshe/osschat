@@ -42,8 +42,8 @@ finis(async (code, signal) => {
   }
 
   if (FINIS_QUITING) {
-    log.warn('RestartReporter', 'finis(%s, %s) called again when quiting... NOP', code, signal)
-    return
+    log.warn('RestartReporter', 'finis(%s, %s) called again when quiting... enforce QUIT', code, signal)
+    process.exit(-1)
   }
 
   FINIS_QUITING = true

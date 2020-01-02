@@ -64,10 +64,9 @@ export class Chatops {
     }
 
     const room = this.bot.Room.load(roomId)
-    await room.ready()
 
     if (typeof info === 'string') {
-      await room.say(`${info}`)
+      await room.say(info)
     } else if (info instanceof Message) {
       switch (info.type()) {
         case Message.Type.Text:

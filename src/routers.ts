@@ -31,7 +31,7 @@ let qrcodeValue: undefined | string
 let userName: undefined | string
 
 const FORM_HTML = `
-  <form action="/chatops/" method="post">
+  <form action="/chatops/" method="get">
     <label for="chatops">ChatOps: </label>
     <input id="chatops" type="text" name="chatops" value="Hello, OSS Bot.">
     <input type="submit" value="ChatOps">
@@ -42,7 +42,7 @@ export default (app: Application) => {
   const routes = app.route() as Router
 
   routes.get('/', rootHandler)
-  routes.post('/chatops/', chatopsHandler)
+  routes.get('/chatops/', chatopsHandler)
 }
 
 async function chatopsHandler (
@@ -51,12 +51,17 @@ async function chatopsHandler (
 ) {
   log.info('routers', 'chatopsHandler()')
 
-  const payload: {
-    chatops: string,
-  } = req.body as any
+  const {
+    chatops,
+  } = req.query as { chatops?: string }
 
-  await Chatops.instance().say(payload.chatops)
+  if (!chatops) {
+    log.error('routers', 'chatopsHandler() received empty param.')
+    res.redirect('/')
+    return
+  }
 
+  await Chatops.instance().say(chatops)
   return res.redirect('/')
 }
 

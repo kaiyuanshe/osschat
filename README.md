@@ -4,6 +4,8 @@
 [![Build Status](https://travis-ci.com/kaiyuanshe/OSS-bot.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSS-bot)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kaiyuanshe/OSS-bot.svg)](https://greenkeeper.io/)
 
+![OSS Chat](docs/images/osschat.png)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Run

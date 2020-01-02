@@ -8,7 +8,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "heroku-postbuild": "npm run build && wechaty-puppet-install",
     "lint": "npm run lint:es && npm run lint:ts",
     "lint:ts": "tsc --noEmit",
     "start": "echo -e '\n\nDo not use `npm start` because its buggy with SIGTERM\n\nUse Procfile instead.\n\n$ npm run build && npx probot run ./dist/bin/main.js\n\n' && exit 0",
@@ -34,7 +33,8 @@
     "node-cache": "^5.1.0",
     "probot": "^9.8.1",
     "smee-client": "^1.1.0",
-    "wechaty": "^0.29.28"
+    "wechaty": "^0.29.28",
+    "wechaty-puppet-padplus": "^0.3.3"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

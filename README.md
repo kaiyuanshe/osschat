@@ -6,6 +6,22 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## What is OSS-bot
+OSS-bot is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g., mailing list, and jira).
+
+OSS-bot will serve users as a cloud service.
+
+## Using OSS-bot as a service
+TBD
+
+## Preliminary
+To compile OSS-bot, typescript environment is needed. If you have `npm`, you can run:
+
+```shell
+npm install -g ts-node
+npm install -g typescript
+```
+
 ## Run
 
 ```shell

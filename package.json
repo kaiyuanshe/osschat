@@ -40,7 +40,7 @@
     "@chatie/eslint-config": "^0.8.1",
     "@chatie/git-scripts": "^0.2.5",
     "@chatie/tsconfig": "^0.6.1",
-    "@hapi/hapi": "^18.3.1",
+    "@hapi/hapi": "^19.0.0",
     "@types/express": "^4.17.2",
     "@types/hapi__hapi": "^18.2.5",
     "@types/raven": "^2.5.1",

@@ -33,7 +33,7 @@
     "node-cache": "^5.1.0",
     "probot": "^9.8.1",
     "smee-client": "^1.1.0",
-    "wechaty": "^0.29.28",
+    "wechaty": "^0.30.2",
     "wechaty-puppet-padplus": "^0.3.3"
   },
   "devDependencies": {

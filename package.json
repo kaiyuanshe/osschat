@@ -33,8 +33,7 @@
     "node-cache": "^5.1.0",
     "probot": "^9.8.1",
     "smee-client": "^1.1.0",
-    "wechaty": "^0.29.28",
-    "wechaty-puppet-padplus": "^0.3.3"
+    "wechaty": "^0.31.4"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

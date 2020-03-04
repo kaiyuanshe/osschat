@@ -38,7 +38,7 @@ export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (conte
   } as UrlLinkPayload
 
   await manageIssue(
-    context.payload.repository.owner.login,
+    context.payload.repository.full_name,
     urlLinkPayload,
   )
 }
@@ -71,7 +71,10 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
     url,
   } as UrlLinkPayload
 
-  await manageIssue(context.payload.repository.owner.login, urlLinkPayload)
+  await manageIssue(
+    context.payload.repository.full_name,
+    urlLinkPayload,
+  )
 
   // const issueComment = context.issue({ body: `Thanks for comment this issue! ${n++}` })
   // await context.github.issues.createComment(issueComment)

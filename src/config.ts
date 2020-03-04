@@ -27,5 +27,5 @@ export const managedRepoConfig = {
   'kaiyuanshe/oss-bot'     : '17591588552@chatroom',
   'wechaty/python-wechaty' : '19367909379@chatroom',
 } as {
-  [orgRepo: string]: string,
+  [fullName: string]: string,
 }

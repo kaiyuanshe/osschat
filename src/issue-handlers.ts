@@ -7,6 +7,7 @@ import {
   UrlLink,
   UrlLinkPayload,
   Room,
+  Wechaty,
 }                     from 'wechaty'
 
 import { getWechaty } from './get-wechaty'
@@ -62,7 +63,7 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   const description = commentBody.slice(0, Math.max(commentBody.length, 70))
   const thumbnailUrl = avatarUrl
 
-  console.info(context.payload.repository)
+  // console.info(context.payload.repository)
 
   const urlLinkPayload = {
     description,
@@ -81,10 +82,18 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   // console.info(context)
 }
 
-function getRepoRoom (orgRepo: string): undefined | Room {
+function getRepoRoom (orgRepo: string): undefined | Room | Room[] {
   if (orgRepo in managedRepoConfig) {
-    const roomId = managedRepoConfig[orgRepo]
-    return getWechaty().Room.load(roomId)
+    const roomIdOrList = managedRepoConfig[orgRepo]
+
+    if (Array.isArray(roomIdOrList)) {
+      return roomIdOrList.map(
+        id => getWechaty().Room.load(id)
+      )
+    }
+
+    return getWechaty().Room.load(roomIdOrList)
+
   }
   return undefined
   // !!login.match(/^(kaiyuanshe|apache)$/i)
@@ -95,10 +104,21 @@ async function manageIssue (
   urlLinkPayload : UrlLinkPayload,
 ): Promise<void> {
 
-  const room = getRepoRoom(orgRepo)
-  if (room) {
-
-    const urlLink = new UrlLink(urlLinkPayload)
-    await room.say(urlLink)
+  const roomOrList = getRepoRoom(orgRepo)
+  if (!roomOrList) {
+    return
   }
+
+  const urlLink = new UrlLink(urlLinkPayload)
+
+  if (Array.isArray(roomOrList)) {
+    for (const room of roomOrList) {
+      await room.say(urlLink)
+      await Wechaty.sleep(10 * 1000)
+    }
+  } else {
+    await roomOrList.say(urlLink)
+    await Wechaty.sleep(10 * 1000)
+  }
+
 }

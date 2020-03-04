@@ -23,9 +23,17 @@ export function debug () : boolean {
   return process.env.DEBUG === 'true'
 }
 
+/**
+ * Huan(202003)
+ *  Key   - GitHub Repo Full Name: "Org/Repo"
+ *  Value - WeChat Room Id / Id List
+ */
 export const managedRepoConfig = {
-  'kaiyuanshe/oss-bot'     : '17591588552@chatroom',
+  'kaiyuanshe/oss-bot'     : [
+    '17591588552@chatroom',
+    '17384390178@chatroom',
+  ],
   'wechaty/python-wechaty' : '19367909379@chatroom',
 } as {
-  [fullName: string]: string,
+  [fullName: string]: string | string[],
 }

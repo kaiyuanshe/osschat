@@ -22,3 +22,10 @@ export const DEV_ROOM_ID        = '17591588552@chatroom'  // OSS-Bot Project Gro
 export function debug () : boolean {
   return process.env.DEBUG === 'true'
 }
+
+export const managedRepoConfig = {
+  'kaiyuanshe/oss-bot'     : '17591588552@chatroom',
+  'wechaty/python-wechaty' : '19367909379@chatroom',
+} as {
+  [orgRepo: string]: string,
+}

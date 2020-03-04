@@ -3,11 +3,15 @@ import {
 }              from 'probot/lib/application'
 import Webhooks from '@octokit/webhooks'
 
-import { getWechaty } from './get-wechaty'
 import {
   UrlLink,
   UrlLinkPayload,
+  Room,
 }                     from 'wechaty'
+
+import { getWechaty } from './get-wechaty'
+
+import { managedRepoConfig } from './config'
 
 export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (context) => {
   const fullName = context.payload.repository.full_name
@@ -26,14 +30,17 @@ export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (conte
   const description = issueBody.slice(0, Math.max(issueBody.length, 70))
   const thumbnailUrl = avatarUrl
 
-  if (belongsToApache(context.payload.repository.owner.login)) {
-    await chatopsIssue({
-      description,
-      thumbnailUrl,
-      title,
-      url,
-    })
-  }
+  const urlLinkPayload = {
+    description,
+    thumbnailUrl,
+    title,
+    url,
+  } as UrlLinkPayload
+
+  await manageIssue(
+    context.payload.repository.owner.login,
+    urlLinkPayload,
+  )
 }
 
 export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = async (context) => {
@@ -55,37 +62,40 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   const description = commentBody.slice(0, Math.max(commentBody.length, 70))
   const thumbnailUrl = avatarUrl
 
-  // console.info(context.payload.repository)
+  console.info(context.payload.repository)
 
-  if (belongsToApache(context.payload.repository.owner.login)) {
-    await chatopsIssue({
-      description,
-      thumbnailUrl,
-      title,
-      url,
-    })
-  }
+  const urlLinkPayload = {
+    description,
+    thumbnailUrl,
+    title,
+    url,
+  } as UrlLinkPayload
+
+  await manageIssue(context.payload.repository.owner.login, urlLinkPayload)
 
   // const issueComment = context.issue({ body: `Thanks for comment this issue! ${n++}` })
   // await context.github.issues.createComment(issueComment)
   // console.info(context)
 }
 
-function belongsToApache (login: string): boolean {
-  return !!login.match(/^(kaiyuanshe|apache)$/i)
+function getRepoRoom (orgRepo: string): undefined | Room {
+  if (orgRepo in managedRepoConfig) {
+    const roomId = managedRepoConfig[orgRepo]
+    return getWechaty().Room.load(roomId)
+  }
+  return undefined
+  // !!login.match(/^(kaiyuanshe|apache)$/i)
 }
 
-async function chatopsIssue (
-  payload: UrlLinkPayload,
-) {
-  console.info('chatopsIssue:', JSON.stringify(payload))
+async function manageIssue (
+  orgRepo        : string,
+  urlLinkPayload : UrlLinkPayload,
+): Promise<void> {
 
-  const wechaty = getWechaty()
+  const room = getRepoRoom(orgRepo)
+  if (room) {
 
-  const urlLink = new UrlLink(payload)
-
-  const DEV_ROOM_ID = ''
-  const room = wechaty.Room.load(DEV_ROOM_ID)
-
-  await room.say(urlLink)
+    const urlLink = new UrlLink(urlLinkPayload)
+    await room.say(urlLink)
+  }
 }

@@ -3,10 +3,11 @@ import {
 }              from 'probot/lib/application'
 import Webhooks from '@octokit/webhooks'
 
-import { UrlLinkPayload } from 'wechaty-puppet'
-
 import { getWechaty } from './get-wechaty'
-import { UrlLink } from 'wechaty'
+import {
+  UrlLink,
+  UrlLinkPayload,
+}                     from 'wechaty'
 
 export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (context) => {
   const fullName = context.payload.repository.full_name

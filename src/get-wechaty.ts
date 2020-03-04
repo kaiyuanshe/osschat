@@ -12,12 +12,14 @@ import { Chatops } from './chatops'
 
 let wechaty: Wechaty
 
-export function getWechaty (name: string): Wechaty {
-  log.verbose('getWechaty', 'getWechaty(%s)', name)
+export function getWechaty (): Wechaty {
+  log.verbose('getWechaty', 'getWechaty()')
 
   if (wechaty) {
     return wechaty
   }
+
+  const name = process.env.WECHATY_NAME || 'heroku-wechaty'
 
   const memory = getMemory(name)
 

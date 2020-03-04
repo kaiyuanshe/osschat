@@ -4,6 +4,8 @@
 [![Build Status](https://travis-ci.com/kaiyuanshe/OSS-bot.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSS-bot)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kaiyuanshe/OSS-bot.svg)](https://greenkeeper.io/)
 
+![OSS Chat](docs/images/osschat.png)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## What is OSS-bot
@@ -59,10 +61,7 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 
 ## Meeting Notes
 
-- [Weekly Meeting Notes](https://docs.google.com/document/d/1K3-rbiIUDSJoGyH0g4zEvhYZL2T6HsKgfsiI0xCCCa0/edit?usp=sharing)
-
-> Let's try to switch to the google docs... becasue the qq docs are too many bug...  
-> I hope everyone could be able to visite Google without any problem! ;-)
+- [Weekly Meeting Notes](https://shimo.im/docs/wGHydDxvWGjWKgDK)
 
 ## Apache Incubator Proposal
 
@@ -88,6 +87,7 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 - Project Lead by: 开源社
 - Heroku Dyno sponsored by: [JuziBot](https://www.juzi.bot)
 - Wechaty Puppet Padplus sponsored by: [JuziBot](https://www.juzi.bot)
+- Heroku Getting Started Template from [Wechaty](https://github.com/wechaty/)
 
 ## Copyright & License
 

@@ -41,7 +41,7 @@ export class VoteManager {
       return
     }
 
-    const mentions = await message.mention()
+    const mentions = await message.mentionList()
     if (!mentions || mentions.length === 0) {
       return
     }

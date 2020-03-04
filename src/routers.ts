@@ -102,5 +102,25 @@ async function rootHandler (_req: Request, res: Response) {
     html = `OSS Bot v${VERSION} Hello, come back later please.`
 
   }
-  res.end(html)
+
+  const htmlHead = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+  `
+
+  const htmlFoot = `
+</body>
+  `
+
+  res.end(
+    [
+      htmlHead,
+      html,
+      htmlFoot,
+    ].join('\n')
+  )
 }

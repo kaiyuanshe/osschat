@@ -43,6 +43,18 @@ export default (app: Application) => {
 
   routes.get('/', rootHandler)
   routes.get('/chatops/', chatopsHandler)
+  routes.get('/logout/', logoutHandler)
+}
+
+async function logoutHandler (
+  _: Request,
+  res: Response,
+) {
+  log.info('routers', 'chatopsHandler()')
+
+  await Chatops.instance().say('Logout request from web')
+  await bot.logout()
+  return res.redirect('/')
 }
 
 async function chatopsHandler (

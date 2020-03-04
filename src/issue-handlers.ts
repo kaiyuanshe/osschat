@@ -12,7 +12,10 @@ import {
 
 import { getWechaty } from './get-wechaty'
 
-import { managedRepoConfig } from './config'
+import {
+  managedRepoConfig,
+  log,
+}                     from './config'
 
 export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (context) => {
   const fullName = context.payload.repository.full_name
@@ -103,7 +106,7 @@ async function manageIssue (
   orgRepo        : string,
   urlLinkPayload : UrlLinkPayload,
 ): Promise<void> {
-
+  log.verbose('issue-handlers', 'manageIssue(%s, %s)', orgRepo, JSON.stringify(urlLinkPayload))
   const roomOrList = getRepoRoom(orgRepo)
   if (!roomOrList) {
     return
@@ -113,10 +116,12 @@ async function manageIssue (
 
   if (Array.isArray(roomOrList)) {
     for (const room of roomOrList) {
+      log.verbose('issue-handlers', 'manageIssue() sending to room %s', room)
       await room.say(urlLink)
       await Wechaty.sleep(10 * 1000)
     }
   } else {
+    log.verbose('issue-handlers', 'manageIssue() sending to room %s', roomOrList)
     await roomOrList.say(urlLink)
     await Wechaty.sleep(10 * 1000)
   }

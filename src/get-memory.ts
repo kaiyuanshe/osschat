@@ -1,6 +1,6 @@
 import {
   MemoryCard,
-}                 from 'memory-card'
+}                 from 'wechaty'
 
 import {
   log,

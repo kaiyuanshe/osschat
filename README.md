@@ -9,6 +9,7 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## What is OSS-bot
+
 OSS-bot is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g., mailing list, and jira).
 
 OSS-bot will serve users as a cloud service.
@@ -28,7 +29,7 @@ npm install
 ## Run
 
 ```shell
-./node_modules/.bin/ts-node src/main.ts
+./node_modules/.bin/ts-node bin/main.ts
 ```
 
 ### Localhost
@@ -76,10 +77,14 @@ You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
 
 ## Committers
 
+- [Zhuang Biaowei](https://github.com/zhuangbiaowei), [(庄表伟)](http://www.zhuangbiaowei.com/blog/), Product Manager from Huawei technologies co. ltd
 - [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) [Wechaty](https://github.com/wechaty/wechaty) Author, <zixia@zixia.net>
 - [Rui](https://github.com/lijiarui),[(李佳芮)](https://lijiarui.github.io) [Wechaty](https://github.com/wechaty/wechaty) Co-author, Founder of [JuziBot](https://www.botorange.com/)
-- [Zhuang Biaowei](https://github.com/zhuangbiaowei), [(庄表伟)](http://www.zhuangbiaowei.com/blog/), Product Manager from Huawei technologies co. ltd
 - To Be Added ...
+
+## Pilots
+
+To be added...
 
 ## Thanks
 

@@ -29,6 +29,7 @@ export function debug () : boolean {
  *  Value - WeChat Room Id / Id List
  */
 export const managedRepoConfig = {
+  'apache/incubator-iotdb' : '18378203056@chatroom',
   'dsextension/dsextension': '18039997009@chatroom',
   'kaiyuanshe/oss-bot'     : [
     '17591588552@chatroom',

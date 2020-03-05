@@ -29,12 +29,12 @@ export function debug () : boolean {
  *  Value - WeChat Room Id / Id List
  */
 export const managedRepoConfig = {
+  'dsextension/dsextension': '18039997009@chatroom',
   'kaiyuanshe/oss-bot'     : [
     '17591588552@chatroom',
     '17384390178@chatroom',
   ],
   'wechaty/python-wechaty' : '19367909379@chatroom',
-  'dsextension/dsextension', '18039997009@chatroom',
 } as {
   [fullName: string]: string | string[],
 }

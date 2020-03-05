@@ -30,7 +30,7 @@ export function debug () : boolean {
  */
 export const managedRepoConfig = {
   'apache/incubator-iotdb' : '18378203056@chatroom'
-  'dsextension/dsextension' : '18039997009@chatroom',
+  'dsextension/dsextension': '18039997009@chatroom',
   'kaiyuanshe/oss-bot'     : [
     '17591588552@chatroom',
     '17384390178@chatroom',

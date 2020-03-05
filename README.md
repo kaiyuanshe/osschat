@@ -14,6 +14,8 @@ OSS-bot is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g.,
 
 OSS-bot will serve users as a cloud service.
 
+- YouTube Video: [Introducing OSS Bot: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk from [@huan](https://github.com/huan) from [OSS Bot Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
+
 ## Using OSS-bot as a service
 
 TBD

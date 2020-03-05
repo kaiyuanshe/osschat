@@ -34,7 +34,8 @@ export const managedRepoConfig = {
     '17384390178@chatroom',
   ],
   'wechaty/python-wechaty' : '19367909379@chatroom',
-  'dsextension/dsextension', '18039997009@chatroom',
+  'dsextension/dsextension' : '18039997009@chatroom',
+  'apache/incubator-iotdb' : '18378203056@chatroom'
 } as {
   [fullName: string]: string | string[],
 }

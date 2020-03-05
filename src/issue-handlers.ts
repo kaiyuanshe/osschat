@@ -41,10 +41,13 @@ export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (conte
     url,
   } as UrlLinkPayload
 
-  await manageIssue(
+  manageIssue(
     context.payload.repository.full_name,
     urlLinkPayload,
-  )
+  ).catch(e => log.error('issue-handler', 'openIssue() manageIssue(%s) rejection: %s',
+    context.payload.repository.full_name,
+    e,
+  ))
 }
 
 export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = async (context) => {
@@ -75,11 +78,13 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
     url,
   } as UrlLinkPayload
 
-  await manageIssue(
+  manageIssue(
     context.payload.repository.full_name,
     urlLinkPayload,
-  )
-
+  ).catch(e => log.error('issue-handler', 'commentIssue() manageIssue(%s) rejection: %s',
+    context.payload.repository.full_name,
+    e,
+  ))
   // const issueComment = context.issue({ body: `Thanks for comment this issue! ${n++}` })
   // await context.github.issues.createComment(issueComment)
   // console.info(context)
@@ -126,4 +131,5 @@ async function manageIssue (
     await Wechaty.sleep(10 * 1000)
   }
 
+  log.verbose('issue-handler', 'manageIssue(%s, %s) done', orgRepo)
 }

@@ -112,7 +112,14 @@ async function manageIssue (
   orgRepo        : string,
   urlLinkPayload : UrlLinkPayload,
 ): Promise<void> {
+  const len = urlLinkPayload.description!.length
+
+  if (len > 70) {
+    urlLinkPayload.description = urlLinkPayload.description?.slice(0, Math.max(len, 70))
+  }
+
   log.verbose('issue-handlers', 'manageIssue(%s, %s)', orgRepo, JSON.stringify(urlLinkPayload))
+
   const roomOrList = getRepoRoom(orgRepo)
   if (!roomOrList) {
     return
@@ -130,5 +137,10 @@ async function manageIssue (
     await Chatops.instance().queue(() => roomOrList.say(urlLink), 'issue card')
   }
 
-  log.verbose('issue-handler', 'manageIssue(%s, %s) done', orgRepo)
+  log.verbose('issue-handler', 'manageIssue(%s) done', orgRepo)
 }
+
+// function isBot (login: string): boolean {
+//   const matched = login.match(/\[bot\]$/i)
+//   return matched !== null
+// }

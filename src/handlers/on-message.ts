@@ -10,6 +10,7 @@ import {
   BOT_ROOM_ID,
 }                   from '../config'
 import { VoteManager } from '../managers/vote-manager'
+import { Chatops } from '../chatops'
 
 const BORN_TIME = Date.now()
 
@@ -42,6 +43,9 @@ export default async function onMessage (
   } catch (e) {
     log.error('on-message', 'Failed to check vote for the message:\n', e)
   }
+
+  await directMessage(message)
+  await mentionMessage(message)
 
   await dingDong.call(this, message)
   await ctpStatus(this, message)
@@ -115,4 +119,32 @@ async function dingDong (
     }
   }
 
+}
+
+async function directMessage (
+  message: Message,
+): Promise<void> {
+  const room = message.room()
+  if (room) {
+    return
+  }
+
+  // direct message
+  await Chatops.instance().say(message)
+}
+
+async function mentionMessage (
+  message: Message,
+): Promise<void> {
+  const room = message.room()
+  if (!room) {
+    return
+  }
+
+  const mentionSelf = await message.mentionSelf()
+  if (!mentionSelf) {
+    return
+  }
+
+  await Chatops.instance().say(message)
 }

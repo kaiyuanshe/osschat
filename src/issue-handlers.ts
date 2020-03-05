@@ -7,10 +7,11 @@ import {
   UrlLink,
   UrlLinkPayload,
   Room,
-  Wechaty,
 }                     from 'wechaty'
 
 import { getWechaty } from './get-wechaty'
+
+import { Chatops } from './chatops'
 
 import {
   managedRepoConfig,
@@ -122,13 +123,11 @@ async function manageIssue (
   if (Array.isArray(roomOrList)) {
     for (const room of roomOrList) {
       log.verbose('issue-handlers', 'manageIssue() sending to room %s', room)
-      await room.say(urlLink)
-      await Wechaty.sleep(10 * 1000)
+      await Chatops.instance().queue(() => room.say(urlLink), 'issue card')
     }
   } else {
     log.verbose('issue-handlers', 'manageIssue() sending to room %s', roomOrList)
-    await roomOrList.say(urlLink)
-    await Wechaty.sleep(10 * 1000)
+    await Chatops.instance().queue(() => roomOrList.say(urlLink), 'issue card')
   }
 
   log.verbose('issue-handler', 'manageIssue(%s, %s) done', orgRepo)

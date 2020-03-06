@@ -47,14 +47,27 @@ export default (app: Application) => {
 }
 
 async function logoutHandler (
-  _: Request,
+  req: Request,
   res: Response,
 ) {
   log.info('routers', 'chatopsHandler()')
 
   await Chatops.instance().say('Logout request from web')
-  await bot.logout()
-  return res.redirect('/')
+
+  const {
+    secret,
+  } = req.query as { secret?: string }
+
+  if (secret && secret === process.env.HUAN_SECRET) {
+    await bot.logout()
+    await Chatops.instance().say('Logout request from web accepted')
+
+    res.end('logged out')
+    return
+  }
+
+  res.end('permission denied')
+  await Chatops.instance().say('Logout request from denied')
 }
 
 async function chatopsHandler (

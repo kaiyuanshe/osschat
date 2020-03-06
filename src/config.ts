@@ -35,10 +35,10 @@ export const managedRepoConfig = {
     '17591588552@chatroom',
     '17384390178@chatroom',
   ],
-  'qihoo360/quicksql' : [ 
-    '4808709382@chatroom', 
+  'qihoo360/quicksql' : [
+    '4808709382@chatroom',
     '4344886880@chatroom',
- ], 
+  ],
   'wechaty/python-wechaty' : '19367909379@chatroom',
 } as {
   [fullName: string]: string | string[],

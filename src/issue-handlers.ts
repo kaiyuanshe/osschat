@@ -126,15 +126,25 @@ async function manageIssue (
   }
 
   const urlLink = new UrlLink(urlLinkPayload)
+  await Chatops.instance().queue(
+    () => Chatops.instance().say(urlLink),
+    'issue card for chatops',
+  )
 
   if (Array.isArray(roomOrList)) {
     for (const room of roomOrList) {
       log.verbose('issue-handlers', 'manageIssue() sending to room %s', room)
-      await Chatops.instance().queue(() => room.say(urlLink), 'issue card')
+      await Chatops.instance().queue(
+        () => room.say(urlLink),
+        'issue card in ' + room,
+      )
     }
   } else {
     log.verbose('issue-handlers', 'manageIssue() sending to room %s', roomOrList)
-    await Chatops.instance().queue(() => roomOrList.say(urlLink), 'issue card')
+    await Chatops.instance().queue(
+      () => roomOrList.say(urlLink),
+      'issue card in ' + roomOrList,
+    )
   }
 
   log.verbose('issue-handler', 'manageIssue(%s) done', orgRepo)

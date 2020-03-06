@@ -30,15 +30,15 @@ export function debug () : boolean {
  */
 export const managedRepoConfig = {
   'apache/incubator-iotdb' : '18378203056@chatroom',
-  'dsextension/dsextension': '18039997009@chatroom',
+  'DSExtension/DSExtension': '18039997009@chatroom',
   'kaiyuanshe/oss-bot'     : [
     '17591588552@chatroom',
     '17384390178@chatroom',
   ],
-  'qihoo360/quicksql' : [
-    '4808709382@chatroom',
+  'qihoo360/quicksql' : [ 
+    '4808709382@chatroom', 
     '4344886880@chatroom',
-  ],
+ ], 
   'wechaty/python-wechaty' : '19367909379@chatroom',
 } as {
   [fullName: string]: string | string[],

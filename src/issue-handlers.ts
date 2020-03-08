@@ -18,6 +18,12 @@ import {
   log,
 }                     from './config'
 
+import {
+  matchOwner,
+  matchRepo,
+  exactMatch,
+}               from './pure-functions/match-org-repo'
+
 export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (context) => {
   const fullName = context.payload.repository.full_name
   const issueNumber = context.payload.issue.number
@@ -43,7 +49,8 @@ export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (conte
   } as UrlLinkPayload
 
   manageIssue(
-    context.payload.repository.full_name,
+    context.payload.repository.owner.login,
+    context.payload.repository.name,
     urlLinkPayload,
   ).catch(e => log.error('issue-handler', 'openIssue() manageIssue(%s) rejection: %s',
     context.payload.repository.full_name,
@@ -80,7 +87,8 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   } as UrlLinkPayload
 
   manageIssue(
-    context.payload.repository.full_name,
+    context.payload.repository.owner.login,
+    context.payload.repository.name,
     urlLinkPayload,
   ).catch(e => log.error('issue-handler', 'commentIssue() manageIssue(%s) rejection: %s',
     context.payload.repository.full_name,
@@ -91,9 +99,38 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   // console.info(context)
 }
 
-function getRepoRoom (orgRepo: string): undefined | Room | Room[] {
-  if (orgRepo.toLowerCase() in managedRepoConfig) {
-    const roomIdOrList = managedRepoConfig[orgRepo]
+function getRoom (
+  owner      : string,
+  repository : string,
+): undefined | Room | Room[] {
+  log.verbose('issue-handler', 'getRoom(%s, %s, config)', owner, repository)
+
+  const managedList = Object.keys(managedRepoConfig)
+
+  let matchedList = managedList
+    .filter(matchOwner(owner))
+    .filter(matchRepo(repository))
+
+  log.verbose('issue-handler', 'getRoom() found %s matched', matchedList.length)
+
+  /**
+   * `wechaty/python-wechaty` will have higher priority than `wechaty/*wechaty*`
+   */
+  const exactMatchList = matchedList
+    .filter(exactMatch(owner, repository))
+
+  /**
+   * If we have exactly the match found,
+   * then we will only process the exactly match ones.
+   */
+  if (exactMatchList.length > 0) {
+    matchedList = exactMatchList
+  }
+
+  for (const fullName of matchedList) {
+    log.verbose('issue-handler', 'getRoom() sending to "%s"', fullName)
+
+    const roomIdOrList = managedRepoConfig[fullName]
 
     if (Array.isArray(roomIdOrList)) {
       return roomIdOrList.map(
@@ -102,14 +139,14 @@ function getRepoRoom (orgRepo: string): undefined | Room | Room[] {
     }
 
     return getWechaty().Room.load(roomIdOrList)
-
   }
+
   return undefined
-  // !!login.match(/^(kaiyuanshe|apache)$/i)
 }
 
 async function manageIssue (
-  orgRepo        : string,
+  owner          : string,
+  repository     : string,
   urlLinkPayload : UrlLinkPayload,
 ): Promise<void> {
   const len = urlLinkPayload.description!.length
@@ -118,9 +155,9 @@ async function manageIssue (
     urlLinkPayload.description = urlLinkPayload.description?.slice(0, Math.max(len, 70))
   }
 
-  log.verbose('issue-handlers', 'manageIssue(%s, %s)', orgRepo, JSON.stringify(urlLinkPayload))
+  log.verbose('issue-handlers', 'manageIssue(%s, %s, %s)', owner, repository, JSON.stringify(urlLinkPayload))
 
-  const roomOrList = getRepoRoom(orgRepo)
+  const roomOrList = getRoom(owner, repository)
   if (!roomOrList) {
     return
   }
@@ -147,7 +184,7 @@ async function manageIssue (
     )
   }
 
-  log.verbose('issue-handler', 'manageIssue(%s) done', orgRepo)
+  log.verbose('issue-handler', 'manageIssue(%s, %s) done', owner, repository)
 }
 
 // function isBot (login: string): boolean {

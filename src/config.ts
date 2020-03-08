@@ -3,6 +3,8 @@
  */
 import readPkgUp from 'read-pkg-up'
 
+import wechatyRepoConfig from './projects/wechaty'
+
 export {
   log,
 }               from 'brolog'
@@ -24,11 +26,18 @@ export function debug () : boolean {
 }
 
 /**
+ * For map `org/repo` to WeChat Room id(s)
+ */
+export interface RepoConfig {
+  [fullName: string]: string | string[],
+}
+
+/**
  * Huan(202003)
  *  Key   - GitHub Repo Full Name: "Org/Repo"
  *  Value - WeChat Room Id / Id List
  */
-export const managedRepoConfig = {
+export const managedRepoConfig: RepoConfig = {
   'BUPT/ai-ml.club': '18968477245@chatroom',
   'DSExtension/DSExtension': '18039997009@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
@@ -40,18 +49,5 @@ export const managedRepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
-  'wechaty/bot5.club': '18095776930@chatroom',
-  'wechaty/python-wechaty' : '19367909379@chatroom',
-} as {
-  [fullName: string]: string | string[],
+  ...wechatyRepoConfig,
 }
-
-/**
- * Convert config to all lowercase #53
- *  https://github.com/kaiyuanshe/oss-bot/issues/53
- */
-Object.keys(managedRepoConfig).forEach(key => {
-  const value = managedRepoConfig[key]
-  delete managedRepoConfig[key]
-  managedRepoConfig[key.toLowerCase()] = value
-})

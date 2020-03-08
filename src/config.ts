@@ -45,3 +45,13 @@ export const managedRepoConfig = {
 } as {
   [fullName: string]: string | string[],
 }
+
+/**
+ * Convert config to all lowercase #53
+ *  https://github.com/kaiyuanshe/oss-bot/issues/53
+ */
+Object.keys(managedRepoConfig).forEach(key => {
+  const value = managedRepoConfig[key]
+  delete managedRepoConfig[key]
+  managedRepoConfig[key.toLowerCase()] = value
+})

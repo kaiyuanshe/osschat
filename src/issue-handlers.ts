@@ -92,7 +92,7 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
 }
 
 function getRepoRoom (orgRepo: string): undefined | Room | Room[] {
-  if (orgRepo in managedRepoConfig) {
+  if (orgRepo.toLowerCase() in managedRepoConfig) {
     const roomIdOrList = managedRepoConfig[orgRepo]
 
     if (Array.isArray(roomIdOrList)) {

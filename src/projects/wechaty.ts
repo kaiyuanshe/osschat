@@ -1,3 +1,9 @@
+/**
+ * Project: Wechaty
+ * GitHub: https://github.com/wechaty/
+ * Maintainer: Huan LI (李卓桓) https://github.com/huan
+ *
+ */
 import {
   RepoConfig,
 }                 from '../config'
@@ -17,10 +23,10 @@ const WECHATY_DEVELOPER_ROOM_ID_LIST = [
 ]
 
 export const config: RepoConfig = {
-  'wechaty/*wechaty*'      : WECHATY_DEVELOPER_ROOM_ID_LIST,
-  'wechaty/bot5.club'      : '18095776930@chatroom',
-  'wechaty/friday'         : WECHATY_DEVELOPER_ROOM_ID_LIST,
-  'wechaty/python-wechaty' : '19367909379@chatroom',           // Python Wechaty
+  'wechaty/*python*'  : '19367909379@chatroom',           // Python Wechaty
+  'wechaty/*wechaty*' : WECHATY_DEVELOPER_ROOM_ID_LIST,
+  'wechaty/bot5.club' : '18095776930@chatroom',
+  'wechaty/friday'    : WECHATY_DEVELOPER_ROOM_ID_LIST,
 }
 
 export default config

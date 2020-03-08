@@ -99,10 +99,10 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   // console.info(context)
 }
 
-function getRoom (
+function getRoomList (
   owner      : string,
   repository : string,
-): undefined | Room | Room[] {
+): Room[] {
   log.verbose('issue-handler', 'getRoom(%s, %s, config)', owner, repository)
 
   const managedList = Object.keys(managedRepoConfig)
@@ -119,29 +119,37 @@ function getRoom (
   const exactMatchList = matchedList
     .filter(exactMatch(owner, repository))
 
+  log.verbose('issue-handler', 'getRoom() found %s exact matched', exactMatchList.length)
+
   /**
    * If we have exactly the match found,
    * then we will only process the exactly match ones.
    */
   if (exactMatchList.length > 0) {
+    log.verbose('issue-handler', 'getRoom() list that does not exact matched are dropped')
     matchedList = exactMatchList
   }
 
-  for (const fullName of matchedList) {
-    log.verbose('issue-handler', 'getRoom() sending to "%s"', fullName)
-
-    const roomIdOrList = managedRepoConfig[fullName]
-
-    if (Array.isArray(roomIdOrList)) {
-      return roomIdOrList.map(
+  const roomList: Room[] = []
+  const idsToRooms = (idOrList: string | string[]) => {
+    if (Array.isArray(idOrList)) {
+      return idOrList.map(
         id => getWechaty().Room.load(id)
       )
+    } else {
+      return [
+        getWechaty().Room.load(idOrList),
+      ]
     }
-
-    return getWechaty().Room.load(roomIdOrList)
   }
 
-  return undefined
+  for (const fullName of matchedList) {
+    log.verbose('issue-handler', 'getRoom() adding rooms for fullName "%s"', fullName)
+    const roomIdOrList = managedRepoConfig[fullName]
+    roomList.push(...idsToRooms(roomIdOrList))
+  }
+
+  return roomList
 }
 
 async function manageIssue (
@@ -157,8 +165,8 @@ async function manageIssue (
 
   log.verbose('issue-handlers', 'manageIssue(%s, %s, %s)', owner, repository, JSON.stringify(urlLinkPayload))
 
-  const roomOrList = getRoom(owner, repository)
-  if (!roomOrList) {
+  const roomList = getRoomList(owner, repository)
+  if (roomList.length <= 0) {
     return
   }
 
@@ -168,19 +176,11 @@ async function manageIssue (
     'issue card for chatops',
   )
 
-  if (Array.isArray(roomOrList)) {
-    for (const room of roomOrList) {
-      log.verbose('issue-handlers', 'manageIssue() sending to room %s', room)
-      await Chatops.instance().queue(
-        () => room.say(urlLink),
-        'issue card in ' + room,
-      )
-    }
-  } else {
-    log.verbose('issue-handlers', 'manageIssue() sending to room %s', roomOrList)
+  for (const room of roomList) {
+    log.verbose('issue-handlers', 'manageIssue() sending to room %s', room)
     await Chatops.instance().queue(
-      () => roomOrList.say(urlLink),
-      'issue card in ' + roomOrList,
+      () => room.say(urlLink),
+      'issue card in ' + room,
     )
   }
 

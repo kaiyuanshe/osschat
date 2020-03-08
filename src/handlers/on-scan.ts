@@ -3,6 +3,8 @@ import {
   Wechaty,
 }             from 'wechaty'
 
+import { generate } from 'qrcode-terminal'
+
 export default async function onScan (
   this   : Wechaty,
   qrcode : string,
@@ -12,6 +14,8 @@ export default async function onScan (
     status,
     qrcodeValueToUrl(qrcode),
   )
+
+  generate(qrcode)
 }
 
 /**

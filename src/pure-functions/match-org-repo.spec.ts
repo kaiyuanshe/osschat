@@ -79,3 +79,21 @@ test('matchRepo with empty wildcat', async t => {
     'should match repo with empty wildcat for different cases'
   )
 })
+
+test('matchRepo with complex wildcat', async t => {
+  const fullName = 'chatie/(blog|*wechaty*)'
+  const repoList = [
+    'matrix-wechaty-appservice',
+    'blog',
+  ]
+
+  for (const repo of repoList) {
+    t.ok(
+      matchRepoFullname(
+        repo,
+        fullName,
+      ),
+      'should match repo with complex wildcat for ' + repo
+    )
+  }
+})

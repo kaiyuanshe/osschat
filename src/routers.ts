@@ -109,6 +109,7 @@ async function rootHandler (_req: Request, res: Response) {
 
   } else if (userName) {
     let rooms = await bot.Room.findAll()
+    rooms = rooms.sort((a, b) => a.id > b.id ? 1 : -1)
     let roomHtml = `The rooms I have joined are as follows: <ol>`
     for (let room of rooms) {
       const topic = await room.topic()

@@ -33,9 +33,9 @@ export async function startBot (wechaty: Wechaty): Promise<void> {
   }
   const ONE_HOUR = 60 * 60 * 1000
   setInterval(heartbeat('💖'), ONE_HOUR)
-  wechaty.on('login', heartbeat('🙋'))
-  wechaty.on('ready', heartbeat('💪'))
-  wechaty.on('logout', heartbeat('😪'))
+  wechaty.on('login', heartbeat(`🙋 (${wechaty.name()})`))
+  wechaty.on('ready', heartbeat(`💪 (${wechaty.name()})`))
+  wechaty.on('logout', heartbeat(`😪 (${wechaty.name()})`))
 
   const wtmp = Wtmp.instance()
   const loginWtmp = (user: Contact) => wtmp.login(user.name())

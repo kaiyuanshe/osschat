@@ -2,7 +2,7 @@
 
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/wechaty/wechaty)
 [![Build Status](https://travis-ci.com/kaiyuanshe/OSS-bot.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSS-bot)
-[![Greenkeeper badge](https://badges.greenkeeper.io/kaiyuanshe/OSS-bot.svg)](https://greenkeeper.io/)
+
 
 ![OSS Chat](docs/images/osschat.png)
 

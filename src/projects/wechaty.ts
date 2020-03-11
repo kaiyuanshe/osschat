@@ -26,13 +26,13 @@ const BOT5_CLUB_ROOM_ID = '18095776930@chatroom'
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)' : WECHATY_DEVELOPER_ROOM_ID_LIST,
-  'wechaty/python-wechaty'  : '19367909379@chatroom',   // Python Wechaty
   'wechaty/*wechaty*'       : WECHATY_DEVELOPER_ROOM_ID_LIST,
   'wechaty/bot5.club'       : BOT5_CLUB_ROOM_ID,
   'wechaty/friday'          : [
     ...WECHATY_DEVELOPER_ROOM_ID_LIST,
     BOT5_CLUB_ROOM_ID,
   ],
+  'wechaty/python-wechaty'  : '19367909379@chatroom',   // Python Wechaty
 }
 
 export default config

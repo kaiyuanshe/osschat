@@ -120,7 +120,7 @@ async function rootHandler (_req: Request, res: Response) {
     }
 
     const roomInfoList = await Promise.all(rooms.map(roomInfo))
-    const sortedList = roomInfoList.sort((a, b) => a.id > b.id ? 1 : -1)
+    const sortedList = roomInfoList.sort((a, b) => a.topic > b.topic ? 1 : -1)
 
     for (const info of sortedList) {
       roomHtml = roomHtml + `<li> ${info.topic} / ${info.id} </li>\n`

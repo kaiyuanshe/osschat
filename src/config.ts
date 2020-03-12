@@ -38,10 +38,10 @@ export interface RepoConfig {
  *  Value - WeChat Room Id / Id List
  */
 export const managedRepoConfig: RepoConfig = {
-  'BUPT/ai-ml.club': '18968477245@chatroom',
-  'DSExtension/DSExtension': '18039997009@chatroom',
-  'dailidong/ossbot': '18039997009@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
+  'BUPT/ai-ml.club': '18968477245@chatroom',
+  'dailidong/ossbot': '18039997009@chatroom',
+  'DSExtension/DSExtension': '18039997009@chatroom',
   'kaiyuanshe/oss-bot'     : [
     '17591588552@chatroom',
     '17384390178@chatroom',

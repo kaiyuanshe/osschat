@@ -50,5 +50,11 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
+  'apache/incubator-shardingsphere'     : [
+    '10693004861@chatroom',
+    '12353073946@chatroom',
+    '12567163222@chatroom',
+    '22584955790@chatroom',
+  ],
   ...wechatyRepoConfig,
 }

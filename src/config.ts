@@ -41,6 +41,12 @@ export const managedRepoConfig: RepoConfig = {
   'BUPT/ai-ml.club': '18968477245@chatroom',
   'DSExtension/DSExtension': '18039997009@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
+  'apache/incubator-shardingsphere'     : [
+    '10693004861@chatroom',
+    '12353073946@chatroom',
+    '12567163222@chatroom',
+    '22584955790@chatroom',
+  ],
   'dailidong/ossbot': '18039997009@chatroom',
   'kaiyuanshe/osschat'     : [
     '17591588552@chatroom',
@@ -49,12 +55,6 @@ export const managedRepoConfig: RepoConfig = {
   'qihoo360/quicksql' : [
     '4808709382@chatroom',
     '4344886880@chatroom',
-  ],
-  'apache/incubator-shardingsphere'     : [
-    '10693004861@chatroom',
-    '12353073946@chatroom',
-    '12567163222@chatroom',
-    '22584955790@chatroom',
   ],
   ...wechatyRepoConfig,
 }

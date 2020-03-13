@@ -1,6 +1,6 @@
 ---
-name: Ossbot Feature Request
-about: Suggest a feature for ossbot
+name: OSSChat Feature Request
+about: Suggest a feature for osschat
 
 ---
 

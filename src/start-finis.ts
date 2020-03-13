@@ -10,10 +10,10 @@ import {
   debug,
 }             from './config'
 
-const BOT_NAME = 'OSS Bot'
+const BOT_NAME = 'OSSChat'
 
 const LOGIN_ANNOUNCEMENT  = `Der! I just got online!\n${BOT_NAME} v${VERSION}`
-// const LOGOUT_ANNOUNCEMENT = `Der! I'm going to offline now, see you, bye!\nOSS Bot v${VERSION}`
+// const LOGOUT_ANNOUNCEMENT = `Der! I'm going to offline now, see you, bye!\nOSSChat v${VERSION}`
 const EXIT_ANNOUNCEMENT   = `Der! I'm going to exit now, see you, bye!\n${BOT_NAME} v${VERSION}`
 
 let bot: undefined | Wechaty

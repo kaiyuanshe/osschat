@@ -1,6 +1,6 @@
 ---
-name: OssBot Bug Report
-about: Create a bug report for a bug you found in ossbot
+name: OSSChat Bug Report
+about: Create a bug report for a bug you found in osschat
 
 ---
 

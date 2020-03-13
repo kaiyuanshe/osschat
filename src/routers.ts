@@ -34,7 +34,7 @@ let userName: undefined | string
 const FORM_HTML = `
   <form action="/chatops/" method="get">
     <label for="chatops">ChatOps: </label>
-    <input id="chatops" type="text" name="chatops" value="Hello, OSS Bot.">
+    <input id="chatops" type="text" name="chatops" value="Hello, OSSChat.">
     <input type="submit" value="ChatOps">
   </form>
 `
@@ -97,7 +97,7 @@ async function rootHandler (_req: Request, res: Response) {
   if (qrcodeValue) {
 
     html = [
-      `<h1>OSS Bot v${VERSION}</h1>`,
+      `<h1>OSSChat v${VERSION}</h1>`,
       'Scan QR Code: <br />',
       qrcodeValue + '<br />',
       '<a href="http://goqr.me/" target="_blank">http://goqr.me/</a><br />',
@@ -128,13 +128,13 @@ async function rootHandler (_req: Request, res: Response) {
     roomHtml = roomHtml + `</ol>`
 
     html = [
-      `<p> OSS Bot v${VERSION} User ${userName} logined. </p>`,
+      `<p> OSSChat v${VERSION} User ${userName} logined. </p>`,
       FORM_HTML,
       roomHtml,
     ].join('')
   } else {
 
-    html = `OSS Bot v${VERSION} Hello, come back later please.`
+    html = `OSSChat v${VERSION} Hello, come back later please.`
 
   }
 

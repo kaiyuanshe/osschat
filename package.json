@@ -1,7 +1,7 @@
 {
-  "name": "OSSChat",
+  "name": "osschat",
   "version": "0.2.39",
-  "description": "Apache OSS Bot",
+  "description": "Apache OSSChat",
   "main": "index.js",
   "engines": {
     "node": "10"

@@ -17,7 +17,7 @@ export const VERSION = pkg.version
  */
 export const PORT = process.env.PORT || 8788
 
-export const BOT_ROOM_ID        = '18995691396@chatroom'  // ChatOps - Oss Bot
+export const BOT_ROOM_ID        = '18995691396@chatroom'  // ChatOps - OSS Chat
 export const HEARTBEAT_ROOM_ID  = '17376996519@chatroom'  // ChatOps - Heartbeat
 export const DEV_ROOM_ID        = '17591588552@chatroom'  // OSSChat Project Group
 

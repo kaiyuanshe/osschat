@@ -25,15 +25,15 @@ export default async function onMessage (
   }
   if (text.toLowerCase() === 'oss') {
 
-    // To Be Fix: Change "OSS Bot ChatOps" Group Name to actual group name
-    log.info('on-message', 'Begin to find the OSS Bot ChatOps room')
+    // To Be Fix: Change "OSSChat ChatOps" Group Name to actual group name
+    log.info('on-message', 'Begin to find the OSSChat ChatOps room')
     const room = this.Room.load(BOT_ROOM_ID)
 
     if (room) {
       await room.add(contact)
 
       // To Be Fix: Change a formal welcome message
-      await room.say('Welcome to join OSS Bot ChatOps Group', contact)
+      await room.say('Welcome to join OSSChat ChatOps Group', contact)
     }
   }
   log.info('on-message', 'onMessage(%s)', message)

@@ -13,7 +13,7 @@ OSSChat is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g.,
 
 OSSChat will serve users as a cloud service.
 
-- YouTube Video: [Introducing OSS Bot: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk from [@huan](https://github.com/huan) from [OSS Bot Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
+- YouTube Video: [Introducing OSSChat: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk from [@huan](https://github.com/huan) from [OSSChat Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
 
 ## Using OSSChat as a service
 
@@ -46,7 +46,7 @@ After scan the qrcode, you can find the following result here
 
 ```shell
 17:12:57 INFO chatops chatops(Der! I just got online!
-OSS Bot v0.0.24)
+OSSChat v0.0.24)
 17:12:57 INFO startBot onLogin(Contact<李佳芮>) 李佳芮 Heroku Wechaty Getting Started v0.29.7 logined
 ```
 
@@ -67,7 +67,7 @@ You can visit the staging system at <http://OSSChat.kaiyuanshe.cn/>
 
 ## Apache Incubator Proposal
 
-- [Incubator OSS Bot Proposal](https://cwiki.apache.org/confluence/display/INCUBATOR/OSSBotProposal)
+- [Incubator OSSChat Proposal](https://cwiki.apache.org/confluence/display/INCUBATOR/OSSBotProposal)
 
 ## Mentors
 

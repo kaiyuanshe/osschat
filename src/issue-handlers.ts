@@ -165,16 +165,16 @@ async function manageIssue (
 
   log.verbose('issue-handlers', 'manageIssue(%s, %s, %s)', owner, repository, JSON.stringify(urlLinkPayload))
 
-  const roomList = getRoomList(owner, repository)
-  if (roomList.length <= 0) {
-    return
-  }
-
   const urlLink = new UrlLink(urlLinkPayload)
   await Chatops.instance().queue(
     () => Chatops.instance().say(urlLink),
     'issue card for chatops',
   )
+
+  const roomList = getRoomList(owner, repository)
+  if (roomList.length <= 0) {
+    return
+  }
 
   for (const room of roomList) {
     log.verbose('issue-handlers', 'manageIssue() sending to room %s', room)

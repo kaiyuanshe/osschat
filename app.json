@@ -1,7 +1,7 @@
 {
-  "name": "OSS-bot",
+  "name": "OSSChat",
   "description": "OSS Bot for HeroKu",
-  "repository": "https://github.com/kaiyuanshe/OSS-bot",
+  "repository": "https://github.com/kaiyuanshe/OSSChat",
   "logo": "https://wechaty.github.io/wechaty/images/wechaty-icon.png",
   "keywords": [
     "wechaty",
@@ -9,7 +9,7 @@
     "deploy",
     "button"
   ],
-  "website": "https://github.com/kaiyuanshe/OSS-bot",
+  "website": "https://github.com/kaiyuanshe/OSSChat",
   "success_url": "/",
   "env": {
     "WECHATY_TOKEN": {

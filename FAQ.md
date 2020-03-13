@@ -7,7 +7,7 @@ The `ts-node` is the REPL/parser for TypeScript (which is a superset of the Java
 
 You can use the `ts-node` to run TypeScript program files. An example can be found in our repo as the following:
 
-<https://github.com/kaiyuanshe/oss-bot/blob/5d6a0bb3e6cbb4620e20897f28495174e1d22619/Procfile#L4>
+<https://github.com/kaiyuanshe/OSSChat/blob/5d6a0bb3e6cbb4620e20897f28495174e1d22619/Procfile#L4>
 
 See also:
 

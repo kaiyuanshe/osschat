@@ -19,7 +19,7 @@ export const PORT = process.env.PORT || 8788
 
 export const BOT_ROOM_ID        = '18995691396@chatroom'  // ChatOps - Oss Bot
 export const HEARTBEAT_ROOM_ID  = '17376996519@chatroom'  // ChatOps - Heartbeat
-export const DEV_ROOM_ID        = '17591588552@chatroom'  // OSS-Bot Project Group
+export const DEV_ROOM_ID        = '17591588552@chatroom'  // OSSChat Project Group
 
 export function debug () : boolean {
   return process.env.DEBUG === 'true'

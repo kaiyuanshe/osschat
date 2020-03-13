@@ -1,27 +1,27 @@
-# OSS-bot
+# OSSChat
 
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/wechaty/wechaty)
-[![Build Status](https://travis-ci.com/kaiyuanshe/OSS-bot.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSS-bot)
+[![Build Status](https://travis-ci.com/kaiyuanshe/OSSChat.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSSChat)
 
 ![OSS Chat](docs/images/osschat-640x320.png)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## What is OSS-bot
+## What is OSSChat
 
-OSS-bot is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g., mailing list, and jira).
+OSSChat is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g., mailing list, and jira).
 
-OSS-bot will serve users as a cloud service.
+OSSChat will serve users as a cloud service.
 
 - YouTube Video: [Introducing OSS Bot: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk from [@huan](https://github.com/huan) from [OSS Bot Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
 
-## Using OSS-bot as a service
+## Using OSSChat as a service
 
 TBD
 
 ## Preliminary
 
-To compile OSS-bot, typescript environment is needed. If you have `npm`, you can run:
+To compile OSSChat, typescript environment is needed. If you have `npm`, you can run:
 
 ```shell
 npm install
@@ -59,7 +59,7 @@ OSS Bot v0.0.24)
 
 We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.
 
-You can visit the staging system at <http://oss-bot.kaiyuanshe.cn/>
+You can visit the staging system at <http://OSSChat.kaiyuanshe.cn/>
 
 ## Meeting Notes
 

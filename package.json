@@ -1,5 +1,5 @@
 {
-  "name": "oss-bot",
+  "name": "OSSChat",
   "version": "0.2.37",
   "description": "Apache OSS Bot",
   "main": "index.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaiyuanshe/OSS-bot.git"
+    "url": "git+https://github.com/kaiyuanshe/OSSChat.git"
   },
   "author": "Huan LI <zixia@zixia.net>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/kaiyuanshe/OSS-bot/issues"
+    "url": "https://github.com/kaiyuanshe/OSSChat/issues"
   },
-  "homepage": "https://github.com/kaiyuanshe/OSS-bot#readme",
+  "homepage": "https://github.com/kaiyuanshe/OSSChat#readme",
   "dependencies": {
     "brolog": "^1.6.5",
     "commander": "^4.0.1",

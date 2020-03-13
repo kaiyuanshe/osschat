@@ -167,7 +167,10 @@ async function manageIssue (
 
   const urlLink = new UrlLink(urlLinkPayload)
   await Chatops.instance().queue(
-    () => Chatops.instance().say(urlLink),
+    async () => {
+      await Chatops.instance().say(urlLinkPayload.url)
+      await Chatops.instance().say(urlLink)
+    },
     'issue card for chatops',
   )
 

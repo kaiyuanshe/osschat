@@ -41,6 +41,7 @@ export const managedRepoConfig: RepoConfig = {
   'BUPT/ai-ml.club': '18968477245@chatroom',
   'DSExtension/DSExtension': '18039997009@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
+  'dailidong/ossbot': '18039997009@chatroom',
   'kaiyuanshe/osschat'     : [
     '17591588552@chatroom',
     '17384390178@chatroom',

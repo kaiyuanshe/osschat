@@ -64,9 +64,9 @@ cd osschat && python install docs/requirements.txt
 
 ### Write the documents
 
-All documents are in the `docs/source/pages` directory.
+All documents are in the `docs/pages` directory.
 Create your `.md` document and configure contents in
-`docs/source/index.rst`. Format: `pages/your-file-name`.
+`docs/index.rst`. Format: `pages/your-file-name`.
 
 Example:
 
@@ -90,7 +90,7 @@ Contents:
 ### Compile the documents
 
 ```shell
-cd docs && make html 
+cd docs &&  sphinx-build -M html . build
 ```
 
 ### Preview documents locally
@@ -99,7 +99,7 @@ Open `index.html` with your browser in the `docs/build/html` directory
 
 ### Advanced settings
 
-All settings in `doc/source/conf.py`.
+All settings in `doc/conf.py`.
 Please refer this [conf.py](https://github.com/readthedocs/recommonmark/blob/master/setup.py).
 
 

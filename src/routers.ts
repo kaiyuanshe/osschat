@@ -11,6 +11,7 @@ import {
 }               from './config'
 import { Chatops } from './chatops'
 import { getWechaty } from './get-wechaty'
+import { Room } from 'wechaty'
 
 const bot = getWechaty()
 
@@ -111,10 +112,18 @@ async function rootHandler (_req: Request, res: Response) {
     let rooms = await bot.Room.findAll()
     rooms = rooms.sort((a, b) => a.id > b.id ? 1 : -1)
     let roomHtml = `The rooms I have joined are as follows: <ol>`
-    for (let room of rooms) {
+
+    const roomInfo = async (room: Room) => {
+      const id = room.id
       const topic = await room.topic()
-      const roomId = room.id
-      roomHtml = roomHtml + `<li> ${topic} / ${roomId} </li>\n`
+      return { id, topic }
+    }
+
+    const roomInfoList = await Promise.all(rooms.map(roomInfo))
+    const sortedList = roomInfoList.sort((a, b) => a.topic > b.topic ? 1 : -1)
+
+    for (const info of sortedList) {
+      roomHtml = roomHtml + `<li> ${info.topic} / ${info.id} </li>\n`
     }
     roomHtml = roomHtml + `</ol>`
 

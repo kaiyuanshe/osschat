@@ -46,17 +46,17 @@ OSS Bot v0.0.24)
 
 ## Contributing Documents
 
-### Preparing the development environment
+### Preparing the environment
 
 Install python3 or Aanaconda3 on your computer
 
-### Get the source code
+### Get the docs
 
 ```shell
 git clone git@github.com:kaiyuanshe/osschat.git
 ```
 
-### Install dependencies
+### Install python requirements
 
 ```shell
 cd osschat && python install docs/requirements.txt

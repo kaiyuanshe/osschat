@@ -3,8 +3,7 @@
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/wechaty/wechaty)
 [![Build Status](https://travis-ci.com/kaiyuanshe/OSS-bot.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSS-bot)
 
-
-![OSS Chat](docs/images/osschat.png)
+![OSS Chat](docs/images/osschat-640x320.png)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

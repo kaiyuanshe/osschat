@@ -59,7 +59,7 @@ export const managedRepoConfig: RepoConfig = {
 }
 ```
 
-then submit a pull request, when pr is been merged, wait 5~10 minutes, you can sumit a issue on your project, if everything is ok, osschat will send this issue to your wechat group. 
+then submit a pull request, when pr is been merged, wait 5~10 minutes, you can submit an issue on your project, if everything is ok, osschat will send this issue to your wechat group. 
 
 if you meet any problem, please submit an issue
 

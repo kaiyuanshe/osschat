@@ -1,7 +1,9 @@
-### 1、install osschat for github project
+# How to use 
+
+## 1、install osschat for github project
 if project is apache project,please referer to page 1.1, if not, please refer to page 1.2 
 
-####  1.1 install app for apache project
+###  1.1 install app for apache project
 
 Ask for infrastructure service of ASF from here: https://issues.apache.org/jira/ .
 
@@ -17,7 +19,7 @@ Thanks
 
 A previous case for reference: https://issues.apache.org/jira/browse/INFRA-19925
 
-#### 1.2 install app for opensource project
+### 1.2 install app for opensource project
 - please open [https://github.com/apps/osschat](https://github.com/apps/osschat) in browser, and install osschat app. 
 - then, give osschat Repository access privilege: All repositories or just choose some repositories that you want to use osschat
  
@@ -27,12 +29,14 @@ Note: for now, osschat just only need 2 privileges:
     - Read and write access to issues and pull requests
 ``` 
 
-### 2. add OssChat wechat(juzi_bangbang) as friend, then invite OssChat into your wechat group
+## 2. add OssChat wechat(juzi_bangbang) as friend, then invite OssChat into your wechat group
 
-### 3.  find your corresponding wechat group id
+- TODO: Need a QR code
+
+## 3.  find your corresponding wechat group id
 visit [https://oss.chat](https://oss.chat) to get your wechat group id
 
-### 4. edit config.ts
+## 4. edit config.ts
 edit  [config.ts](http://github.com/kaiyuanshe/osschat/blob/master/src/config.ts) file, and add your group id to `RepoConfig`
 ```
 export const managedRepoConfig: RepoConfig = {
@@ -62,10 +66,3 @@ export const managedRepoConfig: RepoConfig = {
 then submit a pull request, when pr is been merged, wait 5~10 minutes, you can submit an issue on your project, if everything is ok, osschat will send this issue to your wechat group. 
 
 if you meet any problem, please submit an issue
-
- 
- 
-
-
-
-

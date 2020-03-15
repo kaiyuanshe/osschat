@@ -71,3 +71,4 @@ dist/
 # docs
 /docs/build/
 /docs/make.*
+*.swp

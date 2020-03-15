@@ -23,6 +23,7 @@ const WECHATY_DEVELOPER_ROOM_ID_LIST = [
 ]
 
 const BOT5_CLUB_ROOM_ID = '18095776930@chatroom'
+const PYTHON_WECHATY_ROOM_ID = '19367909379@chatroom'
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)' : WECHATY_DEVELOPER_ROOM_ID_LIST,
@@ -32,7 +33,9 @@ export const config: RepoConfig = {
     ...WECHATY_DEVELOPER_ROOM_ID_LIST,
     BOT5_CLUB_ROOM_ID,
   ],
-  'wechaty/python-wechaty'  : '19367909379@chatroom',   // Python Wechaty
+  'wechaty/go-wechaty'  : PYTHON_WECHATY_ROOM_ID,
+  'wechaty/java-wechaty'  : PYTHON_WECHATY_ROOM_ID,
+  'wechaty/python-wechaty'  : PYTHON_WECHATY_ROOM_ID,
 }
 
 export default config

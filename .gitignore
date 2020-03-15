@@ -68,3 +68,6 @@ package-lock.json
 t/
 t.*
 dist/
+# docs
+/docs/build/
+/docs/make.*

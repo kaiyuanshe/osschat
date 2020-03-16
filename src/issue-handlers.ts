@@ -116,21 +116,20 @@ function getRoomList (
   /**
    * `wechaty/python-wechaty` will have higher priority than `wechaty/*wechaty*`
    */
-  const exactMatchList = matchedList
-    .filter(exactMatch(owner, repository))
+  // const exactMatchList = matchedList
+  //   .filter(exactMatch(owner, repository))
 
-  log.verbose('issue-handler', 'getRoom() found %s exact matched', exactMatchList.length)
+  // log.verbose('issue-handler', 'getRoom() found %s exact matched', exactMatchList.length)
 
   /**
    * If we have exactly the match found,
    * then we will only process the exactly match ones.
    */
-  if (exactMatchList.length > 0) {
-    log.verbose('issue-handler', 'getRoom() list that does not exact matched are dropped')
-    matchedList = exactMatchList
-  }
+  // if (exactMatchList.length > 0) {
+  //   log.verbose('issue-handler', 'getRoom() list that does not exact matched are dropped')
+  //   matchedList = exactMatchList
+  // }
 
-  const roomList: Room[] = []
   const idsToRooms = (idOrList: string | string[]) => {
     if (Array.isArray(idOrList)) {
       return idOrList.map(
@@ -143,11 +142,21 @@ function getRoomList (
     }
   }
 
+  const roomIdList = []
   for (const fullName of matchedList) {
     log.verbose('issue-handler', 'getRoom() adding rooms for fullName "%s"', fullName)
     const roomIdOrList = managedRepoConfig[fullName]
-    roomList.push(...idsToRooms(roomIdOrList))
+    if (Array.isArray(roomIdOrList)) {
+      roomIdList.push(...roomIdOrList)
+    } else {
+      roomIdList.push(roomIdOrList)
+    }
   }
+
+  // make the id unique (in case an id appear in different repo configs)
+  const roomList = idsToRooms(
+    [...new Set(roomIdList)],
+  )
 
   return roomList
 }

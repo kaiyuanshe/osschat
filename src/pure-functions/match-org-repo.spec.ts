@@ -97,3 +97,22 @@ test('matchRepo with complex wildcat', async t => {
     )
   }
 })
+
+test('matchRepo with group wildcat', async t => {
+  const fullName = 'wechaty/(python|go|java)-wechaty'
+  const repoList = [
+    'python-wechaty',
+    'go-wechaty',
+    'java-wechaty',
+  ]
+
+  for (const repo of repoList) {
+    t.ok(
+      matchRepoFullname(
+        repo,
+        fullName,
+      ),
+      'should match repo with group match for ' + repo
+    )
+  }
+})

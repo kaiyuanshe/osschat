@@ -8,7 +8,7 @@ import {
   RepoConfig,
 }                 from '../config'
 
-const WECHATY_DEVELOPER_ROOM_ID_LIST = [
+const ROOM_ID_LIST_WECHATY_DEVELOPER = [
   '24113855649@chatroom',   // Wechaty Developers' Room Next
   '17275396976@chatroom',   // Wechaty Developers' Room 0
   '7582163093@chatroom',    // Wechaty Developers' Room 1
@@ -22,20 +22,18 @@ const WECHATY_DEVELOPER_ROOM_ID_LIST = [
   '19487389780@chatroom',   // Wechaty Ignite 3
 ]
 
-const BOT5_CLUB_ROOM_ID = '18095776930@chatroom'
-const PYTHON_WECHATY_ROOM_ID = '19367909379@chatroom'
+const ROOM_ID_BOT5_CLUB              = '18095776930@chatroom'
+const ROOM_ID_PYTHON_GO_JAVA_WECHATY = '19367909379@chatroom'
 
 export const config: RepoConfig = {
-  'chatie/(blog|*wechaty*)' : WECHATY_DEVELOPER_ROOM_ID_LIST,
-  'wechaty/*wechaty*'       : WECHATY_DEVELOPER_ROOM_ID_LIST,
-  'wechaty/bot5.club'       : BOT5_CLUB_ROOM_ID,
-  'wechaty/friday'          : [
-    ...WECHATY_DEVELOPER_ROOM_ID_LIST,
-    BOT5_CLUB_ROOM_ID,
+  'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'wechaty/(python|go|java)-wechaty' : ROOM_ID_PYTHON_GO_JAVA_WECHATY,
+  'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'wechaty/bot5.club'                : ROOM_ID_BOT5_CLUB,
+  'wechaty/friday'                   : [
+    ...ROOM_ID_LIST_WECHATY_DEVELOPER,
+    ROOM_ID_BOT5_CLUB,
   ],
-  'wechaty/go-wechaty'  : PYTHON_WECHATY_ROOM_ID,
-  'wechaty/java-wechaty'  : PYTHON_WECHATY_ROOM_ID,
-  'wechaty/python-wechaty'  : PYTHON_WECHATY_ROOM_ID,
 }
 
 export default config

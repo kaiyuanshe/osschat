@@ -21,7 +21,7 @@ import {
 import {
   matchOwner,
   matchRepo,
-  exactMatch,
+  // exactMatch,
 }               from './pure-functions/match-org-repo'
 
 export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (context) => {

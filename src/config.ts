@@ -43,6 +43,7 @@ export const managedRepoConfig: RepoConfig = {
   'apache/incubator-dolphinscheduler' : '8676247154@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
   'apache/incubator-shardingsphere'     : [
+    '1905580537@chatroom',
     '10693004861@chatroom',
     '12353073946@chatroom',
     '12567163222@chatroom',

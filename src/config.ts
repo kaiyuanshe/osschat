@@ -36,11 +36,14 @@ export interface RepoConfig {
  * Huan(202003)
  *  Key   - GitHub Repo Full Name: "Org/Repo"
  *  Value - WeChat Room Id / Id List
+ *
+ *  Key should be in ascending order
  */
 export const managedRepoConfig: RepoConfig = {
   'BUPT/ai-ml.club': '18968477245@chatroom',
   'DSExtension/DSExtension': '18039997009@chatroom',
   'apache/incubator-dolphinscheduler' : '8676247154@chatroom',
+  'apache/incubator-doris' : '18440801276@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
   'apache/incubator-shardingsphere'     : [
     '1905580537@chatroom',
@@ -58,7 +61,5 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
-  'apache/incubator-doris' : '18440801276@chatroom',
   ...wechatyRepoConfig,
 }
-

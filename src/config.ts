@@ -58,5 +58,7 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
+  'apache/incubator-doris' : '18440801276@chatroom',
   ...wechatyRepoConfig,
 }
+

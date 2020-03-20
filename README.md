@@ -13,7 +13,7 @@ OSSChat is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g.,
 
 OSSChat will serve users as a cloud service.
 
-- YouTube Video: [Introducing OSSChat: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk from [@huan](https://github.com/huan) from [OSSChat Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
+- YouTube Video: [Introducing OSSChat: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk by [@huan](https://github.com/huan) at [OSSChat Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
 
 ## Using OSSChat as a service
 
@@ -79,8 +79,8 @@ You can visit the staging system at <http://OSSChat.kaiyuanshe.cn/>
 ## Committers
 
 - [Zhuang Biaowei](https://github.com/zhuangbiaowei), [(庄表伟)](http://www.zhuangbiaowei.com/blog/), Product Manager from Huawei technologies co. ltd
-- [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) [Wechaty](https://github.com/wechaty/wechaty) Author, <zixia@zixia.net>
-- [Rui](https://github.com/lijiarui),[(李佳芮)](https://lijiarui.github.io) [Wechaty](https://github.com/wechaty/wechaty) Co-author, Founder of [JuziBot](https://www.botorange.com/)
+- [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia), [Tencent TVP of Chatbot](https://cloud.tencent.com/tvp/138), <huan@kaiyuanshe.org>
+- [Rui](https://github.com/lijiarui)[(李佳芮)](https://lijiarui.github.io), [Wechaty](https://github.com/wechaty/wechaty) Co-author, Founder of [JuziBot](https://www.botorange.com/)
 - To Be Added ...
 
 ## Pilots

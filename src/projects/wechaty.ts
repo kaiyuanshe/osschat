@@ -9,14 +9,14 @@ import {
 }                 from '../config'
 
 const ROOM_ID_LIST_WECHATY_DEVELOPER = [
-  '17275396976@chatroom',   // Wechaty Developers' Room Next
-  '18171595067@chatroom',   // Wechaty Developers' Room
-  '7582163093@chatroom',    // Wechaty Developers' Room 1
-  '5729603967@chatroom',    // Wechaty Developers' Room 2
-  '4335801863@chatroom',    // Wechaty Developers' Room 3
-  '22396239792@chatroom',   // Wechaty Developers' Room 4
-  '19112581505@chatroom',   // Wechaty Developers' Room 5
-  '24113855649@chatroom',   // Wechaty Developers' Room 6
+  '17275396976@chatroom',   // Wechaty Developers' Home Next
+  '18171595067@chatroom',   // Wechaty Developers' Home
+  '7582163093@chatroom',    // Wechaty Developers' Home 1
+  '5729603967@chatroom',    // Wechaty Developers' Home 2
+  '4335801863@chatroom',    // Wechaty Developers' Home 3
+  '22396239792@chatroom',   // Wechaty Developers' Home 4
+  '19112581505@chatroom',   // Wechaty Developers' Home 5
+  '24113855649@chatroom',   // Wechaty Developers' Home 6
   /* ******************** */
   '17559195108@chatroom',   // Wechaty Ignite 1
   '19487389780@chatroom',   // Wechaty Ignite 3

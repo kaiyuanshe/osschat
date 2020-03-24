@@ -3,7 +3,7 @@
  */
 import readPkgUp from 'read-pkg-up'
 
-import wechatyRepoConfig from './projects/wechaty'
+import projectsRepoConfig from './projects/'
 
 export {
   log,
@@ -61,5 +61,5 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
-  ...wechatyRepoConfig,
+  ...projectsRepoConfig,
 }

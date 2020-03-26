@@ -184,8 +184,26 @@ async function manageIssue (
   )
 
   if (owner === 'juzibot' && repository === 'Juzi-WeChat-Work-Tasks') {
-    const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=974db6af-6b24-41aa-8da6-5ed634d24fcf'
-    require(wxBotUrl)
+    const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send'
+    const key      = '974db6af-6b24-41aa-8da6-5ed634d24fcf'
+
+    const options = { method: 'POST',
+      url: wxBotUrl,
+      qs: { key: key },
+      headers: { 'content-type': 'application/json' },
+      body: {
+        msgtype: 'markdown',
+        markdown: {
+          content: `[${urlLinkPayload.title}](${urlLinkPayload.url}) \n ${urlLinkPayload.description}`,
+        },
+      },
+      json: true,
+    }
+
+    request(options, function (error) {
+      if (error) throw new Error(error)
+    })
+
   }
 
   const roomList = getRoomList(owner, repository)

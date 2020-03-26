@@ -187,17 +187,18 @@ async function manageIssue (
     const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send'
     const key      = '974db6af-6b24-41aa-8da6-5ed634d24fcf'
 
-    const options = { method: 'POST',
-      url: wxBotUrl,
-      qs: { key: key },
-      headers: { 'content-type': 'application/json' },
+    const options = {
       body: {
-        msgtype: 'markdown',
         markdown: {
           content: `[${urlLinkPayload.title}](${urlLinkPayload.url}) \n ${urlLinkPayload.description}`,
         },
+        msgtype: 'markdown',
       },
+      headers: { 'content-type': 'application/json' },
       json: true,
+      method: 'POST',
+      qs: { key: key },
+      url: wxBotUrl,
     }
 
     request(options, function (error) {

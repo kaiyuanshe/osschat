@@ -183,6 +183,11 @@ async function manageIssue (
     'issue card for chatops',
   )
 
+  if (owner === 'juzibot' && repository === 'Juzi-WeChat-Work-Tasks') {
+    const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=974db6af-6b24-41aa-8da6-5ed634d24fcf'
+    require(wxBotUrl)
+  }
+
   const roomList = getRoomList(owner, repository)
   if (roomList.length <= 0) {
     return

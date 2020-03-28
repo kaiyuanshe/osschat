@@ -61,6 +61,9 @@ We are current DevOps the master branch from the repo to Heroku under the protec
 
 You can visit the staging system at <http://OSSChat.kaiyuanshe.cn/>
 
+## How to use
+use osschat is so easy, just need 4 steps, please refer [How to use](https://github.com/kaiyuanshe/osschat/blob/master/docs/pages/how-to-use.md)
+
 ## Meeting Notes
 
 - [Weekly Meeting Notes](https://shimo.im/docs/wGHydDxvWGjWKgDK)

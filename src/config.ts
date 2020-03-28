@@ -42,7 +42,11 @@ export interface RepoConfig {
 export const managedRepoConfig: RepoConfig = {
   'BUPT/ai-ml.club': '18968477245@chatroom',
   'DSExtension/DSExtension': '18039997009@chatroom',
-  'apache/incubator-dolphinscheduler' : '8676247154@chatroom',
+  'apache/incubator-dolphinscheduler' : [
+    '8676247154@chatroom',
+    '19237597168@chatroom',
+    '19380384367@chatroom',
+  ], 
   'apache/incubator-doris' : '18440801276@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
   'apache/incubator-shardingsphere'     : [

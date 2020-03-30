@@ -35,7 +35,8 @@
     "probot": "^9.8.1",
     "qrcode-terminal": "^0.12.0",
     "smee-client": "^1.1.0",
-    "wechaty": "^0.37.8"
+    "wechaty": "^0.37.8",
+    "wechaty-puppet-padplus": "^0.5.27"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

@@ -16,7 +16,7 @@ script:
   - node --version
   - npm --version
   - npm test
-  - ./node_modules/.bin/ts-node tests/fixtures/smoke-testing.ts
+  - ./node_modules/.bin/ts-node --files tests/fixtures/smoke-testing.ts
 
 notifications:
   email:

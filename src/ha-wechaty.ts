@@ -103,9 +103,20 @@ export class HAWechaty {
         )
       }
 
+      if (process.env.WECHATY_PUPPET_MOCK_TOKEN) {
+        this.wechatyList.push(
+          new Wechaty({
+            ...this.options,
+            puppet: 'wechaty-puppet-mock',
+          }),
+        )
+      }
+
       if (this.wechatyList.length <= 0) {
         throw new Error('no wechaty puppet found')
       }
+
+      log.info('HAWechaty', 'start() %s puppet inited', this.wechatyList.length)
 
       await Promise.all(
         this.wechatyList.map(

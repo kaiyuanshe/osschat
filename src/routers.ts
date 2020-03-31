@@ -130,6 +130,7 @@ async function rootHandler (
   res.end(
     [
       htmlHead,
+      FORM_HTML,
       html,
       htmlCounter,
       htmlFoot,
@@ -179,8 +180,7 @@ async function rootHtml (
     roomHtml = roomHtml + `</ol>`
 
     html = [
-      `<p> OSSChat v${VERSION} User ${info.userName} logined. </p>`,
-      FORM_HTML,
+      `<p> OSSChat v${VERSION} User ${info.userName} logined via ${wechaty.puppet}. </p>`,
       roomHtml,
     ].join('')
   } else {

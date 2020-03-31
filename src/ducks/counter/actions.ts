@@ -1,9 +1,6 @@
+import { createAction } from '@reduxjs/toolkit'
+
 import * as types from './types'
 
-export const mt = () => ({
-  type: types.MT,
-})
-
-export const mo = () => ({
-  type: types.MO,
-})
+export const mo = createAction(types.MO)
+export const mt = createAction(types.MT)

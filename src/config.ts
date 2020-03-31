@@ -1,3 +1,4 @@
+/// <reference path="./typings.d.ts" />
 /**
  * VERSION
  */

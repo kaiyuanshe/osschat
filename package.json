@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/kaiyuanshe/OSSChat#readme",
   "dependencies": {
+    "array-flatten": "^3.0.0",
     "brolog": "^1.6.5",
     "commander": "^4.0.1",
     "finis": "^0.4.3",

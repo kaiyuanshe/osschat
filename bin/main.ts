@@ -6,7 +6,7 @@ import {
   log,
   VERSION,
 }                     from '../src/config'
-import { getWechaty } from '../src/get-wechaty'
+import { getHAWechaty } from '../src/get-wechaty'
 import { startBot }   from '../src/start-bot'
 import { startFinis } from '../src/start-finis'
 
@@ -40,7 +40,7 @@ export = async (app: Application) => {
 
   log.verbose('main', 'main()')
 
-  const bot = getWechaty()
+  const bot = getHAWechaty()
 
   await Promise.all([
     bot.start(),
@@ -48,7 +48,5 @@ export = async (app: Application) => {
     startFinis(bot),
   ])
 
-  while (bot.state.on()) {
-    await new Promise(resolve => setTimeout(resolve, 1000))
-  }
+  await bot.state.ready('off')
 }

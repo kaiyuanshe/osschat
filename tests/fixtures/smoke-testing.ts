@@ -1,18 +1,18 @@
 #!/usr/bin/env ts-node
 
-import { getWechaty } from '../../src/get-wechaty'
+import { getHAWechaty } from '../../src/get-wechaty'
 import { startBot }   from '../../src/start-bot'
 import { startFinis } from '../../src/start-finis'
 
 process.env.WECHATY_PUPPET = 'wechaty-puppet-mock'
 
 async function main () {
-  const bot = getWechaty()
+  const haBot = getHAWechaty()
 
   await Promise.all([
-    bot.start(),
-    startBot(bot),
-    startFinis(bot),
+    haBot.start(),
+    startBot(haBot),
+    startFinis(haBot),
   ])
 
   return 0

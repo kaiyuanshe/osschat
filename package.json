@@ -8,6 +8,7 @@
   },
   "scripts": {
     "clean": "shx rm -fr dist/*",
+    "dist": "npm run build",
     "build": "tsc",
     "lint": "npm run lint:es && npm run lint:ts",
     "lint:ts": "tsc --noEmit",
@@ -37,6 +38,7 @@
     "node-cache": "^5.1.0",
     "probot": "^9.8.1",
     "qrcode-terminal": "^0.12.0",
+    "redux": "^4.0.5",
     "smee-client": "^1.1.0",
     "wechaty": "^0.37.8",
     "wechaty-puppet-padplus": "^0.5.27"

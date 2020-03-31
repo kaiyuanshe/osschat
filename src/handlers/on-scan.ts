@@ -5,6 +5,11 @@ import {
 
 import { generate } from 'qrcode-terminal'
 
+import {
+  store,
+  logonoffActions,
+}                     from '../ducks/'
+
 export default async function onScan (
   this   : Wechaty,
   qrcode : string,
@@ -13,6 +18,13 @@ export default async function onScan (
   log.info('on-scan', 'onScan() [%s] %s\nScan QR Code above to log in.',
     status,
     qrcodeValueToUrl(qrcode),
+  )
+
+  store.dispatch(
+    logonoffActions.scan(
+      this.id,
+      qrcode,
+    )
   )
 
   generate(qrcode)

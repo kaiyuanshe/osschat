@@ -9,7 +9,7 @@ import {
   Room,
 }                     from 'wechaty'
 
-import { getWechaty } from './get-wechaty'
+import { getHAWechaty } from './get-wechaty'
 
 import { Chatops } from './chatops'
 
@@ -99,10 +99,10 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   // console.info(context)
 }
 
-function getRoomList (
+async function getRoomList (
   owner      : string,
   repository : string,
-): Room[] {
+): Promise<Room[]> {
   log.verbose('issue-handler', 'getRoom(%s, %s, config)', owner, repository)
 
   const managedList = Object.keys(managedRepoConfig)
@@ -130,15 +130,17 @@ function getRoomList (
   //   matchedList = exactMatchList
   // }
 
-  const idsToRooms = (idOrList: string | string[]) => {
+  const idsToRooms = async (idOrList: string | string[]) => {
     if (Array.isArray(idOrList)) {
-      return idOrList.map(
-        id => getWechaty().Room.load(id)
+      const roomList = await Promise.all(
+        idOrList.map(
+          id => getHAWechaty().Room.load(id)
+        )
       )
+      return roomList.filter(r => !!r) as Room[]
     } else {
-      return [
-        getWechaty().Room.load(idOrList),
-      ]
+      const room = await getHAWechaty().Room.load(idOrList)
+      return room ? [ room ] : []
     }
   }
 
@@ -154,7 +156,7 @@ function getRoomList (
   }
 
   // make the id unique (in case an id appear in different repo configs)
-  const roomList = idsToRooms(
+  const roomList = await idsToRooms(
     [...new Set(roomIdList)],
   )
 
@@ -183,7 +185,7 @@ async function manageIssue (
     'issue card for chatops',
   )
 
-  const roomList = getRoomList(owner, repository)
+  const roomList = await getRoomList(owner, repository)
   if (roomList.length <= 0) {
     return
   }

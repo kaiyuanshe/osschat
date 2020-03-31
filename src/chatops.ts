@@ -1,5 +1,4 @@
 import {
-  Wechaty,
   UrlLink,
   Message,
 }             from 'wechaty'
@@ -12,19 +11,20 @@ import {
   DEV_ROOM_ID,
   HEARTBEAT_ROOM_ID,
 }                     from './config'
+import { HAWechaty } from './ha-wechaty'
 
 export class Chatops {
 
   private static singleton: Chatops
 
   public static instance (
-    bot?: Wechaty,
+    haBot?: HAWechaty,
   ) {
     if (!this.singleton) {
-      if (!bot) {
+      if (!haBot) {
         throw new Error('instance need a Wechaty instance to initialize')
       }
-      this.singleton = new Chatops(bot)
+      this.singleton = new Chatops(haBot)
     }
     return this.singleton
   }
@@ -38,7 +38,7 @@ export class Chatops {
   private delayQueueExecutor: DelayQueueExecutor
 
   private constructor (
-    private bot: Wechaty,
+    private haBot: HAWechaty,
   ) {
     this.delayQueueExecutor = new DelayQueueExecutor(5 * 1000)  // set delay period time to 5 seconds
   }
@@ -61,13 +61,17 @@ export class Chatops {
   ): Promise<void> {
     log.info('Chatops', 'roomMessage(%s, %s)', roomId, info)
 
-    const online = this.bot.logonoff()
+    const online = this.haBot.logonoff()
     if (!online) {
       log.error('Chatops', 'roomMessage() this.bot is offline')
       return
     }
 
-    const room = this.bot.Room.load(roomId)
+    const room = await this.haBot.Room.load(roomId)
+    if (!room) {
+      log.error('Chatops', 'roomMessage() no bot found in room %s', roomId)
+      return
+    }
 
     if (typeof info === 'string') {
       await room.say(info)

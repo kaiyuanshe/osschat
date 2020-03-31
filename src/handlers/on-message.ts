@@ -12,12 +12,24 @@ import {
 import { VoteManager } from '../managers/vote-manager'
 import { Chatops } from '../chatops'
 
+import {
+  store,
+  counterActions,
+}                     from '../ducks/'
+
 const BORN_TIME = Date.now()
 
 export default async function onMessage (
   this    : Wechaty,
   message : Message,
 ): Promise<void> {
+
+  if (message.self()) {
+    store.dispatch(counterActions.mo())
+  } else {
+    store.dispatch(counterActions.mt())
+  }
+
   const text    = message.text()
   const contact = message.from()
   if (!contact) {

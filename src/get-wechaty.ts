@@ -1,8 +1,4 @@
 import {
-  Wechaty,
-}                 from 'wechaty'
-
-import {
   log,
 }               from './config'
 import {
@@ -10,26 +6,29 @@ import {
 }               from './get-memory'
 import { Chatops } from './chatops'
 
-let wechaty: Wechaty
+import { HAWechaty } from './ha-wechaty'
 
-export function getWechaty (): Wechaty {
-  log.verbose('getWechaty', 'getWechaty()')
+// let wechaty: Wechaty
+let haWechaty: HAWechaty
 
-  if (wechaty) {
-    return wechaty
+export function getHAWechaty (): HAWechaty {
+  log.verbose('getWechaty', 'getHAWechaty()')
+
+  if (haWechaty) {
+    return haWechaty
   }
 
   const name = process.env.WECHATY_NAME || 'heroku-wechaty'
 
   const memory = getMemory(name)
 
-  wechaty = new Wechaty({
+  haWechaty = new HAWechaty({
     memory,
     name,
   })
 
   // Initialize Chatops Instance:
-  Chatops.instance(wechaty)
+  Chatops.instance(haWechaty)
 
-  return wechaty
+  return haWechaty
 }

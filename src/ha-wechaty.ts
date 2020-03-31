@@ -85,7 +85,16 @@ export class HAWechaty {
     try {
       this.state.on('pending')
 
-      if (process.env.WECHATY_PUPPET_HOSTIE_TOKEN) {
+      const wechatyPuppet = process.env.WECHATY_PUPPET || ''
+      const wechatyPuppetList = wechatyPuppet
+        .split(':')
+        .filter(v => !!v)
+        .map(v => v.toUpperCase())
+        .map(v => v.replace(/-/g, '_'))
+
+      if (wechatyPuppetList.includes('WECHATY_PUPPET_HOSTIE')
+          && process.env.WECHATY_PUPPET_HOSTIE_TOKEN
+      ) {
         this.wechatyList.push(
           new Wechaty({
             ...this.options,
@@ -94,7 +103,9 @@ export class HAWechaty {
         )
       }
 
-      if (process.env.WECHATY_PUPPET_PADPLUS_TOKEN) {
+      if (wechatyPuppetList.includes('WECHATY_PUPPET_PADPLUS')
+          && process.env.WECHATY_PUPPET_PADPLUS_TOKEN
+      ) {
         this.wechatyList.push(
           new Wechaty({
             ...this.options,
@@ -103,7 +114,9 @@ export class HAWechaty {
         )
       }
 
-      if (process.env.WECHATY_PUPPET_MOCK_TOKEN) {
+      if (wechatyPuppetList.includes('WECHATY_PUPPET_MOCK')
+          && process.env.WECHATY_PUPPET_MOCK_TOKEN
+      ) {
         this.wechatyList.push(
           new Wechaty({
             ...this.options,

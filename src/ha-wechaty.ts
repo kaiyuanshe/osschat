@@ -27,9 +27,11 @@ export class HAWechaty {
   public async roomFindAll (): Promise<Room[]> {
     log.verbose('HAWechaty', 'roomFindAll()')
     const roomListList = Promise.all(
-      this.wechatyList.map(
-        wechaty => wechaty.Room.findAll()
-      )
+      this.wechatyList
+        .filter(wechaty => wechaty.logonoff())
+        .map(
+          wechaty => wechaty.Room.findAll()
+        )
     )
 
     const roomList = [] as Room[]
@@ -52,9 +54,9 @@ export class HAWechaty {
 
   public async roomLoad (id: string): Promise<null | Room> {
     log.verbose('HAWechaty', 'roomLoad(%s)', id)
-    const roomList = this.wechatyList.map(
-      wechaty => wechaty.Room.load(id)
-    )
+    const roomList = this.wechatyList
+      .filter(wechaty => wechaty.logonoff())
+      .map(wechaty => wechaty.Room.load(id))
 
     for (const room of roomList) {
       try {
@@ -178,21 +180,26 @@ export class HAWechaty {
     return this
   }
 
-  public logout (): void {
+  public async logout (): Promise<void> {
     log.verbose('HAWechaty', 'logout()')
 
-    this.wechatyList.forEach(
-      wechaty => wechaty.logout()
+    await Promise.all(
+      this.wechatyList.map(
+        wechaty => wechaty.logout()
+      )
     )
   }
 
   public async say (text: string): Promise<void> {
     log.verbose('HAWechaty', 'say(%s)', text)
-    this.wechatyList.forEach(wechaty => wechaty.say(text))
+    this.wechatyList
+      .filter(wechaty => wechaty.logonoff())
+      .forEach(wechaty => wechaty.say(text))
   }
 
   public name (): string {
     return this.wechatyList
+      .filter(wechaty => wechaty.logonoff())
       .map(wechaty => wechaty.name())
       .join(',')
   }

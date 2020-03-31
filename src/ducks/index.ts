@@ -17,12 +17,15 @@ import logonoff, {
 }                     from './logonoff'
 import counter, {
   counterActions,
+  counterSelectors,
 }                     from './counter'
 
 export {
   logonoffActions,
   logonoffSelectors,
+
   counterActions,
+  counterSelectors,
 }
 
 const reducer = combineReducers({
@@ -32,6 +35,10 @@ const reducer = combineReducers({
 
 export const store = configureStore({
   reducer,
+})
+
+store.subscribe(() => {
+  console.info('state:', store.getState())
 })
 
 export type RootState = ReturnType<typeof reducer>

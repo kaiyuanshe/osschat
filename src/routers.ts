@@ -20,6 +20,7 @@ import { getHAWechaty } from './get-wechaty'
 import {
   store,
   logonoffSelectors,
+  counterSelectors,
 }                     from './ducks/'
 
 const haBot = getHAWechaty()
@@ -111,13 +112,26 @@ async function rootHandler (
   </head>
   <body>
     `
+
+  const mt = counterSelectors.mt(store.getState().counter)
+  const mo = counterSelectors.mo(store.getState().counter)
+
+  const htmlCounter = `
+  <hr />
+  <ul>
+    <li>Message Received: ${mt}</li>
+    <li>Message Sent: ${mo}</li>
+  </ul>
+  `
   const htmlFoot = `
   </body>
+  </html>
     `
   res.end(
     [
       htmlHead,
       html,
+      htmlCounter,
       htmlFoot,
     ].join('\n')
   )

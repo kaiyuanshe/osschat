@@ -1,7 +1,7 @@
-export const MT = 'osschat/wechaty/message/mt'
 export const MO = 'osschat/wechaty/message/mo'
+export const MT = 'osschat/wechaty/message/mt'
 
-export interface CounterState {
-  mt: number,
+export interface State {
   mo: number,
+  mt: number,
 }

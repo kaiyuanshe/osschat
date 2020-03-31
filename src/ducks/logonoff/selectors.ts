@@ -1,7 +1,7 @@
 import * as types from './types'
 
 export function status (
-  state: types.LogonoffState,
+  state: types.State,
   wechatyId: string,
 ) {
   if (wechatyId in state) {

@@ -8,14 +8,14 @@ import * as types from './types'
 const initialState = {
   mo: 0,
   mt: 0,
-} as types.CounterState
+} as types.State
 
-const moReducer = (state: types.CounterState) => ({
+const moReducer = (state: types.State) => ({
   ...state,
   mo: state.mo + 1,
 })
 
-const mtReducer = (state: types.CounterState) => ({
+const mtReducer = (state: types.State) => ({
   ...state,
   mt: state.mt + 1,
 })

@@ -7,8 +7,6 @@ import {
 
 import {
   Room,
-  ScanStatus,
-  Contact,
   Wechaty,
 }               from 'wechaty'
 
@@ -19,52 +17,12 @@ import {
 import { Chatops } from './chatops'
 import { getHAWechaty } from './get-wechaty'
 
+import {
+  store,
+  logonoffSelectors,
+}                     from './ducks/'
+
 const haBot = getHAWechaty()
-
-interface BotInfo {
-  qrcode?: string
-  userName?: string
-}
-
-const botInfo = new WeakMap<Wechaty, BotInfo>()
-
-haBot.on(
-  'scan',
-  function (
-    this: Wechaty,
-    qrcode: string,
-    status: ScanStatus,
-  ) {
-    void status
-    const info = { ...botInfo.get(this) } as BotInfo
-    info.qrcode = qrcode
-    info.userName = undefined
-    botInfo.set(this, info)
-  },
-)
-haBot.on(
-  'login',
-  function (
-    this: Wechaty,
-    user: Contact,
-  ) {
-    const info = { ...botInfo.get(this) } as BotInfo
-    info.qrcode = undefined
-    info.userName = user.name()
-    botInfo.set(this, info)
-  },
-)
-haBot.on(
-  'logout',
-  function (
-    this: Wechaty,
-  ) {
-    const info = { ...botInfo.get(this) } as BotInfo
-    info.qrcode = undefined
-    info.userName = undefined
-    botInfo.set(this, info)
-  },
-)
 
 const FORM_HTML = `
   <form action="/chatops/" method="get">
@@ -132,7 +90,12 @@ async function rootHandler (
 ) {
   let html = ''
   for (const wechaty of haBot.wechatyList) {
-    const info = botInfo.get(wechaty)
+
+    const info = logonoffSelectors.status(
+      store.getState().logonoff,
+      wechaty.id,
+    )
+
     html += [
       '<hr />\n',
       await rootHtml(wechaty, info),
@@ -148,11 +111,9 @@ async function rootHandler (
   </head>
   <body>
     `
-
   const htmlFoot = `
   </body>
     `
-
   res.end(
     [
       htmlHead,
@@ -165,8 +126,9 @@ async function rootHandler (
 
 async function rootHtml (
   wechaty: Wechaty,
-  info: BotInfo = {},
+  info: ReturnType<typeof logonoffSelectors.status>,
 ) {
+
   let html
 
   if (info.qrcode) {

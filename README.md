@@ -102,6 +102,7 @@ To be added...
 ## Links
 
 - [Scaling your Redux App with ducks](https://www.freecodecamp.org/news/scaling-your-redux-app-with-ducks-6115955638be/)
+- [Redux Style Guide](https://redux.js.org/style-guide/style-guide#do-not-put-non-serializable-values-in-state-or-actions)
 
 ## Copyright & License
 

@@ -1,9 +1,11 @@
+import * as types from './types'
 
-export function online (duck: any) {
-  return Object.keys(duck.logonoff).filter(
-    id => {
-      const info = duck.logonoff[id]
-      return info.qrcode === undefined && info.userName !== undefined
-    }
-  )
+export function status (
+  state: types.LogonoffState,
+  wechatyId: string,
+) {
+  if (wechatyId in state) {
+    return state[wechatyId]
+  }
+  return {}
 }

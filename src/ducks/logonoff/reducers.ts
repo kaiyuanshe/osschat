@@ -6,16 +6,9 @@ import {
 import * as types from './types'
 import * as actions from './actions'
 
-export interface LogonoffState {
-  [k: string]: {
-    qrcode?   : string,
-    userName? : string,
-  }
-}
+const initialState: types.LogonoffState = {}
 
-const initialState: LogonoffState = {}
-
-const scanReducer = (state: LogonoffState, action: Action) => {
+const scanReducer = (state: types.LogonoffState, action: Action) => {
   if (actions.scan.match(action)) {
     return {
       ...state,
@@ -27,7 +20,7 @@ const scanReducer = (state: LogonoffState, action: Action) => {
   return state
 }
 
-const loginReducer = (state: LogonoffState, action: Action) => {
+const loginReducer = (state: types.LogonoffState, action: Action) => {
   if (actions.login.match(action)) {
     return {
       ...state,
@@ -39,7 +32,7 @@ const loginReducer = (state: LogonoffState, action: Action) => {
   return state
 }
 
-const logoutReducer = (state: LogonoffState, action: Action) => {
+const logoutReducer = (state: types.LogonoffState, action: Action) => {
   if (actions.logout.match(action)) {
     return {
       ...state,

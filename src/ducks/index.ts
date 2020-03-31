@@ -8,18 +8,20 @@
  *    https://redux-toolkit.js.org/usage/usage-with-typescript
  *
  */
-import { combineReducers } from 'redux'
+import { combineReducers }  from 'redux'
+import { configureStore }   from '@reduxjs/toolkit'
 
 import logonoff, {
   logonoffActions,
-}                   from './logonoff'
-
+  logonoffSelectors,
+}                     from './logonoff'
 import counter, {
   counterActions,
-}                   from './counter'
+}                     from './counter'
 
 export {
   logonoffActions,
+  logonoffSelectors,
   counterActions,
 }
 
@@ -28,4 +30,9 @@ const reducer = combineReducers({
   logonoff,
 })
 
-export default reducer
+export const store = configureStore({
+  reducer,
+})
+
+export type RootState = ReturnType<typeof reducer>
+export type AppDispatch = typeof store.dispatch

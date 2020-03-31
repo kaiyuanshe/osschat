@@ -10,4 +10,7 @@ export interface ActionScanPayload {
 
 export interface ActionLoginPayload {
   userName: string,
+  wechaty: {
+    id: string,
+  }
 }

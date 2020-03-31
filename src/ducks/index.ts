@@ -1,22 +1,16 @@
 import { combineReducers } from 'redux'
 
 import logonoff, {
-  login,
-  logout,
-  scan,
-}         from './logonoff'
+  logonoffActions,
+}                   from './logonoff'
 
 import counter, {
-  mo,
-  mt,
-}             from './counter'
+  counterActions,
+}                   from './counter'
 
 export {
-  login,
-  logout,
-  scan,
-  mo,
-  mt,
+  logonoffActions,
+  counterActions,
 }
 
 export default combineReducers({

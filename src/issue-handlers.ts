@@ -13,6 +13,8 @@ import { getWechaty } from './get-wechaty'
 
 import { Chatops } from './chatops'
 
+import request from 'request'
+
 import {
   managedRepoConfig,
   log,

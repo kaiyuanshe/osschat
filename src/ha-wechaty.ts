@@ -108,6 +108,9 @@ export class HAWechaty {
       if (wechatyPuppetList.includes('WECHATY_PUPPET_PADPLUS')
           && process.env.WECHATY_PUPPET_PADPLUS_TOKEN
       ) {
+        // https://github.com/wechaty/wechaty-puppet-padplus#how-to-emit-the-message-that-you-sent
+        process.env.PADPLUS_REPLAY_MESSAGE = 'true'
+
         this.wechatyList.push(
           new Wechaty({
             ...this.options,

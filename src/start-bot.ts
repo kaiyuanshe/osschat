@@ -1,5 +1,4 @@
 import {
-  Wechaty,
   Contact,
 }                   from 'wechaty'
 
@@ -12,11 +11,12 @@ import {
 import {
   Wtmp,
 }               from './wtmp'
+import { HAWechaty } from './ha-wechaty'
 
-export async function startBot (wechaty: Wechaty): Promise<void> {
-  log.verbose('startBot', 'startBot(%s)', wechaty)
+export async function startBot (haWechaty: HAWechaty): Promise<void> {
+  log.verbose('startBot', 'startBot(%s)', haWechaty)
 
-  wechaty
+  haWechaty
     .on('scan',         './handlers/on-scan')
     .on('error',        './handlers/on-error')
     .on('friendship',   './handlers/on-friendship')
@@ -33,14 +33,14 @@ export async function startBot (wechaty: Wechaty): Promise<void> {
   }
   const ONE_HOUR = 60 * 60 * 1000
   setInterval(heartbeat('💖'), ONE_HOUR)
-  wechaty.on('login', heartbeat(`🙋 (${wechaty.name()})`))
-  wechaty.on('ready', heartbeat(`💪 (${wechaty.name()})`))
-  wechaty.on('logout', heartbeat(`😪 (${wechaty.name()})`))
+  haWechaty.on('login', heartbeat(`🙋 (${haWechaty.name()})`))
+  haWechaty.on('ready', heartbeat(`💪 (${haWechaty.name()})`))
+  haWechaty.on('logout', heartbeat(`😪 (${haWechaty.name()})`))
 
   const wtmp = Wtmp.instance()
   const loginWtmp = (user: Contact) => wtmp.login(user.name())
   const logoutWtmp = (user: Contact) => wtmp.logout(user.name())
-  wechaty.on('login', loginWtmp)
-  wechaty.on('logout', logoutWtmp)
+  haWechaty.on('login', loginWtmp)
+  haWechaty.on('logout', logoutWtmp)
 
 }

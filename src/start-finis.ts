@@ -1,5 +1,7 @@
 import { finis }    from 'finis'
-import { Wechaty }  from 'wechaty'
+import {
+  Contact,
+}               from 'wechaty'
 
 import {
   Chatops,
@@ -9,6 +11,7 @@ import {
   VERSION,
   debug,
 }             from './config'
+import { HAWechaty } from './ha-wechaty'
 
 const BOT_NAME = 'OSSChat'
 
@@ -16,16 +19,16 @@ const LOGIN_ANNOUNCEMENT  = `Der! I just got online!\n${BOT_NAME} v${VERSION}`
 // const LOGOUT_ANNOUNCEMENT = `Der! I'm going to offline now, see you, bye!\nOSSChat v${VERSION}`
 const EXIT_ANNOUNCEMENT   = `Der! I'm going to exit now, see you, bye!\n${BOT_NAME} v${VERSION}`
 
-let bot: undefined | Wechaty
+let bot: undefined | HAWechaty
 
-export async function startFinis (wechaty: Wechaty): Promise<void> {
+export async function startFinis (haWechaty: HAWechaty): Promise<void> {
   if (bot) {
     throw new Error('startFinis should only init once')
   }
-  bot = wechaty
+  bot = haWechaty
 
-  bot.on('login',   _ => Chatops.instance().say(LOGIN_ANNOUNCEMENT))
-  bot.on('logout',  user => log.info('RestartReporter', 'startFinis() bot %s logout', user))
+  bot.on('login',   async function () { await Chatops.instance().say(LOGIN_ANNOUNCEMENT) })
+  bot.on('logout',  function (user: Contact) { log.info('RestartReporter', 'startFinis() bot %s logout', user) })
 }
 
 /**

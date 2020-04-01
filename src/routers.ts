@@ -149,7 +149,7 @@ async function rootHtml (
   if (info.qrcode) {
 
     html = [
-      `<h1>OSSChat v${VERSION} via ${escape(wechaty.puppet.toString())}</h1>`,
+      `<h1>OSSChat v${VERSION} via ${escapeHtml(wechaty.puppet.toString())}</h1>`,
       'Scan QR Code: <br />',
       info.qrcode + '<br />',
       '<a href="http://goqr.me/" target="_blank">http://goqr.me/</a><br />',
@@ -180,14 +180,26 @@ async function rootHtml (
     roomHtml = roomHtml + `</ol>`
 
     html = [
-      `<p> OSSChat v${VERSION} User ${info.userName} logined via ${escape(wechaty.puppet.toString())}. </p>`,
+      `<p> OSSChat v${VERSION} User ${info.userName} logined via ${escapeHtml(wechaty.puppet.toString())}. </p>`,
       roomHtml,
     ].join('')
   } else {
 
-    html = `OSSChat v${VERSION} via ${escape(wechaty.puppet.toString())} Hello, come back later please.`
+    html = `OSSChat v${VERSION} via ${escapeHtml(wechaty.puppet.toString())} Hello, come back later please.`
 
   }
 
   return html
+}
+
+/**
+ * https://stackoverflow.com/a/6234804/1123955
+ */
+function escapeHtml (unsafe: string) {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/'/g, '&quot;')
+    .replace(/'/g, '&#039;')
 }

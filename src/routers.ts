@@ -149,7 +149,7 @@ async function rootHtml (
   if (info.qrcode) {
 
     html = [
-      `<h1>OSSChat v${VERSION} via ${wechaty.puppet}</h1>`,
+      `<h1>OSSChat v${VERSION} via ${escape(wechaty.puppet.toString())}</h1>`,
       'Scan QR Code: <br />',
       info.qrcode + '<br />',
       '<a href="http://goqr.me/" target="_blank">http://goqr.me/</a><br />',
@@ -180,12 +180,12 @@ async function rootHtml (
     roomHtml = roomHtml + `</ol>`
 
     html = [
-      `<p> OSSChat v${VERSION} User ${info.userName} logined via ${wechaty.puppet}. </p>`,
+      `<p> OSSChat v${VERSION} User ${info.userName} logined via ${escape(wechaty.puppet.toString())}. </p>`,
       roomHtml,
     ].join('')
   } else {
 
-    html = `OSSChat v${VERSION} via ${wechaty.puppet} Hello, come back later please.`
+    html = `OSSChat v${VERSION} via ${escape(wechaty.puppet.toString())} Hello, come back later please.`
 
   }
 

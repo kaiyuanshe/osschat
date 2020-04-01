@@ -13,6 +13,8 @@ import { getHAWechaty } from './get-wechaty'
 
 import { Chatops } from './chatops'
 
+import request from 'request'
+
 import {
   managedRepoConfig,
   log,
@@ -184,6 +186,30 @@ async function manageIssue (
     },
     'issue card for chatops',
   )
+
+  if (owner === 'juzibot' && repository === 'Juzi-WeChat-Work-Tasks') {
+    const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send'
+    const key      = '974db6af-6b24-41aa-8da6-5ed634d24fcf'
+
+    const options = {
+      body: {
+        markdown: {
+          content: `[${urlLinkPayload.title}](${urlLinkPayload.url}) \n ${urlLinkPayload.description}`,
+        },
+        msgtype: 'markdown',
+      },
+      headers: { 'content-type': 'application/json' },
+      json: true,
+      method: 'POST',
+      qs: { key: key },
+      url: wxBotUrl,
+    }
+
+    request(options, function (error) {
+      if (error) throw new Error(error)
+    })
+
+  }
 
   const roomList = await getRoomList(owner, repository)
   if (roomList.length <= 0) {

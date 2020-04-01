@@ -189,7 +189,7 @@ async function manageIssue (
 
   if (owner === 'juzibot' && repository === 'Juzi-WeChat-Work-Tasks') {
     const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send'
-    const key      = '974db6af-6b24-41aa-8da6-5ed634d24fcf'
+    const key      = process.env.JUZI_WECHAT_WORK_TASKS_BOT_KEY
 
     const options = {
       body: {

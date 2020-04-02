@@ -102,6 +102,9 @@ export class HAWechaty {
           new Wechaty({
             ...this.options,
             puppet: 'wechaty-puppet-hostie',
+            puppetOptions: {
+              token: process.env.HA_WECHATY_PUPPET_HOSTIE_TOKEN,
+            },
           }),
         )
       }
@@ -116,6 +119,9 @@ export class HAWechaty {
           new Wechaty({
             ...this.options,
             puppet: 'wechaty-puppet-padplus',
+            puppetOptions: {
+              token: process.env.HA_WECHATY_PUPPET_PADPLUS_TOKEN,
+            },
           }),
         )
       }
@@ -127,6 +133,9 @@ export class HAWechaty {
           new Wechaty({
             ...this.options,
             puppet: 'wechaty-puppet-mock',
+            puppetOptions: {
+              token: process.env.HA_WECHATY_PUPPET_MOCK_TOKEN,
+            },
           }),
         )
       }

@@ -71,9 +71,9 @@ export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = asy
   const avatarUrl = context.payload.comment.user.avatar_url
 
   const title = [
-    fullName,
     `#${issueNumber}`,
     issueTitle.slice(0, Math.max(issueTitle.length, 30)),
+    fullName,
   ].join(' ')
   const url = htmlUrl
   const description = commentBody.slice(0, Math.max(commentBody.length, 70))

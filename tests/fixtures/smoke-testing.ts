@@ -4,8 +4,8 @@ import { getHAWechaty } from '../../src/get-wechaty'
 import { startBot }   from '../../src/start-bot'
 import { startFinis } from '../../src/start-finis'
 
-process.env.WECHATY_PUPPET = 'wechaty-puppet-mock'
-process.env.WECHATY_PUPPET_MOCK_TOKEN = 'mock-token'
+process.env.HA_WECHATY_PUPPET = 'wechaty-puppet-mock'
+process.env.HA_WECHATY_PUPPET_MOCK_TOKEN = 'mock-token'
 
 async function main () {
   const haBot = getHAWechaty()

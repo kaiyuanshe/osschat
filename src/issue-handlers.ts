@@ -35,9 +35,9 @@ export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (conte
   const avatarUrl = context.payload.repository.owner.avatar_url
 
   const title = [
-    fullName,
     `#${issueNumber}`,
     issueTitle.slice(0, Math.max(issueTitle.length, 30)),
+    fullName,
   ].join(' ')
   const url = htmlUrl
   const description = issueBody.slice(0, Math.max(issueBody.length, 70))

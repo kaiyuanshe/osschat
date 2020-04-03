@@ -1,6 +1,7 @@
 import {
   UrlLink,
   Message,
+  Room,
 }             from 'wechaty'
 
 import { DelayQueueExecutor } from 'rx-queue'
@@ -44,7 +45,9 @@ export class Chatops {
   }
 
   public async heartbeat (text: string): Promise<void> {
-    return this.roomMessage(HEARTBEAT_ROOM_ID, text)
+    return this.roomMessage(HEARTBEAT_ROOM_ID, text, {
+      parallel: true,
+    })
   }
 
   public async say (textOrMessage: string | Message | UrlLink) {
@@ -58,6 +61,11 @@ export class Chatops {
   private async roomMessage (
     roomId: string,
     info:   string | Message | UrlLink,
+    options: {
+      parallel: boolean,
+    } = {
+      parallel: false,
+    },
   ): Promise<void> {
     log.info('Chatops', 'roomMessage(%s, %s)', roomId, info)
 
@@ -67,34 +75,58 @@ export class Chatops {
       return
     }
 
-    const room = await this.haBot.Room.load(roomId)
-    if (!room) {
+    let roomList = [] as Room[]
+
+    if (options.parallel) {
+      roomList = this.haBot.wechatyList
+        .filter(wechaty => wechaty.logonoff())
+        .map(wechaty => wechaty.Room.load(roomId))
+    } else {
+      const room = await this.haBot.Room.load(roomId)
+      if (room) {
+        roomList = [room]
+      }
+    }
+
+    if (roomList.length <= 0) {
       log.error('Chatops', 'roomMessage() no bot found in room %s', roomId)
       return
     }
 
     if (typeof info === 'string') {
-      await room.say(info)
+      await Promise.all(
+        roomList.map(room => room.say(info)),
+      )
     } else if (info instanceof Message) {
       switch (info.type()) {
         case Message.Type.Text:
-          await room.say(`${info}`)
+          await Promise.all(
+            roomList.map(room => room.say(`${info}`)),
+          )
           break
         case Message.Type.Image:
           const image = await info.toFileBox()
-          await room.say(image)
+          await Promise.all(
+            roomList.map(room => room.say(image))
+          )
           break
         case Message.Type.Url:
           const urlLink = await info.toUrlLink()
-          await room.say(urlLink)
+          await Promise.all(
+            roomList.map(room => room.say(urlLink))
+          )
           break
         default:
           const typeName = Message.Type[info.type()]
-          await room.say(`message type: ${typeName}`)
+          await Promise.all(
+            roomList.map(room => room.say(`message type: ${typeName}`))
+          )
           break
       }
     } else if (info instanceof UrlLink) {
-      await room.say(info)
+      await Promise.all(
+        roomList.map(room => room.say(info))
+      )
     }
 
   }

@@ -1,14 +1,16 @@
-import reducer from './reducers'
+import logonoffReducer from './reducers'
+import logonoffEpic from './epics'
 
 import * as logonoffSelectors from './selectors'
-// export { default as duckOperations } from './operations'
 import * as logonoffTypes from './types'
 import * as logonoffActions from './actions'
 
 export {
   logonoffActions,
+  logonoffEpic,
+  logonoffReducer,
   logonoffSelectors,
   logonoffTypes,
 }
 
-export default reducer
+export default logonoffReducer

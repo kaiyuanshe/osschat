@@ -42,7 +42,7 @@
     "request": "^2.88.2",
     "redux": "^4.0.5",
     "smee-client": "^1.1.0",
-    "wechaty": "^0.37.8",
+    "wechaty": "^0.37.14",
     "wechaty-puppet-padplus": "^0.5.27"
   },
   "devDependencies": {

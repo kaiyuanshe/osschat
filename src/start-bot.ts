@@ -1,3 +1,5 @@
+import path from 'path'
+
 import {
   Contact,
   HAWechaty,
@@ -12,20 +14,22 @@ import {
   Wtmp,
 }               from './wtmp'
 
+const absPath = (relatedPath: string) => path.join(__dirname, relatedPath)
+
 export async function startBot (haWechaty: HAWechaty): Promise<void> {
   log.verbose('startBot', 'startBot(%s)', haWechaty)
 
   haWechaty
-    .on('scan',         './handlers/on-scan')
-    .on('error',        './handlers/on-error')
-    .on('friendship',   './handlers/on-friendship')
-    .on('logout',       './handlers/on-logout')
-    .on('login',        './handlers/on-login')
-    .on('message',      './handlers/on-message')
-    .on('room-topic',   './handlers/on-room-topic')
-    .on('room-invite',  './handlers/on-room-invite')
-    .on('room-join',    './handlers/on-room-join')
-    .on('room-leave',   './handlers/on-room-leave')
+    .on('scan',         absPath('./handlers/on-scan'))
+    .on('error',        absPath('./handlers/on-error'))
+    .on('friendship',   absPath('./handlers/on-friendship'))
+    .on('logout',       absPath('./handlers/on-logout'))
+    .on('login',        absPath('./handlers/on-login'))
+    .on('message',      absPath('./handlers/on-message'))
+    .on('room-topic',   absPath('./handlers/on-room-topic'))
+    .on('room-invite',  absPath('./handlers/on-room-invite'))
+    .on('room-join',    absPath('./handlers/on-room-join'))
+    .on('room-leave',   absPath('./handlers/on-room-leave'))
 
   const heartbeat = (emoji: string) => {
     return () => Chatops.instance().heartbeat(emoji)

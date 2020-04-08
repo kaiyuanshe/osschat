@@ -46,8 +46,8 @@
     "request": "^2.88.2",
     "smee-client": "^1.1.0",
     "state-switch": "^0.9.5",
-    "wechaty": "^0.38.2",
-    "wechaty-puppet-padplus": "^0.7.6"
+    "wechaty": "^0.38.3",
+    "wechaty-puppet-padplus": "^0.6.1"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",

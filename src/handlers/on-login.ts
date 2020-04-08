@@ -7,8 +7,8 @@ import {
 import { debug } from '../config'
 
 import {
-  store,
-  logonoffActions,
+  duckStore,
+  wechatyActions,
 }                     from '../ducks/'
 
 export default async function onLogin (
@@ -18,8 +18,8 @@ export default async function onLogin (
   const msg = `${user.name()} Heroku Wechaty Getting Started v${VERSION} logined`
   log.info('startBot', 'onLogin(%s) %s', user, msg)
 
-  store.dispatch(
-    logonoffActions.login(
+  duckStore.dispatch(
+    wechatyActions.login(
       this.id,
       user.name(),
     )

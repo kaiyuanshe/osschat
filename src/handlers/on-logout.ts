@@ -5,8 +5,8 @@ import {
 }             from 'wechaty'
 
 import {
-  store,
-  logonoffActions,
+  duckStore,
+  wechatyActions,
 }                     from '../ducks/'
 
 export default async function onLogout (
@@ -15,8 +15,8 @@ export default async function onLogout (
 ): Promise<void> {
   log.info('on-logout', `onLogout(%s)`, user)
 
-  store.dispatch(
-    logonoffActions.logout(
+  duckStore.dispatch(
+    wechatyActions.logout(
       this.id,
     )
   )

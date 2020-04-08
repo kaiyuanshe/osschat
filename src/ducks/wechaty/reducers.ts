@@ -6,7 +6,9 @@ import {
 import * as types from './types'
 import * as actions from './actions'
 
-const initialState: types.State = {}
+const initialState: types.State = {
+  wechaty: {},
+}
 
 const scanReducer = (state: types.State, action: Action) => {
   if (actions.scan.match(action)) {
@@ -42,6 +44,34 @@ const logoutReducer = (state: types.State, action: Action) => {
   return state
 }
 
+const haDingTimeoutReducer = (state: types.State, action: Action) => {
+  if (actions.haDingTimeout.match(action)) {
+    const newEntry = {
+      ...state.wechaty[action.payload],
+      available: false,
+    }
+    return {
+      ...state,
+      [action.payload]: newEntry,
+    }
+  }
+  return state
+}
+
+const haDingSuccessReducer = (state: types.State, action: Action) => {
+  if (actions.haDingSuccess.match(action)) {
+    const newEntry = {
+      ...state.wechaty[action.payload],
+      available: true,
+    }
+    return {
+      ...state,
+      [action.payload]: newEntry,
+    }
+  }
+  return state
+}
+
 /**
  * https://redux-toolkit.js.org/usage/usage-with-typescript#building-type-safe-reducer-argument-objects
  */
@@ -65,6 +95,11 @@ const logonoffReducer = createReducer(
     [types.SCAN]   : scanReducer,
     [types.LOGIN]  : loginReducer,
     [types.LOGOUT] : logoutReducer,
+
+    // [types.HA_DING]: haDingReducer,
+    [types.HA_DING_SUCCESS]: haDingSuccessReducer,
+    [types.HA_DING_TIMEOUT]: haDingTimeoutReducer,
+    // [types.HA_DONG]: haDongReducer,
   },
 )
 

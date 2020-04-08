@@ -1,6 +1,6 @@
 {
   "name": "osschat",
-  "version": "0.3.16",
+  "version": "0.3.17",
   "description": "Apache OSSChat",
   "main": "index.js",
   "engines": {
@@ -39,10 +39,12 @@
     "node-cache": "^5.1.0",
     "probot": "^9.8.1",
     "qrcode-terminal": "^0.12.0",
-    "request": "^2.88.2",
     "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "request": "^2.88.2",
     "smee-client": "^1.1.0",
-    "wechaty": "^0.37.14",
+    "state-switch": "^0.9.5",
+    "wechaty": "^0.38.2",
     "wechaty-puppet-padplus": "^0.5.27"
   },
   "devDependencies": {

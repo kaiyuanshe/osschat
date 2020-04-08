@@ -2,22 +2,55 @@ import {
   Wechaty,
   WechatyOptions,
   Room,
+  Message,
 }                   from 'wechaty'
+
+import { WechatyEventName } from 'wechaty/dist/src/wechaty'
 
 import { StateSwitch } from 'state-switch'
 
 import flattenArray from 'flatten-array'
 
 import {
+  from,
+  fromEvent,
+}               from 'rxjs'
+import {
+  map,
+  mergeAll,
+}               from 'rxjs/operators'
+
+import {
   log,
 }             from './config'
-import { WechatyEventName } from 'wechaty/dist/src/wechaty'
+
+import {
+  EnhancedStore,
+
+  duckStore,
+  wechatyActions,
+}                     from './ducks/'
+
+/**
+ * Dispatch Message Actions
+ */
+const toMessage$ = (wechaty: Wechaty) => fromEvent<Message>(wechaty, 'message')
+
+const dispatchMessage = (
+  wechatyList: Wechaty[],
+  store: EnhancedStore,
+) => from(wechatyList.map(toMessage$))
+  .pipe(
+    mergeAll(),
+    map(message => wechatyActions.message(message))
+  ).subscribe(action => store.dispatch(action))
 
 export class HAWechaty {
 
   public state: StateSwitch
 
   public wechatyList: Wechaty[]
+  protected disposeCallbackList: (() => void) []
 
   public Room = {
     findAll : this.roomFindAll.bind(this),
@@ -79,6 +112,7 @@ export class HAWechaty {
     log.verbose('HAWechaty', 'constructor("%s")', JSON.stringify(options))
     this.wechatyList = []
     this.state = new StateSwitch('HAWechaty')
+    this.disposeCallbackList = []
   }
 
   public async start () {
@@ -152,6 +186,12 @@ export class HAWechaty {
         )
       )
 
+      /**
+       * Dispatch Redux Actions for Messages from all Wechaty Instances
+       */
+      const sub = dispatchMessage(this.wechatyList, duckStore)
+      this.disposeCallbackList.push(() => sub.unsubscribe())
+
       this.state.on(true)
 
     } catch (e) {
@@ -172,6 +212,11 @@ export class HAWechaty {
           wechaty => wechaty.stop()
         )
       )
+
+      while (this.disposeCallbackList.length > 0) {
+        this.disposeCallbackList.pop()!()
+      }
+
     } catch (e) {
       log.warn('HAWechaty', 'stop() rejection: %s', e)
       throw e

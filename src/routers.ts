@@ -18,8 +18,8 @@ import { Chatops } from './chatops'
 import { getHAWechaty } from './get-wechaty'
 
 import {
-  store,
-  logonoffSelectors,
+  duckStore,
+  wechatySelectors,
   counterSelectors,
 }                     from './ducks/'
 
@@ -91,9 +91,8 @@ async function rootHandler (
 ) {
   let html = ''
   for (const wechaty of haBot.wechatyList) {
-
-    const info = logonoffSelectors.status(
-      store.getState().logonoff,
+    const info = wechatySelectors.status(
+      duckStore.getState().wechaty,
       wechaty.id,
     )
 
@@ -113,8 +112,8 @@ async function rootHandler (
   <body>
     `
 
-  const mt = counterSelectors.mt(store.getState().counter)
-  const mo = counterSelectors.mo(store.getState().counter)
+  const mt = counterSelectors.mt(duckStore.getState().counter)
+  const mo = counterSelectors.mo(duckStore.getState().counter)
 
   const htmlCounter = `
   <hr />
@@ -141,7 +140,7 @@ async function rootHandler (
 
 async function rootHtml (
   wechaty: Wechaty,
-  info: ReturnType<typeof logonoffSelectors.status>,
+  info: ReturnType<typeof wechatySelectors.status>,
 ) {
 
   let html

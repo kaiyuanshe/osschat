@@ -13,7 +13,7 @@ import { VoteManager } from '../managers/vote-manager'
 import { Chatops } from '../chatops'
 
 import {
-  store,
+  duckStore,
   counterActions,
 }                     from '../ducks/'
 
@@ -25,9 +25,9 @@ export default async function onMessage (
 ): Promise<void> {
 
   if (message.self()) {
-    store.dispatch(counterActions.mo())
+    duckStore.dispatch(counterActions.mo())
   } else {
-    store.dispatch(counterActions.mt())
+    duckStore.dispatch(counterActions.mt())
   }
 
   const text    = message.text()

@@ -8,38 +8,104 @@
  *    https://redux-toolkit.js.org/usage/usage-with-typescript
  *
  */
-import { combineReducers }  from 'redux'
-import { configureStore }   from '@reduxjs/toolkit'
 
-import logonoff, {
-  logonoffActions,
-  logonoffSelectors,
-}                     from './logonoff'
+/**
+ * Import all Redux from RTK
+ */
+import {
+  combineReducers,
+  configureStore,
+  // Action,
+  EnhancedStore,
+}                           from '@reduxjs/toolkit'
+import {
+  // combineEpics,
+  createEpicMiddleware,
+  // ActionsObservable,
+  // StateObservable,
+}                         from 'redux-observable'
+
+// import { BehaviorSubject } from 'rxjs'
+// import {
+//   mergeMap,
+// }                         from 'rxjs/operators'
+
+import wechaty, {
+  wechatyActions,
+  wechatySelectors,
+  // wechatyEpic,
+}                     from './wechaty'
 import counter, {
   counterActions,
   counterSelectors,
 }                     from './counter'
 
+/**
+ * Reducer
+ */
+const reducer = combineReducers({
+  counter,
+  wechaty,
+})
+export type RootState = ReturnType<typeof reducer>
+
+/**
+ * Store
+ */
+const epicMiddleware = createEpicMiddleware()
+
+export const duckStore = configureStore({
+  middleware: [
+    epicMiddleware,
+  ],
+  reducer,
+})
+export type AppDispatch = typeof duckStore.dispatch
+
+/**
+ * Epic
+ *
+ *  Adding New Epics Asynchronously/Lazily
+ *    https://redux-observable.js.org/docs/recipes/AddingNewEpicsAsynchronously.html
+ */
+// export const epic$ = new BehaviorSubject(combineEpics(
+//   wechatyEpic,
+// ))
+
+// Huan(20200404) FIXME: any -> RootState
+// const rootEpic = (
+//   action$: ActionsObservable<Action>,
+//   state$: StateObservable<any>,
+//   dependencies: Object,
+// ) => epic$.pipe(
+//   mergeMap(epic =>
+//     epic(action$, state$, dependencies)
+//   )
+// )
+
+// epicMiddleware.run(rootEpic)
+
+// // sometime later...add another Epic, keeping the state of the old ones...
+// epic$.next(wechatyEpic)
+// // and again later add another...
+// epic$.next(wechatyEpic)
+
+/**
+ * Others
+ */
+duckStore.subscribe(() => {
+  console.info('state:', duckStore.getState())
+})
+
+export * from 'redux-observable'
+export * from 'redux'
+
 export {
-  logonoffActions,
-  logonoffSelectors,
+  EnhancedStore,
+
+  wechatyActions,
+  wechatySelectors,
 
   counterActions,
   counterSelectors,
 }
-
-const reducer = combineReducers({
-  counter,
-  logonoff,
-})
-
-export const store = configureStore({
-  reducer,
-})
-
-store.subscribe(() => {
-  console.info('state:', store.getState())
-})
-
-export type RootState = ReturnType<typeof reducer>
-export type AppDispatch = typeof store.dispatch

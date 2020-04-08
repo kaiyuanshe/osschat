@@ -1,7 +1,7 @@
 import {
   Contact,
-}                   from 'wechaty'
-
+  HAWechaty,
+}               from 'ha-wechaty'
 import {
   log,
 }               from './config'
@@ -11,7 +11,6 @@ import {
 import {
   Wtmp,
 }               from './wtmp'
-import { HAWechaty } from './ha-wechaty'
 
 export async function startBot (haWechaty: HAWechaty): Promise<void> {
   log.verbose('startBot', 'startBot(%s)', haWechaty)
@@ -33,9 +32,9 @@ export async function startBot (haWechaty: HAWechaty): Promise<void> {
   }
   const ONE_HOUR = 60 * 60 * 1000
   setInterval(heartbeat('💖'), ONE_HOUR)
-  haWechaty.on('login', heartbeat(`🙋 (${haWechaty.name()})`))
+  haWechaty.on('login', heartbeat(`🌞 (${haWechaty.name()})`))
   haWechaty.on('ready', heartbeat(`💪 (${haWechaty.name()})`))
-  haWechaty.on('logout', heartbeat(`😪 (${haWechaty.name()})`))
+  haWechaty.on('logout', heartbeat(`🌃 (${haWechaty.name()})`))
 
   const wtmp = Wtmp.instance()
   const loginWtmp = (user: Contact) => wtmp.login(user.name())

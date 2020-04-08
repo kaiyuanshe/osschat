@@ -2,6 +2,7 @@ import { finis }    from 'finis'
 import {
   Contact,
 }               from 'wechaty'
+import { HAWechaty } from 'ha-wechaty'
 
 import {
   Chatops,
@@ -11,7 +12,6 @@ import {
   VERSION,
   debug,
 }             from './config'
-import { HAWechaty } from './ha-wechaty'
 
 const BOT_NAME = 'OSSChat'
 

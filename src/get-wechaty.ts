@@ -1,3 +1,5 @@
+import { HAWechaty } from 'ha-wechaty'
+
 import {
   log,
 }               from './config'
@@ -5,8 +7,6 @@ import {
   getMemory,
 }               from './get-memory'
 import { Chatops } from './chatops'
-
-import { HAWechaty } from './ha-wechaty'
 
 // let wechaty: Wechaty
 let haWechaty: HAWechaty

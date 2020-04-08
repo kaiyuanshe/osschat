@@ -5,6 +5,7 @@ import {
 }             from 'wechaty'
 
 import { DelayQueueExecutor } from 'rx-queue'
+import { HAWechaty } from 'ha-wechaty'
 
 import {
   log,
@@ -12,7 +13,6 @@ import {
   DEV_ROOM_ID,
   HEARTBEAT_ROOM_ID,
 }                     from './config'
-import { HAWechaty } from './ha-wechaty'
 
 export class Chatops {
 

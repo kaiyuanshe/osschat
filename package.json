@@ -12,6 +12,7 @@
     "build": "tsc",
     "lint": "npm run lint:es && npm run lint:ts",
     "lint:ts": "tsc --noEmit",
+    "postinstall": "sed -i 4d node_modules/@octokit/types/src/generated/Endpoints.ts",
     "start": "npm run build && npx probot run ./dist/bin/main.js",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "blue-tape -r ts-node/register \"src/**/*.spec.ts\" \"src/*.spec.ts\" \"tests/*.spec.ts\" \"tests/**/*.spec.ts\"",

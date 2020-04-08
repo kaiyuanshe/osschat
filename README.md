@@ -1,9 +1,11 @@
 # OSSChat
 
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/wechaty/wechaty)
-[![Build Status](https://travis-ci.com/kaiyuanshe/OSSChat.svg?branch=master)](https://travis-ci.com/kaiyuanshe/OSSChat)
+[![Node.js CI](https://github.com/kaiyuanshe/osschat/workflows/Node.js%20CI/badge.svg)](https://github.com/kaiyuanshe/osschat/actions?query=workflow%3A%22Node.js+CI%22)
 
 ![OSS Chat](docs/images/osschat-640x320.png)
+
+Apache OSS.Chat Project.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

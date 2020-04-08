@@ -28,7 +28,7 @@ import {
   EnhancedStore,
 
   duckStore,
-  logonoffActions,
+  wechatyActions,
 }                     from './ducks/'
 
 /**
@@ -42,7 +42,7 @@ const dispatchMessage = (
 ) => from(wechatyList.map(toMessage$))
   .pipe(
     mergeAll(),
-    map(message => logonoffActions.message(message))
+    map(message => wechatyActions.message(message))
   ).subscribe(action => store.dispatch(action))
 
 export class HAWechaty {

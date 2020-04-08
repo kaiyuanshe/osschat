@@ -6,7 +6,9 @@ import {
 import * as types from './types'
 import * as actions from './actions'
 
-const initialState: types.State = {}
+const initialState: types.State = {
+  wechaty: {},
+}
 
 const scanReducer = (state: types.State, action: Action) => {
   if (actions.scan.match(action)) {
@@ -45,7 +47,7 @@ const logoutReducer = (state: types.State, action: Action) => {
 const haDingTimeoutReducer = (state: types.State, action: Action) => {
   if (actions.haDingTimeout.match(action)) {
     const newEntry = {
-      ...state[action.payload],
+      ...state.wechaty[action.payload],
       available: false,
     }
     return {
@@ -59,7 +61,7 @@ const haDingTimeoutReducer = (state: types.State, action: Action) => {
 const haDingSuccessReducer = (state: types.State, action: Action) => {
   if (actions.haDingSuccess.match(action)) {
     const newEntry = {
-      ...state[action.payload],
+      ...state.wechaty[action.payload],
       available: true,
     }
     return {

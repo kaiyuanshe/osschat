@@ -63,6 +63,14 @@ const prepareHaDong = (
   payload: string,
 ) => ({ payload })
 
+const prepareSwitchOn = (
+  payload: true | 'pending',
+) => ({ payload })
+
+const prepareSwitchOff = (
+  payload: true | 'pending',
+) => ({ payload })
+
 export const scan   = createAction(types.SCAN, prepareScan)
 export const login  = createAction(types.LOGIN, prepareLogin)
 export const logout = createAction(types.LOGOUT, prepareLogout)
@@ -72,3 +80,6 @@ export const haDing        = createAction(types.HA_DING,          prepareHaDing)
 export const haDingTimeout = createAction(types.HA_DING_TIMEOUT,  prepareHaDingTimeout)
 export const haDingSuccess = createAction(types.HA_DING_SUCCESS,  prepareHaDingSuccess)
 export const haDong        = createAction(types.HA_DONG,          prepareHaDong)
+
+export const switchOn  = createAction(types.SWITCH_ON,  prepareSwitchOn)
+export const switchOff = createAction(types.SWITCH_OFF, prepareSwitchOff)

@@ -5,7 +5,7 @@ export function status (
   wechatyId: string,
 ) {
   if (wechatyId in state) {
-    return state[wechatyId]
+    return state.wechaty[wechatyId]
   }
   return {}
 }
@@ -15,7 +15,7 @@ export function available (
   wechatyId: string,
 ) {
   if (wechatyId in state) {
-    return state[wechatyId].available === true
+    return state.wechaty[wechatyId].available === true
   }
   return false
 }

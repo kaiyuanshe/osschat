@@ -15,26 +15,26 @@
 import {
   combineReducers,
   configureStore,
-  Action,
+  // Action,
   EnhancedStore,
 }                           from '@reduxjs/toolkit'
 import {
-  combineEpics,
+  // combineEpics,
   createEpicMiddleware,
-  ActionsObservable,
-  StateObservable,
+  // ActionsObservable,
+  // StateObservable,
 }                         from 'redux-observable'
 
-import { BehaviorSubject } from 'rxjs'
-import {
-  mergeMap,
-}                         from 'rxjs/operators'
+// import { BehaviorSubject } from 'rxjs'
+// import {
+//   mergeMap,
+// }                         from 'rxjs/operators'
 
-import logonoff, {
-  logonoffActions,
-  logonoffSelectors,
-  logonoffEpic,
-}                     from './logonoff'
+import wechaty, {
+  wechatyActions,
+  wechatySelectors,
+  // wechatyEpic,
+}                     from './wechaty'
 import counter, {
   counterActions,
   counterSelectors,
@@ -45,7 +45,7 @@ import counter, {
  */
 const reducer = combineReducers({
   counter,
-  logonoff,
+  wechaty,
 })
 export type RootState = ReturnType<typeof reducer>
 
@@ -68,27 +68,27 @@ export type AppDispatch = typeof duckStore.dispatch
  *  Adding New Epics Asynchronously/Lazily
  *    https://redux-observable.js.org/docs/recipes/AddingNewEpicsAsynchronously.html
  */
-export const epic$ = new BehaviorSubject(combineEpics(
-  logonoffEpic,
-))
+// export const epic$ = new BehaviorSubject(combineEpics(
+//   wechatyEpic,
+// ))
 
 // Huan(20200404) FIXME: any -> RootState
-const rootEpic = (
-  action$: ActionsObservable<Action>,
-  state$: StateObservable<any>,
-  dependencies: Object,
-) => epic$.pipe(
-  mergeMap(epic =>
-    epic(action$, state$, dependencies)
-  )
-)
+// const rootEpic = (
+//   action$: ActionsObservable<Action>,
+//   state$: StateObservable<any>,
+//   dependencies: Object,
+// ) => epic$.pipe(
+//   mergeMap(epic =>
+//     epic(action$, state$, dependencies)
+//   )
+// )
 
-epicMiddleware.run(rootEpic)
+// epicMiddleware.run(rootEpic)
 
 // // sometime later...add another Epic, keeping the state of the old ones...
-// epic$.next(logonoffEpic)
+// epic$.next(wechatyEpic)
 // // and again later add another...
-// epic$.next(logonoffEpic)
+// epic$.next(wechatyEpic)
 
 /**
  * Others
@@ -103,8 +103,8 @@ export * from 'redux'
 export {
   EnhancedStore,
 
-  logonoffActions,
-  logonoffSelectors,
+  wechatyActions,
+  wechatySelectors,
 
   counterActions,
   counterSelectors,

@@ -18,12 +18,12 @@ import {
   // Action,
   EnhancedStore,
 }                           from '@reduxjs/toolkit'
-import {
-  // combineEpics,
-  createEpicMiddleware,
-  // ActionsObservable,
-  // StateObservable,
-}                         from 'redux-observable'
+// import {
+//   combineEpics,
+//   createEpicMiddleware,
+//   ActionsObservable,
+//   StateObservable,
+// }                         from 'redux-observable'
 
 // import { BehaviorSubject } from 'rxjs'
 // import {
@@ -52,12 +52,12 @@ export type RootState = ReturnType<typeof reducer>
 /**
  * Store
  */
-const epicMiddleware = createEpicMiddleware()
+// const epicMiddleware = createEpicMiddleware()
 
 export const duckStore = configureStore({
-  middleware: [
-    epicMiddleware,
-  ],
+  // middleware: [
+  //   epicMiddleware,
+  // ],
   reducer,
 })
 export type AppDispatch = typeof duckStore.dispatch

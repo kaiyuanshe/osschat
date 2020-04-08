@@ -12,11 +12,9 @@ export const SWITCH_ON  = 'osschat/wechaty/event/SWITCH_ON'
 export const SWITCH_OFF = 'osschat/wechaty/event/SWITCH_OFF'
 
 export interface State {
-  wechaty: {
-    [k: string]: {  // wechaty id
-      qrcode?   : string,
-      userName? : string,
-      available?: boolean
-    }
+  [k: string]: {  // wechaty id
+    qrcode?   : string,
+    userName? : string,
+    available?: boolean
   }
 }

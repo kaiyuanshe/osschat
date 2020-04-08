@@ -3,9 +3,9 @@
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/wechaty/wechaty)
 [![Node.js CI](https://github.com/kaiyuanshe/osschat/workflows/Node.js%20CI/badge.svg)](https://github.com/kaiyuanshe/osschat/actions?query=workflow%3A%22Node.js+CI%22)
 
-![OSS Chat](docs/images/osschat-640x320.png)
+[![OSS Chat](docs/images/osschat-640x320.png)](https://oss.chat)
 
-Apache OSS.Chat Project.
+Apache [OSS.Chat](https://oss.chat) Project.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

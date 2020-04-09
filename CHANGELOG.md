@@ -5,7 +5,7 @@
 
 ### 1 Active Contributors
 
-1. @[huan](https://github.com/huan): [\#96](https://github.com/kaiyuanshe/osschat/pull/96) [\#89](https://github.com/kaiyuanshe/osschat/pull/89) [\#33](https://github.com/kaiyuanshe/osschat/pull/33) [\#27](https://github.com/kaiyuanshe/osschat/pull/27) [\#25](https://github.com/kaiyuanshe/osschat/pull/25) [\#22](https://github.com/kaiyuanshe/osschat/pull/22) [\#21](https://github.com/kaiyuanshe/osschat/pull/21) [\#10](https://github.com/kaiyuanshe/osschat/pull/10) [\#9](https://github.com/kaiyuanshe/osschat/pull/9) [\#8](https://github.com/kaiyuanshe/osschat/pull/8)
+1. @[huan](https://github.com/huan): [\#100](https://github.com/kaiyuanshe/osschat/pull/100) [\#96](https://github.com/kaiyuanshe/osschat/pull/96) [\#89](https://github.com/kaiyuanshe/osschat/pull/89) [\#33](https://github.com/kaiyuanshe/osschat/pull/33) [\#27](https://github.com/kaiyuanshe/osschat/pull/27) [\#25](https://github.com/kaiyuanshe/osschat/pull/25) [\#22](https://github.com/kaiyuanshe/osschat/pull/22) [\#21](https://github.com/kaiyuanshe/osschat/pull/21) [\#10](https://github.com/kaiyuanshe/osschat/pull/10) [\#9](https://github.com/kaiyuanshe/osschat/pull/9) [\#8](https://github.com/kaiyuanshe/osschat/pull/8)
 1. @[lijiarui](https://github.com/lijiarui): [\#91](https://github.com/kaiyuanshe/osschat/pull/91) [\#84](https://github.com/kaiyuanshe/osschat/pull/84) [\#20](https://github.com/kaiyuanshe/osschat/pull/20) [\#17](https://github.com/kaiyuanshe/osschat/pull/17) [\#16](https://github.com/kaiyuanshe/osschat/pull/16) [\#5](https://github.com/kaiyuanshe/osschat/pull/5)
 1. @[dailidong](https://github.com/dailidong): [\#87](https://github.com/kaiyuanshe/osschat/pull/87) [\#86](https://github.com/kaiyuanshe/osschat/pull/86) [\#74](https://github.com/kaiyuanshe/osschat/pull/74) [\#73](https://github.com/kaiyuanshe/osschat/pull/73) [\#72](https://github.com/kaiyuanshe/osschat/pull/72) [\#62](https://github.com/kaiyuanshe/osschat/pull/62)
 1. @[jixuan1989](https://github.com/jixuan1989): [\#93](https://github.com/kaiyuanshe/osschat/pull/93) [\#92](https://github.com/kaiyuanshe/osschat/pull/92) [\#30](https://github.com/kaiyuanshe/osschat/pull/30)
@@ -22,9 +22,9 @@
 
 # Change Log
 
-## [Unreleased](https://github.com/kaiyuanshe/osschat/tree/HEAD)
+## [v0.4](https://github.com/kaiyuanshe/osschat/tree/v0.4) (2020-04-09)
 
-[Full Changelog](https://github.com/kaiyuanshe/osschat/compare/f8da589c26a9b12ed5908a9a98beaa2c043273cb...HEAD)
+[Full Changelog](https://github.com/kaiyuanshe/osschat/compare/f8da589c26a9b12ed5908a9a98beaa2c043273cb...v0.4)
 
 **Implemented enhancements:**
 
@@ -57,6 +57,7 @@
 
 **Merged pull requests:**
 
+- Add Changelog Generator Script [\#100](https://github.com/kaiyuanshe/osschat/pull/100) ([huan](https://github.com/huan))
 - WIP for HA ding/dong with Redux Observable [\#96](https://github.com/kaiyuanshe/osschat/pull/96) ([huan](https://github.com/huan))
 - move repo name to the end of the message title for comments [\#93](https://github.com/kaiyuanshe/osschat/pull/93) ([jixuan1989](https://github.com/jixuan1989))
 - move repo name to the end of the message title [\#92](https://github.com/kaiyuanshe/osschat/pull/92) ([jixuan1989](https://github.com/jixuan1989))

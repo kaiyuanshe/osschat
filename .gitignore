@@ -72,3 +72,4 @@ dist/
 /docs/build/
 /docs/make.*
 *.swp
+*.bak

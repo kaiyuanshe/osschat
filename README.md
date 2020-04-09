@@ -21,23 +21,22 @@ OSSChat will serve users as a cloud service.
 
 TBD
 
-## Preliminary
+## Run OSSChat locally
 
-To compile OSSChat, typescript environment is needed. If you have `npm`, you can run:
+To run OSSChat, Node.js is required.
+
+Install [Node.js](https://nodejs.org) first if you are not.
 
 ```shell
 npm install
+npm run heroku:local
 ```
 
-## Run
+Then visit <http://localhost:5000>
 
-```shell
-./node_modules/.bin/ts-node bin/main.ts
-```
+### Output Messages
 
-### Localhost
-
-You can get the following result, open <http://localhost:8788>, scan qrcode and begin to use the bot!
+After started the bot you should see the following log messages:
 
 ```shell
 16:57:45 INFO Wechaty <wechaty-puppet-puppeteer>(heroku-wechaty) start() v0.29.7 is starting...
@@ -54,14 +53,13 @@ OSSChat v0.0.24)
 
 ### Advance
 
-1. Using docker to get a more stable version
-2. Using an advance puppet to get a more stable version
+1. Using an advance puppet to get a more stable version. Learn more about it from the [Wechaty Puppet Directory](https://github.com/wechaty/wechaty-puppet/wiki/Directory)
 
-## Staging
+## DevOps & CI/CD
 
 We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.
 
-You can visit the staging system at <http://OSSChat.kaiyuanshe.cn/>
+You can visit the online system at <https://oss.chat>
 
 ## How to use
 

@@ -7,6 +7,8 @@
     "node": "10"
   },
   "scripts": {
+    "heroku:env": "heroku config -s -a oss-chat | sed 's/\\\\\\\\/\\\\/g' | tee .env",
+    "heroku:local": "heroku local",
     "clean": "shx rm -fr dist/*",
     "dist": "npm run build",
     "build": "tsc",

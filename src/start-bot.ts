@@ -35,10 +35,10 @@ export async function startBot (haWechaty: HAWechaty): Promise<void> {
     return () => Chatops.instance().heartbeat(emoji)
   }
   const ONE_HOUR = 60 * 60 * 1000
-  setInterval(heartbeat('💖'), ONE_HOUR)
-  haWechaty.on('login', heartbeat(`🌞 (${haWechaty.name()})`))
-  haWechaty.on('ready', heartbeat(`💪 (${haWechaty.name()})`))
-  haWechaty.on('logout', heartbeat(`🌃 (${haWechaty.name()})`))
+  setInterval(heartbeat('[爱心]'), ONE_HOUR)
+  haWechaty.on('login', heartbeat(`[太阳] (${haWechaty.name()})`))
+  haWechaty.on('ready', heartbeat(`[拳头] (${haWechaty.name()})`))
+  haWechaty.on('logout', heartbeat(`[月亮] (${haWechaty.name()})`))
 
   const wtmp = Wtmp.instance()
   const loginWtmp = (user: Contact) => wtmp.login(user.name())

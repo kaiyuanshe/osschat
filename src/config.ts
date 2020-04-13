@@ -66,5 +66,6 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
+  'jesseweb/yxtg' : '19611101639@chatroom',
   ...projectsRepoConfig,
 }

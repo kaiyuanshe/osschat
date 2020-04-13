@@ -58,6 +58,7 @@ export const managedRepoConfig: RepoConfig = {
     '22584955790@chatroom',
   ],
   'dailidong/ossbot': '18039997009@chatroom',
+  'JesseWeb/yxtg':'19611101639@chatroom',
   'kaiyuanshe/osschat'     : [
     '17591588552@chatroom',
     '17384390178@chatroom',

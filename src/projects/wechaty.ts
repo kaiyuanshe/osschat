@@ -35,6 +35,7 @@ export const config: RepoConfig = {
     ...ROOM_ID_LIST_WECHATY_DEVELOPER,
     ROOM_ID_BOT5_CLUB,
   ],
+  'wechaty/wishlist': ROOM_ID_LIST_WECHATY_DEVELOPER,
 }
 
 export default config

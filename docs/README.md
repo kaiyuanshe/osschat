@@ -1,6 +1,16 @@
-# Contributing
+# Guidelines for Contributing
 
-## Contributing Codes 
+## How to contribute
+
+* Use OSSChat in your open source project.
+* Visit the [issue list](https://github.com/kaiyuanshe/osschat/issues) and tell us your comments and suggestions!
+* We welcome requirements and prefer to work with you to achieve them.
+* You can write articles / blog / tutorial to let more people know about osschat.
+* Review [pull requests](https://github.com/kaiyuanshe/osschat/pulls)
+* Contributing Code
+* Contributing Documents
+
+## Contributing Code
 
 ### Preparing the development environment
 

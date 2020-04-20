@@ -16,6 +16,7 @@ OSSChat is for bridging IM apps (e.g., WeChat) and Apache community tools (e.g.,
 OSSChat will serve users as a cloud service.
 
 - YouTube Video: [Introducing OSSChat: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk by [@huan](https://github.com/huan) at [OSSChat Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
+- Read more [documention](https://osschat.readthedocs.io/en/latest/)
 
 ## Using OSSChat as a service
 

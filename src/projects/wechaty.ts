@@ -28,6 +28,7 @@ const ROOM_ID_PYTHON_GO_JAVA_WECHATY = '19367909379@chatroom'
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'chatie/grpc'                      : ROOM_ID_PYTHON_GO_JAVA_WECHATY,
+  'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'wechaty/(python|go|java)-wechaty' : ROOM_ID_PYTHON_GO_JAVA_WECHATY,
   'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'wechaty/bot5.club'                : ROOM_ID_BOT5_CLUB,

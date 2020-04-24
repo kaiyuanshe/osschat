@@ -31,10 +31,13 @@ const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
   '19460512625@chatroom',  // Python/Go/Java Wechaty Meetup
 ]
 
+const ROOM_ID_PREANGEL = '17237607145@chatroom' // ChatOps - PreAngel
+
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'preangel/preangel.com'            : ROOM_ID_PREANGEL,
   'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'wechaty/bot5.club'                : ROOM_ID_LIST_BOT5_CLUB,

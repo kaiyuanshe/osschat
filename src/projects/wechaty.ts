@@ -37,7 +37,7 @@ export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'preangel/preangel.com'            : ROOM_ID_PREANGEL,
+  'preangel/pre-angel.com'           : ROOM_ID_PREANGEL,
   'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'wechaty/bot5.club'                : ROOM_ID_LIST_BOT5_CLUB,

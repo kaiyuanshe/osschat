@@ -22,19 +22,25 @@ const ROOM_ID_LIST_WECHATY_DEVELOPER = [
   '19487389780@chatroom',   // Wechaty Ignite 3
 ]
 
-const ROOM_ID_BOT5_CLUB              = '18095776930@chatroom'
-const ROOM_ID_PYTHON_GO_JAVA_WECHATY = '19367909379@chatroom'
+const ROOM_ID_LIST_BOT5_CLUB = [
+  '18095776930@chatroom',   // Bot Friday Open Forum - BFOF
+  '17301175542@chatroom',   // Bot Friday Open Forum - 2019
+]
+const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
+  '19367909379@chatroom',  // Python/Go/Java Wechaty
+  '19460512625@chatroom',  // Python/Go/Java Wechaty Meetup
+]
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'chatie/grpc'                      : ROOM_ID_PYTHON_GO_JAVA_WECHATY,
+  'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'wechaty/(python|go|java)-wechaty' : ROOM_ID_PYTHON_GO_JAVA_WECHATY,
+  'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'wechaty/bot5.club'                : ROOM_ID_BOT5_CLUB,
+  'wechaty/bot5.club'                : ROOM_ID_LIST_BOT5_CLUB,
   'wechaty/friday'                   : [
     ...ROOM_ID_LIST_WECHATY_DEVELOPER,
-    ROOM_ID_BOT5_CLUB,
+    ...ROOM_ID_LIST_BOT5_CLUB,
   ],
   'wechaty/wishlist': ROOM_ID_LIST_WECHATY_DEVELOPER,
 }

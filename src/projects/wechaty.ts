@@ -32,11 +32,13 @@ const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
 ]
 
 const ROOM_ID_PREANGEL = '17237607145@chatroom' // ChatOps - PreAngel
+const ROOM_ID_CHATBOT_0_1 = '22598372108@chatroom' // 博文视点《Chatbot从0到1》读者群
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
   'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'lijiarui/chatbot-zero-to-one'     : ROOM_ID_CHATBOT_0_1,
   'preangel/pre-angel.com'           : ROOM_ID_PREANGEL,
   'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
   'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,

@@ -17,9 +17,6 @@ const ROOM_ID_LIST_WECHATY_DEVELOPER = [
   '22396239792@chatroom',   // Wechaty Developers' Home 4
   '19112581505@chatroom',   // Wechaty Developers' Home 5
   '24113855649@chatroom',   // Wechaty Developers' Home 6
-  /* ******************** */
-  '17559195108@chatroom',   // Wechaty Ignite 1
-  '19487389780@chatroom',   // Wechaty Ignite 3
 ]
 
 const ROOM_ID_LIST_BOT5_CLUB = [

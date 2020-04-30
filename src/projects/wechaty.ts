@@ -25,7 +25,6 @@ const ROOM_ID_LIST_BOT5_CLUB = [
 ]
 const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
   '19367909379@chatroom',  // Python/Go/Java Wechaty
-  '19460512625@chatroom',  // Python/Go/Java Wechaty Meetup
 ]
 
 const ROOM_ID_PREANGEL = '17237607145@chatroom' // ChatOps - PreAngel

@@ -6,7 +6,9 @@ import readPkgUp from 'read-pkg-up'
 
 import projectsRepoConfig from './projects/'
 
-require('dotenv').config()
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export {
   log,

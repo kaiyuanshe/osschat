@@ -6,6 +6,8 @@ import readPkgUp from 'read-pkg-up'
 
 import projectsRepoConfig from './projects/'
 
+require('dotenv').config()
+
 export {
   log,
 }               from 'brolog'

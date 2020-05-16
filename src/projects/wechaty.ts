@@ -27,19 +27,21 @@ const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
   '19367909379@chatroom',  // Python/Go/Java Wechaty
 ]
 
-const ROOM_ID_PREANGEL = '17237607145@chatroom' // ChatOps - PreAngel
-const ROOM_ID_CHATBOT_0_1 = '22598372108@chatroom' // 博文视点《Chatbot从0到1》读者群
+const ROOM_ID_PREANGEL      = '17237607145@chatroom'  // ChatOps - PreAngel
+const ROOM_ID_CHATBOT_0_1   = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
+const ROOM_ID_JAVASCRIPT_ML = '4383052528@chatroom'   // Machine Learning in JavaScript
 
 export const config: RepoConfig = {
-  'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'lijiarui/chatbot-zero-to-one'     : ROOM_ID_CHATBOT_0_1,
-  'preangel/pre-angel.com'           : ROOM_ID_PREANGEL,
-  'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
-  'wechaty/bot5.club'                : ROOM_ID_LIST_BOT5_CLUB,
-  'wechaty/friday'                   : [
+  'chatie/(blog|*wechaty*)'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'chatie/grpc'                         : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
+  'huan/tensorflow-handbook-javascript' : ROOM_ID_JAVASCRIPT_ML,
+  'juzibot/donut-tester'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'lijiarui/chatbot-zero-to-one'        : ROOM_ID_CHATBOT_0_1,
+  'preangel/pre-angel.com'              : ROOM_ID_PREANGEL,
+  'wechaty/(python|go|java)-wechaty'    : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
+  'wechaty/*wechaty*'                   : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'wechaty/bot5.club'                   : ROOM_ID_LIST_BOT5_CLUB,
+  'wechaty/friday'                      : [
     ...ROOM_ID_LIST_WECHATY_DEVELOPER,
     ...ROOM_ID_LIST_BOT5_CLUB,
   ],

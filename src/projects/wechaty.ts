@@ -8,7 +8,7 @@ import {
   RepoConfig,
 }                 from '../config'
 
-const ROOM_ID_LIST_WECHATY_DEVELOPER = [
+const ROOM_ID_LIST_WECHATY_DEVELOPERS = [
   '17275396976@chatroom',   // Wechaty Developers' Home Next
   '18171595067@chatroom',   // Wechaty Developers' Home
   '7582163093@chatroom',    // Wechaty Developers' Home 1
@@ -31,23 +31,25 @@ const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
   '19460512625@chatroom',  // Python/Go/Java Wechaty Meetup
 ]
 
-const ROOM_ID_PREANGEL = '17237607145@chatroom' // ChatOps - PreAngel
-const ROOM_ID_CHATBOT_0_1 = '22598372108@chatroom' // 博文视点《Chatbot从0到1》读者群
+const ROOM_ID_PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel
+const ROOM_ID_CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
+const ROOM_ID_WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
 
 export const config: RepoConfig = {
-  'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPERS,
   'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPERS,
   'lijiarui/chatbot-zero-to-one'     : ROOM_ID_CHATBOT_0_1,
   'preangel/pre-angel.com'           : ROOM_ID_PREANGEL,
   'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPERS,
+  'wechaty/PMC'                      : ROOM_ID_WECHATY_CONTRIBUTORS,
   'wechaty/bot5.club'                : ROOM_ID_LIST_BOT5_CLUB,
   'wechaty/friday'                   : [
-    ...ROOM_ID_LIST_WECHATY_DEVELOPER,
+    ...ROOM_ID_LIST_WECHATY_DEVELOPERS,
     ...ROOM_ID_LIST_BOT5_CLUB,
   ],
-  'wechaty/wishlist': ROOM_ID_LIST_WECHATY_DEVELOPER,
+  'wechaty/wishlist': ROOM_ID_LIST_WECHATY_DEVELOPERS,
 }
 
 export default config

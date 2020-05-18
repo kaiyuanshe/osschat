@@ -2,7 +2,10 @@
 /**
  * VERSION
  */
-import readPkgUp from 'read-pkg-up'
+import readPkgUp  from 'read-pkg-up'
+import dotenv     from 'dotenv'
+
+dotenv.config()
 
 import projectsRepoConfig from './projects/'
 

@@ -17,9 +17,6 @@ const ROOM_ID_LIST_WECHATY_DEVELOPERS = [
   '22396239792@chatroom',   // Wechaty Developers' Home 4
   '19112581505@chatroom',   // Wechaty Developers' Home 5
   '24113855649@chatroom',   // Wechaty Developers' Home 6
-  /* ******************** */
-  '17559195108@chatroom',   // Wechaty Ignite 1
-  '19487389780@chatroom',   // Wechaty Ignite 3
 ]
 
 const ROOM_ID_LIST_BOT5_CLUB = [
@@ -28,7 +25,6 @@ const ROOM_ID_LIST_BOT5_CLUB = [
 ]
 const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
   '19367909379@chatroom',  // Python/Go/Java Wechaty
-  '19460512625@chatroom',  // Python/Go/Java Wechaty Meetup
 ]
 
 const ROOM_ID_PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel

@@ -35,6 +35,7 @@
     "array-flatten": "^3.0.0",
     "brolog": "^1.8.3",
     "commander": "^5.0.0",
+    "dotenv": "^8.2.0",
     "finis": "^0.4.4",
     "flatten-array": "^1.0.0",
     "ha-wechaty": "^0.1.10",

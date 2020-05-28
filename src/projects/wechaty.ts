@@ -30,6 +30,7 @@ const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
 const ROOM_ID_PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel
 const ROOM_ID_CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
 const ROOM_ID_WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
+const ROOM_ID_SUMMER_OF_CODE       =  '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPERS,
@@ -44,6 +45,10 @@ export const config: RepoConfig = {
   'wechaty/friday'                   : [
     ...ROOM_ID_LIST_WECHATY_DEVELOPERS,
     ...ROOM_ID_LIST_BOT5_CLUB,
+  ],
+  'wechaty/summer-of-code': [
+    ...ROOM_ID_LIST_WECHATY_DEVELOPERS,
+    ROOM_ID_SUMMER_OF_CODE,
   ],
   'wechaty/wishlist': ROOM_ID_LIST_WECHATY_DEVELOPERS,
 }

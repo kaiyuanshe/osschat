@@ -33,16 +33,16 @@ const ROOM_ID_WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contribu
 const ROOM_ID_SUMMER_OF_CODE       =  '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
 
 export const config: RepoConfig = {
-  'chatie/(blog|*wechaty*)'          : ROOM_ID_LIST_WECHATY_DEVELOPERS,
-  'chatie/grpc'                      : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'juzibot/donut-tester'             : ROOM_ID_LIST_WECHATY_DEVELOPERS,
-  'lijiarui/chatbot-zero-to-one'     : ROOM_ID_CHATBOT_0_1,
-  'preangel/pre-angel.com'           : ROOM_ID_PREANGEL,
-  'wechaty/(python|go|java)-wechaty' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'wechaty/*wechaty*'                : ROOM_ID_LIST_WECHATY_DEVELOPERS,
-  'wechaty/PMC'                      : ROOM_ID_WECHATY_CONTRIBUTORS,
-  'wechaty/bot5.club'                : ROOM_ID_LIST_BOT5_CLUB,
-  'wechaty/friday'                   : [
+  'chatie/(blog|*wechaty*)'                 : ROOM_ID_LIST_WECHATY_DEVELOPERS,
+  'chatie/grpc'                             : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
+  'juzibot/donut-tester'                    : ROOM_ID_LIST_WECHATY_DEVELOPERS,
+  'lijiarui/chatbot-zero-to-one'            : ROOM_ID_CHATBOT_0_1,
+  'preangel/pre-angel.com'                  : ROOM_ID_PREANGEL,
+  'wechaty/(python|go|java|scala)-wechaty*' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
+  'wechaty/*wechaty*'                       : ROOM_ID_LIST_WECHATY_DEVELOPERS,
+  'wechaty/PMC'                             : ROOM_ID_WECHATY_CONTRIBUTORS,
+  'wechaty/bot5.club'                       : ROOM_ID_LIST_BOT5_CLUB,
+  'wechaty/friday'                          : [
     ...ROOM_ID_LIST_WECHATY_DEVELOPERS,
     ...ROOM_ID_LIST_BOT5_CLUB,
   ],

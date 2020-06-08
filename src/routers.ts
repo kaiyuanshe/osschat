@@ -130,6 +130,14 @@ async function rootHandler (
   </ul>
   `
   const htmlFoot = `
+    <hr />
+    <p>
+      OSSChat GitHub:
+        <a href="https://github.com/kaiyuanshe/osschat" target="_blank">
+          https://github.com/kaiyuanshe/osschat
+        </a>
+    </p>
+
   </body>
   </html>
     `
@@ -195,16 +203,7 @@ async function rootHtml (
 
   }
 
-  const githubLink = `
-    <hr />
-    <p>
-      OSSChat GitHub:
-        <a href="https://github.com/kaiyuanshe/osschat" target="_blank">
-          https://github.com/kaiyuanshe/osschat
-        </a>
-    </p>
-  `
-  return html + githubLink
+  return html
 }
 
 /**

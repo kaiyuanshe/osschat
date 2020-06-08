@@ -57,9 +57,10 @@ export async function setupBot (): Promise<void> {
       room: HEARTBEAT_ROOM_ID,
     }),
     ChatOps({
-      at: true,
-      dm: true,
-      room: CHATOPS_ROOM_ID,
+      at        : true,
+      blacklist : [ 'dong' ],
+      dm        : true,
+      room      : CHATOPS_ROOM_ID,
     }),
   )
 

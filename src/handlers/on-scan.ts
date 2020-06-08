@@ -5,10 +5,10 @@ import {
 
 import { generate } from 'qrcode-terminal'
 
-import {
-  duckStore,
-  wechatyActions,
-}                     from '../ducks/'
+// import {
+//   duckStore,
+//   wechatyActions,
+// }                     from '../ducks/'
 
 export default async function onScan (
   this   : Wechaty,
@@ -20,12 +20,12 @@ export default async function onScan (
     qrcodeValueToUrl(qrcode),
   )
 
-  duckStore.dispatch(
-    wechatyActions.scan(
-      this.id,
-      qrcode,
-    )
-  )
+  // duckStore.dispatch(
+  //   wechatyActions.scan(
+  //     this.id,
+  //     qrcode,
+  //   )
+  // )
 
   generate(qrcode)
 }

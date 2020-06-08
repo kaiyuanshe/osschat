@@ -6,10 +6,10 @@ import {
 }             from 'wechaty'
 import { debug } from '../config'
 
-import {
-  duckStore,
-  wechatyActions,
-}                     from '../ducks/'
+// import {
+//   duckStore,
+//   wechatyActions,
+// }                     from '../ducks/'
 
 export default async function onLogin (
   this : Wechaty,
@@ -18,12 +18,12 @@ export default async function onLogin (
   const msg = `${user.name()} Heroku Wechaty Getting Started v${VERSION} logined`
   log.info('startBot', 'onLogin(%s) %s', user, msg)
 
-  duckStore.dispatch(
-    wechatyActions.login(
-      this.id,
-      user.name(),
-    )
-  )
+  // duckStore.dispatch(
+  //   wechatyActions.login(
+  //     this.id,
+  //     user.name(),
+  //   )
+  // )
 
   if (debug()) {
     await user.say(msg)

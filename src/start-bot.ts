@@ -2,8 +2,14 @@ import path from 'path'
 
 import {
   Contact,
+}               from 'wechaty'
+import {
   HAWechaty,
 }               from 'ha-wechaty'
+// import {
+//   heartbeat,
+// }               from 'wechaty-plugin-contrib'
+
 import {
   log,
 }               from './config'
@@ -45,5 +51,4 @@ export async function startBot (haWechaty: HAWechaty): Promise<void> {
   const logoutWtmp = (user: Contact) => wtmp.logout(user.name())
   haWechaty.on('login', loginWtmp)
   haWechaty.on('logout', logoutWtmp)
-
 }

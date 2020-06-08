@@ -4,10 +4,10 @@ import {
   Wechaty,
 }             from 'wechaty'
 
-import {
-  duckStore,
-  wechatyActions,
-}                     from '../ducks/'
+// import {
+//   duckStore,
+//   wechatyActions,
+// }                     from '../ducks/'
 
 export default async function onLogout (
   this : Wechaty,
@@ -15,10 +15,10 @@ export default async function onLogout (
 ): Promise<void> {
   log.info('on-logout', `onLogout(%s)`, user)
 
-  duckStore.dispatch(
-    wechatyActions.logout(
-      this.id,
-    )
-  )
+  // duckStore.dispatch(
+  //   wechatyActions.logout(
+  //     this.id,
+  //   )
+  // )
 
 }

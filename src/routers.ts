@@ -17,11 +17,11 @@ import {
 import { Chatops } from './chatops'
 import { getHAWechaty } from './get-wechaty'
 
-import {
-  duckStore,
-  wechatySelectors,
-  counterSelectors,
-}                     from './ducks/'
+// import {
+//   duckStore,
+//   wechatySelectors,
+//   counterSelectors,
+// }                     from './ducks/'
 
 const haBot = getHAWechaty()
 
@@ -91,10 +91,11 @@ async function rootHandler (
 ) {
   let html = ''
   for (const wechaty of haBot.wechatyList) {
-    const info = wechatySelectors.status(
-      duckStore.getState().wechaty,
-      wechaty.id,
-    )
+    // const info = wechatySelectors.status(
+    //   duckStore.getState().wechaty,
+    //   wechaty.id,
+    // )
+    const info = 'TODO'
 
     html += [
       '<hr />\n',
@@ -112,8 +113,8 @@ async function rootHandler (
   <body>
     `
 
-  const mt = counterSelectors.mt(duckStore.getState().counter)
-  const mo = counterSelectors.mo(duckStore.getState().counter)
+  const mt = 0 // counterSelectors.mt(duckStore.getState().counter)
+  const mo = 0 // counterSelectors.mo(duckStore.getState().counter)
 
   const htmlCounter = `
   <hr />
@@ -140,7 +141,7 @@ async function rootHandler (
 
 async function rootHtml (
   wechaty: Wechaty,
-  info: ReturnType<typeof wechatySelectors.status>,
+  info: any, // ReturnType<typeof wechatySelectors.status>,
 ) {
 
   let html

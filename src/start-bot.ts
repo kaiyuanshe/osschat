@@ -4,6 +4,10 @@ import {
   Contact,
   HAWechaty,
 }               from 'ha-wechaty'
+// import {
+//   heartbeat,
+// }               from 'wechaty-plugin-contrib'
+
 import {
   log,
 }               from './config'

@@ -12,10 +12,10 @@ import {
 import { VoteManager } from '../managers/vote-manager'
 import { Chatops } from '../chatops'
 
-import {
-  duckStore,
-  counterActions,
-}                     from '../ducks/'
+// import {
+//   duckStore,
+//   counterActions,
+// }                     from '../ducks/'
 
 const BORN_TIME = Date.now()
 
@@ -24,11 +24,11 @@ export default async function onMessage (
   message : Message,
 ): Promise<void> {
 
-  if (message.self()) {
-    duckStore.dispatch(counterActions.mo())
-  } else {
-    duckStore.dispatch(counterActions.mt())
-  }
+  // if (message.self()) {
+  //   duckStore.dispatch(counterActions.mo())
+  // } else {
+  //   duckStore.dispatch(counterActions.mt())
+  // }
 
   const text    = message.text()
   const contact = message.from()

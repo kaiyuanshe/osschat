@@ -15,7 +15,7 @@ import {
   VERSION,
 }               from './config'
 import { Chatops } from './chatops'
-import { getHAWechaty } from './get-wechaty'
+import { getBot } from './get-bot'
 
 // import {
 //   duckStore,
@@ -23,7 +23,7 @@ import { getHAWechaty } from './get-wechaty'
 //   counterSelectors,
 // }                     from './ducks/'
 
-const haBot = getHAWechaty()
+const haBot = getBot()
 
 const FORM_HTML = `
   <form action="/chatops/" method="get">
@@ -95,7 +95,11 @@ async function rootHandler (
     //   duckStore.getState().wechaty,
     //   wechaty.id,
     // )
-    const info = 'TODO'
+
+    const wechatyBundle = haBot.ducks.ducksify('wechaty')
+    const qrcode = wechatyBundle.selectors.getQrCode(wechaty.id)
+    const userName = wechatyBundle.selectors.getUserPayload(wechaty.id)?.name
+    const info = { qrcode, userName }
 
     html += [
       '<hr />\n',
@@ -113,8 +117,10 @@ async function rootHandler (
   <body>
     `
 
-  const mt = 0 // counterSelectors.mt(duckStore.getState().counter)
-  const mo = 0 // counterSelectors.mo(duckStore.getState().counter)
+  const counterBundle = haBot.ducks.ducksify('counter')
+
+  const mt = counterBundle.selectors.getMt() // counterSelectors.mt(duckStore.getState().counter)
+  const mo = counterBundle.selectors.getMo() // counterSelectors.mo(duckStore.getState().counter)
 
   const htmlCounter = `
   <hr />
@@ -174,8 +180,8 @@ async function rootHtml (
     const roomInfoList = await Promise.all(rooms.map(roomInfo))
     const sortedList = roomInfoList.sort((a, b) => a.topic > b.topic ? 1 : -1)
 
-    for (const info of sortedList) {
-      roomHtml = roomHtml + `<li> ${info.topic} / ${info.id} </li>\n`
+    for (const roomInfo of sortedList) {
+      roomHtml = roomHtml + `<li> ${roomInfo.topic} / ${roomInfo.id} </li>\n`
     }
     roomHtml = roomHtml + `</ol>`
 
@@ -189,7 +195,16 @@ async function rootHtml (
 
   }
 
-  return html
+  const githubLink = `
+    <hr />
+    <p>
+      OSSChat GitHub:
+        <a href="https://github.com/kaiyuanshe/osschat" target="_blank">
+          https://github.com/kaiyuanshe/osschat
+        </a>
+    </p>
+  `
+  return html + githubLink
 }
 
 /**

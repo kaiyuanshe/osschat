@@ -11,7 +11,7 @@ dotenv.config()
 
 export {
   log,
-}               from 'brolog'
+}               from 'wechaty'
 
 const pkg = readPkgUp.sync({ cwd: __dirname })!.packageJson
 export const VERSION = pkg.version
@@ -21,7 +21,7 @@ export const VERSION = pkg.version
  */
 export const PORT = process.env.PORT || 8788
 
-export const BOT_ROOM_ID        = '18995691396@chatroom'  // ChatOps - OSS Chat
+export const CHATOPS_ROOM_ID    = '18995691396@chatroom'  // ChatOps - OSS Chat
 export const HEARTBEAT_ROOM_ID  = '17376996519@chatroom'  // ChatOps - Heartbeat
 export const DEV_ROOM_ID        = '17591588552@chatroom'  // OSSChat Project Group
 

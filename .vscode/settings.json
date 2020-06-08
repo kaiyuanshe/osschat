@@ -70,4 +70,9 @@
     "javascript",
     "typescript",
   ],
+  "cSpell.words": [
+    "ducksify",
+    "osschat",
+    "probot"
+  ],
 }

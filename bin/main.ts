@@ -6,9 +6,9 @@ import {
   log,
   VERSION,
 }                     from '../src/config'
-import { getHAWechaty } from '../src/get-wechaty'
-import { startBot }   from '../src/start-bot'
-import { startFinis } from '../src/start-finis'
+import { getBot }     from '../src/get-bot'
+import { setupBot }   from '../src/setup-bot'
+import { setupFinis } from '../src/setup-finis'
 
 import {
   commentIssue,
@@ -40,13 +40,11 @@ export = async (app: Application) => {
 
   log.verbose('main', 'main()')
 
-  const bot = getHAWechaty()
+  const bot = getBot()
 
-  await Promise.all([
-    bot.start(),
-    startBot(bot),
-    startFinis(bot),
-  ])
+  await bot.start()
+  await setupBot()
+  await setupFinis(bot)
 
   await bot.state.ready('off')
 }

@@ -21,7 +21,7 @@ const EXIT_ANNOUNCEMENT   = `Der! I'm going to exit now, see you, bye!\n${BOT_NA
 
 let bot: undefined | HAWechaty
 
-export async function startFinis (haWechaty: HAWechaty): Promise<void> {
+export async function setupFinis (haWechaty: HAWechaty): Promise<void> {
   if (bot) {
     throw new Error('startFinis should only init once')
   }

@@ -9,7 +9,7 @@ import {
   Room,
 }                     from 'wechaty'
 
-import { getHAWechaty } from './get-wechaty'
+import { getBot } from './get-bot'
 
 import { Chatops } from './chatops'
 
@@ -136,12 +136,12 @@ async function getRoomList (
     if (Array.isArray(idOrList)) {
       const roomList = await Promise.all(
         idOrList.map(
-          id => getHAWechaty().Room.load(id)
+          id => getBot().Room.load(id)
         )
       )
       return roomList.filter(r => !!r) as Room[]
     } else {
-      const room = await getHAWechaty().Room.load(idOrList)
+      const room = await getBot().Room.load(idOrList)
       return room ? [ room ] : []
     }
   }

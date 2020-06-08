@@ -1,6 +1,6 @@
 {
   "name": "osschat",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "Apache OSSChat",
   "main": "index.js",
   "engines": {
@@ -36,9 +36,9 @@
     "brolog": "^1.8.3",
     "commander": "^5.0.0",
     "dotenv": "^8.2.0",
+    "ducks": "^0.10.2",
     "finis": "^0.4.4",
-    "flatten-array": "^1.0.0",
-    "ha-wechaty": "^0.4.3",
+    "ha-wechaty": "^0.4.9",
     "micromatch": "^4.0.2",
     "moment": "^2.24.0",
     "node-cache": "^5.1.0",
@@ -50,6 +50,7 @@
     "smee-client": "^1.1.0",
     "state-switch": "^0.9.5",
     "wechaty": "^0.39.13",
+    "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.4.12",
     "wechaty-puppet-padplus": "^0.7.15",
     "wechaty-redux": "^0.2.18"

@@ -195,7 +195,16 @@ async function rootHtml (
 
   }
 
-  return html
+  const githubLink = `
+    <hr />
+    <p>
+      OSSChat GitHub:
+        <a href="https://github.com/kaiyuanshe/osschat" target="_blank">
+          https://github.com/kaiyuanshe/osschat
+        </a>
+    </p>
+  `
+  return html + githubLink
 }
 
 /**

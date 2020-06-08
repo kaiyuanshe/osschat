@@ -78,7 +78,7 @@ export class Chatops {
     let roomList = [] as Room[]
 
     if (options.parallel) {
-      roomList = this.haBot.wechatyList
+      roomList = this.haBot.nodes()
         .filter(wechaty => wechaty.logonoff())
         .map(wechaty => wechaty.Room.load(roomId))
     } else {

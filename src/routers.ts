@@ -90,7 +90,7 @@ async function rootHandler (
   res: Response,
 ) {
   let html = ''
-  for (const wechaty of haBot.wechatyList) {
+  for (const wechaty of haBot.nodes()) {
     // const info = wechatySelectors.status(
     //   duckStore.getState().wechaty,
     //   wechaty.id,

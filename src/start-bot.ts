@@ -2,6 +2,8 @@ import path from 'path'
 
 import {
   Contact,
+}               from 'wechaty'
+import {
   HAWechaty,
 }               from 'ha-wechaty'
 // import {

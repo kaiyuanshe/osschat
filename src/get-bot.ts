@@ -43,6 +43,13 @@ export function getBot () {
     ducks,
     memory,
     name,
+    reduxDevTools: 'remote',
+    remoteReduxDevToolsOptions: {
+      hostname : 'dev.chatie.io',
+      maxAge   : 500,
+      port     : 8000,
+      realtime : true,
+    },
   })
 
   // const t = haWechaty.ducks.ducksify()

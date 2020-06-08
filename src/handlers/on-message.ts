@@ -141,6 +141,11 @@ async function directMessage (
     return
   }
 
+  if (message.text() === 'dong') {
+    // skip chatieio
+    return
+  }
+
   // direct message
   await Chatops.instance().say(message)
 }

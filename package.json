@@ -46,6 +46,7 @@
     "qrcode-terminal": "^0.12.0",
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
+    "remote-redux-devtools": "^0.5.16",
     "request": "^2.88.2",
     "smee-client": "^1.1.0",
     "state-switch": "^0.9.5",

@@ -36,7 +36,7 @@ const ROOM_ID_JAVASCRIPT_ML = '4383052528@chatroom'   // Machine Learning in Jav
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'                 : ROOM_ID_LIST_WECHATY_DEVELOPERS,
   'chatie/grpc'                             : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'huan/tensorflow-handbook-javascript' : ROOM_ID_JAVASCRIPT_ML,
+  'huan/tensorflow-handbook-javascript'     : ROOM_ID_JAVASCRIPT_ML,
   'juzibot/donut-tester'                    : ROOM_ID_LIST_WECHATY_DEVELOPERS,
   'lijiarui/chatbot-zero-to-one'            : ROOM_ID_CHATBOT_0_1,
   'preangel/pre-angel.com'                  : ROOM_ID_PREANGEL,

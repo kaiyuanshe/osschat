@@ -8,51 +8,49 @@ import {
   RepoConfig,
 }                 from '../config'
 
-const ROOM_ID_LIST_WECHATY_DEVELOPERS = [
-  '17275396976@chatroom',   // Wechaty Developers' Home Next
-  '18171595067@chatroom',   // Wechaty Developers' Home
-  '7582163093@chatroom',    // Wechaty Developers' Home 1
-  '5729603967@chatroom',    // Wechaty Developers' Home 2
-  '4335801863@chatroom',    // Wechaty Developers' Home 3
-  '22396239792@chatroom',   // Wechaty Developers' Home 4
-  '19112581505@chatroom',   // Wechaty Developers' Home 5
-  '24113855649@chatroom',   // Wechaty Developers' Home 6
-]
+const WECHATY_DEVELOPERS_HEADQUARTERS = '17275396976@chatroom'
 
-const ROOM_ID_LIST_BOT5_CLUB = [
-  '18095776930@chatroom',   // Bot Friday Open Forum - BFOF
-  '17301175542@chatroom',   // Bot Friday Open Forum - 2019
-]
-const ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY = [
-  '19367909379@chatroom',  // Python/Go/Java Wechaty
-]
+// const LIST_WECHATY_DEVELOPERS = [
+//   '18171595067@chatroom',   // Wechaty Developers' Home
+//   '7582163093@chatroom',    // Wechaty Developers' Home 1
+//   '5729603967@chatroom',    // Wechaty Developers' Home 2
+//   '4335801863@chatroom',    // Wechaty Developers' Home 3
+//   '22396239792@chatroom',   // Wechaty Developers' Home 4
+//   '19112581505@chatroom',   // Wechaty Developers' Home 5
+//   '24113855649@chatroom',   // Wechaty Developers' Home 6
+// ]
 
-const ROOM_ID_PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel
-const ROOM_ID_CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
-const ROOM_ID_WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
-const ROOM_ID_SUMMER_OF_CODE       =  '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
-const ROOM_ID_JAVASCRIPT_ML = '4383052528@chatroom'   // Machine Learning in JavaScript
+const BOT5_CLUB_2020 =   '18095776930@chatroom'   // Bot Friday Open Forum - BFOF
+// const BOT5_CLUB_2019 =  '17301175542@chatroom'   // Bot Friday Open Forum - 2019
+
+const MULTI_LANGUAGE_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
+
+const PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel
+const CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
+const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
+const SUMMER_OF_CODE       = '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
+const JAVASCRIPT_ML        = '4383052528@chatroom'   // Machine Learning in JavaScript
 
 export const config: RepoConfig = {
-  'chatie/(blog|*wechaty*)'                 : ROOM_ID_LIST_WECHATY_DEVELOPERS,
-  'chatie/grpc'                             : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'huan/tensorflow-handbook-javascript'     : ROOM_ID_JAVASCRIPT_ML,
-  'juzibot/donut-tester'                    : ROOM_ID_LIST_WECHATY_DEVELOPERS,
-  'lijiarui/chatbot-zero-to-one'            : ROOM_ID_CHATBOT_0_1,
-  'preangel/pre-angel.com'                  : ROOM_ID_PREANGEL,
-  'wechaty/(python|go|java|scala)-wechaty*' : ROOM_ID_LIST_PYTHON_GO_JAVA_WECHATY,
-  'wechaty/*wechaty*'                       : ROOM_ID_LIST_WECHATY_DEVELOPERS,
-  'wechaty/PMC'                             : ROOM_ID_WECHATY_CONTRIBUTORS,
-  'wechaty/bot5.club'                       : ROOM_ID_LIST_BOT5_CLUB,
+  'chatie/(blog|*wechaty*)'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'chatie/grpc'                             : MULTI_LANGUAGE_WECHATY,
+  'huan/tensorflow-handbook-javascript'     : JAVASCRIPT_ML,
+  'juzibot/donut-tester'                    : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'lijiarui/chatbot-zero-to-one'            : CHATBOT_0_1,
+  'preangel/pre-angel.com'                  : PREANGEL,
+  'wechaty/(python|go|java|scala)-wechaty*' : MULTI_LANGUAGE_WECHATY,
+  'wechaty/*wechaty*'                       : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'wechaty/PMC'                             : WECHATY_CONTRIBUTORS,
+  'wechaty/bot5.club'                       : BOT5_CLUB_2020,
   'wechaty/friday'                          : [
-    ...ROOM_ID_LIST_WECHATY_DEVELOPERS,
-    ...ROOM_ID_LIST_BOT5_CLUB,
+    ...WECHATY_DEVELOPERS_HEADQUARTERS,
+    ...BOT5_CLUB_2020,
   ],
   'wechaty/summer-of-code': [
-    ...ROOM_ID_LIST_WECHATY_DEVELOPERS,
-    ROOM_ID_SUMMER_OF_CODE,
+    ...WECHATY_DEVELOPERS_HEADQUARTERS,
+    SUMMER_OF_CODE,
   ],
-  'wechaty/wishlist': ROOM_ID_LIST_WECHATY_DEVELOPERS,
+  'wechaty/wishlist': WECHATY_DEVELOPERS_HEADQUARTERS,
 }
 
 export default config

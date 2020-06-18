@@ -92,6 +92,15 @@ use osschat is so easy, just need 4 steps, please refer [How to use](https://git
 
 To be added...
 
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/0)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/0)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/1)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/1)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/2)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/2)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/3)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/3)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/4)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/4)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/5)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/5)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/6)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/6)
+[![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/7)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/7)
+
 ## Thanks
 
 - OSS mentored by: Apache Software Fundation

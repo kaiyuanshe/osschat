@@ -1,5 +1,3 @@
-import path from 'path'
-
 import {
   Contact,
 }               from 'wechaty'

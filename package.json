@@ -50,7 +50,7 @@
     "request": "^2.88.2",
     "smee-client": "^1.1.0",
     "state-switch": "^0.9.5",
-    "wechaty": "^0.39.13",
+    "wechaty": "^0.41.24",
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.4.13",
     "wechaty-puppet-padplus": "^0.7.15",

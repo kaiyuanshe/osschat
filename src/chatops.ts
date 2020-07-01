@@ -105,22 +105,28 @@ export class Chatops {
           )
           break
         case Message.Type.Image:
-          const image = await info.toFileBox()
-          await Promise.all(
-            roomList.map(room => room.say(image))
-          )
+          {
+            const image = await info.toFileBox()
+            await Promise.all(
+              roomList.map(room => room.say(image))
+            )
+          }
           break
         case Message.Type.Url:
-          const urlLink = await info.toUrlLink()
-          await Promise.all(
-            roomList.map(room => room.say(urlLink))
-          )
+          {
+            const urlLink = await info.toUrlLink()
+            await Promise.all(
+              roomList.map(room => room.say(urlLink))
+            )
+          }
           break
         default:
-          const typeName = Message.Type[info.type()]
-          await Promise.all(
-            roomList.map(room => room.say(`message type: ${typeName}`))
-          )
+          {
+            const typeName = Message.Type[info.type()]
+            await Promise.all(
+              roomList.map(room => room.say(`message type: ${typeName}`))
+            )
+          }
           break
       }
     } else if (info instanceof UrlLink) {

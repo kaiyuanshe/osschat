@@ -109,7 +109,7 @@ async function getRoomList (
 
   const managedList = Object.keys(managedRepoConfig)
 
-  let matchedList = managedList
+  const matchedList = managedList
     .filter(matchOwner(owner))
     .filter(matchRepo(repository))
 
@@ -142,7 +142,7 @@ async function getRoomList (
       return roomList.filter(r => !!r) as Room[]
     } else {
       const room = await getBot().Room.load(idOrList)
-      return room ? [ room ] : []
+      return room ? [room] : []
     }
   }
 

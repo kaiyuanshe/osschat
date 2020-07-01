@@ -177,7 +177,7 @@ async function rootHtml (
   } else if (info.userName) {
     let rooms = await wechaty.Room.findAll()
     rooms = rooms.sort((a, b) => a.id > b.id ? 1 : -1)
-    let roomHtml = `The rooms I have joined are as follows: <ol>`
+    let roomHtml = 'The rooms I have joined are as follows: <ol>'
 
     const roomInfo = async (room: Room) => {
       const id = room.id
@@ -191,7 +191,7 @@ async function rootHtml (
     for (const roomInfo of sortedList) {
       roomHtml = roomHtml + `<li> ${roomInfo.topic} / ${roomInfo.id} </li>\n`
     }
-    roomHtml = roomHtml + `</ol>`
+    roomHtml = roomHtml + '</ol>'
 
     html = [
       `<p> OSSChat v${VERSION} User ${info.userName} logined via ${escapeHtml(wechaty.puppet.toString())}. </p>`,

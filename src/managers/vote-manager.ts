@@ -80,11 +80,11 @@ export class VoteManager {
 
       const isVoted = voteMemberIdList.reduce((res, id) => res || (id === contact.id), false)
       if (isVoted) {
-        await room.say(`You have warned user {user}, please do not warn anyone consecutively.`, contact)
+        await room.say('You have warned user {user}, please do not warn anyone consecutively.', contact)
       }
 
       if (voteCount >= DEFAULT_VOTE_THRESHOLD) {
-        await room.say(`You have been voted to be an unwelcome guest in this room, kicking you out is a significant notice for everyone who is still in this room be nice, bye-bye..`, mention)
+        await room.say('You have been voted to be an unwelcome guest in this room, kicking you out is a significant notice for everyone who is still in this room be nice, bye-bye..', mention)
         await room.del(mention)
         this.cache.del(KEY)
       } else {

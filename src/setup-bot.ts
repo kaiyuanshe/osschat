@@ -22,7 +22,18 @@ import {
 }                     from './wtmp'
 import { getBot } from './get-bot'
 
-const absPath = (relatedPath: string) => path.join(__dirname, relatedPath)
+import onScan  from './handlers/on-scan'
+import onError  from './handlers/on-error'
+import onFriendship  from './handlers/on-friendship'
+import onLogout  from './handlers/on-logout'
+import onLogin  from './handlers/on-login'
+import onMessage  from './handlers/on-message'
+import onRoomTopic  from './handlers/on-room-topic'
+import onRoomInvite  from './handlers/on-room-invite'
+import onRoomJoin  from './handlers/on-room-join'
+import onRoomLeave  from './handlers/on-room-leave'
+
+// const absPath = (relatedPath: string) => path.join(__dirname, relatedPath)
 
 export async function setupBot (): Promise<void> {
   log.verbose('startBot', 'startBot()')
@@ -30,16 +41,16 @@ export async function setupBot (): Promise<void> {
   const haWechaty = getBot()
 
   haWechaty
-    .on('scan',         absPath('./handlers/on-scan'))
-    .on('error',        absPath('./handlers/on-error'))
-    .on('friendship',   absPath('./handlers/on-friendship'))
-    .on('logout',       absPath('./handlers/on-logout'))
-    .on('login',        absPath('./handlers/on-login'))
-    .on('message',      absPath('./handlers/on-message'))
-    .on('room-topic',   absPath('./handlers/on-room-topic'))
-    .on('room-invite',  absPath('./handlers/on-room-invite'))
-    .on('room-join',    absPath('./handlers/on-room-join'))
-    .on('room-leave',   absPath('./handlers/on-room-leave'))
+    .on('scan',         onScan)
+    .on('error',        onError)
+    .on('friendship',   onFriendship)
+    .on('logout',       onLogout)
+    .on('login',        onLogin)
+    .on('message',      onMessage)
+    .on('room-topic',   onRoomTopic)
+    .on('room-invite',  onRoomInvite)
+    .on('room-join',    onRoomJoin)
+    .on('room-leave',   onRoomLeave)
 
   haWechaty.use(
     DingDong({

@@ -28,8 +28,10 @@ const MULTI_LANGUAGE_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
 const PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel
 const CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
 const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
-const SUMMER_OF_CODE       = '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
 const JAVASCRIPT_ML        = '4383052528@chatroom'   // Machine Learning in JavaScript
+
+// '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
+const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code - Discuss
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'                 : WECHATY_DEVELOPERS_HEADQUARTERS,

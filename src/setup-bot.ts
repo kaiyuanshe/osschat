@@ -52,8 +52,8 @@ export async function setupBot (): Promise<void> {
 
   haWechaty.use(
     DingDong({
-      mention : true,
-      room    : false,
+      mention : false,
+      room    : /ChatOps/i,
     }),
     Heartbeat({
       emoji: {

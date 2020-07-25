@@ -3,7 +3,7 @@ import {
 }               from 'wechaty'
 import {
   Heartbeat,
-  DingDong,
+  // DingDong,
   ChatOps,
 }               from 'wechaty-plugin-contrib'
 
@@ -51,10 +51,10 @@ export async function setupBot (): Promise<void> {
     .on('room-leave',   onRoomLeave)
 
   haWechaty.use(
-    DingDong({
-      mention : false,
-      room    : /ChatOps/i,
-    }),
+    // DingDong({
+    //   mention : false,
+    //   room    : /ChatOps/i,
+    // }),
     Heartbeat({
       emoji: {
         heartbeat : '[爱心]',

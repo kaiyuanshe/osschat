@@ -52,7 +52,7 @@
     "state-switch": "^0.9.5",
     "wechaty": "^0.43.8",
     "wechaty-ducks-contrib": "^0.2.2",
-    "wechaty-plugin-contrib": "^0.14.10",
+    "wechaty-plugin-contrib": "^0.14.11",
     "wechaty-puppet-padplus": "^0.7.15",
     "wechaty-redux": "^0.2.20"
   },

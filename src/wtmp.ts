@@ -10,7 +10,7 @@ interface WtmpEntry {
   logout? : number,
 }
 
-export class Wtmp {
+class Wtmp {
 
   private static singleton: Wtmp
 
@@ -74,3 +74,5 @@ export class Wtmp {
   }
 
 }
+
+void Wtmp

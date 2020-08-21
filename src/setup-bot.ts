@@ -1,6 +1,6 @@
-import {
-  Contact,
-}               from 'wechaty'
+// import {
+//   Contact,
+// }               from 'wechaty'
 import {
   Heartbeat,
   DingDong,
@@ -15,9 +15,9 @@ import {
 // import {
 //   Chatops,
 // }                     from './chatops'
-import {
-  Wtmp,
-}                     from './wtmp'
+// import {
+//   Wtmp,
+// }                     from './wtmp'
 import { getBot } from './get-bot'
 
 import onScan  from './handlers/on-scan'
@@ -82,9 +82,9 @@ export async function setupBot (): Promise<void> {
   // haWechaty.on('ready', heartbeat(`[拳头] (${haWechaty.name()})`))
   // haWechaty.on('logout', heartbeat(`[月亮] (${haWechaty.name()})`))
 
-  const wtmp = Wtmp.instance()
-  const loginWtmp = (user: Contact) => wtmp.login(user.name())
-  const logoutWtmp = (user: Contact) => wtmp.logout(user.name())
-  haWechaty.on('login', loginWtmp)
-  haWechaty.on('logout', logoutWtmp)
+  // const wtmp = Wtmp.instance()
+  // const loginWtmp = (user: Contact) => wtmp.login(user.name())
+  // const logoutWtmp = (user: Contact) => wtmp.logout(user.name())
+  // haWechaty.on('login', loginWtmp)
+  // haWechaty.on('logout', logoutWtmp)
 }

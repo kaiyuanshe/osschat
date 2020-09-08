@@ -63,7 +63,7 @@ export class VoteManager {
     }
 
     for (const mention of mentions) {
-      if (mention.id === message.wechaty.self().id) {
+      if (mention.id === message.wechaty.userSelf().id) {
         return
       }
 

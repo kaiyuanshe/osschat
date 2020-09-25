@@ -46,6 +46,16 @@ export interface RepoConfig {
 export const managedRepoConfig: RepoConfig = {
   'BUPT/ai-ml.club': '18968477245@chatroom',
   'DSExtension/DSExtension': '18039997009@chatroom',
+  'JesseWeb/yxtg':'19611101639@chatroom',
+  'Tencent/wepy': '21886945130@chatroom',
+  'apache/incubator-dolphinscheduler'     : [
+    '8676247154@chatroom',
+    '19237597168@chatroom',
+    '19380384367@chatroom',
+    '19146409029@chatroom',
+    '20259685174@chatroom',
+    '18892613968@chatroom',
+  ],
   'WeBankFinTech/DataSphereStudio' : [
     '17539577298@chatroom',
     '18720976935@chatroom',
@@ -59,16 +69,6 @@ export const managedRepoConfig: RepoConfig = {
     '18815198079@chatroom',
     '20244382563@chatroom',
     '20071581452@chatroom',
-  ],
-  'JesseWeb/yxtg':'19611101639@chatroom',
-  'Tencent/wepy': '21886945130@chatroom',
-  'apache/incubator-dolphinscheduler'     : [
-    '8676247154@chatroom',
-    '19237597168@chatroom',
-    '19380384367@chatroom',
-    '19146409029@chatroom',
-    '20259685174@chatroom',
-    '18892613968@chatroom',
   ],
   'apache/incubator-doris' : '18440801276@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',

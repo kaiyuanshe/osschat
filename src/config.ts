@@ -59,16 +59,16 @@ export const managedRepoConfig: RepoConfig = {
   'apache/incubator-doris' : '18440801276@chatroom',
   'apache/incubator-iotdb' : '18378203056@chatroom',
   'dailidong/ossbot': '18039997009@chatroom',
-  'kaiyuanshe/osschat'     : [
-    '17591588552@chatroom',
-    '17384390178@chatroom',
-  ],
   'WeBankFinTech/DataSphereStudio' : [
     '17539577298@chatroom',
     '18720976935@chatroom',
     '18815198079@chatroom',
     '20244382563@chatroom',
     '20071581452@chatroom',
+  ],
+  'kaiyuanshe/osschat'     : [
+    '17591588552@chatroom',
+    '17384390178@chatroom',
   ],
   'WeBankFinTech/Linkis' : [
     '17539577298@chatroom',

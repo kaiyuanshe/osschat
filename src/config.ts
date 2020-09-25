@@ -44,6 +44,8 @@ export interface RepoConfig {
  *  Key should be in ascending order
  */
 export const managedRepoConfig: RepoConfig = {
+  'BUPT/ai-ml.club': '18968477245@chatroom',
+  'DSExtension/DSExtension': '18039997009@chatroom',
   'WeBankFinTech/DataSphereStudio' : [
     '17539577298@chatroom',
     '18720976935@chatroom',
@@ -58,8 +60,6 @@ export const managedRepoConfig: RepoConfig = {
     '20244382563@chatroom',
     '20071581452@chatroom',
   ],
-  'BUPT/ai-ml.club': '18968477245@chatroom',
-  'DSExtension/DSExtension': '18039997009@chatroom',
   'JesseWeb/yxtg':'19611101639@chatroom',
   'Tencent/wepy': '21886945130@chatroom',
   'apache/incubator-dolphinscheduler'     : [

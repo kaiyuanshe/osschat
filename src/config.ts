@@ -67,5 +67,19 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
+ 'WeBankFinTech/Linkis' : [
+   17539577298@chatroom,
+   18720976935@chatroom,
+   18815198079@chatroom,
+   20244382563@chatroom,
+   20071581452@chatroom,
+  ],
+'WeBankFinTech/DataSphereStudio' : [
+   17539577298@chatroom,
+   18720976935@chatroom,
+   18815198079@chatroom,
+   20244382563@chatroom,
+   20071581452@chatroom,
+  ],
   ...projectsRepoConfig,
 }

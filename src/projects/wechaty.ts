@@ -35,7 +35,6 @@ const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code -
 
 export const config: RepoConfig = {
   'chatie/(blog|*wechaty*)'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'chatie/grpc'                             : MULTI_LANGUAGE_WECHATY,
   'huan/tensorflow-handbook-javascript'     : JAVASCRIPT_ML,
   'juzibot/donut-tester'                    : WECHATY_DEVELOPERS_HEADQUARTERS,
   'lijiarui/chatbot-zero-to-one'            : CHATBOT_0_1,
@@ -48,6 +47,7 @@ export const config: RepoConfig = {
     ...WECHATY_DEVELOPERS_HEADQUARTERS,
     ...BOT5_CLUB_2020,
   ],
+  'wechaty/grpc'                            : MULTI_LANGUAGE_WECHATY,
   'wechaty/summer-of-code': [
     ...WECHATY_DEVELOPERS_HEADQUARTERS,
     SUMMER_OF_CODE,

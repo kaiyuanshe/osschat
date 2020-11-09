@@ -42,6 +42,7 @@ export const config: RepoConfig = {
   'wechaty/(python|go|java|scala)-wechaty*' : MULTI_LANGUAGE_WECHATY,
   'wechaty/*wechaty*'                       : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/PMC'                             : WECHATY_CONTRIBUTORS,
+  'wechaty/puppet-service-providers'        : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/bot5.club'                       : BOT5_CLUB_2020,
   'wechaty/friday'                          : [
     ...WECHATY_DEVELOPERS_HEADQUARTERS,

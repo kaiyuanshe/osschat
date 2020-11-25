@@ -1,10 +1,10 @@
 import wechaty          from './wechaty'
 import zixia            from './zixia'
 import tensorflowBook   from './tensorflow-book'
-import paddlepaddle     from './paddlepaddle'
+import baidu            from './baidu'
 
 export const projectsRepoConfig = {
-  ...paddlepaddle,
+  ...baidu,
   ...tensorflowBook,
   ...wechaty,
   ...zixia,

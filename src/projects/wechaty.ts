@@ -48,7 +48,7 @@ export const config: RepoConfig = {
     ...BOT5_CLUB_2020,
   ],
   'wechaty/grpc'                            : MULTI_LANGUAGE_WECHATY,
-  'wechaty/puppet-service-providers'        : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'wechaty/puppet-services'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/summer-of-code': [
     ...WECHATY_DEVELOPERS_HEADQUARTERS,
     SUMMER_OF_CODE,

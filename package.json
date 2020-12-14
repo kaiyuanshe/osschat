@@ -31,10 +31,10 @@
   },
   "homepage": "https://github.com/kaiyuanshe/OSSChat#readme",
   "dependencies": {
-    "@reduxjs/toolkit": "^1.4.0",
+    "@reduxjs/toolkit": "^1.5.0",
     "array-flatten": "^3.0.0",
     "brolog": "^1.12.4",
-    "commander": "^6.2.0",
+    "commander": "^6.2.1",
     "dotenv": "^8.2.0",
     "ducks": "^0.10.2",
     "finis": "^0.4.4",
@@ -42,7 +42,7 @@
     "micromatch": "^4.0.2",
     "moment": "^2.29.1",
     "node-cache": "^5.1.2",
-    "probot": "^9.11.7",
+    "probot": "^10.18.0",
     "qrcode-terminal": "^0.12.0",
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
@@ -54,7 +54,7 @@
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.14.15",
     "wechaty-puppet-padplus": "^0.7.15",
-    "wechaty-redux": "^0.2.20"
+    "wechaty-redux": "^0.2.21"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.1",

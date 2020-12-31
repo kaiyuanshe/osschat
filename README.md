@@ -19,7 +19,7 @@ OSSChat will serve users as a cloud service.
 - OSS.Chat - A bridge to the Apache Way in China (OSS.Chat - 通往 Apache Way 的一道虹桥)
     - [slides](https://docs.google.com/presentation/d/1ws1loxT0JVzNkZO_7G5Xx8T3mDvAmh8PCZ-sAs9rfqM)
     - [ApacheCon @Home 2020](https://apachecon.com/acah2020/) (video: [link](https://www.youtube.com/watch?v=KWS4V86heh0))
-    - [Open Source for Good 开源向善 - 2020 中国开源年会暨阿帕奇中国路演 COSCon'20 & Apache Roadshow - China](http://coscon.kaiyuanshe.cn/), (video [link](http://coscon.kaiyuanshe.cn/#activity/agenda?pid=135))
+    - [2020 中国开源年会暨阿帕奇中国路演 COSCon'20 & Apache Roadshow - China](http://coscon.kaiyuanshe.cn/), (intro [link](https://coscon.kaiyuanshe.cn/#activity/agenda?pid=135), video [link](http://coscon.kaiyuanshe.cn/#activity/agenda?pid=135))
 - Read more [documention](https://osschat.readthedocs.io/en/latest/)
 
 ## Using OSSChat as a service

@@ -4,9 +4,7 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import {
-  RepoConfig,
-}                 from '../config'
+import { RepoConfig } from '../config'
 
 const WECHATY_DEVELOPERS_HEADQUARTERS = '17275396976@chatroom'
 
@@ -26,35 +24,37 @@ const BOT5_CLUB_2021 = '18825797159@chatroom' // Bot Friday Open Forum 2021
 
 const MULTI_LANGUAGE_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
 
-const PREANGEL             = '17237607145@chatroom'  // ChatOps - PreAngel
 const CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
 const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
-const JAVASCRIPT_ML        = '4383052528@chatroom'   // Machine Learning in JavaScript
 
 // '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
 const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code - Discuss
 
 export const config: RepoConfig = {
-  'chatie/(blog|*wechaty*)'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'huan/tensorflow-handbook-javascript'     : JAVASCRIPT_ML,
-  'juzibot/donut-tester'                    : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'lijiarui/chatbot-zero-to-one'            : CHATBOT_0_1,
-  'preangel/pre-angel.com'                  : PREANGEL,
-  'wechaty/(python|go|java|scala)-wechaty*' : MULTI_LANGUAGE_WECHATY,
-  'wechaty/*wechaty*'                       : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'wechaty/PMC'                             : WECHATY_CONTRIBUTORS,
-  'wechaty/bot5.club'                       : BOT5_CLUB_2021,
-  'wechaty/friday'                          : [
+  'lijiarui/chatbot-zero-to-one' : CHATBOT_0_1,
+
+  'juzibot/donut-tester'   : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'wechaty/wishlist'       : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'wechaty/*wechaty*'      : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'wechaty/*puppet*'       : WECHATY_DEVELOPERS_HEADQUARTERS,
+  'wechaty/wechaty.js.org' : WECHATY_DEVELOPERS_HEADQUARTERS,
+
+  'wechaty/PMC' : WECHATY_CONTRIBUTORS,
+
+  'wechaty/bot5.club' : BOT5_CLUB_2021,
+  'wechaty/friday'    : [
     WECHATY_DEVELOPERS_HEADQUARTERS,
     BOT5_CLUB_2021,
   ],
-  'wechaty/grpc'                            : MULTI_LANGUAGE_WECHATY,
-  'wechaty/puppet-services'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
+
+  'wechaty/grpc'                                       : MULTI_LANGUAGE_WECHATY,
+  'wechaty/(python|go|java|scala|php|dotnet)-wechaty*' : MULTI_LANGUAGE_WECHATY,
+
   'wechaty/summer-of-code': [
     WECHATY_DEVELOPERS_HEADQUARTERS,
     SUMMER_OF_CODE,
   ],
-  'wechaty/wishlist': WECHATY_DEVELOPERS_HEADQUARTERS,
+
 }
 
 export default config

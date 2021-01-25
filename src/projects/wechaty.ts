@@ -30,6 +30,7 @@ const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
 // '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
 const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code - Discuss
 
+/* eslint-disable sort-keys */
 export const config: RepoConfig = {
   'lijiarui/chatbot-zero-to-one' : CHATBOT_0_1,
 

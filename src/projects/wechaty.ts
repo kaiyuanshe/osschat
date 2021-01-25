@@ -20,7 +20,8 @@ const WECHATY_DEVELOPERS_HEADQUARTERS = '17275396976@chatroom'
 //   '24113855649@chatroom',   // Wechaty Developers' Home 6
 // ]
 
-const BOT5_CLUB_2020 =   '18095776930@chatroom'   // Bot Friday Open Forum - BFOF
+const BOT5_CLUB_2021 = '18825797159@chatroom' // Bot Friday Open Forum 2021
+// const BOT5_CLUB_2020 = '18095776930@chatroom' // Bot Friday Open Forum 2020
 // const BOT5_CLUB_2019 =  '17301175542@chatroom'   // Bot Friday Open Forum - 2019
 
 const MULTI_LANGUAGE_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
@@ -42,15 +43,15 @@ export const config: RepoConfig = {
   'wechaty/(python|go|java|scala)-wechaty*' : MULTI_LANGUAGE_WECHATY,
   'wechaty/*wechaty*'                       : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/PMC'                             : WECHATY_CONTRIBUTORS,
-  'wechaty/bot5.club'                       : BOT5_CLUB_2020,
+  'wechaty/bot5.club'                       : BOT5_CLUB_2021,
   'wechaty/friday'                          : [
-    ...WECHATY_DEVELOPERS_HEADQUARTERS,
-    ...BOT5_CLUB_2020,
+    WECHATY_DEVELOPERS_HEADQUARTERS,
+    BOT5_CLUB_2021,
   ],
   'wechaty/grpc'                            : MULTI_LANGUAGE_WECHATY,
   'wechaty/puppet-services'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/summer-of-code': [
-    ...WECHATY_DEVELOPERS_HEADQUARTERS,
+    WECHATY_DEVELOPERS_HEADQUARTERS,
     SUMMER_OF_CODE,
   ],
   'wechaty/wishlist': WECHATY_DEVELOPERS_HEADQUARTERS,

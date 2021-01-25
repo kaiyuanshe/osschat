@@ -4,7 +4,7 @@
  */
 import readPkgUp  from 'read-pkg-up'
 
-import projectsRepoConfig from './projects/'
+import projectsRepoConfig from './projects/mod'
 
 import dotenv     from 'dotenv'
 dotenv.config()

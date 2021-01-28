@@ -30,6 +30,8 @@ const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
 // '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
 const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code - Discuss
 
+const PUPPET_SERVICE_PROVIDER = '25578655216@chatroom' // Wechaty Puppet Service Provider
+
 /* eslint-disable sort-keys */
 export const config: RepoConfig = {
   'lijiarui/chatbot-zero-to-one' : CHATBOT_0_1,
@@ -39,6 +41,8 @@ export const config: RepoConfig = {
   'wechaty/*wechaty*'      : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/*puppet*'       : WECHATY_DEVELOPERS_HEADQUARTERS,
   'wechaty/wechaty.js.org' : WECHATY_DEVELOPERS_HEADQUARTERS,
+
+  'wechaty/puppet-services' : PUPPET_SERVICE_PROVIDER,
 
   'wechaty/PMC' : WECHATY_CONTRIBUTORS,
 

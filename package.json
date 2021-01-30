@@ -34,7 +34,7 @@
     "@reduxjs/toolkit": "^1.5.0",
     "array-flatten": "^3.0.0",
     "brolog": "^1.12.4",
-    "commander": "^7.0.0",
+    "commander": "^6",
     "dotenv": "^8.2.0",
     "ducks": "^0.10.2",
     "finis": "^0.4.4",
@@ -53,7 +53,6 @@
     "wechaty": "^0.56.3",
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.14.15",
-    "wechaty-puppet-padplus": "^0.7.15",
     "wechaty-redux": "^0.2.20"
   },
   "devDependencies": {

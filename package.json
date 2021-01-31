@@ -38,7 +38,7 @@
     "dotenv": "^8.2.0",
     "ducks": "^0.10.2",
     "finis": "^0.4.4",
-    "ha-wechaty": "^0.4.12",
+    "ha-wechaty": "^0.4.13",
     "micromatch": "^4.0.2",
     "moment": "^2.29.1",
     "node-cache": "^5.1.2",

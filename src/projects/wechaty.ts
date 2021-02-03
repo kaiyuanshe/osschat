@@ -32,6 +32,8 @@ const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code -
 
 const PUPPET_SERVICE_PROVIDER = '25578655216@chatroom' // Wechaty Puppet Service Provider
 
+const MATRIX_APPSERVICE_WECHATY_ROOM = '19053006724@chatroom' // Matrix Appservice Wechaty
+
 /* eslint-disable sort-keys */
 export const config: RepoConfig = {
   'lijiarui/chatbot-zero-to-one' : CHATBOT_0_1,
@@ -59,7 +61,7 @@ export const config: RepoConfig = {
     WECHATY_DEVELOPERS_HEADQUARTERS,
     SUMMER_OF_CODE,
   ],
-
+  'wechaty/matrix-appservice-wechaty/': MATRIX_APPSERVICE_WECHATY_ROOM,
 }
 
 export default config

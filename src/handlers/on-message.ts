@@ -31,7 +31,7 @@ export default async function onMessage (
   // }
 
   const text    = message.text()
-  const contact = message.from()
+  const contact = message.talker()
   if (!contact) {
     return
   }
@@ -112,7 +112,7 @@ async function dingDong (
   let text = message.text()
   const type = message.type()
   const room = message.room()
-  // const from = message.from()
+  // const from = message.talker()
   const mentionSelf = await message.mentionSelf()
 
   if (room) {

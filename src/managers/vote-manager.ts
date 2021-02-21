@@ -28,7 +28,7 @@ export class VoteManager {
   public static async checkVote (message: Message) {
 
     const room = message.room()
-    const contact = message.from()
+    const contact = message.talker()
     const content = message.text()
 
     if (!room || !contact || message.type() !== Message.Type.Text) {

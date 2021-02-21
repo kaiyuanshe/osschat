@@ -22,7 +22,7 @@ const BOT5_CLUB_2021 = '18825797159@chatroom' // Bot Friday Open Forum 2021
 // const BOT5_CLUB_2020 = '18095776930@chatroom' // Bot Friday Open Forum 2020
 // const BOT5_CLUB_2019 =  '17301175542@chatroom'   // Bot Friday Open Forum - 2019
 
-const MULTI_LANGUAGE_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
+const POLYGLOT_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
 
 const CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
 const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
@@ -55,8 +55,9 @@ export const config: RepoConfig = {
     BOT5_CLUB_2021,
   ],
 
-  'wechaty/grpc'                                       : MULTI_LANGUAGE_WECHATY,
-  'wechaty/(python|go|java|scala|php|dotnet)-wechaty*' : MULTI_LANGUAGE_WECHATY,
+  'wechaty/openapi'                                         : POLYGLOT_WECHATY,
+  'wechaty/grpc'                                            : POLYGLOT_WECHATY,
+  'wechaty/(python|go|java|scala|php|dotnet|rust)-wechaty*' : POLYGLOT_WECHATY,
 
   'wechaty/summer-of-wechaty': [
     SUMMER_OF_WECHATY_MENTORS,

@@ -28,7 +28,8 @@ const CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot�
 const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
 
 // '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
-const SUMMER_OF_CODE       = '18324919941@chatroom'  // Wechaty Summer of Code - Discuss
+const SUMMER_OF_WECHATY_STUDENTS = '18324919941@chatroom'  // Summer of Wechaty Albums
+const SUMMER_OF_WECHATY_MENTORS  = '21044280639@chatroom'  // Summer of Wechaty Mentor Candidates
 
 const PUPPET_SERVICE_PROVIDER = '25578655216@chatroom' // Wechaty Puppet Service Provider
 
@@ -55,9 +56,10 @@ export const config: RepoConfig = {
   'wechaty/grpc'                                       : MULTI_LANGUAGE_WECHATY,
   'wechaty/(python|go|java|scala|php|dotnet)-wechaty*' : MULTI_LANGUAGE_WECHATY,
 
-  'wechaty/summer-of-code': [
+  'wechaty/summer-of-wechaty': [
+    SUMMER_OF_WECHATY_MENTORS,
+    SUMMER_OF_WECHATY_STUDENTS,
     WECHATY_DEVELOPERS_HEADQUARTERS,
-    SUMMER_OF_CODE,
   ],
 
 }

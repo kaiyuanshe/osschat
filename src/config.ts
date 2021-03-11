@@ -50,17 +50,9 @@ export const managedRepoConfig: RepoConfig = {
   'Tencent/wepy': '21886945130@chatroom',
   'WeBankFinTech/DataSphereStudio' : [
     '17539577298@chatroom',
-    '18720976935@chatroom',
-    '18815198079@chatroom',
-    '20244382563@chatroom',
-    '20071581452@chatroom',
   ],
   'WeBankFinTech/Linkis' : [
     '17539577298@chatroom',
-    '18720976935@chatroom',
-    '18815198079@chatroom',
-    '20244382563@chatroom',
-    '20071581452@chatroom',
   ],
   'apache/incubator-dolphinscheduler'     : [
     '8676247154@chatroom',

@@ -47,6 +47,7 @@ const roomConfig = {
   '25578655216@chatroom': [
     // Wechaty Puppet Service Provider
     'wechaty/puppet-services',
+    'padlocal/wechaty-puppet-padlocal',
   ],
   '6719192413@chatroom': [
     // Wechaty Contributors

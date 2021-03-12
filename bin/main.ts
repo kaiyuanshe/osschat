@@ -34,8 +34,8 @@ export = async (app: Application) => {
     .option('-d, --debug', 'enable debug mode')
 
   program.parse(process.argv)
-  if (program.debug) {
-    process.env.DEBUG = program.debug.toString()
+  if (program.opts().debug) {
+    process.env.DEBUG = program.opts().debug.toString()
   }
 
   log.verbose('main', 'main()')

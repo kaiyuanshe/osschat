@@ -6,65 +6,67 @@
  */
 import { RepoConfig } from '../config'
 
-const WECHATY_DEVELOPERS_HEADQUARTERS = '17275396976@chatroom'
-
-// const LIST_WECHATY_DEVELOPERS = [
-//   '18171595067@chatroom',   // Wechaty Developers' Home
-//   '7582163093@chatroom',    // Wechaty Developers' Home 1
-//   '5729603967@chatroom',    // Wechaty Developers' Home 2
-//   '4335801863@chatroom',    // Wechaty Developers' Home 3
-//   '22396239792@chatroom',   // Wechaty Developers' Home 4
-//   '19112581505@chatroom',   // Wechaty Developers' Home 5
-//   '24113855649@chatroom',   // Wechaty Developers' Home 6
-// ]
-
-const BOT5_CLUB_2021 = '18825797159@chatroom' // Bot Friday Open Forum 2021
-// const BOT5_CLUB_2020 = '18095776930@chatroom' // Bot Friday Open Forum 2020
-// const BOT5_CLUB_2019 =  '17301175542@chatroom'   // Bot Friday Open Forum - 2019
-
-const POLYGLOT_WECHATY = '19367909379@chatroom' // Python/Go/Java Wechaty
-
-const CHATBOT_0_1          = '22598372108@chatroom'  // 博文视点《Chatbot从0到1》读者群
-const WECHATY_CONTRIBUTORS = '6719192413@chatroom'   // Wechaty Contributors
-
-// '17817316202@chatroom'  // Wechaty ISCAS Code of Summer
-const SUMMER_OF_WECHATY_STUDENTS = '18324919941@chatroom'  // Summer of Wechaty Albums
-const SUMMER_OF_WECHATY_MENTORS  = '21044280639@chatroom'  // Summer of Wechaty Mentor Candidates
-
-const PUPPET_SERVICE_PROVIDER = '25578655216@chatroom' // Wechaty Puppet Service Provider
-
-const MATRIX_APPSERVICE_WECHATY_ROOM = '19053006724@chatroom' // Matrix Appservice Wechaty
-
-/* eslint-disable sort-keys */
-export const config: RepoConfig = {
-  'lijiarui/chatbot-zero-to-one' : CHATBOT_0_1,
-
-  'juzibot/donut-tester'   : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'wechaty/wishlist'       : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'wechaty/*wechaty*'      : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'wechaty/*puppet*'       : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'wechaty/wechaty.js.org' : WECHATY_DEVELOPERS_HEADQUARTERS,
-
-  'wechaty/puppet-services' : PUPPET_SERVICE_PROVIDER,
-
-  'wechaty/PMC' : WECHATY_CONTRIBUTORS,
-
-  'wechaty/bot5.club' : BOT5_CLUB_2021,
-  'wechaty/friday'    : [
-    WECHATY_DEVELOPERS_HEADQUARTERS,
-    BOT5_CLUB_2021,
+const roomConfig = {
+  '17275396976@chatroom': [
+    // Wechaty Developers' Headquarters
+    'juzibot/donut-tester',
+    'wechaty/*puppet*',
+    'wechaty/*wechaty*',
+    'wechaty/friday',
+    'wechaty/summer-of-wechaty',
+    'wechaty/wechaty.js.org',
+    'wechaty/wishlist',
   ],
-
-  'wechaty/openapi'                                         : POLYGLOT_WECHATY,
-  'wechaty/grpc'                                            : POLYGLOT_WECHATY,
-  'wechaty/(python|go|java|scala|php|dotnet|rust)-wechaty*' : POLYGLOT_WECHATY,
-
-  'wechaty/summer-of-wechaty': [
-    SUMMER_OF_WECHATY_MENTORS,
-    SUMMER_OF_WECHATY_STUDENTS,
-    WECHATY_DEVELOPERS_HEADQUARTERS,
+  '18324919941@chatroom': [
+    // Summer of Wechaty Students
+    'wechaty/summer-of-wechaty',
   ],
-  'wechaty/matrix-appservice-wechaty/': MATRIX_APPSERVICE_WECHATY_ROOM,
+  '18825797159@chatroom': [
+    // Bot Friday Open Forum 2021
+    'wechaty/bot5.club',
+    'wechaty/friday',
+  ],
+  '19053006724@chatroom': [
+    // Matrix Appservice Wechaty
+    'wechaty/matrix-appservice-wechaty',
+  ],
+  '19367909379@chatroom': [
+    // Python/Go/Java Wechaty
+    'wechaty/(python|go|java|scala|php|dotnet|rust)-wechaty*',
+    'wechaty/grpc',
+    'wechaty/openapi',
+  ],
+  '21044280639@chatroom': [
+    // Summer of Wechaty Mentor Candidates
+    'wechaty/summer-of-wechaty',
+  ],
+  '22598372108@chatroom': [
+    // 博文视点《Chatbot从0到1》读者群
+    'lijiarui/chatbot-zero-to-one',
+  ],
+  '25578655216@chatroom': [
+    // Wechaty Puppet Service Provider
+    'wechaty/puppet-services',
+  ],
+  '6719192413@chatroom': [
+    // Wechaty Contributors
+    'wechaty/PMC',
+  ],
 }
 
-export default config
+export interface RepoConfigEx {
+  [repoMatch: string]: string[],
+}
+
+const config: RepoConfigEx = {}
+
+Object
+  .entries(roomConfig)
+  .forEach(([roomId, repoList]) => repoList.forEach(repo => {
+    config[repo] = [
+      ...(config[repo] || []),
+      roomId,
+    ]
+  }))
+
+export default config as RepoConfig

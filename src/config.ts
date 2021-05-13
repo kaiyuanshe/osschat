@@ -77,5 +77,8 @@ export const managedRepoConfig: RepoConfig = {
     '4808709382@chatroom',
     '4344886880@chatroom',
   ],
+  'X-lab2017/open-digger' : [
+    '17196414564@chatroom',
+  ],
   ...projectsRepoConfig,
 }

@@ -54,6 +54,9 @@ export const managedRepoConfig: RepoConfig = {
   'WeBankFinTech/Linkis' : [
     '17539577298@chatroom',
   ],
+  'X-lab2017/open-digger' : [
+    '17196414564@chatroom',
+  ],
   'apache/incubator-dolphinscheduler'     : [
     '8676247154@chatroom',
     '19237597168@chatroom',
@@ -76,9 +79,6 @@ export const managedRepoConfig: RepoConfig = {
   'qihoo360/quicksql' : [
     '4808709382@chatroom',
     '4344886880@chatroom',
-  ],
-  'X-lab2017/open-digger' : [
-    '17196414564@chatroom',
   ],
   ...projectsRepoConfig,
 }

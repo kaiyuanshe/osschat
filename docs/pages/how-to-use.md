@@ -29,7 +29,7 @@ Note: for now, osschat just only need 2 privileges:
     - Read and write access to issues and pull requests
 ``` 
 
-## 2. add OssChat wechat(juzi_bangbang) as friend, then invite OssChat into your wechat group
+## 2. add OssChat wechat(wxid: OSSChat) as friend, then invite OssChat into your wechat group
 
 - TODO: Need a QR code
 

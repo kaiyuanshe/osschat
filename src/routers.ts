@@ -1,4 +1,3 @@
-import { Application } from 'probot' // eslint-disable-line no-unused-vars
 import {
   Router,
   Request,
@@ -33,12 +32,10 @@ const FORM_HTML = `
   </form>
 `
 
-export default (app: Application) => {
-  const routes = app.route() as Router
-
-  routes.get('/', rootHandler)
-  routes.get('/chatops/', chatopsHandler)
-  routes.get('/logout/', logoutHandler)
+function configureRoutes (router: Router) {
+  router.get('/', rootHandler)
+  router.get('/chatops/', chatopsHandler)
+  router.get('/logout/', logoutHandler)
 }
 
 async function logoutHandler (
@@ -217,3 +214,5 @@ function escapeHtml (unsafe: string) {
     .replace(/'/g, '&quot;')
     .replace(/'/g, '&#039;')
 }
+
+export { configureRoutes }

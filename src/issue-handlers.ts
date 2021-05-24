@@ -1,7 +1,7 @@
 import {
   OnCallback,
 }              from 'probot/lib/application'
-import Webhooks from '@octokit/webhooks'
+import { EventPayloads } from '@octokit/webhooks'
 
 import {
   UrlLink,
@@ -26,7 +26,7 @@ import {
   // exactMatch,
 }               from './pure-functions/match-org-repo'
 
-export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (context) => {
+export const openIssue: OnCallback<EventPayloads.WebhookPayloadIssues> = async (context) => {
   const fullName = context.payload.repository.full_name
   const issueNumber = context.payload.issue.number
   const issueTitle = context.payload.issue.title
@@ -60,7 +60,7 @@ export const openIssue: OnCallback<Webhooks.WebhookPayloadIssues> = async (conte
   ))
 }
 
-export const commentIssue: OnCallback<Webhooks.WebhookPayloadIssueComment> = async (context) => {
+export const commentIssue: OnCallback<EventPayloads.WebhookPayloadIssueComment> = async (context) => {
   // const issue = context .issue()
   // console.info(context.payload.repository)
   const fullName = context.payload.repository.full_name

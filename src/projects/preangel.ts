@@ -4,7 +4,7 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import { RepoConfig }   from '../config'
+import { RepoConfig }   from './config'
 
 const PREANGEL = '17237607145@chatroom'  // ChatOps - PreAngel
 

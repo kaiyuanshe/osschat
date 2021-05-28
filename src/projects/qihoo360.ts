@@ -8,11 +8,10 @@ import {
   RepoConfig,
 }                 from './config'
 
-const ROOM_ID = '20755579878@chatroom' // bot测试
-
 export const config: RepoConfig = {
-  'PaddlePaddle/book': [
-    ROOM_ID,
+  'qihoo360/quicksql' : [
+    '4808709382@chatroom',
+    '4344886880@chatroom',
   ],
 }
 

@@ -8,12 +8,8 @@ import {
   RepoConfig,
 }                 from './config'
 
-const ROOM_ID = '20755579878@chatroom' // bot测试
-
 export const config: RepoConfig = {
-  'PaddlePaddle/book': [
-    ROOM_ID,
-  ],
+  'Tencent/wepy': '21886945130@chatroom',
 }
 
 export default config

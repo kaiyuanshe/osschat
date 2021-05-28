@@ -39,11 +39,6 @@ export async function setupFinis (haWechaty: HAWechaty): Promise<void> {
 let FINIS_QUITING = false
 
 finis(async (code, signal) => {
-  if (!bot) {
-    log.warn('RestartReporter', 'finis() no bot set, NOOP')
-    return
-  }
-
   if (FINIS_QUITING) {
     log.warn('RestartReporter', 'finis(%s, %s) called again when quiting... enforce QUIT', code, signal)
     process.exit(-1)
@@ -51,6 +46,11 @@ finis(async (code, signal) => {
 
   FINIS_QUITING = true
   log.info('RestartReporter', 'finis(%s, %s)', code, signal)
+
+  if (!bot) {
+    log.warn('RestartReporter', 'finis() no bot set, NOOP')
+    return
+  }
 
   if (bot.logonoff()) {
     log.info('RestartReporter', 'finis() announce exiting')

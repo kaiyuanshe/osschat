@@ -4,7 +4,7 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import { RepoConfig } from '../config'
+import { RepoConfig } from './config'
 
 const roomConfig = {
   '17275396976@chatroom': [

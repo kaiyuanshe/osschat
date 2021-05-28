@@ -1,4 +1,7 @@
-import { Application } from 'probot' // eslint-disable-line no-unused-vars
+import {
+  Probot,
+  ApplicationFunctionOptions,
+}                             from 'probot' // eslint-disable-line no-unused-vars
 
 import { Command } from 'commander'
 
@@ -14,13 +17,22 @@ import {
   commentIssue,
   openIssue,
 }                 from '../src/issue-handlers'
-import configureRoutes from '../src/routers'
+import { configureRoutes } from '../src/routers'
 
-export = async (app: Application) => {
+export = async (
+  app: Probot,
+  {
+    getRouter,
+  }: ApplicationFunctionOptions,
+) => {
+  if (!getRouter) {
+    throw new Error('getRouter() is required for OSSChat')
+  }
+
   app.on('issue_comment.created', commentIssue)
   app.on('issues.opened', openIssue)
 
-  configureRoutes(app)
+  configureRoutes(getRouter())
 
   // For more information on building apps:
   // https://probot.github.io/docs/

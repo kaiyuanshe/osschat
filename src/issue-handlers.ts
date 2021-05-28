@@ -1,7 +1,12 @@
 import {
-  OnCallback,
-}              from 'probot/lib/application'
-import { EventPayloads } from '@octokit/webhooks'
+  Context,
+}             from 'probot'
+import {
+  WebhookEvent,
+}               from '@octokit/webhooks'
+import {
+  HandlerFunction,
+}                   from '@octokit/webhooks/dist-types/types'
 
 import {
   UrlLink,
@@ -26,7 +31,23 @@ import {
   // exactMatch,
 }               from './pure-functions/match-org-repo'
 
-export const openIssue: OnCallback<EventPayloads.WebhookPayloadIssues> = async (context) => {
+type OpenIssueHandler = HandlerFunction<
+  'issues.opened',
+  Omit<
+    Context<any>,
+    keyof WebhookEvent<any>
+  >
+>
+
+type CommentIssueHandler = HandlerFunction<
+  'issue_comment.created',
+  Omit<
+    Context<any>,
+    keyof WebhookEvent<any>
+  >
+>
+
+export const openIssue: OpenIssueHandler = async (context) => {
   const fullName = context.payload.repository.full_name
   const issueNumber = context.payload.issue.number
   const issueTitle = context.payload.issue.title
@@ -60,7 +81,7 @@ export const openIssue: OnCallback<EventPayloads.WebhookPayloadIssues> = async (
   ))
 }
 
-export const commentIssue: OnCallback<EventPayloads.WebhookPayloadIssueComment> = async (context) => {
+export const commentIssue: CommentIssueHandler = async (context) => {
   // const issue = context .issue()
   // console.info(context.payload.repository)
   const fullName = context.payload.repository.full_name
@@ -146,7 +167,7 @@ async function getRoomList (
     }
   }
 
-  const roomIdList = []
+  const roomIdList: string[] = []
   for (const fullName of matchedList) {
     log.verbose('issue-handler', 'getRoom() adding rooms for fullName "%s"', fullName)
     const roomIdOrList = managedRepoConfig[fullName]

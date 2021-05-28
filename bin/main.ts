@@ -25,10 +25,14 @@ export = async (
     getRouter,
   }: ApplicationFunctionOptions,
 ) => {
+  if (!getRouter) {
+    throw new Error('getRouter() is required for OSSChat')
+  }
+
   app.on('issue_comment.created', commentIssue)
   app.on('issues.opened', openIssue)
 
-  configureRoutes(getRouter!())
+  configureRoutes(getRouter())
 
   // For more information on building apps:
   // https://probot.github.io/docs/

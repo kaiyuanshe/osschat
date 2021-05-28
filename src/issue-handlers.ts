@@ -21,7 +21,10 @@ import { Chatops } from './chatops'
 import request from 'request'
 
 import {
-  managedRepoConfig,
+  projectsRepoConfig,
+}                       from './projects/mod'
+
+import {
   log,
 }                     from './config'
 
@@ -128,7 +131,7 @@ async function getRoomList (
 ): Promise<Room[]> {
   log.verbose('issue-handler', 'getRoom(%s, %s, config)', owner, repository)
 
-  const managedList = Object.keys(managedRepoConfig)
+  const managedList = Object.keys(projectsRepoConfig)
 
   const matchedList = managedList
     .filter(matchOwner(owner))
@@ -170,7 +173,7 @@ async function getRoomList (
   const roomIdList: string[] = []
   for (const fullName of matchedList) {
     log.verbose('issue-handler', 'getRoom() adding rooms for fullName "%s"', fullName)
-    const roomIdOrList = managedRepoConfig[fullName]
+    const roomIdOrList = projectsRepoConfig[fullName]
     if (Array.isArray(roomIdOrList)) {
       roomIdList.push(...roomIdOrList)
     } else {

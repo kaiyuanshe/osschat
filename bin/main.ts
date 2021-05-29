@@ -19,10 +19,10 @@ import {
 }                           from '../src/issue-handlers'
 import { configureRoutes }  from '../src/routers'
 
-export = async (
+async function probotApp (
   app: Probot,
   options: ApplicationFunctionOptions,
-) => {
+) {
   if (!options.getRouter) {
     throw new Error('getRouter() is required for OSSChat')
   }
@@ -65,4 +65,9 @@ export = async (
    *  the heroku R10 (boot timeout) problem
    */
   // await bot.state.ready('off')
+}
+
+export default probotApp
+export {
+  probotApp,
 }

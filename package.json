@@ -1,6 +1,6 @@
 {
   "name": "osschat",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "Apache OSSChat",
   "main": "index.js",
   "engines": {
@@ -46,12 +46,12 @@
     "qrcode-terminal": "^0.12.0",
     "read-pkg-up": "^7.0.1",
     "redux": "^4.1.0",
-    "redux-observable": "^2.0.0-alpha.0",
     "remote-redux-devtools": "^0.5.16",
     "request": "^2.88.2",
+    "rx-queue": "^0.12.3",
     "smee-client": "^1.2.2",
     "state-switch": "^0.9.5",
-    "wechaty": "^0.60.12",
+    "wechaty": "^0.61.1",
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.14.17",
     "wechaty-redux": "^0.2.25"

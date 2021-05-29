@@ -17,9 +17,9 @@ OSSChat will serve users as a cloud service.
 
 - YouTube Video: [Introducing OSSChat: Sync GitHub Issues with WeChat Groups for Open-source Projects](https://youtu.be/HNksCmm_pvY), talk by [@huan](https://github.com/huan) at [OSSChat Meeting](https://shimo.im/docs/wGHydDxvWGjWKgDK) 2020-03-05 (Thu) 20:30 - 21:00 CST
 - OSS.Chat - A bridge to the Apache Way in China (OSS.Chat - 通往 Apache Way 的一道虹桥)
-    - [slides](https://docs.google.com/presentation/d/1ws1loxT0JVzNkZO_7G5Xx8T3mDvAmh8PCZ-sAs9rfqM)
-    - [ApacheCon @Home 2020](https://apachecon.com/acah2020/) (video: [link](https://www.youtube.com/watch?v=KWS4V86heh0))
-    - [2020 中国开源年会暨阿帕奇中国路演 COSCon'20 & Apache Roadshow - China](http://coscon.kaiyuanshe.cn/), (intro [link](https://coscon.kaiyuanshe.cn/#activity/agenda?pid=135), video [link](http://coscon.kaiyuanshe.cn/#activity/agenda?pid=135))
+  - [slides](https://docs.google.com/presentation/d/1ws1loxT0JVzNkZO_7G5Xx8T3mDvAmh8PCZ-sAs9rfqM)
+  - [ApacheCon @Home 2020](https://apachecon.com/acah2020/) (video: [link](https://www.youtube.com/watch?v=KWS4V86heh0))
+  - [2020 中国开源年会暨阿帕奇中国路演 COSCon'20 & Apache Roadshow - China](http://coscon.kaiyuanshe.cn/), (intro [link](https://coscon.kaiyuanshe.cn/#activity/agenda?pid=135), video [link](http://coscon.kaiyuanshe.cn/#activity/agenda?pid=135))
 - Read more [documention](https://osschat.readthedocs.io/en/latest/)
 
 ## Using OSSChat as a service
@@ -104,6 +104,15 @@ To be added...
 [![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/5)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/5)
 [![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/6)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/6)
 [![contributor](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/images/7)](https://sourcerer.io/fame/huan/kaiyuanshe/osschat/links/7)
+
+## History
+
+### Master
+
+### v0.9 May 30 2021
+
+1. Upgrade RxJS to v7
+1. Upgrade Wechaty to v0.60
 
 ## Thanks
 

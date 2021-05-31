@@ -30,7 +30,7 @@ async function probotApp (
   app.on('issue_comment.created', commentIssue)
   app.on('issues.opened', openIssue)
 
-  configureRoutes(options.getRouter())
+  configureRoutes(options.getRouter('/'))
 
   // For more information on building apps:
   // https://probot.github.io/docs/

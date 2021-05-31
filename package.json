@@ -37,8 +37,9 @@
     "commander": "^7",
     "dotenv": "^10.0.0",
     "ducks": "^0.10.2",
+    "express": "^4.17.1",
     "finis": "^0.4.4",
-    "ha-wechaty": "^0.4.16",
+    "ha-wechaty": "^0.5.1",
     "micromatch": "^4.0.4",
     "moment": "^2.29.1",
     "node-cache": "^5.1.2",
@@ -50,11 +51,10 @@
     "request": "^2.88.2",
     "rx-queue": "^0.12.3",
     "smee-client": "^1.2.2",
-    "state-switch": "^0.9.5",
-    "wechaty": "^0.61.1",
+    "wechaty": "^0.61.2",
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.14.17",
-    "wechaty-redux": "^0.2.25"
+    "wechaty-redux": "^0.3.1"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.3",
@@ -64,7 +64,6 @@
     "@types/micromatch": "^4.0.1",
     "@types/raven": "^2.5.3",
     "@types/request": "^2.48.5",
-    "express": "^4.17.1",
     "shx": "^0.3.3",
     "tstest": "^0.4.10"
   },

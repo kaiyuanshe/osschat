@@ -14,9 +14,13 @@ import { setupBot }   from '../src/setup-bot'
 import { setupFinis } from '../src/setup-finis'
 
 import {
-  commentIssue,
-  openIssue,
-}                           from '../src/issue-handlers'
+  issueCommentCreated,
+  issuesOpened,
+  pullRequestReviewCommentCreated,
+  pullRequestReviewSubmitted,
+  pullRequestOpened,
+}                           from '../src/probot-handlers/mod'
+
 import { configureRoutes }  from '../src/routers'
 
 async function probotApp (
@@ -27,11 +31,11 @@ async function probotApp (
     throw new Error('getRouter() is required for OSSChat')
   }
 
-  app.on('issue_comment.created', commentIssue)
-  app.on('issues.opened', openIssue)
-  // app.on('pull_request.opened', openIssue)
-  // app.on('pull_request_review.submitted', openIssue)
-  // app.on('pull_request_review_comment.created', commentIssue)
+  app.on('issue_comment.created',               issueCommentCreated)
+  app.on('issues.opened',                       issuesOpened)
+  app.on('pull_request_review_comment.created', pullRequestReviewCommentCreated)
+  app.on('pull_request_review.submitted',       pullRequestReviewSubmitted)
+  app.on('pull_request.opened',                 pullRequestOpened)
 
   configureRoutes(options.getRouter())
 

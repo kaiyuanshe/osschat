@@ -20,16 +20,16 @@ import {
 // }                     from './wtmp'
 import { getBot } from './get-bot'
 
-import onScan  from './handlers/on-scan'
-import onError  from './handlers/on-error'
-import onFriendship  from './handlers/on-friendship'
-import onLogout  from './handlers/on-logout'
-import onLogin  from './handlers/on-login'
-import onMessage  from './handlers/on-message'
-import onRoomTopic  from './handlers/on-room-topic'
-import onRoomInvite  from './handlers/on-room-invite'
-import onRoomJoin  from './handlers/on-room-join'
-import onRoomLeave  from './handlers/on-room-leave'
+import onScan  from './wechaty-handlers/on-scan'
+import onError  from './wechaty-handlers/on-error'
+import onFriendship  from './wechaty-handlers/on-friendship'
+import onLogout  from './wechaty-handlers/on-logout'
+import onLogin  from './wechaty-handlers/on-login'
+import onMessage  from './wechaty-handlers/on-message'
+import onRoomTopic  from './wechaty-handlers/on-room-topic'
+import onRoomInvite  from './wechaty-handlers/on-room-invite'
+import onRoomJoin  from './wechaty-handlers/on-room-join'
+import onRoomLeave  from './wechaty-handlers/on-room-leave'
 
 // const absPath = (relatedPath: string) => path.join(__dirname, relatedPath)
 

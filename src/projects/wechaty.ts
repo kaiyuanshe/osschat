@@ -23,7 +23,7 @@ const roomConfig = {
   ],
   '18825797159@chatroom': [
     // Bot Friday Open Forum 2021
-    'wechaty/bot5.club',
+    'wechaty/bot5.ml',
     'wechaty/friday',
   ],
   '19053006724@chatroom': [

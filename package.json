@@ -54,7 +54,7 @@
     "wechaty": "^0.61.4",
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.14.17",
-    "wechaty-redux": "^0.3.1"
+    "wechaty-redux": "^0.3.4"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.3",

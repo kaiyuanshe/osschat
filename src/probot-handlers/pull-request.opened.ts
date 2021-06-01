@@ -1,28 +1,14 @@
 import {
+  Probot,
+}             from 'probot'
+import {
   UrlLinkPayload,
   log,
 }                 from 'wechaty'
-import {
-  Context,
-}             from 'probot'
-import {
-  WebhookEvent,
-}               from '@octokit/webhooks'
-import {
-  HandlerFunction,
-}                   from '@octokit/webhooks/dist-types/types'
 
 import { deliverCard } from '../deliver-card'
 
-type PullRequestOpened = HandlerFunction<
-  'pull_request.opened',
-  Omit<
-    Context<any>,
-    keyof WebhookEvent<any>
-  >
->
-
-const pullRequestOpened: PullRequestOpened = async (context) => {
+const pullRequestOpenedPlugin = (app: Probot) => app.on('pull_request.opened', async (context) => {
   const fullName = context.payload.repository.full_name
   const pullRequestNumber = context.payload.pull_request.number
   const pullRequestTitle = context.payload.pull_request.title
@@ -58,6 +44,6 @@ const pullRequestOpened: PullRequestOpened = async (context) => {
       e,
     )
   }
-}
+})
 
-export { pullRequestOpened }
+export { pullRequestOpenedPlugin }

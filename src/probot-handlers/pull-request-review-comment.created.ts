@@ -1,28 +1,14 @@
 import {
+  Probot,
+}             from 'probot'
+import {
   UrlLinkPayload,
   log,
 }                 from 'wechaty'
-import {
-  Context,
-}             from 'probot'
-import {
-  WebhookEvent,
-}               from '@octokit/webhooks'
-import {
-  HandlerFunction,
-}                   from '@octokit/webhooks/dist-types/types'
 
 import { deliverCard } from '../deliver-card'
 
-type PullRequestReviewCommentCreated = HandlerFunction<
-  'pull_request_review_comment.created',
-  Omit<
-    Context<any>,
-    keyof WebhookEvent<any>
-  >
->
-
-const pullRequestReviewCommentCreated: PullRequestReviewCommentCreated = async (context) => {
+const pullRequestReviewCommentCreatedPlugin = (app: Probot) => app.on('pull_request_review_comment.created', async (context) => {
   const fullName = context.payload.repository.full_name
   const issueNumber = context.payload.pull_request.number
   const issueTitle = context.payload.pull_request.title
@@ -58,6 +44,6 @@ const pullRequestReviewCommentCreated: PullRequestReviewCommentCreated = async (
       e,
     )
   }
-}
+})
 
-export { pullRequestReviewCommentCreated }
+export { pullRequestReviewCommentCreatedPlugin }

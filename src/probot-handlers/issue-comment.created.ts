@@ -1,28 +1,14 @@
 import {
+  Probot,
+}             from 'probot'
+import {
   UrlLinkPayload,
   log,
 }                 from 'wechaty'
-import {
-  Context,
-}             from 'probot'
-import {
-  WebhookEvent,
-}               from '@octokit/webhooks'
-import {
-  HandlerFunction,
-}                   from '@octokit/webhooks/dist-types/types'
 
 import { deliverCard } from '../deliver-card'
 
-type IssueCommentCreated = HandlerFunction<
-  'issue_comment.created',
-  Omit<
-    Context<any>,
-    keyof WebhookEvent<any>
-  >
->
-
-const issueCommentCreated: IssueCommentCreated = async (context) => {
+const issueCommentCreatedPlugin = (app: Probot) => app.on('issue_comment.created', async (context) => {
   const fullName = context.payload.repository.full_name
   const issueNumber = context.payload.issue.number
   const issueTitle = context.payload.issue.title
@@ -58,6 +44,6 @@ const issueCommentCreated: IssueCommentCreated = async (context) => {
       e,
     )
   }
-}
+})
 
-export { issueCommentCreated }
+export { issueCommentCreatedPlugin }

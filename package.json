@@ -57,9 +57,9 @@
     "wechaty-redux": "^0.3.4"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.12.3",
+    "@chatie/eslint-config": "^0.12.4",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^0.14.1",
+    "@chatie/tsconfig": "^0.17.1",
     "@types/express": "^4.17.12",
     "@types/micromatch": "^4.0.1",
     "@types/raven": "^2.5.3",

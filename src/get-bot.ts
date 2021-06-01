@@ -36,7 +36,7 @@ export function getBot () {
 
   const ducks = new Ducks(duckery)
 
-  const name = process.env.WECHATY_NAME || 'heroku-wechaty'
+  const name = process.env['WECHATY_NAME'] || 'heroku-wechaty'
   const memory = getMemory(name)
 
   haWechaty = configureHa({

@@ -173,7 +173,7 @@ async function getRoomList (
   const roomIdList: string[] = []
   for (const fullName of matchedList) {
     log.verbose('issue-handler', 'getRoom() adding rooms for fullName "%s"', fullName)
-    const roomIdOrList = projectsRepoConfig[fullName]
+    const roomIdOrList = projectsRepoConfig[fullName]!
     if (Array.isArray(roomIdOrList)) {
       roomIdList.push(...roomIdOrList)
     } else {
@@ -213,7 +213,7 @@ async function manageIssue (
 
   if (owner === 'juzibot' && repository === 'Juzi-WeChat-Work-Tasks') {
     const wxBotUrl = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send'
-    const key      = process.env.JUZI_WECHAT_WORK_TASKS_BOT_KEY
+    const key      = process.env['JUZI_WECHAT_WORK_TASKS_BOT_KEY']
 
     const options = {
       body: {

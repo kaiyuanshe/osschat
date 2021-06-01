@@ -1,4 +1,4 @@
-import {
+import type {
   Router,
   Request,
   Response,
@@ -33,7 +33,7 @@ const FORM_HTML = `
 `
 
 function configureRoutes (router: Router) {
-  router.get('/', rootHandler)
+  router.get('/dashboard/', rootHandler)
   router.get('/chatops/', chatopsHandler)
   router.get('/logout/', logoutHandler)
 }
@@ -50,7 +50,7 @@ async function logoutHandler (
     secret,
   } = req.query as { secret?: string }
 
-  if (secret && secret === process.env.HUAN_SECRET) {
+  if (secret && secret === process.env['HUAN_SECRET']) {
     await haBot.logout()
     await Chatops.instance().say('Logout request from web accepted')
 
@@ -79,7 +79,7 @@ async function chatopsHandler (
   }
 
   await Chatops.instance().say(chatops)
-  return res.redirect('/')
+  return res.redirect('/dashboard/')
 }
 
 async function rootHandler (

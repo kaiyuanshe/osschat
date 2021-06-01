@@ -29,8 +29,11 @@ async function probotApp (
 
   app.on('issue_comment.created', commentIssue)
   app.on('issues.opened', openIssue)
+  // app.on('pull_request.opened', openIssue)
+  // app.on('pull_request_review.submitted', openIssue)
+  // app.on('pull_request_review_comment.created', commentIssue)
 
-  configureRoutes(options.getRouter('/'))
+  configureRoutes(options.getRouter())
 
   // For more information on building apps:
   // https://probot.github.io/docs/

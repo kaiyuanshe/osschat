@@ -9,7 +9,7 @@ import moment from 'moment'
 import {
   CHATOPS_ROOM_ID,
 }                   from '../config'
-import { VoteManager } from '../managers/vote-manager'
+// import { VoteManager } from '../managers/vote-manager'
 import { Chatops } from '../chatops'
 
 // import {
@@ -50,11 +50,11 @@ export default async function onMessage (
   }
   log.info('on-message', 'onMessage(%s)', message)
 
-  try {
-    await VoteManager.checkVote(message)
-  } catch (e) {
-    log.error('on-message', 'Failed to check vote for the message:\n', e)
-  }
+  // try {
+  //   await VoteManager.checkVote(message)
+  // } catch (e) {
+  //   log.error('on-message', 'Failed to check vote for the message:\n', e)
+  // }
 
   await directMessage(message)
   await mentionMessage(message)

@@ -9,7 +9,7 @@ import {
 }                 from './config'
 
 export const config: RepoConfig = {
-  'apache/incubator-dolphinscheduler'     : [
+  'apache/dolphinscheduler'     : [
     '8676247154@chatroom',
     '19237597168@chatroom',
     '19380384367@chatroom',

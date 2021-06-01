@@ -1,7 +1,7 @@
 import {
   Probot,
   ApplicationFunctionOptions,
-}                             from 'probot' // eslint-disable-line no-unused-vars
+}                             from 'probot'
 
 // import { Command } from 'commander'
 

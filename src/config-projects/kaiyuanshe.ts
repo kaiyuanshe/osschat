@@ -13,7 +13,6 @@ export const config: RepoConfig = {
     '17591588552@chatroom',
     '17384390178@chatroom',
   ],
-  
    'kaiyuanshe/ktoken' : [
     '19400127075@chatroom',
   ],

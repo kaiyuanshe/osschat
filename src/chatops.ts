@@ -10,7 +10,7 @@ import { HAWechaty } from 'ha-wechaty'
 import {
   log,
   CHATOPS_ROOM_ID,
-  DEV_ROOM_ID,
+  DEVELOPER_ROOM_ID,
   HEARTBEAT_ROOM_ID,
 }                     from './config'
 
@@ -55,7 +55,7 @@ export class Chatops {
   }
 
   public async dev (urlLink: UrlLink) {
-    return this.roomMessage(DEV_ROOM_ID, urlLink)
+    return this.roomMessage(DEVELOPER_ROOM_ID, urlLink)
   }
 
   private async roomMessage (

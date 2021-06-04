@@ -53,7 +53,7 @@
     "smee-client": "^1.2.2",
     "wechaty": "^0.61.12",
     "wechaty-ducks-contrib": "^0.2.2",
-    "wechaty-plugin-contrib": "^0.14.17",
+    "wechaty-plugin-contrib": "^0.14.23",
     "wechaty-redux": "^0.3.4"
   },
   "devDependencies": {

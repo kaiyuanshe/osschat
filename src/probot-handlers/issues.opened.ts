@@ -14,7 +14,7 @@ const issuesOpenedPlugin = (app: Probot) => app.on('issues.opened', async (conte
   const issueTitle = context.payload.issue.title
   const issueBody = context.payload.issue.body
   const htmlUrl = context.payload.issue.html_url
-  const avatarUrl = context.payload.repository.owner.avatar_url
+  const avatarUrl = context.payload.issue.user.avatar_url
 
   const title = [
     `#${issueNumber}`,

@@ -13,8 +13,8 @@ const pullRequestReviewSubmittedPlugin = (app: Probot) => app.on('pull_request_r
   const pullRequestNumber = context.payload.pull_request.number
   const pullRequestTitle = context.payload.pull_request.title
   const pullRequestReviewBody = context.payload.review.body || ''
+  const avatarUrl = context.payload.review.user.avatar_url
   const htmlUrl = context.payload.pull_request.html_url
-  const avatarUrl = context.payload.pull_request.user.avatar_url
 
   const title = [
     `#${pullRequestNumber}`,

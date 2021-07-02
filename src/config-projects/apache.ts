@@ -23,10 +23,11 @@ export const config: RepoConfig = {
     '20072190904@chatroom',
   ],
   'apache/incubator-iotdb' : '18378203056@chatroom',
-  'dromara/shenyu' : [
+  'apache/incubator-shenyu' : [
     '18639211911@chatroom',
     '20052698015@chatroom',
     '21232173020@chatroom',
+    '19502430226@chatroom',
   ],
 }
 

@@ -14,7 +14,7 @@ const pullRequestOpenedPlugin = (app: Probot) => app.on('pull_request.opened', a
   const pullRequestTitle = context.payload.pull_request.title
   const pullRequestBody = context.payload.pull_request.body
   const htmlUrl = context.payload.pull_request.html_url
-  const avatarUrl = context.payload.repository.owner.avatar_url
+  const avatarUrl = context.payload.pull_request.user.avatar_url
 
   const title = [
     `#${pullRequestNumber}`,

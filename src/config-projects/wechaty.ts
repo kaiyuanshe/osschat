@@ -36,6 +36,10 @@ const roomConfig = {
     'wechaty/grpc',
     'wechaty/openapi',
   ],
+  '21013901541@chatroom': [
+    // Wechaty Puppet XP
+    'wechaty/wechaty-puppet-xp',
+  ],
   '21044280639@chatroom': [
     // Summer of Wechaty Mentor Candidates
     'wechaty/summer-of-wechaty',

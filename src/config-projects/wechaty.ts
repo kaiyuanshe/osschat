@@ -59,13 +59,13 @@ const roomConfig = {
    * Polyglot Wechaty User Groups
    */
   '18005545363@chatroom': [ // .NET Wechaty User Group
-    'wechaty/go-wechaty*',
+    'wechaty/dotnet-wechaty*',
   ],
   '19236545415@chatroom': [ // PHP Wechaty User Group
     'wechaty/php-wechaty*',
   ],
   '19459143119@chatroom': [ // OpenAPI Wechaty User Group
-    'wechaty/openapi',
+    'wechaty/openapi*',
   ],
   '20062821521@chatroom': [ // Java Wechaty User Group
     'wechaty/java-wechaty*',

@@ -82,6 +82,10 @@ const roomConfig = {
   '21366491788@chatroom': [ // Scala Wechaty User Group
     'wechaty/scala-wechaty*',
   ],
+  '21148500489@chatroom': [ // TypeScript Wechaty User Group
+    'wechaty/wechaty',
+    'wechaty/wechaty-getting-started',
+  ],
 
 }
 

@@ -57,14 +57,14 @@ class Wtmp {
 
   public first (): WtmpEntry {
     if (this.wtmpList.length > 0) {
-      return this.wtmpList[0]
+      return this.wtmpList[0]!
     }
     throw new Error('no entry found')
   }
 
   public last (): WtmpEntry {
     if (this.wtmpList.length > 0) {
-      return this.wtmpList[-1]
+      return this.wtmpList[-1]!
     }
     throw new Error('no entry found')
   }

@@ -1,12 +1,12 @@
 /**
- * Project: Wechaty
- * GitHub: https://github.com/wechaty/
+ * Project: OSSChat
+ * GitHub: https://github.com/kaiyuanshe/osschat
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
 import {
   RepoConfig,
-}                 from '../config'
+}                 from './config'
 
 export const config: RepoConfig = {
   'zixia/aka.org.cn'    : '3408538832@chatroom',

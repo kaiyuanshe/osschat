@@ -1,5 +1,4 @@
-import { Application } from 'probot' // eslint-disable-line no-unused-vars
-import {
+import type {
   Router,
   Request,
   Response,
@@ -33,12 +32,10 @@ const FORM_HTML = `
   </form>
 `
 
-export default (app: Application) => {
-  const routes = app.route() as Router
-
-  routes.get('/', rootHandler)
-  routes.get('/chatops/', chatopsHandler)
-  routes.get('/logout/', logoutHandler)
+function configureRoutes (router: Router) {
+  router.get('/dashboard/', rootHandler)
+  router.get('/chatops/', chatopsHandler)
+  router.get('/logout/', logoutHandler)
 }
 
 async function logoutHandler (
@@ -53,7 +50,7 @@ async function logoutHandler (
     secret,
   } = req.query as { secret?: string }
 
-  if (secret && secret === process.env.HUAN_SECRET) {
+  if (secret && secret === process.env['HUAN_SECRET']) {
     await haBot.logout()
     await Chatops.instance().say('Logout request from web accepted')
 
@@ -82,7 +79,7 @@ async function chatopsHandler (
   }
 
   await Chatops.instance().say(chatops)
-  return res.redirect('/')
+  return res.redirect('/dashboard/')
 }
 
 async function rootHandler (
@@ -217,3 +214,5 @@ function escapeHtml (unsafe: string) {
     .replace(/'/g, '&quot;')
     .replace(/'/g, '&#039;')
 }
+
+export { configureRoutes }

@@ -15,6 +15,11 @@ export function matchRepoFullname (
   fullName: string,
 ): boolean {
   const managedRepo = fullName.split('/')[1]
+
+  if (!managedRepo) {
+    throw new Error('no managedRepo found for ' + fullName)
+  }
+
   // console.info('managedRepo:', managedRepo)
   // console.info('repo:', repo)
   return micromatch.isMatch(

@@ -29,12 +29,12 @@ Note: for now, osschat just only need 2 privileges:
     - Read and write access to issues and pull requests
 ``` 
 
-## 2. add OssChat wechat(juzi_bangbang) as friend, then invite OssChat into your wechat group
+## 2. add OssChat wechat(wxid: OSSChat) as friend, then invite OssChat into your wechat group
 
 - TODO: Need a QR code
 
 ## 3.  find your corresponding wechat group id
-visit [https://oss.chat](https://oss.chat) to get your wechat group id
+visit [https://oss.chat/dashboard/](https://oss.chat/dashboard/) to get your wechat group id
 
 ## 4. edit config.ts
 edit  [config.ts](http://github.com/kaiyuanshe/osschat/blob/master/src/config.ts) file, and add your group id to `RepoConfig`

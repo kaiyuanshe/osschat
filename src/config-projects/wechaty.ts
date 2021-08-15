@@ -27,15 +27,6 @@ const roomConfig = {
   '19053006724@chatroom': [ // Matrix Appservice Wechaty
     'wechaty/matrix-appservice-wechaty',
   ],
-  /**
-   * Huan(202108): will be renamed to "Wechaty Developers' Home 9"
-   */
-  // '19367909379@chatroom': [
-  //   // Python/Go/Java Wechaty
-  //   'wechaty/(python|go|java|scala|php|dotnet|rust)-wechaty*',
-  //   'wechaty/grpc',
-  //   'wechaty/openapi',
-  // ],
   '21013901541@chatroom': [ // Wechaty Puppet XP
     'wechaty/wechaty-puppet-xp',
   ],
@@ -50,6 +41,7 @@ const roomConfig = {
     'juzibot/wxwork-tester',
     'padlocal/wechaty-puppet-padlocal',
     'wechaty/puppet-services',
+    'wechaty/wechaty-puppet*',
   ],
   '6719192413@chatroom': [ // Wechaty Contributors
     'wechaty/PMC',
@@ -84,6 +76,12 @@ const roomConfig = {
   ],
   '21148500489@chatroom': [ // TypeScript Wechaty User Group
     'wechaty/wechaty',
+    'wechaty/wechaty-puppet-service',
+    'wechaty/wechaty-plugin*',
+    'wechaty/wechaty-vorpal*',
+    'wechaty/wechaty-redux*',
+    'wechaty/cli',
+    'wechaty/friday',
     'wechaty/wechaty-getting-started',
   ],
 

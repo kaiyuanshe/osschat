@@ -12,9 +12,9 @@ const pullRequestReviewSubmittedPlugin = (app: Probot) => app.on('pull_request_r
   const fullName = context.payload.repository.full_name
   const pullRequestNumber = context.payload.pull_request.number
   const pullRequestTitle = context.payload.pull_request.title
-  const pullRequestBody = context.payload.pull_request.body
+  const pullRequestReviewBody = context.payload.review.body || ''
+  const avatarUrl = context.payload.review.user.avatar_url
   const htmlUrl = context.payload.pull_request.html_url
-  const avatarUrl = context.payload.repository.owner.avatar_url
 
   const title = [
     `#${pullRequestNumber}`,
@@ -22,7 +22,7 @@ const pullRequestReviewSubmittedPlugin = (app: Probot) => app.on('pull_request_r
     fullName,
   ].join(' ')
   const url = htmlUrl
-  const description = pullRequestBody.slice(0, Math.max(pullRequestBody.length, 70))
+  const description = pullRequestReviewBody.slice(0, Math.max(pullRequestReviewBody.length, 70))
   const thumbnailUrl = avatarUrl
 
   const urlLinkPayload = {

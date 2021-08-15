@@ -34,7 +34,7 @@ Note: for now, osschat just only need 2 privileges:
 - TODO: Need a QR code
 
 ## 3.  find your corresponding wechat group id
-visit [https://oss.chat](https://oss.chat) to get your wechat group id
+visit [https://oss.chat/dashboard/](https://oss.chat/dashboard/) to get your wechat group id
 
 ## 4. edit config.ts
 edit  [config.ts](http://github.com/kaiyuanshe/osschat/blob/master/src/config.ts) file, and add your group id to `RepoConfig`

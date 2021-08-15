@@ -14,6 +14,7 @@ export const config: RepoConfig = {
   ],
   'WeBankFinTech/Linkis' : [
     '17539577298@chatroom',
+    '18620024854@chatroom',
   ],
 }
 

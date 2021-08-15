@@ -49,7 +49,7 @@ export const config: RepoConfig = {
   ],
   'wechaty/grpc'                            : MULTI_LANGUAGE_WECHATY,
   'wechaty/puppet-services'                 : WECHATY_DEVELOPERS_HEADQUARTERS,
-  'wechaty/summer-of-code': [
+  'wechaty/summer': [
     ...WECHATY_DEVELOPERS_HEADQUARTERS,
     SUMMER_OF_CODE,
   ],

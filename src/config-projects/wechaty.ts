@@ -13,12 +13,12 @@ const roomConfig = {
     'wechaty/*puppet*',
     'wechaty/*wechaty*',
     'wechaty/friday',
-    'wechaty/summer-of-wechaty',
+    'wechaty/summer*',
     'wechaty/wechaty.js.org',
     'wechaty/wishlist',
   ],
   '18324919941@chatroom': [ // Summer of Wechaty Students
-    'wechaty/summer-of-wechaty',
+    'wechaty/summer*',
   ],
   '18825797159@chatroom': [ // Bot Friday Open Forum 2021
     'wechaty/bot5.ml',
@@ -40,7 +40,7 @@ const roomConfig = {
     'wechaty/wechaty-puppet-xp',
   ],
   '21044280639@chatroom': [ // Summer of Wechaty Mentor Candidates
-    'wechaty/summer-of-wechaty',
+    'wechaty/summer*',
   ],
   '22598372108@chatroom': [ // 博文视点《Chatbot从0到1》读者群
     'lijiarui/chatbot-zero-to-one',

@@ -29,6 +29,7 @@ export const config: RepoConfig = {
     '21232173020@chatroom',
     '19502430226@chatroom',
   ],
+  'apache/incubator-pegasus' : '21353174418@chatroom',
 }
 
 export default config

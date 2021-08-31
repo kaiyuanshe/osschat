@@ -29,9 +29,7 @@ export const config: RepoConfig = {
     '21232173020@chatroom',
     '19502430226@chatroom',
   ],
-    'streamnative/kop' : [
-    '18300408994@chatroom',
-  ],
+    'streamnative/kop' : '18300408994@chatroom',
 }
 
 export default config

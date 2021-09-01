@@ -22,6 +22,7 @@ export const config: RepoConfig = {
     '23308011535@chatroom',
   ],
   'apache/incubator-iotdb' : '18378203056@chatroom',
+  'apache/incubator-pegasus' : '21353174418@chatroom',
   'apache/incubator-shenyu' : [
     '18639211911@chatroom',
     '20052698015@chatroom',

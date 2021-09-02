@@ -9,6 +9,7 @@ import qihoo360         from './qihoo360'
 import tencent          from './tencent'
 import kaiyuanshe       from './kaiyuanshe'
 import others           from './others'
+import streamnative     from './streamnative'
 
 /**
  * Huan(202003)
@@ -23,6 +24,7 @@ export const projectsRepoConfig = {
   ...kaiyuanshe,
   ...preangel,
   ...qihoo360,
+  ...streamnative,
   ...tencent,
   ...tensorflowBook,
   ...webank,

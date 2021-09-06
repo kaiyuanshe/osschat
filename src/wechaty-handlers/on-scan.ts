@@ -3,7 +3,7 @@ import {
   Wechaty,
 }             from 'wechaty'
 
-import { generate } from 'qrcode-terminal'
+import * as qrTerminal from 'qrcode-terminal'
 
 // import {
 //   duckStore,
@@ -27,7 +27,7 @@ export default async function onScan (
   //   )
   // )
 
-  generate(qrcode)
+  qrTerminal.generate(qrcode)
 }
 
 /**

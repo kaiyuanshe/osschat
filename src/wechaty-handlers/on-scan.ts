@@ -1,9 +1,10 @@
 import {
   log,
   Wechaty,
-}             from 'wechaty'
+  qrcodeValueToImageUrl,
+}                         from 'wechaty'
 
-import { generate } from 'qrcode-terminal'
+import * as qrTerminal from 'qrcode-terminal'
 
 // import {
 //   duckStore,
@@ -17,7 +18,7 @@ export default async function onScan (
 ): Promise<void> {
   log.info('on-scan', 'onScan() [%s] %s\nScan QR Code above to log in.',
     status,
-    qrcodeValueToUrl(qrcode),
+    qrcodeValueToImageUrl(qrcode),
   )
 
   // duckStore.dispatch(
@@ -27,18 +28,5 @@ export default async function onScan (
   //   )
   // )
 
-  generate(qrcode)
-}
-
-/**
- * Generate a QR Code online via
- * http://goqr.me/api/doc/create-qr-code/
- */
-function qrcodeValueToUrl (value: string): string {
-  const qrcodeImageUrl = [
-    'https://api.qrserver.com/v1/create-qr-code/?data=',
-    encodeURIComponent(value),
-  ].join('')
-
-  return qrcodeImageUrl
+  qrTerminal.generate(qrcode)
 }

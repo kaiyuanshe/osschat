@@ -7,7 +7,7 @@ import type {
 import {
   Room,
   Wechaty,
-}               from 'wechaty'
+}                         from 'wechaty'
 
 import {
   log,

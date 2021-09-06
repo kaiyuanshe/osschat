@@ -54,6 +54,7 @@
     "wechaty": "^0.67.9",
     "wechaty-ducks-contrib": "^0.2.2",
     "wechaty-plugin-contrib": "^0.14.23",
+    "wechaty-puppet-padlocal": "^0.4.2",
     "wechaty-redux": "^0.3.4"
   },
   "devDependencies": {

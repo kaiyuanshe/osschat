@@ -21,7 +21,7 @@ const roomConfig = {
     'wechaty/summer*',
   ],
   '18825797159@chatroom': [ // Bot Friday Open Forum 2021
-    'wechaty/bot5.ml',
+    'wechaty/bot5',
     'wechaty/friday',
   ],
   '19053006724@chatroom': [ // Matrix Appservice Wechaty

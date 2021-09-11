@@ -1,6 +1,6 @@
 {
   "name": "osschat",
-  "version": "0.9.38",
+  "version": "0.9.39",
   "description": "Apache OSSChat",
   "main": "index.js",
   "engines": {

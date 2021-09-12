@@ -22,8 +22,7 @@ const VERSION = pkg.version
 // const CHATOPS_ROOM_ID   = '21453880635@chatroom'  // WeCom: ChatOps - OSSChat
 const CHATOPS_ROOM_ID  = '18995691396@chatroom'  // WeChat: ChatOps - OSSChat
 
-// const HEARTBEAT_ROOM_ID   = '24980472405@chatroom'    // WeCom: ChatOps - Heartbat
-const HEARTBEAT_ROOM_ID  = '17376996519@chatroom'  // WeChat: ChatOps - Heartbeat
+const HEARTBEAT_ROOM_ID   = '24980472405@chatroom'    // WeCom: ChatOps - Heartbat MIX
 
 const DEVELOPER_ROOM_ID  = '17591588552@chatroom'  // WeChat: OSSChat Project Group
 

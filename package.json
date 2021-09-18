@@ -54,7 +54,7 @@
     "request": "^2.88.2",
     "rx-queue": "^0.12.6",
     "smee-client": "^1.2.2",
-    "wechaty": "^0.69.54",
+    "wechaty": "^0.68.1",
     "wechaty-ducks-contrib": "^0.3.5",
     "wechaty-plugin-contrib": "^0.14.23",
     "wechaty-puppet-padlocal": "^0.4.2",

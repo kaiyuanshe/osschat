@@ -11,25 +11,25 @@ import {
   log,
   CHATOPS_ROOM_ID,
   HEARTBEAT_ROOM_ID,
-}                     from './config'
+}                     from './config.js'
 // import {
 //   Chatops,
-// }                     from './chatops'
+// }                     from './chatops.js'
 // import {
 //   Wtmp,
-// }                     from './wtmp'
-import { getBot } from './get-bot'
+// }                     from './wtmp.js'
+import { getBot } from './get-bot.js'
 
-import onScan  from './wechaty-handlers/on-scan'
-import onError  from './wechaty-handlers/on-error'
-import onFriendship  from './wechaty-handlers/on-friendship'
-import onLogout  from './wechaty-handlers/on-logout'
-import onLogin  from './wechaty-handlers/on-login'
-import onMessage  from './wechaty-handlers/on-message'
-import onRoomTopic  from './wechaty-handlers/on-room-topic'
-import onRoomInvite  from './wechaty-handlers/on-room-invite'
-import onRoomJoin  from './wechaty-handlers/on-room-join'
-import onRoomLeave  from './wechaty-handlers/on-room-leave'
+import onScan  from './wechaty-handlers/on-scan.js'
+import onError  from './wechaty-handlers/on-error.js'
+import onFriendship  from './wechaty-handlers/on-friendship.js'
+import onLogout  from './wechaty-handlers/on-logout.js'
+import onLogin  from './wechaty-handlers/on-login.js'
+import onMessage  from './wechaty-handlers/on-message.js'
+import onRoomTopic  from './wechaty-handlers/on-room-topic.js'
+import onRoomInvite  from './wechaty-handlers/on-room-invite.js'
+import onRoomJoin  from './wechaty-handlers/on-room-join.js'
+import onRoomLeave  from './wechaty-handlers/on-room-leave.js'
 
 // const absPath = (relatedPath: string) => path.join(__dirname, relatedPath)
 

@@ -1,4 +1,4 @@
-import { finis }    from 'finis'
+import finisPkg   from 'finis'
 import type {
   Contact,
 }               from 'wechaty'
@@ -6,12 +6,14 @@ import type { HAWechaty } from 'ha-wechaty'
 
 import {
   Chatops,
-}             from './chatops'
+}             from './chatops.js'
 import {
   log,
   VERSION,
   debug,
-}             from './config'
+}             from './config.js'
+
+const finis: typeof finisPkg = (finisPkg as any).default
 
 const BOT_NAME = 'OSSChat'
 

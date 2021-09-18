@@ -6,7 +6,7 @@ import {
   log,
 }                 from 'wechaty'
 
-import { deliverCard } from '../deliver-card'
+import { deliverCard } from '../deliver-card.js'
 
 const pullRequestReviewSubmittedPlugin = (app: Probot) => app.on('pull_request_review.submitted', async (context) => {
   const fullName = context.payload.repository.full_name

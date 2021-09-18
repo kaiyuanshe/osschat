@@ -4,7 +4,7 @@ import {
 
 import {
   log,
-}                 from './config'
+}                 from './config.js'
 
 export let memory: MemoryCard
 

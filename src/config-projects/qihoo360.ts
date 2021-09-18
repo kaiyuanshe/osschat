@@ -6,7 +6,7 @@
  */
 import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 export const config: RepoConfig = {
   'qihoo360/quicksql' : [

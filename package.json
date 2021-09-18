@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "engines": {
-    "node": ">=14"
+    "node": ">=16",
+    "npm": ">=7"
   },
   "scripts": {
     "heroku:env": "heroku config -s -a oss-chat | sed 's/\\\\\\\\/\\\\/g' | tee .env",
@@ -37,10 +38,10 @@
     "brolog": "^1.12.4",
     "commander": "^8",
     "dotenv": "^10.0.0",
-    "ducks": "^0.11.7",
+    "ducks": "^0.11.10",
     "express": "^4.17.1",
     "finis": "^0.4.4",
-    "ha-wechaty": "^0.9.6",
+    "ha-wechaty": "^0.9.8",
     "micromatch": "^4.0.4",
     "moment": "^2.29.1",
     "node-cache": "^5.1.2",
@@ -54,10 +55,10 @@
     "rx-queue": "^0.12.6",
     "smee-client": "^1.2.2",
     "wechaty": "^0.69.54",
-    "wechaty-ducks-contrib": "^0.2.2",
+    "wechaty-ducks-contrib": "^0.3.4",
     "wechaty-plugin-contrib": "^0.14.23",
     "wechaty-puppet-padlocal": "^0.4.2",
-    "wechaty-redux": "^0.3.4"
+    "wechaty-redux": "^0.5.6"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.14.1",

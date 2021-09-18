@@ -12,15 +12,15 @@ import type {
 import {
   log,
   VERSION,
-}               from './config'
-import { Chatops } from './chatops'
-import { getBot } from './get-bot'
+}               from './config.js'
+import { Chatops } from './chatops.js'
+import { getBot } from './get-bot.js'
 
 // import {
 //   duckStore,
 //   wechatySelectors,
 //   counterSelectors,
-// }                     from './ducks/'
+// }                     from './ducks/.js'
 
 const haBot = getBot()
 

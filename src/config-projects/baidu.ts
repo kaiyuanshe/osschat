@@ -6,7 +6,7 @@
  */
 import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 const ROOM_ID = '20755579878@chatroom' // bot测试
 

@@ -4,7 +4,7 @@ import {
   Wechaty,
 }                   from 'wechaty'
 
-import { Chatops } from '../chatops'
+import { Chatops } from '../chatops.js'
 
 export default async function onRoomInvite (
   this           : Wechaty,

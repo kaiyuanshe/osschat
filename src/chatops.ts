@@ -12,7 +12,7 @@ import {
   CHATOPS_ROOM_ID,
   DEVELOPER_ROOM_ID,
   HEARTBEAT_ROOM_ID,
-}                     from './config'
+}                     from './config.js'
 
 export class Chatops {
 

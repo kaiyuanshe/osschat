@@ -6,7 +6,7 @@ import {
   log,
 }                 from 'wechaty'
 
-import { deliverCard } from '../deliver-card'
+import { deliverCard } from '../deliver-card.js'
 
 const issuesOpenedPlugin = (app: Probot) => app.on('issues.opened', async (context) => {
   const fullName = context.payload.repository.full_name

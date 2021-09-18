@@ -1,8 +1,8 @@
 #!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 
-import { getHAWechaty } from '../../src/get-wechaty'
-import { startBot }   from '../../src/start-bot'
-import { startFinis } from '../../src/start-finis'
+import { getHAWechaty } from '../../src/get-wechaty.js'
+import { startBot }   from '../../src/start-bot.js'
+import { startFinis } from '../../src/start-finis.js'
 
 process.env.HA_WECHATY_PUPPET = 'wechaty-puppet-mock'
 process.env.HA_WECHATY_PUPPET_MOCK_TOKEN = 'mock-token'

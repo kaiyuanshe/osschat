@@ -6,7 +6,7 @@
  */
 import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 export const config: RepoConfig = {
   'zixia/aka.org.cn'    : '3408538832@chatroom',

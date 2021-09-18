@@ -11,7 +11,7 @@ import {
 import dotenv     from 'dotenv'
 dotenv.config()
 
-const pkg = readPkgUp.sync({ cwd: __dirname })!.packageJson
+const pkg = readPkgUp.readPackageUpSync({ cwd: __dirname })!.packageJson
 const VERSION = pkg.version
 
 /**

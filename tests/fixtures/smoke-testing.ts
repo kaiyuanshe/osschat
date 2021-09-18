@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 
 import { getHAWechaty } from '../../src/get-wechaty'
 import { startBot }   from '../../src/start-bot'

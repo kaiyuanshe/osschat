@@ -1,8 +1,8 @@
 import { finis }    from 'finis'
-import {
+import type {
   Contact,
 }               from 'wechaty'
-import { HAWechaty } from 'ha-wechaty'
+import type { HAWechaty } from 'ha-wechaty'
 
 import {
   Chatops,

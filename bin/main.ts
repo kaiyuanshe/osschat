@@ -3,6 +3,7 @@ import type {
   Probot,
   ApplicationFunctionOptions,
 }                             from 'probot'
+import { run } from 'probot'
 
 // import { Command } from 'commander'
 
@@ -65,7 +66,10 @@ async function probotApp (
   // await bot.state.ready('off')
 }
 
-export default probotApp
-export {
-  probotApp,
-}
+run(probotApp)
+  .catch(console.error)
+
+// export default probotApp
+// export {
+//   probotApp,
+// }

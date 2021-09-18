@@ -116,8 +116,8 @@ async function rootHandler (
 
   const counterBundle = haBot.ducks.ducksify('counter')
 
-  const mt = counterBundle.selectors.getIncoming() // counterSelectors.mt(duckStore.getState().counter)
-  const mo = counterBundle.selectors.getOutgoing() // counterSelectors.mo(duckStore.getState().counter)
+  const mt = counterBundle.selectors.getMT() // counterSelectors.mt(duckStore.getState().counter)
+  const mo = counterBundle.selectors.getMO() // counterSelectors.mo(duckStore.getState().counter)
 
   const htmlCounter = `
   <hr />

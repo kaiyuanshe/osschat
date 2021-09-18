@@ -9,7 +9,7 @@ import * as qrTerminal from 'qrcode-terminal'
 // import {
 //   duckStore,
 //   wechatyActions,
-// }                     from '../ducks/'
+// }                     from '../ducks/.js'
 
 export default async function onScan (
   this   : Wechaty,

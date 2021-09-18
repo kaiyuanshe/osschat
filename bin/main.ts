@@ -1,3 +1,4 @@
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 import type {
   Probot,
   ApplicationFunctionOptions,
@@ -8,14 +9,14 @@ import type {
 import {
   log,
   // VERSION,
-}                     from '../src/config'
-import { getBot }     from '../src/get-bot'
-import { setupBot }   from '../src/setup-bot'
-import { setupFinis } from '../src/setup-finis'
+}                     from '../src/config.js'
+import { getBot }     from '../src/get-bot.js'
+import { setupBot }   from '../src/setup-bot.js'
+import { setupFinis } from '../src/setup-finis.js'
 
-import { configureProbot } from '../src/probot-handlers/mod'
+import { configureProbot } from '../src/probot-handlers/mod.js'
 
-import { configureRoutes }  from '../src/routers'
+import { configureRoutes }  from '../src/routers.js'
 
 async function probotApp (
   app: Probot,

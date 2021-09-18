@@ -20,7 +20,7 @@
 
 import { test }  from 'tstest'
 
-// import { log }  from '../src/config'
+// import { log }  from '../src/config.js'
 
 // import { spy } from 'sinon'
 

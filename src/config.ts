@@ -2,16 +2,21 @@
 /**
  * VERSION
  */
-import readPkgUp  from 'read-pkg-up'
+import { readPackageUpSync } from 'read-pkg-up'
 
 import {
   log,
 }               from 'wechaty'
 
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
 import dotenv     from 'dotenv'
 dotenv.config()
 
-const pkg = readPkgUp.readPackageUpSync({ cwd: __dirname })!.packageJson
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const pkg = readPackageUpSync({ cwd: __dirname })!.packageJson
 const VERSION = pkg.version
 
 /**

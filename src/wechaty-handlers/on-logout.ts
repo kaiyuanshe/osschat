@@ -7,7 +7,7 @@ import {
 // import {
 //   duckStore,
 //   wechatyActions,
-// }                     from '../ducks/'
+// }                     from '../ducks/.js'
 
 export default async function onLogout (
   this : Wechaty,

@@ -1,8 +1,11 @@
 #!/usr/bin/env -S node --no-warnings --loader ts-node/esm
+
 import type {
   Probot,
   ApplicationFunctionOptions,
 }                             from 'probot'
+
+// https://probot.github.io/docs/development/#run-probot-programmatically
 import { run } from 'probot'
 
 // import { Command } from 'commander'

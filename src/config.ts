@@ -11,8 +11,8 @@ import {
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-import dotenv     from 'dotenv'
-dotenv.config()
+// https://github.com/motdotla/dotenv/issues/89#issuecomment-596083057
+import 'dotenv/config.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 

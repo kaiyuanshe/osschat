@@ -4,7 +4,7 @@ import type {
   Response,
 }             from 'express'
 
-import {
+import type {
   Room,
   Wechaty,
 }                         from 'wechaty'

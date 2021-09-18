@@ -1,4 +1,4 @@
-import {
+import type {
   Probot,
   ApplicationFunctionOptions,
 }                             from 'probot'

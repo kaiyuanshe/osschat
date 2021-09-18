@@ -4,7 +4,7 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import {
+import type {
   RepoConfig,
 }                 from './config'
 

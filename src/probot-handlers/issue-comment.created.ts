@@ -1,4 +1,4 @@
-import {
+import type {
   Probot,
 }             from 'probot'
 import {

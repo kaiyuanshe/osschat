@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 /**
  *   Wechaty - https://github.com/chatie/wechaty
  *
@@ -18,7 +18,7 @@
  *
  */
 
-import test  from 'blue-tape'
+import { test }  from 'tstest'
 
 // import { log }  from '../src/config'
 

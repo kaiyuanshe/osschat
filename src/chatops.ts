@@ -5,7 +5,7 @@ import {
 }             from 'wechaty'
 
 import { DelayQueueExecutor } from 'rx-queue'
-import { HAWechaty } from 'ha-wechaty'
+import type { HAWechaty } from 'ha-wechaty'
 
 import {
   log,

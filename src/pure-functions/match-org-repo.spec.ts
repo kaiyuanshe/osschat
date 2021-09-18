@@ -1,9 +1,10 @@
-import test  from 'blue-tape'
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
+import { test }  from 'tstest'
 
 import {
   matchOwnerFullname,
   matchRepoFullname,
-}               from './match-org-repo'
+}               from './match-org-repo.js'
 
 test('matchOwner', async t => {
   t.ok(

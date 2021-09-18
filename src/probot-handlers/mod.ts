@@ -1,4 +1,4 @@
-import { Probot } from 'probot'
+import type { Probot } from 'probot'
 
 import { issueCommentCreatedPlugin } from './issue-comment.created'
 import { issuesOpenedPlugin } from './issues.opened'

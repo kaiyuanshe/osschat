@@ -5,7 +5,7 @@
  *
  */
 /* eslint-disable sort-keys */
-import { RepoConfig } from './config'
+import type { RepoConfig } from './config'
 
 const roomConfig = {
   '17275396976@chatroom': [ // Wechaty Developers' Headquarters

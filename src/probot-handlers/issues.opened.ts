@@ -1,4 +1,4 @@
-import {
+import type {
   Probot,
 }             from 'probot'
 import {
@@ -22,7 +22,7 @@ const issuesOpenedPlugin = (app: Probot) => app.on('issues.opened', async (conte
     fullName,
   ].join(' ')
   const url = htmlUrl
-  const description = issueBody.slice(0, Math.max(issueBody.length, 70))
+  const description = issueBody?.slice(0, Math.max(issueBody.length, 70))
   const thumbnailUrl = avatarUrl
 
   const urlLinkPayload = {

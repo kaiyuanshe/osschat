@@ -1,4 +1,4 @@
-import {
+import type {
   Probot,
 }             from 'probot'
 import {
@@ -6,7 +6,7 @@ import {
   log,
 }                 from 'wechaty'
 
-import { deliverCard } from '../deliver-card'
+import { deliverCard } from '../deliver-card.js'
 
 const pullRequestOpenedPlugin = (app: Probot) => app.on('pull_request.opened', async (context) => {
   const fullName = context.payload.repository.full_name
@@ -18,11 +18,11 @@ const pullRequestOpenedPlugin = (app: Probot) => app.on('pull_request.opened', a
 
   const title = [
     `#${pullRequestNumber}`,
-    pullRequestTitle.slice(0, Math.max(pullRequestTitle.length, 30)),
+    pullRequestTitle?.slice(0, Math.max(pullRequestTitle.length, 30)),
     fullName,
   ].join(' ')
   const url = htmlUrl
-  const description = pullRequestBody.slice(0, Math.max(pullRequestBody.length, 70))
+  const description = pullRequestBody?.slice(0, Math.max(pullRequestBody.length, 70))
   const thumbnailUrl = avatarUrl
 
   const urlLinkPayload = {

@@ -8,14 +8,14 @@ import moment from 'moment'
 
 import {
   CHATOPS_ROOM_ID,
-}                   from '../config'
-// import { VoteManager } from '../managers/vote-manager'
-import { Chatops } from '../chatops'
+}                   from '../config.js'
+// import { VoteManager } from '../managers/vote-manager.js'
+import { Chatops } from '../chatops.js'
 
 // import {
 //   duckStore,
 //   counterActions,
-// }                     from '../ducks/'
+// }                     from '../ducks/.js'
 
 const BORN_TIME = Date.now()
 

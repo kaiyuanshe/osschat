@@ -4,23 +4,23 @@ import type {
   Response,
 }             from 'express'
 
-import {
+import type {
   Room,
   Wechaty,
-}               from 'wechaty'
+}                         from 'wechaty'
 
 import {
   log,
   VERSION,
-}               from './config'
-import { Chatops } from './chatops'
-import { getBot } from './get-bot'
+}               from './config.js'
+import { Chatops } from './chatops.js'
+import { getBot } from './get-bot.js'
 
 // import {
 //   duckStore,
 //   wechatySelectors,
 //   counterSelectors,
-// }                     from './ducks/'
+// }                     from './ducks/.js'
 
 const haBot = getBot()
 
@@ -116,8 +116,8 @@ async function rootHandler (
 
   const counterBundle = haBot.ducks.ducksify('counter')
 
-  const mt = counterBundle.selectors.getMt() // counterSelectors.mt(duckStore.getState().counter)
-  const mo = counterBundle.selectors.getMo() // counterSelectors.mo(duckStore.getState().counter)
+  const mt = counterBundle.selectors.getMT() // counterSelectors.mt(duckStore.getState().counter)
+  const mo = counterBundle.selectors.getMO() // counterSelectors.mo(duckStore.getState().counter)
 
   const htmlCounter = `
   <hr />

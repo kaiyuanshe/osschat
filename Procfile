@@ -1,4 +1,5 @@
 # Why does SIGTERM handling not work correctly in NodeJS with NPM?
 #   https://help.heroku.com/ROG3H81R/why-does-sigterm-handling-not-work-correctly-in-nodejs-with-npm
 
-web: probot run ./dist/bin/main.js
+# web: probot run ./dist/bin/main.js
+web: node ./dist/bin/main.js

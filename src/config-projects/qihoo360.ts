@@ -4,9 +4,9 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import {
+import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 export const config: RepoConfig = {
   'qihoo360/quicksql' : [

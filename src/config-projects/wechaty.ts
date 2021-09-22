@@ -5,7 +5,7 @@
  *
  */
 /* eslint-disable sort-keys */
-import { RepoConfig } from './config'
+import type { RepoConfig } from './config.js'
 
 const roomConfig = {
   '17275396976@chatroom': [ // Wechaty Developers' Headquarters
@@ -20,7 +20,7 @@ const roomConfig = {
     'wechaty/summer*',
   ],
   '18825797159@chatroom': [ // Bot Friday Open Forum 2021
-    'wechaty/bot5.ml',
+    'wechaty/bot5',
     'wechaty/friday',
   ],
   '19053006724@chatroom': [ // Matrix Appservice Wechaty
@@ -50,28 +50,28 @@ const roomConfig = {
    * Polyglot Wechaty User Groups
    */
   '18005545363@chatroom': [ // .NET Wechaty User Group
-    'wechaty/dotnet-wechaty*',
+    'wechaty/dotnet-*',
   ],
   '19236545415@chatroom': [ // PHP Wechaty User Group
-    'wechaty/php-wechaty*',
+    'wechaty/php-*',
   ],
   '19459143119@chatroom': [ // OpenAPI Wechaty User Group
-    'wechaty/openapi*',
+    'wechaty/openapi-*',
   ],
   '20062821521@chatroom': [ // Java Wechaty User Group
-    'wechaty/java-wechaty*',
+    'wechaty/java-*',
   ],
   '20771403027@chatroom': [ // Python Wechaty User Group
-    'wechaty/python-wechaty*',
+    'wechaty/python-*',
   ],
   '21063503320@chatroom': [ // Rust Wechaty User Group
-    'wechaty/rust-wechaty*',
+    'wechaty/rust-*',
   ],
   '21153390249@chatroom': [ // Go Wechaty User Group
-    'wechaty/go-wechaty*',
+    'wechaty/go-*',
   ],
   '21366491788@chatroom': [ // Scala Wechaty User Group
-    'wechaty/scala-wechaty*',
+    'wechaty/scala-*',
   ],
   '21148500489@chatroom': [ // TypeScript Wechaty User Group
     'wechaty/wechaty',

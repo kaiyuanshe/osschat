@@ -10,12 +10,12 @@ import {
 
 import {
   log,
-}               from './config'
+}               from './config.js'
 import {
   getMemory,
-}               from './get-memory'
+}               from './get-memory.js'
 
-import { Chatops } from './chatops'
+import { Chatops } from './chatops.js'
 
 const duckery = {
   counter : CounterDuck,

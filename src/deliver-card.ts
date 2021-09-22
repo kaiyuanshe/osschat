@@ -8,16 +8,16 @@ import request from 'request'
 
 import {
   projectsRepoConfig,
-}                       from './config-projects/mod'
+}                       from './config-projects/mod.js'
 
 import {
   matchOwner,
   matchRepo,
   // exactMatch,
-}               from './pure-functions/match-org-repo'
+}               from './pure-functions/match-org-repo.js'
 
-import { getBot } from './get-bot'
-import { Chatops } from './chatops'
+import { getBot } from './get-bot.js'
+import { Chatops } from './chatops.js'
 
 async function deliverCard (
   owner          : string,

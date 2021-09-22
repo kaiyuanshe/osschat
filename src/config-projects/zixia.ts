@@ -4,9 +4,9 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import {
+import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 export const config: RepoConfig = {
   'zixia/aka.org.cn'    : '3408538832@chatroom',

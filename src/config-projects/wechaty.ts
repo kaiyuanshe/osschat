@@ -10,7 +10,6 @@ import { RepoConfig } from './config'
 const roomConfig = {
   '17275396976@chatroom': [ // Wechaty Developers' Headquarters
     'juzibot/donut-tester',
-    'wechaty/*puppet*',
     'wechaty/*wechaty*',
     'wechaty/friday',
     'wechaty/summer*',
@@ -36,12 +35,12 @@ const roomConfig = {
   '22598372108@chatroom': [ // 博文视点《Chatbot从0到1》读者群
     'lijiarui/chatbot-zero-to-one',
   ],
-  '25578655216@chatroom': [ // Wechaty Puppet Service Provider
+  '25578655216@chatroom': [ // Wechaty Puppet User Group
     'juzibot/donut-tester',
     'juzibot/wxwork-tester',
     'padlocal/wechaty-puppet-padlocal',
-    'wechaty/puppet-services',
-    'wechaty/wechaty-puppet*',
+    'wechaty/*grpc*',
+    'wechaty/*puppet*',
   ],
   '6719192413@chatroom': [ // Wechaty Contributors
     'wechaty/PMC',

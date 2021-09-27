@@ -79,16 +79,15 @@ export async function setupBot (): Promise<void> {
   )
 
   if (process.env['CHATOPERA_CLIENTID'] && process.env['CHATOPERA_SECRET']) {
-    const chatoperaFiltersGroup =
-      process.env['CHATOPERA_FILTERS_GROUP']?.split(',')
+    const chatoperaFiltersGroup = process.env['CHATOPERA_FILTERS_GROUP']?.split(',')
 
     haWechaty.use(
       WechatyChatopera({
         mention: false,
         room: async (room: Room): Promise<boolean> => {
           if (chatoperaFiltersGroup) {
-            let topic = await room.topic()
-            for (let topicFilter of chatoperaFiltersGroup) {
+            const topic = await room.topic()
+            for (const topicFilter of chatoperaFiltersGroup) {
               if (topic.includes(topicFilter)) {
                 return true
               }
@@ -99,7 +98,7 @@ export async function setupBot (): Promise<void> {
           }
         },
       })
-    );
+    )
   }
 
   // const heartbeat = (emoji: string) => {

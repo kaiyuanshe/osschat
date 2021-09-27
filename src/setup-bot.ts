@@ -8,6 +8,10 @@ import {
 }               from 'wechaty-plugin-contrib'
 
 import {
+  WechatyChatopera,
+}               from 'wechaty-chatopera'
+
+import {
   log,
   CHATOPS_ROOM_ID,
   HEARTBEAT_ROOM_ID,
@@ -70,6 +74,9 @@ export async function setupBot (): Promise<void> {
       contact   : true,
       mention   : true,
       room      : CHATOPS_ROOM_ID,
+    }),
+    WechatyChatopera({
+      mention: false,
     }),
   )
 

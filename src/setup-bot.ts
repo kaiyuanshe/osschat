@@ -1,6 +1,7 @@
-// import {
-//   Contact,
-// }               from 'wechaty'
+import type {
+  Room,
+}               from 'wechaty'
+
 import {
   Heartbeat,
   DingDong,
@@ -75,10 +76,31 @@ export async function setupBot (): Promise<void> {
       mention   : true,
       room      : CHATOPS_ROOM_ID,
     }),
-    WechatyChatopera({
-      mention: false,
-    }),
   )
+
+  if (process.env['CHATOPERA_CLIENTID'] && process.env['CHATOPERA_SECRET']) {
+    const chatoperaFiltersGroup =
+      process.env['CHATOPERA_FILTERS_GROUP']?.split(',')
+
+    haWechaty.use(
+      WechatyChatopera({
+        mention: false,
+        room: async (room: Room): Promise<boolean> => {
+          if (chatoperaFiltersGroup) {
+            let topic = await room.topic()
+            for (let topicFilter of chatoperaFiltersGroup) {
+              if (topic.includes(topicFilter)) {
+                return true
+              }
+            }
+            return false
+          } else {
+            return true
+          }
+        },
+      })
+    );
+  }
 
   // const heartbeat = (emoji: string) => {
   //   return () => Chatops.instance().heartbeat(emoji)

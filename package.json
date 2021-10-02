@@ -17,7 +17,7 @@
     "build": "tsc",
     "lint": "npm-run-all lint:es lint:ts",
     "lint:ts": "tsc --isolatedModules --noEmit",
-    "start": "npm run build && npx probot run ./dist/bin/main.js",
+    "start": "npm run build && node ./dist/bin/main.js",
     "test": "npm-run-all lint test:unit",
     "test:unit": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"src/**/*.spec.ts\" \"tests/**/*.spec.ts\"",
     "lint:es": "eslint --ignore-pattern node_modules/ --ignore-pattern fixtures/ \"{bin,examples,src,scripts,tests}/**/*.ts\""
@@ -48,6 +48,7 @@
     "qrcode-terminal": "^0.12.0",
     "read-pkg-up": "^8",
     "redux": "^4.1.1",
+    "redux-observable": "^2.0.0",
     "remote-redux-devtools": "^0.5.16",
     "request": "^2.88.2",
     "rx-queue": "^0.12.6",

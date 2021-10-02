@@ -3,7 +3,7 @@ networks:
     default:
 
 services:
-    app:
+    osschat:
         image: kaiyuanshe/osschat:develop
         volumes:
             - .env:/app/.env

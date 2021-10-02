@@ -1,7 +1,3 @@
-import type {
-  Room,
-}               from 'wechaty'
-
 import {
   Heartbeat,
   DingDong,

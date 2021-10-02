@@ -20,7 +20,7 @@
     "start": "npm run build && npx probot run ./dist/bin/main.js",
     "test": "npm-run-all lint test:unit",
     "test:unit": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"src/**/*.spec.ts\" \"tests/**/*.spec.ts\"",
-    "lint:es": "eslint --ignore-pattern node_modules/ --ignore-pattern fixtures/ '{bin,examples,src,scripts,tests}/**/*.ts'"
+    "lint:es": "eslint --ignore-pattern node_modules/ --ignore-pattern fixtures/ \"{bin,examples,src,scripts,tests}/**/*.ts\""
   },
   "repository": {
     "type": "git",

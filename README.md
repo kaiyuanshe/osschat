@@ -63,9 +63,20 @@ OSSChat v0.0.24)
 
 ## DevOps & CI/CD
 
+### Heroku
 We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.
 
 You can visit the online system at <https://oss.chat>
+
+### Docker
+Build docker image with `scripts/build.sh`, after that service can be hosted with docker-compose.
+
+```
+cp sample.env .env # Modify .env file with your settings
+docker-compose up -d
+```
+
+Note, the current docker image for osschat is not pushed into DockerHub yet.
 
 ## How to use
 

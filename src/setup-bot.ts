@@ -17,6 +17,11 @@ import {
   CHATOPS_ROOM_ID,
   HEARTBEAT_ROOM_ID,
 }                     from './config.js'
+
+import {
+  projectsRepoConfig,
+}                       from './config-projects/mod.js'
+
 // import {
 //   Chatops,
 // }                     from './chatops.js'
@@ -78,25 +83,12 @@ export async function setupBot (): Promise<void> {
     }),
   )
 
-  if (process.env['CHATOPERA_CLIENTID'] && process.env['CHATOPERA_SECRET']) {
-    const chatoperaFiltersGroup = process.env['CHATOPERA_FILTERS_GROUP']?.split(',')
-
+  // Auto load Wechaty Chatopera Plugin with ENV variables
+  if ((process.env['WCP_DEFAULT_CLIENTID'] && process.env['WCP_DEFAULT_SECRET']) || process.env['WCP_PERSONAL_ACC_TOKEN']) {
     haWechaty.use(
       WechatyChatopera({
         mention: false,
-        room: async (room: Room): Promise<boolean> => {
-          if (chatoperaFiltersGroup) {
-            const topic = await room.topic()
-            for (const topicFilter of chatoperaFiltersGroup) {
-              if (topic.includes(topicFilter)) {
-                return true
-              }
-            }
-            return false
-          } else {
-            return true
-          }
-        },
+        repoConfig: projectsRepoConfig,
       })
     )
   }

@@ -35,7 +35,7 @@ const roomConfig = {
   '22598372108@chatroom': [ // 博文视点《Chatbot从0到1》读者群
     'lijiarui/chatbot-zero-to-one',
   ],
-  '25578655216@chatroom': [ // Wechaty Puppet User Group
+  '19317837191@chatroom': [ // Puppet Wechaty User Group
     'juzibot/donut-tester',
     'juzibot/wxwork-tester',
     'padlocal/wechaty-puppet-padlocal',

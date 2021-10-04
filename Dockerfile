@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json /app/
 
-RUN npm install --registry=https://registry.npmmirror.com
+RUN npm install
 
 COPY . /app
 

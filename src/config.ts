@@ -25,11 +25,11 @@ const VERSION = pkg.version
 // export const PORT = process.env.PORT || 8788
 
 // const CHATOPS_ROOM_ID   = '21453880635@chatroom'  // WeCom: ChatOps - OSSChat
-const CHATOPS_ROOM_ID  = process.env['CHATOPS_ROOM_ID'] || '18995691396@chatroom'  // WeChat: ChatOps - OSSChat
+const CHATOPS_ROOM_ID  = process.env['OSSCHAT_ROOM_ID_CHATOPS'] || '18995691396@chatroom'  // WeChat: ChatOps - OSSChat
 
-const HEARTBEAT_ROOM_ID   = process.env['HEARTBEAT_ROOM_ID'] || '24980472405@chatroom'    // WeCom: ChatOps - Heartbat MIX
+const HEARTBEAT_ROOM_ID   = process.env['OSSCHAT_ROOM_ID_HEARTBEAT'] || '24980472405@chatroom'    // WeCom: ChatOps - Heartbat MIX
 
-const DEVELOPER_ROOM_ID  = process.env['DEVELOPER_ROOM_ID'] || '17591588552@chatroom'  // WeChat: OSSChat Project Group
+const DEVELOPER_ROOM_ID  = process.env['OSSCHAT_ROOM_ID_DEVELOPER'] || '17591588552@chatroom'  // WeChat: OSSChat Project Group
 
 function debug () : boolean {
   return process.env['DEBUG'] === 'true'

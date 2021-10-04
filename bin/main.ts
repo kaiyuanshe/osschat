@@ -14,6 +14,7 @@ import {
   log,
   // VERSION,
 }                     from '../src/config.js'
+
 import { getBot }     from '../src/get-bot.js'
 import { setupBot }   from '../src/setup-bot.js'
 import { setupFinis } from '../src/setup-finis.js'

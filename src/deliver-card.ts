@@ -16,8 +16,8 @@ import {
   // exactMatch,
 }               from './pure-functions/match-org-repo.js'
 
-import { getBot } from './get-bot.js'
-import { Chatops } from './chatops.js'
+import { getBot }   from './get-bot.js'
+import { Chatops }  from './chatops.js'
 
 async function deliverCard (
   owner          : string,

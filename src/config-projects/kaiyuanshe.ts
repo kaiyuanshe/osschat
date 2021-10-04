@@ -10,8 +10,8 @@ import type {
 
 export const config: RepoConfig = {
   'kaiyuanshe/osschat'     : [
-    '17591588552@chatroom',
-    '17384390178@chatroom',
+    '17591588552@chatroom', // OSSChat PMC
+    '17384390178@chatroom', // OSSChat Pilot Group
   ],
 }
 

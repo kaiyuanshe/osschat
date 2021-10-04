@@ -4,7 +4,7 @@ import {
   qrcodeValueToImageUrl,
 }                         from 'wechaty'
 
-import * as qrTerminal from 'qrcode-terminal'
+import qrTerminal from 'qrcode-terminal'
 
 // import {
 //   duckStore,

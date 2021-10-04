@@ -64,10 +64,12 @@ package-lock.json
 
 # IDE
 .idea
-
+.vscode
+tmp/
 t/
 t.*
 dist/
+
 # docs
 /docs/build/
 /docs/make.*

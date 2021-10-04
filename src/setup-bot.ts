@@ -1,6 +1,3 @@
-// import {
-//   Contact,
-// }               from 'wechaty'
 import {
   Heartbeat,
   DingDong,
@@ -8,10 +5,19 @@ import {
 }               from 'wechaty-plugin-contrib'
 
 import {
+  WechatyChatopera,
+}               from 'wechaty-chatopera'
+
+import {
   log,
   CHATOPS_ROOM_ID,
   HEARTBEAT_ROOM_ID,
 }                     from './config.js'
+
+import {
+  projectsRepoConfig,
+}                       from './config-projects/mod.js'
+
 // import {
 //   Chatops,
 // }                     from './chatops.js'
@@ -72,6 +78,21 @@ export async function setupBot (): Promise<void> {
       room      : CHATOPS_ROOM_ID,
     }),
   )
+
+  // Auto load Wechaty Chatopera Plugin with ENV variables
+  if ((process.env['CHATOPERA_DEFAULT_CLIENTID'] && process.env['CHATOPERA_DEFAULT_SECRET']) || process.env['CHATOPERA_PERSONAL_ACC_TOKEN']) {
+    haWechaty.use(
+      WechatyChatopera({
+        clientId: process.env['CHATOPERA_DEFAULT_CLIENTID'],
+        faqBestReplyThreshold: process.env['CHATOPERA_FAQ_BESTREPLY_THRES'] ? parseFloat(process.env['CHATOPERA_FAQ_BESTREPLY_THRES']) : undefined,
+        faqSuggReplyThreshold: process.env['CHATOPERA_FAQ_SUGGREPLY_THRES'] ? parseFloat(process.env['CHATOPERA_FAQ_SUGGREPLY_THRES']) : undefined,
+        mention: false,
+        personalAccessToken: process.env['CHATOPERA_PERSONAL_ACC_TOKEN'],
+        repoConfig: projectsRepoConfig,
+        secret: process.env['CHATOPERA_DEFAULT_SECRET'],
+      })
+    )
+  }
 
   // const heartbeat = (emoji: string) => {
   //   return () => Chatops.instance().heartbeat(emoji)

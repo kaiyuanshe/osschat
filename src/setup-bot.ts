@@ -80,11 +80,16 @@ export async function setupBot (): Promise<void> {
   )
 
   // Auto load Wechaty Chatopera Plugin with ENV variables
-  if ((process.env['WCP_DEFAULT_CLIENTID'] && process.env['WCP_DEFAULT_SECRET']) || process.env['WCP_PERSONAL_ACC_TOKEN']) {
+  if ((process.env['CHATOPERA_DEFAULT_CLIENTID'] && process.env['CHATOPERA_DEFAULT_SECRET']) || process.env['CHATOPERA_PERSONAL_ACC_TOKEN']) {
     haWechaty.use(
       WechatyChatopera({
+        clientId: process.env['CHATOPERA_DEFAULT_CLIENTID'],
+        faqBestReplyThreshold: process.env['CHATOPERA_FAQ_BESTREPLY_THRES'] ? parseFloat(process.env['CHATOPERA_FAQ_BESTREPLY_THRES']) : undefined,
+        faqSuggReplyThreshold: process.env['CHATOPERA_FAQ_SUGGREPLY_THRES'] ? parseFloat(process.env['CHATOPERA_FAQ_SUGGREPLY_THRES']) : undefined,
         mention: false,
+        personalAccessToken: process.env['CHATOPERA_PERSONAL_ACC_TOKEN'],
         repoConfig: projectsRepoConfig,
+        secret: process.env['CHATOPERA_DEFAULT_SECRET'],
       })
     )
   }

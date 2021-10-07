@@ -9,6 +9,7 @@ import qihoo360         from './qihoo360.js'
 import tencent          from './tencent.js'
 import kaiyuanshe       from './kaiyuanshe.js'
 import chatopera       from './chatopera.js'
+import hailiangWang       from './hailiang-wang.js'
 import others           from './others.js'
 
 /**
@@ -30,6 +31,7 @@ export const projectsRepoConfig = {
   ...wechaty,
   ...zixia,
   ...chatopera,
+  ...hailiangWang,
 
   // others
   ...others,

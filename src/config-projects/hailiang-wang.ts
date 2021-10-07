@@ -4,12 +4,11 @@
  * Maintainer: Chatopera https://github.com/hailiang-wang
  *
  */
- import type { RepoConfig } from './config.js'
+import type { RepoConfig } from './config.js'
 
- export const config: RepoConfig = {
-   'hailiang-wang/issues': [
-     /* Chatopera测试群1 */ '20687119169@chatroom'],
- }
- 
- export default config
- 
+export const config: RepoConfig = {
+  'hailiang-wang/issues': [
+    /* Chatopera测试群1 */ '20687119169@chatroom'],
+}
+
+export default config

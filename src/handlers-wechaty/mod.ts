@@ -1,3 +1,5 @@
+import type { HAWechaty } from 'ha-wechaty'
+
 import onScan       from './on-scan.js'
 import onError      from './on-error.js'
 import onFriendship from './on-friendship.js'
@@ -9,15 +11,20 @@ import onRoomInvite from './on-room-invite.js'
 import onRoomJoin   from './on-room-join.js'
 import onRoomLeave  from './on-room-leave.js'
 
+const addEventHandlers = (haWechaty: HAWechaty) => {
+  haWechaty
+    .on('scan',         onScan)
+    .on('error',        onError)
+    .on('friendship',   onFriendship)
+    .on('logout',       onLogout)
+    .on('login',        onLogin)
+    .on('message',      onMessage)
+    .on('room-topic',   onRoomTopic)
+    .on('room-invite',  onRoomInvite)
+    .on('room-join',    onRoomJoin)
+    .on('room-leave',   onRoomLeave)
+}
+
 export {
-  onScan,
-  onError,
-  onFriendship,
-  onLogout,
-  onLogin,
-  onMessage,
-  onRoomTopic,
-  onRoomInvite,
-  onRoomJoin,
-  onRoomLeave,
+  addEventHandlers,
 }

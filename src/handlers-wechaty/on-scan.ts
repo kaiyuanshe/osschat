@@ -6,11 +6,6 @@ import {
 
 import qrTerminal from 'qrcode-terminal'
 
-// import {
-//   duckStore,
-//   wechatyActions,
-// }                     from '../ducks/.js'
-
 export default async function onScan (
   this   : Wechaty,
   qrcode : string,
@@ -20,13 +15,6 @@ export default async function onScan (
     status,
     qrcodeValueToImageUrl(qrcode),
   )
-
-  // duckStore.dispatch(
-  //   wechatyActions.scan(
-  //     this.id,
-  //     qrcode,
-  //   )
-  // )
 
   qrTerminal.generate(qrcode)
 }

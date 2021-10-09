@@ -19,7 +19,7 @@ import { getBot }     from '../src/get-bot.js'
 import { setupBot }   from '../src/setup-bot.js'
 import { setupFinis } from '../src/setup-finis.js'
 
-import { configureProbot } from '../src/probot-handlers/mod.js'
+import { configureProbot } from '../src/handlers-probot/mod.js'
 
 import { configureRoutes }  from '../src/routers.js'
 

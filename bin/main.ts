@@ -27,6 +27,8 @@ async function probotApp (
   app: Probot,
   options: ApplicationFunctionOptions,
 ) {
+  log.verbose('main', 'probotApp()')
+
   if (!options.getRouter) {
     throw new Error('getRouter() is required for OSSChat')
   }
@@ -34,24 +36,6 @@ async function probotApp (
   configureProbot(app)
 
   configureRoutes(options.getRouter())
-
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
-
-  // const program = new Command()
-  // program
-  //   .version(VERSION)
-  //   .option('-d, --debug', 'enable debug mode')
-
-  // program.parse(process.argv)
-  // if (program.opts().debug) {
-  //   process.env.DEBUG = program.opts().debug.toString()
-  // }
-
-  log.verbose('main', 'main()')
 
   const bot = getBot()
 
@@ -70,8 +54,33 @@ async function probotApp (
   // await bot.state.ready('off')
 }
 
-run(probotApp)
-  .catch(console.error)
+async function main () {
+  log.verbose('main', 'main()')
+
+  // For more information on building apps:
+  // https://probot.github.io/docs/
+
+  // To get your app running against GitHub, see:
+  // https://probot.github.io/docs/development/
+
+  // const program = new Command()
+  // program
+  //   .version(VERSION)
+  //   .option('-d, --debug', 'enable debug mode')
+
+  // program.parse(process.argv)
+  // if (program.opts().debug) {
+  //   process.env.DEBUG = program.opts().debug.toString()
+  // }
+
+  try {
+    await run(probotApp)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+main().catch(console.error)
 
 // export default probotApp
 // export {

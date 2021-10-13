@@ -35,6 +35,9 @@ const roomConfig = {
   '21013901541@chatroom': [ // Wechaty Puppet XP
     'wechaty/wechaty-puppet-xp',
   ],
+  '24082599405@chatroom': [ // Wechaty Puppet OICQ
+    'wechaty/wechaty-puppet-oicq',
+  ],
   '21044280639@chatroom': [ // Summer of Wechaty Mentor Candidates
     'wechaty/summer*',
   ],

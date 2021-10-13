@@ -26,6 +26,12 @@ const roomConfig = {
   '19053006724@chatroom': [ // Matrix Appservice Wechaty
     'wechaty/matrix-appservice-wechaty',
   ],
+  '17754743068@chatroom': [  // Wechaty Puppet Walnut
+    'wechaty/wechaty-puppet-walnut',
+  ],
+  '20764206744@chatroom': [  // Wechaty Puppet Itchat
+    'wechaty/python-wechaty-puppet-itchat',
+  ],
   '21013901541@chatroom': [ // Wechaty Puppet XP
     'wechaty/wechaty-puppet-xp',
   ],

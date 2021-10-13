@@ -8,7 +8,7 @@ import type { RepoConfig } from './config.js'
 
 export const config: RepoConfig = {
   'authing/*': [
-    '', // Wechaty Authing Plugin
+    '23496612989@chatroom', // Wechaty Authing Plugin
   ],
 }
 

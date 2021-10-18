@@ -13,8 +13,8 @@ export const config: RepoConfig = {
   'XiaoMi/pegasus-go-client' : '21353174418@chatroom',
   'XiaoMi/pegasus-nodejs-client' : '21353174418@chatroom',
   'XiaoMi/pegasus-python-client' : '21353174418@chatroom',
-  'XiaoMi/rdsn' : '21353174418@chatroom',
   'XiaoMi/pegasus-scala-client' : '21353174418@chatroom',
+  'XiaoMi/rdsn' : '21353174418@chatroom',
   'apache/dolphinscheduler'     : [
     '8676247154@chatroom',
     '19237597168@chatroom',

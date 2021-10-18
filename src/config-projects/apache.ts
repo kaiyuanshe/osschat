@@ -9,6 +9,12 @@ import type {
 }                 from './config.js'
 
 export const config: RepoConfig = {
+  'XiaoMi/pegasus-nodejs-client' : '21353174418@chatroom',
+  'XiaoMi/pegasus-python-client' : '21353174418@chatroom',
+  'XiaoMi/pegasus-go-client' : '21353174418@chatroom',
+  'XiaoMi/pegasus-YCSB' : '21353174418@chatroom',
+  'XiaoMi/pegasus-scala-client' : '21353174418@chatroom',
+  'XiaoMi/rdsn' : '21353174418@chatroom',
   'apache/dolphinscheduler'     : [
     '8676247154@chatroom',
     '19237597168@chatroom',
@@ -21,14 +27,8 @@ export const config: RepoConfig = {
   'apache/incubator-doris' : [
     '23308011535@chatroom',
   ],
-  'apache/incubator-iotdb' : '18378203056@chatroom',  
+  'apache/incubator-iotdb' : '18378203056@chatroom',
   'apache/incubator-pegasus' : '21353174418@chatroom',
-  'XiaoMi/rdsn' : '21353174418@chatroom',
-  'XiaoMi/pegasus-nodejs-client' : '21353174418@chatroom',
-  'XiaoMi/pegasus-python-client' : '21353174418@chatroom',
-  'XiaoMi/pegasus-go-client' : '21353174418@chatroom',
-  'XiaoMi/pegasus-YCSB' : '21353174418@chatroom',
-  'XiaoMi/pegasus-scala-client' : '21353174418@chatroom',
   'apache/incubator-shenyu' : [
     '18639211911@chatroom',
     '20052698015@chatroom',

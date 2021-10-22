@@ -9,6 +9,10 @@ import {
   projectsRepoConfig,
 }                       from '../config-projects/mod.js'
 
+import {
+  fileURLToPath,
+}                       from 'url'
+
 import path             from 'path'
 
 let plugin: undefined | WechatyPlugin
@@ -18,6 +22,9 @@ if (
   (process.env['CHATOPERA_DEFAULT_CLIENTID'] && process.env['CHATOPERA_DEFAULT_SECRET'])
   || process.env['CHATOPERA_PERSONAL_ACC_TOKEN']
 ) {
+
+  const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
   plugin = WechatyChatopera({
     clientId: process.env['CHATOPERA_DEFAULT_CLIENTID'],
     faqBestReplyThreshold: process.env['CHATOPERA_FAQ_BESTREPLY_THRES'] ? parseFloat(process.env['CHATOPERA_FAQ_BESTREPLY_THRES']) : undefined,

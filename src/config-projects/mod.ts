@@ -1,16 +1,19 @@
-import wechaty          from './wechaty.js'
-import zixia            from './zixia.js'
-import tensorflowBook   from './tensorflow-book.js'
-import baidu            from './baidu.js'
-import preangel         from './preangel.js'
 import apache           from './apache.js'
-import webank           from './webank.js'
+import authing          from './authing.js'
+import baidu            from './baidu.js'
+import bjNodejsClube    from './bj-nodejs-club.js'
+import chatopera        from './chatopera.js'
+import hailiangWang     from './hailiang-wang.js'
+import kaiyuanshe       from './kaiyuanshe.js'
+import preangel         from './preangel.js'
 import qihoo360         from './qihoo360.js'
 import tencent          from './tencent.js'
-import kaiyuanshe       from './kaiyuanshe.js'
-import bjNodejsClube    from './bj-nodejs-club.js'
-import chatopera       from './chatopera.js'
-import hailiangWang       from './hailiang-wang.js'
+import tensorflowBook   from './tensorflow-book.js'
+import webank           from './webank.js'
+import wechaty          from './wechaty.js'
+import zixia            from './zixia.js'
+
+// others
 import others           from './others.js'
 
 /**
@@ -22,6 +25,7 @@ import others           from './others.js'
  */
 export const projectsRepoConfig = {
   ...apache,
+  ...authing,
   ...baidu,
   ...kaiyuanshe,
   ...preangel,

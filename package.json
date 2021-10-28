@@ -1,6 +1,6 @@
 {
   "name": "osschat",
-  "version": "0.10.40",
+  "version": "0.10.45",
   "description": "Apache OSSChat",
   "main": "index.js",
   "type": "module",
@@ -14,7 +14,7 @@
     "changelog": "github_changelog_generator -u kaiyuanshe -p osschat && sed -i'.bak' /greenkeeper/d CHANGELOG.md && sed -i'.bak' '/An in-range update of/d' CHANGELOG.md && ts-node scripts/sort-contributiveness.ts < CHANGELOG.md > CHANGELOG.new.md 2>/dev/null && cat CHANGELOG.md >> CHANGELOG.new.md && mv CHANGELOG.new.md CHANGELOG.md",
     "clean": "shx rm -fr dist/*",
     "dist": "npm run build",
-    "build": "tsc",
+    "build": "tsc && chmod +r ./node_modules/node-jq/bin/jq || true",
     "lint": "npm-run-all lint:es lint:ts",
     "lint:ts": "tsc --isolatedModules --noEmit",
     "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node bin/main.ts",
@@ -34,8 +34,6 @@
   "homepage": "https://github.com/kaiyuanshe/OSSChat#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
-    "array-flatten": "^3.0.0",
-    "brolog": "^1.12.4",
     "dotenv": "^10.0.0",
     "ducks": "^0.11.10",
     "express": "^4.17.1",
@@ -43,7 +41,6 @@
     "ha-wechaty": "^0.9.12",
     "micromatch": "^4.0.4",
     "moment": "^2.29.1",
-    "node-cache": "^5.1.2",
     "probot": "^12",
     "qrcode-terminal": "^0.12.0",
     "read-pkg-up": "^8",

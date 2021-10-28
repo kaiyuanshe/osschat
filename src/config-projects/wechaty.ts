@@ -26,8 +26,17 @@ const roomConfig = {
   '19053006724@chatroom': [ // Matrix Appservice Wechaty
     'wechaty/matrix-appservice-wechaty',
   ],
+  '17754743068@chatroom': [  // Wechaty Puppet Walnut
+    'wechaty/*puppet-walnut',
+  ],
+  '20764206744@chatroom': [  // Wechaty Puppet Itchat
+    'wechaty/*puppet-itchat',
+  ],
   '21013901541@chatroom': [ // Wechaty Puppet XP
-    'wechaty/wechaty-puppet-xp',
+    'wechaty/*puppet-xp',
+  ],
+  '24082599405@chatroom': [ // Wechaty Puppet OICQ
+    'wechaty/*puppet-oicq',
   ],
   '21044280639@chatroom': [ // Summer of Wechaty Mentor Candidates
     'wechaty/summer*',
@@ -38,7 +47,7 @@ const roomConfig = {
   '18000948607@chatroom': [ // Puppet Wechaty User Group
     'juzibot/donut-tester',
     'juzibot/wxwork-tester',
-    'padlocal/wechaty-puppet-padlocal',
+    'padlocal/*puppet-padlocal',
     'wechaty/*grpc*',
     'wechaty/*puppet*',
   ],
@@ -75,13 +84,13 @@ const roomConfig = {
   ],
   '21148500489@chatroom': [ // TypeScript Wechaty User Group
     'wechaty/wechaty',
-    'wechaty/wechaty-puppet-service',
-    'wechaty/wechaty-plugin*',
-    'wechaty/wechaty-vorpal*',
-    'wechaty/wechaty-redux*',
+    'wechaty/*puppet-service',
+    'wechaty/*plugin*',
+    'wechaty/*vorpal*',
+    'wechaty/*redux*',
     'wechaty/cli',
     'wechaty/friday',
-    'wechaty/wechaty-getting-started',
+    'wechaty/*getting-started',
   ],
 
 }

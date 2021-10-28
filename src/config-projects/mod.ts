@@ -8,6 +8,7 @@ import webank           from './webank.js'
 import qihoo360         from './qihoo360.js'
 import tencent          from './tencent.js'
 import kaiyuanshe       from './kaiyuanshe.js'
+import bjNodejsClube    from './bj-nodejs-club.js'
 import chatopera       from './chatopera.js'
 import hailiangWang       from './hailiang-wang.js'
 import others           from './others.js'
@@ -30,6 +31,7 @@ export const projectsRepoConfig = {
   ...webank,
   ...wechaty,
   ...zixia,
+  ...bjNodejsClube,
   ...chatopera,
   ...hailiangWang,
 

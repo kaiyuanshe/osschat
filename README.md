@@ -125,7 +125,11 @@ To be added...
 
 ### Master
 
-### v0.9 May 30 2021
+### v0.10 (Nov 2, 2021)
+
+This branch works with Wechaty v0.68, for compatible with those modules (like PadLocal) does not support Wechaty v1.0 (yet)
+
+### v0.9 (May 30, 2021)
 
 1. Upgrade RxJS to v7
 1. Upgrade Wechaty to v0.60

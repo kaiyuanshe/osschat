@@ -55,6 +55,7 @@
     "wechaty-chatopera": "^0.4.2",
     "wechaty-ducks-contrib": "^0.3.6",
     "wechaty-plugin-contrib": "^0.14.23",
+    "wechaty-puppet": "^0.41.9",
     "wechaty-puppet-padlocal": "^0.4.2",
     "wechaty-redux": "^0.5.7"
   },

@@ -121,8 +121,8 @@ async function getRoomList (
     if (Array.isArray(idOrList)) {
       const roomList = await Promise.all(
         idOrList.map(
-          id => getBot().Room.load(id)
-        )
+          id => getBot().Room.load(id),
+        ),
       )
       return roomList.filter(r => !!r) as Room[]
     } else {

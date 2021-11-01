@@ -25,7 +25,7 @@ const duckery = {
 
 type Duckery = typeof duckery
 
-let haWechaty: HAWechaty<Duckery>
+let haWechaty: undefined | HAWechaty<Duckery>
 
 export function getBot () {
   log.verbose('getWechaty', 'getHAWechaty()')

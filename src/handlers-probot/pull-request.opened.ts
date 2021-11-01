@@ -18,7 +18,7 @@ const pullRequestOpenedPlugin = (app: Probot) => app.on('pull_request.opened', a
 
   const title = [
     `#${pullRequestNumber}`,
-    pullRequestTitle?.slice(0, Math.max(pullRequestTitle.length, 30)),
+    pullRequestTitle.slice(0, Math.max(pullRequestTitle.length, 30)),
     fullName,
   ].join(' ')
   const url = htmlUrl

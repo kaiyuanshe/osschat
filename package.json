@@ -38,6 +38,7 @@
     "ducks": "^0.11.10",
     "express": "^4.17.1",
     "finis": "^0.4.5",
+    "gerror": "^1.0.2",
     "ha-wechaty": "^0.9.12",
     "micromatch": "^4.0.4",
     "moment": "^2.29.1",
@@ -51,10 +52,10 @@
     "rx-queue": "^0.12.6",
     "smee-client": "^1.2.2",
     "wechaty": "^0.68.1",
+    "wechaty-chatopera": "^0.4.2",
     "wechaty-ducks-contrib": "^0.3.6",
     "wechaty-plugin-contrib": "^0.14.23",
     "wechaty-puppet-padlocal": "^0.4.2",
-    "wechaty-chatopera": "^0.4.2",
     "wechaty-redux": "^0.5.7"
   },
   "devDependencies": {

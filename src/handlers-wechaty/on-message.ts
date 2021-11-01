@@ -31,21 +31,19 @@ export default async function onMessage (
   // }
 
   const text    = message.text()
-  const contact = message.talker()
-  if (!contact) {
-    return
-  }
+  const talker = message.talker()
+
   if (text.toLowerCase() === 'oss') {
 
     // To Be Fix: Change "OSSChat ChatOps" Group Name to actual group name
     log.info('on-message', 'Begin to find the OSSChat ChatOps room')
-    const room = this.Room.load(CHATOPS_ROOM_ID)
+    const room = await this.Room.find({ id: CHATOPS_ROOM_ID })
 
     if (room) {
-      await room.add(contact)
+      await room.add(talker)
 
       // To Be Fix: Change a formal welcome message
-      await room.say('Welcome to join OSSChat ChatOps Group', contact)
+      await room.say('Welcome to join OSSChat ChatOps Group', talker)
     }
   }
   log.info('on-message', 'onMessage(%s)', message)

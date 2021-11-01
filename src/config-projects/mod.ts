@@ -1,6 +1,7 @@
 import apache           from './apache.js'
 import authing          from './authing.js'
 import baidu            from './baidu.js'
+import bjNodejsClube    from './bj-nodejs-club.js'
 import chatopera        from './chatopera.js'
 import hailiangWang     from './hailiang-wang.js'
 import kaiyuanshe       from './kaiyuanshe.js'
@@ -34,6 +35,7 @@ export const projectsRepoConfig = {
   ...webank,
   ...wechaty,
   ...zixia,
+  ...bjNodejsClube,
   ...chatopera,
   ...hailiangWang,
 

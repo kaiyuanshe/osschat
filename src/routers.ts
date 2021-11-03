@@ -8,6 +8,7 @@ import type {
   Room,
   Wechaty,
 }                         from 'wechaty'
+import { wrapAsyncError } from 'gerror'
 
 import {
   log,
@@ -22,6 +23,8 @@ import { getBot } from './get-bot.js'
 //   counterSelectors,
 // }                     from './ducks/.js'
 
+const wrapAsync = wrapAsyncError(console.error)
+
 const haBot = getBot()
 
 const FORM_HTML = `
@@ -33,9 +36,9 @@ const FORM_HTML = `
 `
 
 function configureRoutes (router: Router) {
-  router.get('/dashboard/', rootHandler)
-  router.get('/chatops/', chatopsHandler)
-  router.get('/logout/', logoutHandler)
+  router.get('/dashboard/', wrapAsync(rootHandler))
+  router.get('/chatops/', wrapAsync(chatopsHandler))
+  router.get('/logout/', wrapAsync(logoutHandler))
 }
 
 async function logoutHandler (
@@ -145,7 +148,7 @@ async function rootHandler (
       html,
       htmlCounter,
       htmlFoot,
-    ].join('\n')
+    ].join('\n'),
   )
 
 }

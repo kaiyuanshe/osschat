@@ -7,6 +7,7 @@ import type {
 
 // https://probot.github.io/docs/development/#run-probot-programmatically
 import { run } from 'probot'
+import { wrapAsyncError } from 'gerror'
 
 // import { Command } from 'commander'
 
@@ -74,7 +75,11 @@ async function main () {
   // }
 
   try {
-    await run(probotApp)
+    await run(
+      wrapAsyncError(console.error)(
+        probotApp,
+      ),
+    )
   } catch (e) {
     console.error(e)
   }

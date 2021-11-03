@@ -81,9 +81,7 @@ finis(async (code, signal) => {
 
   try {
     log.info('RestartReporter', 'finis() setTimeout() going to exit with %d', code)
-    if (bot) {
-      await bot.stop()
-    }
+    await bot.stop()
   } catch (e) {
     log.error('RestartReporter', 'finis() setTimeout() exception: %s', e)
   } finally {

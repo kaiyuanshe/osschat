@@ -6,7 +6,7 @@ export function matchOwnerFullname (
 ): boolean {
   return fullName.toLowerCase()
     .startsWith(
-      owner.toLowerCase() + '/'
+      owner.toLowerCase() + '/',
     )
 }
 

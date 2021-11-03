@@ -52,7 +52,7 @@
     "rx-queue": "^0.12.6",
     "smee-client": "^1.2.2",
     "wechaty": "^0.68.1",
-    "wechaty-chatopera": "^0.4.2",
+    "wechaty-chatopera": "0.4.2",
     "wechaty-ducks-contrib": "^0.3.6",
     "wechaty-plugin-contrib": "^0.14.23",
     "wechaty-puppet": "^0.41.9",

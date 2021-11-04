@@ -31,3 +31,6 @@ wechaty/wechaty:
   java 版本找不到了，哪个大佬发一下地址:
     answers:
       - Java Wechaty official website is https://wechaty.js.org/docs/polyglot/java/
+   撤回图片的时候，怎么解析那段东西:
+     answers:
+       - You are welcome to read the source code and to see if you can find the solution from it, or file an issue on GitHub to describe the question to be clear so that other developers can read and know your problem. https://github.com/wechaty/wechaty

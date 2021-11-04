@@ -1,5 +1,4 @@
 # 其中，chatopera/* 与 chatopera.ts 里的 Repo 匹配格式一致；其次，每个 FAQ 问答对的形式如下：
-#   @see https://github.com/kaiyuanshe/osschat/wiki/How-to-setup-auto-reply-with-Chatopera
 #
 # ```yaml
 #  {{问题}}:
@@ -10,6 +9,8 @@
 #      - {{扩展问1}}
 #      - {{扩展问2}}
 # ```
+#
+#   @see https://github.com/kaiyuanshe/osschat/wiki/How-to-setup-auto-reply-with-Chatopera
 #
 wechaty/wechaty:
   Ding:

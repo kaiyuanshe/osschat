@@ -10,11 +10,12 @@ import type { RepoConfig } from './config.js'
 const roomConfig = {
   '17275396976@chatroom': [ // Wechaty Developers' Headquarters
     'juzibot/donut-tester',
-    'wechaty/*wechaty*',
-    'wechaty/friday',
-    'wechaty/summer*',
-    'wechaty/wechaty.js.org',
-    'wechaty/wishlist',
+    'wechaty/*',
+    // 'wechaty/*wechaty*',
+    // 'wechaty/friday',
+    // 'wechaty/summer*',
+    // 'wechaty/wechaty.js.org',
+    // 'wechaty/wishlist',
   ],
   '18324919941@chatroom': [ // Summer of Wechaty Students
     'wechaty/summer*',
@@ -84,13 +85,13 @@ const roomConfig = {
   ],
   '21148500489@chatroom': [ // TypeScript Wechaty User Group
     'wechaty/wechaty',
-    'wechaty/*puppet-service',
-    'wechaty/*plugin*',
-    'wechaty/*vorpal*',
-    'wechaty/*redux*',
+    'wechaty/puppet-service',
+    'wechaty/plugin*',
+    'wechaty/vorpal*',
+    'wechaty/redux*',
     'wechaty/cli',
     'wechaty/friday',
-    'wechaty/*getting-started',
+    'wechaty/getting-started',
   ],
 
 }

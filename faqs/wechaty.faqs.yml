@@ -1,5 +1,4 @@
 # 其中，chatopera/* 与 chatopera.ts 里的 Repo 匹配格式一致；其次，每个 FAQ 问答对的形式如下：
-#   @see https://github.com/kaiyuanshe/osschat/wiki/How-to-setup-auto-reply-with-Chatopera
 #
 # ```yaml
 #  {{问题}}:
@@ -10,6 +9,8 @@
 #      - {{扩展问1}}
 #      - {{扩展问2}}
 # ```
+#
+#   @see https://github.com/kaiyuanshe/osschat/wiki/How-to-setup-auto-reply-with-Chatopera
 #
 wechaty/wechaty:
   Ding:
@@ -27,3 +28,9 @@ wechaty/wechaty:
   免费 Web 协议怎么用:
     answers:
       - To learn more about Wechaty Puppet Provider, please visit Wechaty official website at https://wechaty.js.org/docs/puppet-providers/
+  java 版本找不到了，哪个大佬发一下地址:
+    answers:
+      - Java Wechaty official website is https://wechaty.js.org/docs/polyglot/java/
+  撤回图片的时候，怎么解析那段东西:
+    answers:
+      - You are welcome to read the source code and to see if you can find the solution from it, or file an issue on GitHub to describe the question to be clear so that other developers can read and know your problem. https://github.com/wechaty/wechaty

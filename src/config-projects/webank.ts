@@ -12,7 +12,7 @@ export const config: RepoConfig = {
   'WeBankFinTech/DataSphereStudio' : [
     '17539577298@chatroom',
   ],
-  'WeBankFinTech/Linkis' : [
+  'apache/incubator-linkis' : [
     '17539577298@chatroom',
     '18620024854@chatroom',
   ],

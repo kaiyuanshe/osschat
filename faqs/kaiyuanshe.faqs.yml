@@ -19,3 +19,7 @@ kaiyuanshe/osschat:
     answers:
       - The mission of the OSS.Chat project is to bridge the three-way communication and translation barriers between WeChat and other social platforms (future) and GitHub Issues and mailing lists to the open-source development community, making ASF's cultural, technical, and collaborative processes acceptable quickly and easily, rather than stumbling from the start. Learn more from https://wechaty.js.org/docs/showcases/osschat-bot
 
+kaiyuanshe/tasks:
+  故事集记录:
+    answers:
+      - 查看 Issues 列表，https://github.com/kaiyuanshe/tasks/issues (使用 Labels: s100)

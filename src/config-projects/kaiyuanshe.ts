@@ -13,6 +13,9 @@ export const config: RepoConfig = {
     '17591588552@chatroom', // OSSChat PMC
     '17384390178@chatroom', // OSSChat Pilot Group
   ],
+  'kaiyuanshe/tasks'     : [
+    '18995691396@chatroom', // To track kaiyuanshe ongoing tasks.
+  ],
 }
 
 export default config

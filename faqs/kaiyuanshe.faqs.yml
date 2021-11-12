@@ -22,4 +22,4 @@ kaiyuanshe/osschat:
 kaiyuanshe/tasks:
   故事集记录:
     answers:
-      - 查看 Issues 列表，https://github.com/kaiyuanshe/tasks/issues (使用 Labels: s100)
+      - "查看 Issues 列表，https://github.com/kaiyuanshe/tasks/issues (使用 Labels: s100)"

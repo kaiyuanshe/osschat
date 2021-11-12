@@ -4,9 +4,9 @@ import {
 
 import {
   log,
-}                 from './config'
+}                 from './config.js'
 
-export let memory: MemoryCard
+export let memory: undefined | MemoryCard
 
 export function getMemory (name: string): MemoryCard {
   log.verbose('getMemory', 'getMemory(%s)', name)

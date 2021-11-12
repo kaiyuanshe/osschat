@@ -2,16 +2,21 @@
 /**
  * VERSION
  */
-import readPkgUp  from 'read-pkg-up'
+import { readPackageUpSync } from 'read-pkg-up'
 
 import {
   log,
 }               from 'wechaty'
 
-import dotenv     from 'dotenv'
-dotenv.config()
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
-const pkg = readPkgUp.sync({ cwd: __dirname })!.packageJson
+// https://github.com/motdotla/dotenv/issues/89#issuecomment-596083057
+import 'dotenv/config.js'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const pkg = readPackageUpSync({ cwd: __dirname })!.packageJson
 const VERSION = pkg.version
 
 /**
@@ -20,12 +25,11 @@ const VERSION = pkg.version
 // export const PORT = process.env.PORT || 8788
 
 // const CHATOPS_ROOM_ID   = '21453880635@chatroom'  // WeCom: ChatOps - OSSChat
-const CHATOPS_ROOM_ID  = '18995691396@chatroom'  // WeChat: ChatOps - OSSChat
+const CHATOPS_ROOM_ID  = process.env['OSSCHAT_ROOM_ID_CHATOPS'] || '18995691396@chatroom'  // WeChat: ChatOps - OSSChat
 
-// const HEARTBEAT_ROOM_ID   = '24980472405@chatroom'    // WeCom: ChatOps - Heartbat
-const HEARTBEAT_ROOM_ID  = '17376996519@chatroom'  // WeChat: ChatOps - Heartbeat
+const HEARTBEAT_ROOM_ID   = process.env['OSSCHAT_ROOM_ID_HEARTBEAT'] || '24980472405@chatroom'    // WeCom: ChatOps - Heartbat MIX
 
-const DEVELOPER_ROOM_ID  = '17591588552@chatroom'  // WeChat: OSSChat Project Group
+const DEVELOPER_ROOM_ID  = process.env['OSSCHAT_ROOM_ID_DEVELOPER'] || '17591588552@chatroom'  // WeChat: OSSChat Project Group
 
 function debug () : boolean {
   return process.env['DEBUG'] === 'true'

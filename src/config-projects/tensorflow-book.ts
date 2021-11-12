@@ -4,9 +4,9 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import {
+import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 const ROOM_ID       = '4510565418@chatroom'
 const JAVASCRIPT_ML = '4383052528@chatroom'  // Machine Learning in JavaScript

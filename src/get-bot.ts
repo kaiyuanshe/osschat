@@ -10,12 +10,12 @@ import {
 
 import {
   log,
-}               from './config'
+}               from './config.js'
 import {
   getMemory,
-}               from './get-memory'
+}               from './get-memory.js'
 
-import { Chatops } from './chatops'
+import { Chatops } from './chatops.js'
 
 const duckery = {
   counter : CounterDuck,
@@ -25,7 +25,7 @@ const duckery = {
 
 type Duckery = typeof duckery
 
-let haWechaty: HAWechaty<Duckery>
+let haWechaty: undefined | HAWechaty<Duckery>
 
 export function getBot () {
   log.verbose('getWechaty', 'getHAWechaty()')

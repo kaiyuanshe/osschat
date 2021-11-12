@@ -1,4 +1,4 @@
-import {
+import type {
   Probot,
 }             from 'probot'
 import {
@@ -6,15 +6,15 @@ import {
   log,
 }                 from 'wechaty'
 
-import { deliverCard } from '../deliver-card'
+import { deliverCard } from '../deliver-card.js'
 
-const issueCommentCreatedPlugin = (app: Probot) => app.on('issue_comment.created', async (context) => {
+const issuesOpenedPlugin = (app: Probot) => app.on('issues.opened', async (context) => {
   const fullName = context.payload.repository.full_name
   const issueNumber = context.payload.issue.number
   const issueTitle = context.payload.issue.title
-  const commentBody = context.payload.comment.body
-  const htmlUrl = context.payload.comment.html_url
-  const avatarUrl = context.payload.comment.user.avatar_url
+  const issueBody = context.payload.issue.body
+  const htmlUrl = context.payload.issue.html_url
+  const avatarUrl = context.payload.issue.user.avatar_url
 
   const title = [
     `#${issueNumber}`,
@@ -22,7 +22,7 @@ const issueCommentCreatedPlugin = (app: Probot) => app.on('issue_comment.created
     fullName,
   ].join(' ')
   const url = htmlUrl
-  const description = commentBody.slice(0, Math.max(commentBody.length, 70))
+  const description = issueBody?.slice(0, Math.max(issueBody.length, 70))
   const thumbnailUrl = avatarUrl
 
   const urlLinkPayload = {
@@ -39,11 +39,11 @@ const issueCommentCreatedPlugin = (app: Probot) => app.on('issue_comment.created
       urlLinkPayload,
     )
   } catch (e) {
-    log.error('issue-handler', 'commentIssue() manageIssue(%s) rejection: %s',
+    log.error('issue-handler', 'openIssue() manageIssue(%s) rejection: %s',
       context.payload.repository.full_name,
       e,
     )
   }
 })
 
-export { issueCommentCreatedPlugin }
+export { issuesOpenedPlugin }

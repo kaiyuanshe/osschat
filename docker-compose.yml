@@ -1,0 +1,12 @@
+version: '2'
+networks:
+    default:
+
+services:
+    osschat:
+        image: kaiyuanshe/osschat:develop
+        volumes:
+            - .env:/app/.env
+        restart: always
+        environment:
+            - BROLOG_LEVEL=verbose

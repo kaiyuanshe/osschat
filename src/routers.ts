@@ -4,23 +4,26 @@ import type {
   Response,
 }             from 'express'
 
-import {
+import type {
   Room,
   Wechaty,
-}               from 'wechaty'
+}                         from 'wechaty'
+import { wrapAsyncError } from 'gerror'
 
 import {
   log,
   VERSION,
-}               from './config'
-import { Chatops } from './chatops'
-import { getBot } from './get-bot'
+}               from './config.js'
+import { Chatops } from './chatops.js'
+import { getBot } from './get-bot.js'
 
 // import {
 //   duckStore,
 //   wechatySelectors,
 //   counterSelectors,
-// }                     from './ducks/'
+// }                     from './ducks/.js'
+
+const wrapAsync = wrapAsyncError(console.error)
 
 const haBot = getBot()
 
@@ -33,9 +36,9 @@ const FORM_HTML = `
 `
 
 function configureRoutes (router: Router) {
-  router.get('/dashboard/', rootHandler)
-  router.get('/chatops/', chatopsHandler)
-  router.get('/logout/', logoutHandler)
+  router.get('/dashboard/', wrapAsync(rootHandler))
+  router.get('/chatops/', wrapAsync(chatopsHandler))
+  router.get('/logout/', wrapAsync(logoutHandler))
 }
 
 async function logoutHandler (
@@ -116,8 +119,8 @@ async function rootHandler (
 
   const counterBundle = haBot.ducks.ducksify('counter')
 
-  const mt = counterBundle.selectors.getMt() // counterSelectors.mt(duckStore.getState().counter)
-  const mo = counterBundle.selectors.getMo() // counterSelectors.mo(duckStore.getState().counter)
+  const mt = counterBundle.selectors.getMT() // counterSelectors.mt(duckStore.getState().counter)
+  const mo = counterBundle.selectors.getMO() // counterSelectors.mo(duckStore.getState().counter)
 
   const htmlCounter = `
   <hr />
@@ -145,7 +148,7 @@ async function rootHandler (
       html,
       htmlCounter,
       htmlFoot,
-    ].join('\n')
+    ].join('\n'),
   )
 
 }

@@ -8,12 +8,8 @@ import type {
   RepoConfig,
 }                 from './config.js'
 
-const ROOM_ID = '20755579878@chatroom' // bot测试
-
 export const config: RepoConfig = {
-  'PaddlePaddle/book': [
-    ROOM_ID,
-  ],
+  'streamnative/kop' : '18300408994@chatroom',
 }
 
 export default config

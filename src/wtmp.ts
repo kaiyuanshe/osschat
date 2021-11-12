@@ -12,7 +12,7 @@ interface WtmpEntry {
 
 class Wtmp {
 
-  private static singleton: Wtmp
+  private static singleton?: Wtmp
 
   private bornTime: number
   private wtmpList: WtmpEntry[] = []

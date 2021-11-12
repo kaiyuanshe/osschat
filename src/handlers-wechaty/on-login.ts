@@ -4,12 +4,12 @@ import {
   VERSION,
   Wechaty,
 }             from 'wechaty'
-import { debug } from '../config'
+import { debug } from '../config.js'
 
 // import {
 //   duckStore,
 //   wechatyActions,
-// }                     from '../ducks/'
+// }                     from '../ducks/.js'
 
 export default async function onLogin (
   this : Wechaty,

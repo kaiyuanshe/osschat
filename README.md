@@ -2,6 +2,7 @@
 
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/wechaty/wechaty)
 [![Node.js CI](https://github.com/kaiyuanshe/osschat/workflows/Node.js%20CI/badge.svg)](https://github.com/kaiyuanshe/osschat/actions?query=workflow%3A%22Node.js+CI%22)
+[![ES Modules](https://img.shields.io/badge/ES-Modules-brightgreen)](https://github.com/Chatie/tsconfig/issues/16)
 
 [![OSS Chat](docs/images/osschat.svg)](https://oss.chat)
 
@@ -60,11 +61,25 @@ OSSChat v0.0.24)
 
 1. Using an advance puppet to get a more stable version. Learn more about it from the [Wechaty Puppet Directory](https://github.com/wechaty/wechaty-puppet/wiki/Directory)
 
+2. Using [Chatopera Cloud Services](https://docs.chatopera.com/) to enable more dialogue skills and user engagements. (#TODO Blog, https://github.com/kaiyuanshe/osschat/issues/156)
+
+
 ## DevOps & CI/CD
 
+### Heroku
 We are current DevOps the master branch from the repo to Heroku under the protection of Travis CI.
 
 You can visit the online system at <https://oss.chat>
+
+### Docker
+Build docker image with `scripts/build.sh`, after that service can be hosted with docker-compose.
+
+```
+cp sample.env .env # Modify .env file with your settings
+docker-compose up -d
+```
+
+Note, the current docker image for osschat is not pushed into DockerHub yet.
 
 ## How to use
 
@@ -90,6 +105,7 @@ use osschat is so easy, just need 4 steps, please refer [How to use](https://git
 - [Zhuang Biaowei](https://github.com/zhuangbiaowei), [(庄表伟)](http://www.zhuangbiaowei.com/blog/), Product Manager from Huawei technologies co. ltd
 - [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia), [Tencent TVP of Chatbot](https://cloud.tencent.com/tvp/138), <huan@kaiyuanshe.org>
 - [Rui](https://github.com/lijiarui)[(李佳芮)](https://lijiarui.github.io), [Wechaty](https://github.com/wechaty/wechaty) Co-author, Founder of [JuziBot](https://www.botorange.com/)
+- [Hai Liang WANG](https://github.com/hailiang-wang), [(王海良)](https://www.linkedin.com/in/hai-liang-wang/), [Chatopera](https://docs.chatopera.com/), Chatbot Operator.
 - To Be Added ...
 
 ## Pilots
@@ -107,9 +123,13 @@ To be added...
 
 ## History
 
-### Master
+### Master v0.11
 
-### v0.9 May 30 2021
+### v0.10 (Nov 2, 2021)
+
+This branch works with Wechaty v0.68, for compatible with those modules (like PadLocal) does not support Wechaty v1.0 (yet)
+
+### v0.9 (May 30, 2021)
 
 1. Upgrade RxJS to v7
 1. Upgrade Wechaty to v0.60

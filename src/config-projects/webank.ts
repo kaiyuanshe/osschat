@@ -4,16 +4,17 @@
  * Maintainer: Huan LI (李卓桓) https://github.com/huan
  *
  */
-import {
+import type {
   RepoConfig,
-}                 from './config'
+}                 from './config.js'
 
 export const config: RepoConfig = {
   'WeBankFinTech/DataSphereStudio' : [
     '17539577298@chatroom',
   ],
-  'WeBankFinTech/Linkis' : [
+  'apache/incubator-linkis' : [
     '17539577298@chatroom',
+    '18620024854@chatroom',
   ],
 }
 

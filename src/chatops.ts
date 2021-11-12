@@ -5,18 +5,18 @@ import {
 }             from 'wechaty'
 
 import { DelayQueueExecutor } from 'rx-queue'
-import { HAWechaty } from 'ha-wechaty'
+import type { HAWechaty } from 'ha-wechaty'
 
 import {
   log,
   CHATOPS_ROOM_ID,
   DEVELOPER_ROOM_ID,
   HEARTBEAT_ROOM_ID,
-}                     from './config'
+}                     from './config.js'
 
 export class Chatops {
 
-  private static singleton: Chatops
+  private static singleton?: Chatops
 
   public static instance (
     haBot?: HAWechaty,
@@ -108,7 +108,7 @@ export class Chatops {
           {
             const image = await info.toFileBox()
             await Promise.all(
-              roomList.map(room => room.say(image))
+              roomList.map(room => room.say(image)),
             )
           }
           break
@@ -116,7 +116,7 @@ export class Chatops {
           {
             const urlLink = await info.toUrlLink()
             await Promise.all(
-              roomList.map(room => room.say(urlLink))
+              roomList.map(room => room.say(urlLink)),
             )
           }
           break
@@ -124,14 +124,14 @@ export class Chatops {
           {
             const typeName = Message.Type[info.type()]
             await Promise.all(
-              roomList.map(room => room.say(`message type: ${typeName}`))
+              roomList.map(room => room.say(`message type: ${typeName}`)),
             )
           }
           break
       }
     } else if (info instanceof UrlLink) {
       await Promise.all(
-        roomList.map(room => room.say(info))
+        roomList.map(room => room.say(info)),
       )
     }
 

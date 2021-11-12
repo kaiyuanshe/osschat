@@ -1,9 +1,10 @@
-import test  from 'blue-tape'
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
+import { test }  from 'tstest'
 
 import {
   matchOwnerFullname,
   matchRepoFullname,
-}               from './match-org-repo'
+}               from './match-org-repo.js'
 
 test('matchOwner', async t => {
   t.ok(
@@ -22,7 +23,7 @@ test('matchRepo', async t => {
       'docs',
       'wechaty/docs',
     ),
-    'should match repo in plan text'
+    'should match repo in plan text',
   )
 
   t.notOk(
@@ -30,7 +31,7 @@ test('matchRepo', async t => {
       'docs',
       'wechaty/matrix',
     ),
-    'should not match repo in plan text'
+    'should not match repo in plan text',
   )
 
   t.ok(
@@ -38,7 +39,7 @@ test('matchRepo', async t => {
       'docs',
       'wechaty/*cs',
     ),
-    'should match repo in wildcat text'
+    'should match repo in wildcat text',
   )
 
   t.notOk(
@@ -46,7 +47,7 @@ test('matchRepo', async t => {
       'docs',
       'wechaty/*trix',
     ),
-    'should not match repo in wildcat text'
+    'should not match repo in wildcat text',
   )
 })
 
@@ -56,7 +57,7 @@ test('matchOwner between uppercase with lowercase', async t => {
       'weCHATY',
       'WEchaty/Docs',
     ),
-    'should match owner in plan text for different cases'
+    'should match owner in plan text for different cases',
   )
 })
 
@@ -66,7 +67,7 @@ test('matchRepo between uppercase with lowercase', async t => {
       'docs',
       'wechaty/Docs',
     ),
-    'should match repo in plan text for different cases'
+    'should match repo in plan text for different cases',
   )
 })
 
@@ -76,7 +77,7 @@ test('matchRepo with empty wildcat', async t => {
       'docs',
       'wechaty/*Docs*',
     ),
-    'should match repo with empty wildcat for different cases'
+    'should match repo with empty wildcat for different cases',
   )
 })
 
@@ -93,7 +94,7 @@ test('matchRepo with complex wildcat', async t => {
         repo,
         fullName,
       ),
-      'should match repo with complex wildcat for ' + repo
+      'should match repo with complex wildcat for ' + repo,
     )
   }
 })
@@ -112,7 +113,7 @@ test('matchRepo with group wildcat', async t => {
         repo,
         fullName,
       ),
-      'should match repo with group match for ' + repo
+      'should match repo with group match for ' + repo,
     )
   }
 })

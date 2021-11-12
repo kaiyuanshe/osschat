@@ -14,7 +14,7 @@ export const config: RepoConfig = {
     '17384390178@chatroom', // OSSChat Pilot Group
   ],
   'kaiyuanshe/tasks'     : [
-    '18995691396@chatroom', // To track kaiyuanshe ongoing tasks.
+    '24033011336@chatroom', // To track kaiyuanshe ongoing tasks.
   ],
 }
 

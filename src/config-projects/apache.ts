@@ -34,6 +34,7 @@ export const config: RepoConfig = {
     '20052698015@chatroom',
     '21232173020@chatroom',
     '19502430226@chatroom',
+    '18270639113@chatroom',
   ],
 }
 

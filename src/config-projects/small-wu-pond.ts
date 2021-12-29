@@ -4,8 +4,8 @@ const roomConfig = {
     'Wuzhijieoooo/HelloGitHub',
     'Wuzhijieoooo/fe-interview',
     'Wuzhijieoooo/Learn-Git-in-30-days',
-    'Wuzhijieoooo/oss-chat'
-  ]
+    'Wuzhijieoooo/oss-chat',
+  ],
 }
 
 export interface RepoConfigEx {

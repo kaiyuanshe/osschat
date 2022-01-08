@@ -20,7 +20,8 @@ const roomConfig = {
   '18324919941@chatroom': [ // Summer of Wechaty Students
     'wechaty/summer*',
   ],
-  '18825797159@chatroom': [ // Bot Friday Open Forum 2021
+  // '18825797159@chatroom': Bot Friday Open Forum 2021
+  '19244336373@chatroom': [ // BOT5 Club Alumni 2022
     'wechaty/bot5',
     'wechaty/friday',
   ],

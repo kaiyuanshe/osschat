@@ -1,16 +1,31 @@
 chatopera/*:
-  简单的介绍下这个开源项目吧?:
+  简单的介绍下这个开源项目吧:
     answers:
       - 春松客服是面向中小型企业的智能客服系统。现有提供的功能可以参考我们的 README.md 文件。https://github.com/chatopera/cskefu/ 我们强调的智能客服主要是机器人客服以及辅助客服人员的一些功能。语音识别模块，以及我们已经发布的多轮对话设计器、智能问答引擎，很快会集成到春松客服中。 适用场景包括售前、对话营销。
-  多轮对话设计器、智能问答引擎，这两个集成后是开源的吗，还是付费使用?:
+  多轮对话设计器:
     answers:
-      - 多轮对话设计器可以免费下载使用, 智能问答引擎还没有开源。参考Chatopera 云服务。
-  请问客户怎么接入？:
+      - 多轮对话设计器可以免费下载使用, https://docs.chatopera.com/products/chatbot-platform/howto-guides/cde-install.html
+  请问客户怎么接入:
     answers:
-      - 部署安装，配置使用。创建网站渠道，查看网站渠道详情有集成指南。
-  软件怎么收费?:
+      - 部署安装，配置使用。创建网站渠道，查看网站渠道详情有集成指南。 https://docs.chatopera.com/products/cskefu/channels/index.html
+  软件怎么收费:
     answers:
-      - 基础模块不收费，商业插件和服务收费。参考开源项目地址主页介绍。
-  春松客服支持哪些渠道？:
+      - 基础模块不收费，商业插件和服务收费。参考开源项目地址主页介绍。https://github.com/chatopera/cskefu
+  春松客服支持哪些渠道:
     answers:
       - 免费模块目前支持 PC，Mobile 浏览器，开源版本就可以。APP 需要对接 SDK，这个有额外的开发工作，我们可以定制开发。
+  elasticsearch 版本:
+    answers:
+      - 现在春松客服使用的 ES 版本是 v2.4.6，春松客服中间件的版本参考这里，https://github.com/chatopera/cskefu/blob/osc/docker-compose.yml
+  机器人怎么设置常见问题:
+    answers:
+      - 参考机器人使用文档，https://docs.chatopera.com/products/cskefu/work-chatbot/message-types.html
+  nginx 代理:
+    answers:
+      - 反向代理，负载均衡配置，参考文档 https://blog.csdn.net/samurais/article/details/105820829
+  呼叫中心:
+    answers:
+      - 呼叫中心可定制，现在没有做完，和商务人员联系得到最新的状态 https://www.chatopera.com/mail.html
+  小程序接入:
+    answers:
+      - 春松客服网站渠道的 H5 页面，兼容移动客户端浏览器、小程序；微信小程序原生 APP 参考 https://github.com/chatopera/cskefu-wxapp

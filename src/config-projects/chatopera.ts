@@ -4,7 +4,7 @@
  * Maintainer: Chatopera https://github.com/chatopera
  *
  */
-import type { RepoConfig } from "./config.js";
+import type { RepoConfig } from './config.js'
 
 export const config: RepoConfig = {
   'chatopera/*': [
@@ -12,6 +12,6 @@ export const config: RepoConfig = {
     /* Chatopera智能客服-客户群02 */ '25014086676@chatroom',
     /* Chatopera智能客服-客户群03 */ '25479704194@chatroom',
   ],
-};
+}
 
 export default config

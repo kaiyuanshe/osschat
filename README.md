@@ -23,6 +23,16 @@ OSSChat will serve users as a cloud service.
   - [2020 中国开源年会暨阿帕奇中国路演 COSCon'20 & Apache Roadshow - China](http://coscon.kaiyuanshe.cn/), (intro [link](https://coscon.kaiyuanshe.cn/#activity/agenda?pid=135), video [link](http://coscon.kaiyuanshe.cn/#activity/agenda?pid=135))
 - Read more [documention](https://osschat.readthedocs.io/en/latest/)
 
+## HOT! OSS.Chat 加入 2022 年腾讯“开源摘星计划”
+
+![开源摘星计划](https://raw.githubusercontent.com/weopenprojects/WeOpen-Star/main/assets/imgs/weopenstar.jpeg)
+
+开源摘星计划（WeOpen Star） 是由腾源会 2022 年推出的全新项目，旨在为开源人提供成长激励，为开源项目提供成长支持，助力开发者更好地了解开源，更快地跨越鸿沟，参与到开源的具体贡献与实践中。
+
+不管你是开源萌新，还是希望更深度参与开源贡献的老兵，跟随“开源摘星计划”开启你的开源之旅，从一篇学习笔记、到一段代码的提交，不断挖掘自己的潜能，最终成长为开源社区的“闪亮之星”。
+
+详情：[OSS.Chat X 开源摘星计划](https://github.com/weopenprojects/WeOpen-Star/issues/38)
+
 ## Using OSSChat as a service
 
 TBD

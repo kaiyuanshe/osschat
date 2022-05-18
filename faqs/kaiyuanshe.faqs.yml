@@ -1,0 +1,25 @@
+# 其中，chatopera/* 与 chatopera.ts 里的 Repo 匹配格式一致；其次，每个 FAQ 问答对的形式如下：
+#   @see https://github.com/kaiyuanshe/osschat/wiki/How-to-setup-auto-reply-with-Chatopera
+#
+# ```yaml
+#  {{问题}}:
+#    categories: {{x/y/z}}
+#    answers:
+#      - {{答案}}
+#    extends:
+#      - {{扩展问1}}
+#      - {{扩展问2}}
+# ```
+#
+kaiyuanshe/osschat:
+  什么是 Chatopera:
+    answers:
+      - Chatopera 是春松客服公司提供面向中小型企业的智能客服系统。可以参阅 https://github.com/chatopera/cskefu/ 。我们强调的智能客服主要是机器人客服以及辅助客服人员的一些功能。语音识别模块，以及我们已经发布的多轮对话设计器、智能问答引擎，很快会集成到春松客服中。 适用场景包括售前、对话营销。
+  什么是 OSSChat:
+    answers:
+      - The mission of the OSS.Chat project is to bridge the three-way communication and translation barriers between WeChat and other social platforms (future) and GitHub Issues and mailing lists to the open-source development community, making ASF's cultural, technical, and collaborative processes acceptable quickly and easily, rather than stumbling from the start. Learn more from https://wechaty.js.org/docs/showcases/osschat-bot
+
+kaiyuanshe/tasks:
+  故事集记录:
+    answers:
+      - "查看 Issues 列表，https://github.com/kaiyuanshe/tasks/issues (使用 Labels: s100)"

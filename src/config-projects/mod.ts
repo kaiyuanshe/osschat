@@ -12,6 +12,7 @@ import tensorflowBook   from './tensorflow-book.js'
 import webank           from './webank.js'
 import wechaty          from './wechaty.js'
 import zixia            from './zixia.js'
+import smallWuPond      from './small-wu-pond.js'
 
 // others
 import others           from './others.js'
@@ -38,6 +39,7 @@ export const projectsRepoConfig = {
   ...bjNodejsClube,
   ...chatopera,
   ...hailiangWang,
+  ...smallWuPond,
 
   // others
   ...others,

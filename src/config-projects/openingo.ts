@@ -10,8 +10,8 @@ import type {
 
 export const config: RepoConfig = {
   'openingo/.github': '20527830074@chatroom',
-  'openingo/godkits': '20527830074@chatroom',
   'openingo/envcd': '20527830074@chatroom',
+  'openingo/godkits': '20527830074@chatroom',
 }
 
 export default config

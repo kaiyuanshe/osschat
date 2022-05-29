@@ -17,6 +17,7 @@ export const config: RepoConfig = {
     '17196414564@chatroom',
   ],
   'dailidong/ossbot': '18039997009@chatroom',
+  'SuperSupeng/open-source-explorer': '19424448622@chatroom'
 }
 
 export default config

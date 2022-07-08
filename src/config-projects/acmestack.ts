@@ -9,10 +9,20 @@
 }                 from './config.js'
 
 export const config: RepoConfig = {
-  'acmestack/.github': '20527830074@chatroom',
-  'acmestack/envcd': '20527830074@chatroom',
-  'acmestack/godkits': '20527830074@chatroom',
-  'acmestack/gobatis': '20527830074@chatroom',
+  'acmestack/envcd': [
+    '25666623890@chatroom',
+    '20527830074@chatroom',
+  ],
+  'acmestack/godkits': [
+    '25666623890@chatroom',
+    '19931755661@chatroom',
+    '20527830074@chatroom',
+  ],
+  'acmestack/gobatis': [
+    '18109854524@chatroom',
+    '19931755661@chatroom',
+    '20527830074@chatroom',
+  ],
 }
 
 export default config

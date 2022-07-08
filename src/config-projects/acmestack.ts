@@ -13,13 +13,13 @@ export const config: RepoConfig = {
     '25666623890@chatroom',
     '20527830074@chatroom',
   ],
-  'acmestack/godkits': [
-    '25666623890@chatroom',
+  'acmestack/gobatis': [
+    '18109854524@chatroom',
     '19931755661@chatroom',
     '20527830074@chatroom',
   ],
-  'acmestack/gobatis': [
-    '18109854524@chatroom',
+  'acmestack/godkits': [
+    '25666623890@chatroom',
     '19931755661@chatroom',
     '20527830074@chatroom',
   ],
